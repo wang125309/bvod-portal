@@ -1,5 +1,5 @@
-bvod-front
-==========
+bvod-portal
+===========
 
-> fontend for bvod
+> portal for bvod
 
