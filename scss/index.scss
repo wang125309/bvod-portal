@@ -19,7 +19,7 @@ body {
 .banner {
     margin-bottom: 40px;
     min-height: 300px;
-    
+
     img {
         width: 100%;
     }
@@ -51,11 +51,14 @@ section.video-grid {
     .grid {
         padding-top: 12px;
 
+        $video-width-large: ($container-lg)* 0.4 - $grid-gutter-width; // 444px
+        $video-height-large: $video-width-large * 0.85; // ~377px
         .video-large {
             $bg-height: 8px;
             padding-top: $bg-height;
             margin-top: -$bg-height;
             background: url(../img/video-bg.png) top center no-repeat;
+            @include size($video-width-large, $video-height-large + $bg-height);
 
             img {
                 width: 100%;
@@ -67,9 +70,11 @@ section.video-grid {
         }
 
         .video {
-
             .video-thumbnail {
                 position: relative;
+                $video-width: $container-lg / 5 - $grid-gutter-width;
+                $video-height: 135px;
+                @include size($video-width, $video-height);
 
                 .title {
                     @include text-overflow;
@@ -93,6 +98,7 @@ section.video-grid {
                     @include text-overflow;
                     color: $gray-light;
                     font-size: $font-size-small;
+                    margin-bottom: 8px;
 
                     .icon-watch {
                         height: 10px;
@@ -108,7 +114,7 @@ section.video-grid {
                         font-size: $font-size-small;
                     }
                 }
-                            }
+            }
 
             img {
                 width: 100%;
@@ -211,4 +217,202 @@ section.video-list {
             }
         }
     }
+}
+
+
+.icon-history {
+    background: url(../img/history.png) center center no-repeat;
+    @include size(16px, 16px);
+    display: inline-block;
+    vertical-align: middle
+}
+
+
+$navbar-bvod-color:             #efeff1 !default;
+$navbar-bvod-bg:                transparent  !default;
+$navbar-bvod-border:            $navbar-bvod-bg, 6.5% !default;
+
+// Navbar links
+$navbar-bvod-link-color:                #efeff1 !default;
+$navbar-bvod-link-hover-color:          $navbar-bvod-color !default;
+$navbar-bvod-link-hover-bg:             transparent !default;
+$navbar-bvod-link-active-color:         $navbar-bvod-color !default;
+$navbar-bvod-link-active-bg:            transparent; 
+$navbar-bvod-link-disabled-color:       #ccc !default;
+$navbar-bvod-link-disabled-bg:          transparent !default;
+
+// Navbar brand label
+$navbar-bvod-brand-color:               $navbar-bvod-link-color !default;
+$navbar-bvod-brand-hover-color:         transparent;
+$navbar-bvod-brand-hover-bg:            transparent !default;
+
+// Navbar toggle
+$navbar-bvod-toggle-hover-bg:           #fff !default;
+$navbar-bvod-toggle-icon-bar-bg:        #fff !default;
+$navbar-bvod-toggle-border-color:       #fff !default;
+
+.navbar-bvod {
+  background-color: $navbar-bvod-bg;
+  @include gradient-vertical-three-colors(rgba(0, 0, 0, .7), rgba(0, 0, 0, .5), 50%, rgba(0, 0, 0, .1));
+  border-color: $navbar-bvod-border;
+
+  .navbar-brand {
+    color: $navbar-bvod-brand-color;
+    font-size: $font-size-h3;
+    line-height: 40px;
+
+    &:hover,
+    &:focus {
+      color: $navbar-bvod-brand-hover-color;
+      background-color: $navbar-bvod-brand-hover-bg;
+    }
+  }
+
+  .navbar-text {
+    color: $navbar-bvod-color;
+  }
+
+  .navbar-nav.tabs {
+      font-size: $font-size-large;
+
+      > li > a {
+        padding-left: 25px;
+        padding-right: 25px;
+        line-height: 18px;
+      }
+  }
+
+
+  .navbar-nav {
+    > li > a {
+      color: $navbar-bvod-link-color;
+      text-align: center;
+      line-height: 40px;
+
+      > span.en {
+        font-size: $font-size-base;
+      }
+
+      &:hover,
+      &:focus {
+        color: $navbar-bvod-link-hover-color;
+        background-color: $navbar-bvod-link-hover-bg;
+      }
+    }
+    > .active > a {
+      &,
+      &:hover,
+      &:focus {
+        color: $navbar-bvod-link-active-color;
+        background-color: $navbar-bvod-link-active-bg;
+      }
+    }
+    > .disabled > a {
+      &,
+      &:hover,
+      &:focus {
+        color: $navbar-bvod-link-disabled-color;
+        background-color: $navbar-bvod-link-disabled-bg;
+      }
+    }
+  }
+
+  .navbar-toggle {
+    border-color: $navbar-bvod-toggle-border-color;
+    &:hover,
+    &:focus {
+      background-color: $navbar-bvod-toggle-hover-bg;
+    }
+    .icon-bar {
+      background-color: $navbar-bvod-toggle-icon-bar-bg;
+    }
+  }
+
+  .navbar-collapse,
+  .navbar-form {
+    border-color: $navbar-bvod-border;
+
+    .form-control {
+        background: transparent;
+        color: #fff;
+    }
+
+    ::-webkit-input-placeholder {
+        color: $navbar-bvod-color;
+    }
+
+    .navbar-form {
+        padding-top: 10px;
+    }
+  }
+
+  // Dropdown menu items
+  .navbar-nav {
+    // Remove background color from open dropdown
+    > .open > a {
+      &,
+      &:hover,
+      &:focus {
+        background-color: $navbar-bvod-link-active-bg;
+        color: $navbar-bvod-link-active-color;
+      }
+    }
+
+    @media (max-width: $grid-float-breakpoint-max) {
+      // Dropdowns get custom display when collapsed
+      .open .dropdown-menu {
+        > li > a {
+          color: $navbar-bvod-link-color;
+          &:hover,
+          &:focus {
+            color: $navbar-bvod-link-hover-color;
+            background-color: $navbar-bvod-link-hover-bg;
+          }
+        }
+        > .active > a {
+          &,
+          &:hover,
+          &:focus {
+            color: $navbar-bvod-link-active-color;
+            background-color: $navbar-bvod-link-active-bg;
+          }
+        }
+        > .disabled > a {
+          &,
+          &:hover,
+          &:focus {
+            color: $navbar-bvod-link-disabled-color;
+            background-color: $navbar-bvod-link-disabled-bg;
+          }
+        }
+      }
+    }
+  }
+
+
+  // Links in navbars
+  //
+  // Add a class to ensure links outside the navbar nav are colored correctly.
+
+  .navbar-link {
+    color: $navbar-bvod-link-color;
+    &:hover {
+      color: $navbar-bvod-link-hover-color;
+    }
+  }
+
+  .btn-link {
+    color: $navbar-bvod-link-color;
+    &:hover,
+    &:focus {
+      color: $navbar-bvod-link-hover-color;
+    }
+    &[disabled],
+    fieldset[disabled] & {
+      &:hover,
+      &:focus {
+        color: $navbar-bvod-link-disabled-color;
+      }
+    }
+  }
 }

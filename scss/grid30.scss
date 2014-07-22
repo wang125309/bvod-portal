@@ -3,6 +3,20 @@
 $grid_columns: 30;
 $grid-gutter-width: 20px;
 
+$container-tablet:             ((720px + $grid-gutter-width));
+//** For `$screen-sm-min` and up.
+$container-sm:                 $container-tablet !default;
+
+// Medium screen / desktop
+$container-desktop:            ((940px + $grid-gutter-width));
+//** For `$screen-md-min` and up.
+$container-md:                 $container-desktop !default;
+
+// Large screen / wide desktop
+$container-large-desktop:      ((1140px + $grid-gutter-width));
+//** For `$screen-lg-min` and up.
+$container-lg:                 $container-large-desktop;
+
 // Row
 //
 // Rows contain and clear the floats of your columns.
