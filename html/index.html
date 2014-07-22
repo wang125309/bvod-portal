@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BVOD</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    @@include("./navbar.html")
+    <div class="banner">
+        <img src="http://placehold.it/1920x480" alt="">
+    </div>
+
+    <div class="container">
+        @@include("./video-grid.html", {
+            "title": "精选视频",
+            "sub_title": "Featured Videos"
+        })
+
+        @@include("./video-list.html", {
+            "title": "最新视频",
+            "sub_title": "Recently Added Videos" 
+        })
+
+        @@include("./video-grid.html", {
+            "title": "热门视频",
+            "sub_title": "Popular Videos" 
+        })
+    </div>
+    @@include("./footer.html")
+    <script></script>
+</body>
+</html>
+
