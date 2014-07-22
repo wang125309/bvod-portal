@@ -1,5 +1,5 @@
 @import "components/bootstrap-sass-official/assets/stylesheets/bootstrap";
-
+@import "scss/grid30";
 
 .navbar {
     margin-bottom: 0px;
@@ -122,20 +122,13 @@ section.video-list {
         padding-left: 0px;
         margin-bottom: 0px;
 
-        li.video {
-            $video-width: 216px;
-            $video-height: 310px;
-            @include size($video-width, $video-height);
+        .video.video-medium {
+            img {
+                width: 100%;
+            }
 
             position: relative;
-            background: url(http://placehold.it/218x310) center center;
-            float: left;
             box-sizing: border-box;
-            margin-right: 15px;
-
-            &:last-child {
-                margin-right: 0px;
-            }
 
             .title {
                 @include gradient-vertical-three-colors(rgba(0, 0, 0, 0), rgba(0, 0, 0, .3), 50%, rgba(0, 0, 0, 1));

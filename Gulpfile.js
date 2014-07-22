@@ -3,7 +3,7 @@ var fileinclude = require("gulp-file-include");
 var sass = require("gulp-sass");
 
 gulp.task('sass', function() {
-    return gulp.src("scss/*.scss")
+    return gulp.src("scss/index.scss")
         .pipe(sass({
             errLogToConsole: true
         }))
