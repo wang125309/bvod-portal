@@ -10328,6 +10328,9 @@ button.close {
   .col-lg-offset-30 {
     margin-left: 100%; } }
 
+body {
+  font-family: '微软雅黑', "Helvetica Neue", Helvetica, Arial, sans-serif; }
+
 .navbar {
   margin-bottom: 0px; }
   .navbar form {

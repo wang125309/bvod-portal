@@ -1,6 +1,10 @@
 @import "components/bootstrap-sass-official/assets/stylesheets/bootstrap";
 @import "scss/grid30";
 
+body {
+    font-family: '微软雅黑', #{$font-family-sans-serif};
+}
+
 .navbar {
     margin-bottom: 0px;
     form {
