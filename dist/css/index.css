@@ -4592,8 +4592,24 @@ button.close {
   .banner img {
     width: 100%; }
 
+.icon-watch-reverse {
+  width: 17px;
+  height: 12px;
+  display: inline-block;
+  vertical-align: baseline;
+  background: url(../img/watch-reverse.png) center center no-repeat; }
+
+.icon-more {
+  width: 11px;
+  height: 18px;
+  display: inline-block;
+  vertical-align: top;
+  background: url(../img/more-arrow.png) top center no-repeat; }
+
 section.video-grid {
   margin-bottom: 40px; }
+  section.video-grid .more {
+    margin: 0px; }
   section.video-grid .grid {
     padding-top: 12px; }
     section.video-grid .grid .video-large {
@@ -4618,14 +4634,26 @@ section.video-grid {
         color: #eeeeee;
         font-size: 12px; }
     section.video-grid .grid .video .video-info div.comment {
-      margin: 8px 0px 5px; }
-    section.video-grid .grid .video .video-info div.username {
+      margin: 8px 0px 5px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap; }
+    section.video-grid .grid .video .video-info .meta {
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
-      display: inline-block;
       color: #777777;
       font-size: 12px; }
+      section.video-grid .grid .video .video-info .meta .icon-watch {
+        height: 10px;
+        width: 15px;
+        background: url(../img/watch.png) left center no-repeat;
+        display: inline-block;
+        vertical-align: baseline; }
+      section.video-grid .grid .video .video-info .meta div.watch {
+        color: #777777;
+        float: right;
+        font-size: 12px; }
     section.video-grid .grid .video img {
       width: 100%; }
 
@@ -4678,3 +4706,39 @@ section.video-list {
   .footer .seperator {
     padding: 0px 8px;
     color: #eeeeee; }
+
+.video-large {
+  position: relative;
+  cursor: pointer; }
+  .video-large .btn-play {
+    display: none;
+    position: absolute;
+    width: 99px;
+    height: 99px;
+    margin-left: -49.5px;
+    margin-top: -49.5px;
+    left: 50%;
+    top: 50%;
+    background: url(../img/play.png) center center no-repeat; }
+  .video-large:hover .btn-play {
+    display: block; }
+  .video-large .info {
+    color: #eeeeee;
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+    padding: 30px 20px;
+    background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0.5));
+    background-image: -o-linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0.5));
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0.5));
+    background-repeat: no-repeat;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#80000000', GradientType=0);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; }
+    .video-large .info .title {
+      font-size: 18px; }
+    .video-large .info .meta {
+      color: #eeeeee; }
+      .video-large .info .meta .watch {
+        float: right; }

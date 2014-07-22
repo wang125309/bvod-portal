@@ -8,7 +8,7 @@
 <body>
     @@include("./navbar.html")
     <div class="banner">
-        <img src="http://placehold.it/1920x480" alt="">
+        <img src="http://placehold.it/1920x480&text=Banner" alt="">
     </div>
 
     <div class="container">
@@ -23,6 +23,7 @@
         })
 
         @@include("./video-grid.html", {
+            "more": "更多热门",
             "title": "热门视频",
             "sub_title": "Popular Videos" 
         })
