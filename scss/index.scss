@@ -16,13 +16,76 @@ body {
     }
 }
 
+@mixin btn-play-base($width, $height) {
+  display: none;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: $width;
+  height: $height;
+  margin-left: -$width/2;
+  margin-top: -$height/2;
+}
+
+.btn-play {
+  @include btn-play-base(99px, 99px);
+  background: url(../img/play.png) center center no-repeat;
+}
+
+.btn-play-lg {
+  @include btn-play-base(140px, 140px);
+  background: url(../img/play-lg.png) center center no-repeat;
+}
+
 .banner {
+    position: relative;
     margin-bottom: 40px;
     min-height: 300px;
+
+    .banner-inner {
+      position: absolute;
+      top: 0px;
+      width: 100%;
+      height: 100%;
+
+      .container {
+        height: 100%;
+        position: relative;
+
+      .meta {
+        @include size(400px, auto);
+        position: absolute;
+        top: 60%;
+        left: 0%;
+        color: #fff;
+        text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.41);
+        h3 {
+          font-weight: normal;
+        }
+      }
+      }
+    }
 
     img {
         width: 100%;
     }
+
+    &:hover {
+      .btn-play-lg {
+        display: block;
+      }
+    }
+}
+
+@mixin bvod-icon($bg_url, $width, $height, $vertical-align: baseline) {
+  @include size($width, $height);
+  display: inline-block;
+  vertical-align: $vertical-align;
+  background: url(#{$bg_url}) center center no-repeat;
+}
+
+.icon-logo {
+  @include bvod-icon("../img/logo.png", 50px, 50px, top);
 }
 
 .icon-watch-reverse {
@@ -180,17 +243,7 @@ section.video-list {
     position: relative;
     cursor: pointer;
 
-    .btn-play {
-        display: none;
-        position: absolute;
-        width: 99px;
-        height: 99px;
-        margin-left: -49.5px;
-        margin-top: -49.5px;
-        left: 50%;
-        top: 50%;
-        background: url(../img/play.png) center center no-repeat;
-    }
+    
 
     &:hover .btn-play {
         display: block;
@@ -228,6 +281,7 @@ section.video-list {
 }
 
 
+$navbar-height:                 67px;
 $navbar-bvod-color:             #efeff1 !default;
 $navbar-bvod-bg:                transparent  !default;
 $navbar-bvod-border:            $navbar-bvod-bg, 6.5% !default;
@@ -251,23 +305,35 @@ $navbar-bvod-toggle-hover-bg:           #fff !default;
 $navbar-bvod-toggle-icon-bar-bg:        #fff !default;
 $navbar-bvod-toggle-border-color:       #fff !default;
 
+$navbar-bvod-line-height: 37px;
+
 .navbar-bvod {
+  @include gradient-vertical-three-colors(rgba(0, 0, 0, .7), rgba(0, 0, 0, .3), 50%, rgba(0, 0, 0, .05));
   background-color: $navbar-bvod-bg;
-  @include gradient-vertical-three-colors(rgba(0, 0, 0, .7), rgba(0, 0, 0, .5), 50%, rgba(0, 0, 0, .1));
   border-color: $navbar-bvod-border;
 
   .navbar-brand {
     color: $navbar-bvod-brand-color;
+    float: left;
+    padding: $navbar-padding-vertical $navbar-padding-horizontal;
     font-size: $font-size-h3;
-    line-height: 40px;
+    line-height: 50px;
+    padding: 7px 0px;
+    height: $navbar-height;
 
     &:hover,
     &:focus {
-      color: $navbar-bvod-brand-hover-color;
-      background-color: $navbar-bvod-brand-hover-bg;
+      text-decoration: none;
+    }
+
+    @media (min-width: $grid-float-breakpoint) {
+      .navbar > .container &,
+      .navbar > .container-fluid & {
+        margin-left: -$navbar-padding-horizontal;
+      }
     }
   }
-
+  
   .navbar-text {
     color: $navbar-bvod-color;
   }
@@ -287,7 +353,7 @@ $navbar-bvod-toggle-border-color:       #fff !default;
     > li > a {
       color: $navbar-bvod-link-color;
       text-align: center;
-      line-height: 40px;
+      line-height: $navbar-bvod-line-height;
 
       > span.en {
         font-size: $font-size-base;
@@ -304,7 +370,7 @@ $navbar-bvod-toggle-border-color:       #fff !default;
       &:hover,
       &:focus {
         color: $navbar-bvod-link-active-color;
-        background-color: $navbar-bvod-link-active-bg;
+        background: url(../img/navbar-active.png) top center no-repeat $navbar-bvod-link-active-bg;
       }
     }
     > .disabled > a {
