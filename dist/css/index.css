@@ -10363,7 +10363,7 @@ body {
 .banner {
   position: relative;
   margin-bottom: 40px;
-  min-height: 300px; }
+  height: 420px; }
   .banner .banner-inner {
     position: absolute;
     top: 0px;
@@ -10376,14 +10376,15 @@ body {
         width: 400px;
         height: auto;
         position: absolute;
-        bottom: 15%;
+        bottom: 12%;
         left: 0%;
         color: #fff;
         text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.41); }
         .banner .banner-inner .container .meta h3 {
           font-weight: normal; }
-  .banner img {
-    width: 100%; }
+  .banner .slide-item {
+    width: 100%;
+    height: 100%; }
   .banner:hover .btn-play-lg {
     display: block; }
 
@@ -10595,6 +10596,7 @@ section.video-list {
   .navbar-bvod .navbar-collapse, .navbar-bvod .navbar-form {
     border-color: transparent, 6.5%; }
     .navbar-bvod .navbar-collapse .form-control, .navbar-bvod .navbar-form .form-control {
+      width: 250px;
       background: transparent;
       color: #fff; }
     .navbar-bvod .navbar-collapse ::-webkit-input-placeholder, .navbar-bvod .navbar-form ::-webkit-input-placeholder {
