@@ -24,11 +24,11 @@
     </div>
 
     <div class="container">
-        {% include "video-grid.html" with title="精选视频" sub_title="Featured Videos" %}
-        
-        {% include "video-list.html" with title="最新视频" sub_title="Recently Added Videos" %}
+        {% include "video-grid.html" with title="精选视频" sub_title="Featured Videos" content=featured.media %}
 
-        {% include "video-grid.html" with title="热门视频" sub_title="Popular Videos" more="更多热门" %}
+        {% include "video-list.html" with title="最新视频" sub_title="Recently Added Videos" content=recently.media %}
+
+        {% include "video-grid.html" with title="热门视频" sub_title="Popular Videos" more="更多热门" content=popular.media %}
     </div>
 
     {% include "footer.html" %}

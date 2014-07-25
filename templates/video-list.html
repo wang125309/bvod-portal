@@ -3,32 +3,13 @@
         <h4>{{ title }}  <span class="small">{{ sub_title }}</span></h4>
     </div>
     <ul class="list row">
+        {% for item in content %}
         <li class="col-xs-6">
             <div class="video video-medium">
-                <img src="http://placehold.it/234x400" alt="">
-                <div class="title">舌尖上的中国（二）</div>
+                <img src="{{item.thumbs.m.url}}" alt="">
+                <div class="title">{{item.title}}</div>
             </div>
         </li>
-        <li class="col-xs-6">
-            <div class="video video-medium">
-                <img src="http://placehold.it/234x400" alt="">
-                <div class="title">舌尖上的中国（二）</div>
-            </div>
-        </li><li class="col-xs-6">
-            <div class="video video-medium">
-                <img src="http://placehold.it/234x400" alt="">
-                <div class="title">舌尖上的中国（二）</div>
-            </div>
-        </li><li class="col-xs-6">
-            <div class="video video-medium">
-                <img src="http://placehold.it/234x400" alt="">
-                <div class="title">舌尖上的中国（二）</div>
-            </div>
-        </li><li class="col-xs-6">
-            <div class="video video-medium">
-                <img src="http://placehold.it/234x400" alt="">
-                <div class="title">舌尖上的中国（二）</div>
-            </div>
-        </li>
+        {% endfor %}
     </ul>
 </section>

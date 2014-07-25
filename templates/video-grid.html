@@ -6,99 +6,48 @@
         <h4>{{ title }}  <span class="small">{{ sub_title }}</span></h4>
     </div>
     <div class="grid row">
+        {% for item in content %}
+        {% if forloop.first %}
         <div class="col-sm-12">
             <div class="video-large">
-                <img src="http://placehold.it/444x377" alt="">
-                <a href="#" class="btn-play"></a>
+                <img src="{{item.thumbs.l.url}}" alt="">
+                <a href="{{item.url}}" class="btn-play"></a>
                 <div class="info">
-                    <div class='title'>北航马拉松大赛</div>
+                    <div class='title'>{{item.title}}</div>
                     <div class='meta'>
                         <div class="watch">
-                            <i class='icon-watch-reverse'></i> 1.1万
+                            <i class='icon-watch-reverse'></i> {{item.views}}
                         </div>
-                        最美的夕阳
+                        {{item.description_plain}}
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-sm-18">
-            <div class="row">
-                <div class="col-sm-10 video">
-                    <div class="video-thumbnail">
-                        <img src="http://placehold.it/210x135" alt="">    
-                        <div class="title">瑜伽课教程（三）</div>
-                    </div>
-                    <div class="video-info">
-                        <div class="comment">美女陪你做瑜伽</div>
-                        <div class="meta clearfix">
-                            <div class="watch">
-                                <i class='icon-watch'></i> 1.1万
-                            </div>
-                            最美的夕阳
-                        </div>
-                    </div>
+        {% else %}
+            {% if forloop.counter == 2 %}
+            <div class="col-sm-18">
+                <div class="row">
+            {% endif %}
+            <div class="col-sm-10 video">
+                <div class="video-thumbnail">
+                    <img src="{{item.thumbs.s.url}}" alt="">    
+                    <div class="title">{{item.title}}</div>
                 </div>
-                <div class="col-sm-10 video">
-                    <div class="video-thumbnail">
-                        <img src="http://placehold.it/210x135" alt="">    
-                        <div class="title">瑜伽课教程（三）</div>
-                    </div>
-                    <div class="video-info">
-                        <div class="comment">美女陪你做瑜伽</div>
-                        <div class="meta clearfix">
-                            <div class="watch">
-                                <i class='icon-watch'></i> 1.1万
-                            </div>
-                            最美的夕阳
+                <div class="video-info">
+                    <div class="comment">{{item.slug}}</div>
+                    <div class="meta clearfix">
+                        <div class="watch">
+                            <i class='icon-watch'></i> {{item.views}}
                         </div>
-                    </div>
-                </div>
-                <div class="col-sm-10 video">
-                    <div class="video-thumbnail">
-                        <img src="http://placehold.it/210x135" alt="">    
-                        <div class="title">瑜伽课教程（三）</div>
-                    </div>
-                    <div class="video-info">
-                        <div class="comment">美女陪你做瑜伽</div>
-                        <div class="meta clearfix">
-                            <div class="watch">
-                                <i class='icon-watch'></i> 1.1万
-                            </div>
-                            最美的夕阳
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-10 video">
-                    <div class="video-thumbnail">
-                        <img src="http://placehold.it/210x135" alt="">    
-                        <div class="title">瑜伽课教程（三）</div>
-                    </div>
-                    <div class="video-info">
-                        <div class="comment">美女陪你做瑜伽</div>
-                        <div class="meta clearfix">
-                            <div class="watch">
-                                <i class='icon-watch'></i> 1.1万
-                            </div>
-                            最美的夕阳
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-10 video">
-                    <div class="video-thumbnail">
-                        <img src="http://placehold.it/210x135" alt="">    
-                        <div class="title">瑜伽课教程（三）</div>
-                    </div>
-                    <div class="video-info">
-                        <div class="comment">美女陪你做瑜伽</div>
-                        <div class="meta clearfix">
-                            <div class="watch">
-                                <i class='icon-watch'></i> 1.1万
-                            </div>
-                            最美的夕阳
-                        </div>
+                        {{item.description_plain}}
                     </div>
                 </div>
             </div>
-        </div>
+            {% if forloop.last %}
+                </div>
+            </div>
+            {% endif %}
+        {% endif %}
+        {% endfor %}
     </div>
 </section>    
