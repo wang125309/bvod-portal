@@ -1,7 +1,9 @@
 <section class="video-grid">
     <div class="header">
-        <a href="#" class="h4 more pull-right">@@more <i class="icon-more"></i></a>
-        <h4>@@title  <span class="small">@@sub_title</span></h4>
+        {% if more %}
+        <a href="#" class="h4 more pull-right">{{ more }}<i class="icon-more"></i></a>
+        {% endif %}
+        <h4>{{ title }}  <span class="small">{{ sub_title }}</span></h4>
     </div>
     <div class="grid row">
         <div class="col-sm-12">
