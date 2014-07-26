@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>BVOD</title>
     <link rel="stylesheet" href="{{ STATIC_URL }}css/index.css">
+    {% include "polyfills.html" %}
 </head>
 <body>
     {% include "navbar.html" %}
@@ -50,5 +51,8 @@
     </div>
 
     {% include "footer.html" %}
+
+    <script type="text/javascript" src="{{ STATIC_URL }}js/require.config.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}components/requirejs/require.js"></script>
 </body>
 </html>

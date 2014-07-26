@@ -29,6 +29,14 @@ $navbar-bvod-line-height: 37px;
   background-color: $navbar-bvod-bg;
   border-color: $navbar-bvod-border;
 
+  &.pinned {
+    display: block;
+  }
+
+  &.unpinned {
+    display: none;
+  }
+
   .navbar-brand {
     color: $navbar-bvod-brand-color;
     float: left;
@@ -199,4 +207,16 @@ $navbar-bvod-line-height: 37px;
       }
     }
   }
+}
+
+.navbar {
+    margin-bottom: 0px;
+    form {
+        margin-bottom: 0px;
+
+        .form-group {
+            margin-bottom: 0px;
+        }
+    }
+
 }

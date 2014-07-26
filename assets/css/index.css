@@ -10375,6 +10375,10 @@ body {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#B3000000', endColorstr='#0D000000', GradientType=0);
   background-color: transparent;
   border-color: transparent, 6.5%; }
+  .navbar-bvod.pinned {
+    display: block; }
+  .navbar-bvod.unpinned {
+    display: none; }
   .navbar-bvod .navbar-brand {
     color: #efeff1;
     float: left;
@@ -10453,6 +10457,13 @@ body {
     .navbar-bvod .btn-link[disabled]:hover, .navbar-bvod .btn-link[disabled]:focus, fieldset[disabled] .navbar-bvod .btn-link:hover, fieldset[disabled] .navbar-bvod .btn-link:focus {
       color: #ccc; }
 
+.navbar {
+  margin-bottom: 0px; }
+  .navbar form {
+    margin-bottom: 0px; }
+    .navbar form .form-group {
+      margin-bottom: 0px; }
+
 .footer {
   background: #1665ad;
   color: #eeeeee; }
@@ -10466,12 +10477,8 @@ body {
     padding: 0px 8px;
     color: #eeeeee; }
 
-.navbar {
-  margin-bottom: 0px; }
-  .navbar form {
-    margin-bottom: 0px; }
-    .navbar form .form-group {
-      margin-bottom: 0px; }
+.header .more {
+  margin: 0px; }
 
 .btn-play {
   display: none;
@@ -10530,8 +10537,6 @@ body {
 
 section.video-grid {
   margin-bottom: 40px; }
-  section.video-grid .more {
-    margin: 0px; }
   section.video-grid .grid {
     padding-top: 12px; }
     section.video-grid .grid .video-large {
@@ -10552,8 +10557,15 @@ section.video-grid {
       margin-bottom: 16px; }
     section.video-grid .grid .video .video-thumbnail {
       position: relative;
+      overflow: hidden;
       width: 212px;
       height: 135px; }
+      section.video-grid .grid .video .video-thumbnail img {
+        height: 135px;
+        margin-left: -14px; }
+        section.video-grid .grid .video .video-thumbnail img.error {
+          height: 100%;
+          margin-left: 0px; }
       section.video-grid .grid .video .video-thumbnail .title {
         overflow: hidden;
         text-overflow: ellipsis;
@@ -10581,8 +10593,6 @@ section.video-grid {
         color: #777777;
         float: right;
         font-size: 12px; }
-    section.video-grid .grid .video img {
-      width: 100%; }
 
 section.video-list {
   margin-bottom: 40px; }
@@ -10652,23 +10662,23 @@ section.video-list {
 
 .departments {
   margin-bottom: 20px; }
-  .departments .more {
-    margin: 0px; }
   .departments .department-list-wrapper {
     overflow-y: hidden;
     overflow-x: auto; }
     .departments .department-list-wrapper .department-list {
-      width: 1343.33333px; }
+      width: 1150px; }
       .departments .department-list-wrapper .department-list .department {
-        width: 193.33333px;
+        width: 165.71429px;
         padding-left: 10px;
         padding-right: 10px; }
         .departments .department-list-wrapper .department-list .department a {
           display: block; }
           .departments .department-list-wrapper .department-list .department a img {
+            border-radius: 6px;
+            border: 1px solid #eeeeee;
             width: 100%; }
         .departments .department-list-wrapper .department-list .department .title {
           text-align: center; }
         .departments .department-list-wrapper .department-list .department:last-child {
-          width: 183.33333px;
+          width: 155.71429px;
           padding-right: 0px; }

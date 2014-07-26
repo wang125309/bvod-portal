@@ -5,20 +5,16 @@
 @import "assets/scss/lib/navbar-bvod";
 @import "assets/scss/lib/footer";
 
-.navbar {
-    margin-bottom: 0px;
-    form {
-        margin-bottom: 0px;
-
-        .form-group {
-            margin-bottom: 0px;
-        }
-    }
-
+.header {
+ .more {
+  margin: 0px;
+ } 
 }
 
-$video-width-indeed: 560px;
-$video-height-indeed: 315px;
+$video-large-width-indeed: 560px;
+$video-large-height-indeed: 315px;
+$video-medium-width-indeed: 160px;
+$video-medium-height-indeed: 90px;
 
 @mixin btn-play-base($width, $height) {
   display: none;
@@ -93,16 +89,12 @@ $video-height-indeed: 315px;
 section.video-grid {
     margin-bottom: 40px;
 
-    .more {
-        margin: 0px;
-    }
-
     .grid {
         padding-top: 12px;
 
         $video-width-large: ($container-lg)* 0.4 - $grid-gutter-width; // 444px
         $video-height-large: $video-width-large * 0.85; // ~377px
-        $video-large-offset: (($video-width-indeed * $video-height-large / $video-height-indeed) - $video-width-large)/2;
+        $video-large-offset: (($video-large-width-indeed * $video-height-large / $video-large-height-indeed) - $video-width-large)/2;
         .video-large {
             $bg-height: 8px;
             padding-top: $bg-height;
@@ -130,9 +122,21 @@ section.video-grid {
         .video {
             .video-thumbnail {
                 position: relative;
+                overflow: hidden;
                 $video-width: $container-lg / 5 - $grid-gutter-width;
                 $video-height: 135px;
                 @include size($video-width, $video-height);
+                $video-medium-offset: (($video-medium-width-indeed * $video-height / $video-medium-height-indeed) - $video-width)/2;
+
+                img {
+                  height: $video-height;
+                  margin-left: -$video-medium-offset;
+
+                  &.error {
+                    height: 100%;
+                    margin-left: 0px;
+                  }
+                }
 
                 .title {
                     @include text-overflow;
@@ -166,10 +170,6 @@ section.video-grid {
                     }
                 }
             }
-
-            img {
-                width: 100%;
-            }
         }
     }
 }
@@ -178,8 +178,8 @@ section.video-list {
     margin-bottom: 40px;
 
     ul {
-        padding-top: 12px;
         @include clearfix;
+        padding-top: 12px;
         list-style: none;
         padding-left: 0px;
         margin-bottom: 0px;
@@ -194,7 +194,7 @@ section.video-list {
 
             $video-width: 212px;
             $video-height: 360px;
-            $video-offset: ($video-width-indeed * $video-height / $video-height-indeed - $video-width)/2;
+            $video-offset: ($video-large-width-indeed * $video-height / $video-large-height-indeed - $video-width)/2;
             img {
               height: $video-height;
               margin-left: -$video-offset;
@@ -257,13 +257,8 @@ section.video-list {
 .departments {
   margin-bottom: 20px;
 
-
-  .more {
-    margin: 0px;
-  }
-
   $dep-length: 7;
-  $dep-size: $container-lg / 6; 
+  $dep-size: $container-lg / 7; 
   $dep-padding-horizontal: 10px;
 
   .department-list-wrapper {
@@ -280,6 +275,8 @@ section.video-list {
         a {
           display: block;
           img {
+            border-radius: 6px;
+            border: 1px solid $gray-lighter;
             width: 100%;
           }
         }
