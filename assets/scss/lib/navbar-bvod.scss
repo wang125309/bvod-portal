@@ -37,7 +37,7 @@ $navbar-bvod-line-height: 37px;
     transform: translateY(0%);
   }
 
-  &.headroom--not-top {
+  &.normal, &.headroom--not-top {
     background: #233966;
   }
 
