@@ -11,6 +11,34 @@
  } 
 }
 
+.carousel-fade .item {
+  -webkit-transition: opacity 1s; 
+  -moz-transition: opacity 1s; 
+  -ms-transition: opacity 1s; 
+  -o-transition: opacity 1s; 
+  transition: opacity 1s;
+}
+
+.carousel-fade .active.left {
+  left:0;
+  opacity:0;
+  z-index:2;
+}
+
+.carousel-fade .next {
+  left:0;
+  opacity:1;
+  z-index:1;
+}
+
+.carousel-fade .carousel-control:hover {
+  background: transparent;
+}
+
+.carousel-fade .carousel-control {
+  background: transparent;
+}
+
 $video-large-width-indeed: 560px;
 $video-large-height-indeed: 315px;
 $video-medium-width-indeed: 160px;
@@ -41,7 +69,7 @@ $video-medium-height-indeed: 90px;
     position: relative;
     margin-bottom: 40px;
 
-    .slide-item {
+    .item {
       min-width: $container-lg;
 
       .container {
@@ -53,17 +81,22 @@ $video-medium-height-indeed: 90px;
         .meta {
           @include size(400px, auto);
           position: absolute;
-          bottom: 12%;
+          top: 60%;
           left: 10px;
           color: #fff;
           text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.41);
+
           h3 {
             font-weight: normal;
+          }
+
+          .ad-title, .ad-desc {
+            display: none;
           }
         }
       }
 
-      @media (min-width: $screen-lg-min) {
+    @media (min-width: $screen-lg-min) {
         .container {
           position: absolute;
           top: 0px;

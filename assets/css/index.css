@@ -10379,7 +10379,7 @@ body {
     transition: transform 200ms linear; }
   .navbar-bvod.headroom--pinned {
     transform: translateY(0%); }
-  .navbar-bvod.headroom--not-top {
+  .navbar-bvod.normal, .navbar-bvod.headroom--not-top {
     background: #233966; }
   .navbar-bvod.headroom--unpinned {
     transform: translateY(-100%); }
@@ -10484,6 +10484,29 @@ body {
 .header .more {
   margin: 0px; }
 
+.carousel-fade .item {
+  -webkit-transition: opacity 1s;
+  -moz-transition: opacity 1s;
+  -ms-transition: opacity 1s;
+  -o-transition: opacity 1s;
+  transition: opacity 1s; }
+
+.carousel-fade .active.left {
+  left: 0;
+  opacity: 0;
+  z-index: 2; }
+
+.carousel-fade .next {
+  left: 0;
+  opacity: 1;
+  z-index: 1; }
+
+.carousel-fade .carousel-control:hover {
+  background: transparent; }
+
+.carousel-fade .carousel-control {
+  background: transparent; }
+
 .btn-play {
   display: none;
   position: absolute;
@@ -10509,34 +10532,36 @@ body {
 .banner {
   position: relative;
   margin-bottom: 40px; }
-  .banner .slide-item {
+  .banner .item {
     min-width: 1160px; }
-    .banner .slide-item .container {
+    .banner .item .container {
       height: 100%;
       position: absolute;
       top: 0px;
       left: 0px; }
-      .banner .slide-item .container .meta {
+      .banner .item .container .meta {
         width: 400px;
         height: auto;
         position: absolute;
-        bottom: 12%;
+        top: 60%;
         left: 10px;
         color: #fff;
         text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.41); }
-        .banner .slide-item .container .meta h3 {
+        .banner .item .container .meta h3 {
           font-weight: normal; }
+        .banner .item .container .meta .ad-title, .banner .item .container .meta .ad-desc {
+          display: none; }
     @media (min-width: 1200px) {
-      .banner .slide-item .container {
+      .banner .item .container {
         position: absolute;
         top: 0px;
         left: 50%;
         width: 1160px;
         height: 100%;
         margin-left: -580px; } }
-    .banner .slide-item img {
+    .banner .item img {
       width: 100%; }
-    .banner .slide-item:hover .btn-play-lg {
+    .banner .item:hover .btn-play-lg {
       display: block; }
 
 section.video-grid {
