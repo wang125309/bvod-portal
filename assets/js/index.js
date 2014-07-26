@@ -21,8 +21,8 @@ define(function(require) {
         }).on('slid.bs.carousel', function() {
             $prevTitle.hide();
             $prevDesc.hide();
-            var $title = $("slider").find(".active .ad-title");
-            var $desc = $("slider").find(".active .ad-desc");
+            var $title = $slider.find(".active .ad-title");
+            var $desc = $slider.find(".active .ad-desc");
             $title.velocity('fadeIn', {
                 duration: 500,
                 complete: function() {
