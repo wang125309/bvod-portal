@@ -37,8 +37,8 @@ def fetch_department_list(limit = 7):
 def fetch_ad_list(limit = 7):
    api_url = base_url+'media/ads'
    ad = {}
-   ads = fetch_query_list(api_url, ad, 'ads')
-   return {'count':ads['count'], 'ads':ads['ads'][:limit]}
+   result = fetch_query_list(api_url, ad, 'ads')
+   return result['ads'][:limit]
 
 if __name__ == '__main__':
 	print fetch_ad_list(1)
