@@ -10541,7 +10541,10 @@ section.video-grid {
       width: 444px;
       height: 385.4px; }
       section.video-grid .grid .video-large img {
-        width: 100%; }
+        position: absolute;
+        height: 100%;
+        left: -113.46667px;
+        clip: rect(0px, 557.46667px, 377.4px, 113.46667px); }
     section.video-grid .grid .row {
       margin-bottom: 16px; }
     section.video-grid .grid .video .video-thumbnail {

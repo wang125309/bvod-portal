@@ -98,6 +98,9 @@ section.video-grid {
 
         $video-width-large: ($container-lg)* 0.4 - $grid-gutter-width; // 444px
         $video-height-large: $video-width-large * 0.85; // ~377px
+        $video-width-indeed: 560px;
+        $video-height-indeed: 315px;
+        $video-large-offset: (($video-width-indeed * $video-height-large / $video-height-indeed) - $video-width-large)/2;
         .video-large {
             $bg-height: 8px;
             padding-top: $bg-height;
@@ -106,7 +109,10 @@ section.video-grid {
             @include size($video-width-large, $video-height-large + $bg-height);
 
             img {
-                width: 100%;
+              position: absolute;
+              height: 100%;
+              left: -$video-large-offset;
+              clip: rect(0px, $video-width-large + $video-large-offset, $video-height-large, $video-large-offset);
             }
         }
 
