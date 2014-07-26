@@ -10638,3 +10638,26 @@ section.video-list {
       color: #eeeeee; }
       .video-large .info .meta .watch {
         float: right; }
+
+.departments {
+  margin-bottom: 20px; }
+  .departments .more {
+    margin: 0px; }
+  .departments .department-list-wrapper {
+    overflow-y: hidden;
+    overflow-x: auto; }
+    .departments .department-list-wrapper .department-list {
+      width: 1343.33333px; }
+      .departments .department-list-wrapper .department-list .department {
+        width: 193.33333px;
+        padding-left: 10px;
+        padding-right: 10px; }
+        .departments .department-list-wrapper .department-list .department a {
+          display: block; }
+          .departments .department-list-wrapper .department-list .department a img {
+            width: 100%; }
+        .departments .department-list-wrapper .department-list .department .title {
+          text-align: center; }
+        .departments .department-list-wrapper .department-list .department:last-child {
+          width: 183.33333px;
+          padding-right: 0px; }

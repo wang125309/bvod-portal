@@ -228,3 +228,47 @@ section.video-list {
         }
     }
 }
+
+
+.departments {
+  margin-bottom: 20px;
+
+
+  .more {
+    margin: 0px;
+  }
+
+  $dep-length: 7;
+  $dep-size: $container-lg / 6; 
+  $dep-padding-horizontal: 10px;
+
+  .department-list-wrapper {
+    overflow-y: hidden;
+    overflow-x: auto;
+
+    .department-list {
+      width: $dep-size * $dep-length - $dep-padding-horizontal;
+
+      .department {
+        width: $dep-size;
+        padding-left: 10px;
+        padding-right: 10px;
+        a {
+          display: block;
+          img {
+            width: 100%;
+          }
+        }
+
+        .title {
+          text-align: center;
+        }
+
+        &:last-child {
+          width: $dep-size - $dep-padding-horizontal;
+          padding-right: 0px;
+        }
+      }
+    }
+  }
+}
