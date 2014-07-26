@@ -6,8 +6,9 @@
         {% for item in content %}
         <li class="col-xs-6">
             <div class="video video-medium">
-                <img src="{{item.thumbs.m.url}}" alt="">
-                <div class="title">{{item.title}}</div>
+                <img src="{{item.thumbs.m.url}}" alt=""
+                    onError="this.src='http://placehold.it/220x400&text=!'">
+                <div class="title">{{ item.title }}</div>
             </div>
         </li>
         {% endfor %}
