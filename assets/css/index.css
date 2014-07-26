@@ -10375,10 +10375,14 @@ body {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#B3000000', endColorstr='#0D000000', GradientType=0);
   background-color: transparent;
   border-color: transparent, 6.5%; }
-  .navbar-bvod.pinned {
-    display: block; }
-  .navbar-bvod.unpinned {
-    display: none; }
+  .navbar-bvod.headroom {
+    transition: transform 200ms linear; }
+  .navbar-bvod.headroom--pinned {
+    transform: translateY(0%); }
+  .navbar-bvod.headroom--not-top {
+    background: #233966; }
+  .navbar-bvod.headroom--unpinned {
+    transform: translateY(-100%); }
   .navbar-bvod .navbar-brand {
     color: #efeff1;
     float: left;

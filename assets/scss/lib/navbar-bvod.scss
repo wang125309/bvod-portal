@@ -29,12 +29,20 @@ $navbar-bvod-line-height: 37px;
   background-color: $navbar-bvod-bg;
   border-color: $navbar-bvod-border;
 
-  &.pinned {
-    display: block;
+  &.headroom {
+    transition: transform 200ms linear;
   }
 
-  &.unpinned {
-    display: none;
+  &.headroom--pinned {
+    transform: translateY(0%);
+  }
+
+  &.headroom--not-top {
+    background: #233966;
+  }
+
+  &.headroom--unpinned {
+    transform: translateY(-100%);
   }
 
   .navbar-brand {
