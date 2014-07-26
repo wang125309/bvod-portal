@@ -1,5 +1,6 @@
 @import "assets/components/bootstrap-sass-official/assets/stylesheets/bootstrap";
 
+// 改成30列
 $grid_columns: 30;
 $grid-gutter-width: 20px;
 
@@ -31,15 +32,22 @@ $container-lg:                 $container-large-desktop;
 //
 // Set the container width, and override it for fixed navbars in media queries.
 
+// 取消container的适配功能
+
 .container {
   @include container-fixed();
+  width: $container-lg;
 
   @media (min-width: $screen-sm-min) {
-    width: $container-sm;
+    //width: $container-sm;
+    width: $container-lg;
   }
+
   @media (min-width: $screen-md-min) {
-    width: $container-md;
+    //width: $container-md;
+    width: $container-lg;
   }
+  
   @media (min-width: $screen-lg-min) {
     width: $container-lg;
   }

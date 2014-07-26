@@ -9164,7 +9164,8 @@ button.close {
   margin-right: auto;
   margin-left: auto;
   padding-left: 10px;
-  padding-right: 10px; }
+  padding-right: 10px;
+  width: 1160px; }
   .container:before, .container:after {
     content: " ";
     display: table; }
@@ -9172,10 +9173,10 @@ button.close {
     clear: both; }
   @media (min-width: 768px) {
     .container {
-      width: 750px; } }
+      width: 1160px; } }
   @media (min-width: 992px) {
     .container {
-      width: 970px; } }
+      width: 1160px; } }
   @media (min-width: 1200px) {
     .container {
       width: 1160px; } }
