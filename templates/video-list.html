@@ -5,11 +5,12 @@
     <ul class="list row">
         {% for item in content %}
         <li class="col-xs-6">
-            <div class="video video-medium">
+            <a class="video video-medium" href="{{ item.url }}">
                 <img src="{{item.thumbs.m.url}}" alt=""
-                    onError="this.src='http://placehold.it/220x400&text=!'">
+                    onError="this.src='http://placehold.it/220x400&text=!'">    
+                <i class="btn-play"></i>
                 <div class="title">{{ item.title }}</div>
-            </div>
+            </a>
         </li>
         {% endfor %}
     </ul>

@@ -1,0 +1,21 @@
+.footer {
+    background: rgb(22, 101, 173);
+    color: $gray-lighter;
+
+    .icon img {
+        max-width: 100%;
+    }
+
+    p {
+        font-size: $font-size-small;
+    }
+
+    a {
+        color: $gray-lighter;
+    }
+
+    .seperator {
+        padding: 0px 8px;
+        color: $gray-lighter;
+    }
+}

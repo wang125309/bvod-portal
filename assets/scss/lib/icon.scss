@@ -1,0 +1,41 @@
+@mixin bvod-icon($bg_url, $width, $height, $vertical-align: baseline) {
+  @include size($width, $height);
+  display: inline-block;
+  vertical-align: $vertical-align;
+  background: url(#{$bg_url}) center center no-repeat;
+}
+
+.icon-logo {
+  @include bvod-icon("../img/logo.png", 50px, 50px, top);
+}
+
+.icon-watch-reverse {
+    width: 17px; 
+    height: 12px;
+    display: inline-block;
+    vertical-align: baseline;
+    background: url(../img/watch-reverse.png) center center no-repeat;
+}
+
+.icon-more {
+    width: 11px;
+    height: 18px;
+    display: inline-block;
+    vertical-align: top;
+    background: url(../img/more-arrow.png) top center no-repeat;
+}
+
+.icon-history {
+    background: url(../img/history.png) center center no-repeat;
+    @include size(16px, 16px);
+    display: inline-block;
+    vertical-align: middle
+}
+
+.icon-watch {
+    height: 10px;
+    width: 15px;
+    background: url(../img/watch.png) left center no-repeat;
+    display: inline-block;
+    vertical-align: baseline;
+}

@@ -1,0 +1,202 @@
+$navbar-height:                 67px;
+$navbar-bvod-color:             #efeff1 !default;
+$navbar-bvod-bg:                transparent  !default;
+$navbar-bvod-border:            $navbar-bvod-bg, 6.5% !default;
+
+// Navbar links
+$navbar-bvod-link-color:                #efeff1 !default;
+$navbar-bvod-link-hover-color:          $navbar-bvod-color !default;
+$navbar-bvod-link-hover-bg:             transparent !default;
+$navbar-bvod-link-active-color:         $navbar-bvod-color !default;
+$navbar-bvod-link-active-bg:            transparent; 
+$navbar-bvod-link-disabled-color:       #ccc !default;
+$navbar-bvod-link-disabled-bg:          transparent !default;
+
+// Navbar brand label
+$navbar-bvod-brand-color:               $navbar-bvod-link-color !default;
+$navbar-bvod-brand-hover-color:         transparent;
+$navbar-bvod-brand-hover-bg:            transparent !default;
+
+// Navbar toggle
+$navbar-bvod-toggle-hover-bg:           #fff !default;
+$navbar-bvod-toggle-icon-bar-bg:        #fff !default;
+$navbar-bvod-toggle-border-color:       #fff !default;
+
+$navbar-bvod-line-height: 37px;
+
+.navbar-bvod {
+  @include gradient-vertical-three-colors(rgba(0, 0, 0, .7), rgba(0, 0, 0, .3), 50%, rgba(0, 0, 0, .05));
+  background-color: $navbar-bvod-bg;
+  border-color: $navbar-bvod-border;
+
+  .navbar-brand {
+    color: $navbar-bvod-brand-color;
+    float: left;
+    padding: $navbar-padding-vertical $navbar-padding-horizontal;
+    font-size: $font-size-h3;
+    line-height: 50px;
+    padding: 7px 0px;
+    height: $navbar-height;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+
+    @media (min-width: $grid-float-breakpoint) {
+      .navbar > .container &,
+      .navbar > .container-fluid & {
+        margin-left: -$navbar-padding-horizontal;
+      }
+    }
+  }
+  
+  .navbar-text {
+    color: $navbar-bvod-color;
+  }
+
+  .navbar-nav.tabs {
+      font-size: $font-size-large;
+
+      > li > a {
+        padding-left: 25px;
+        padding-right: 25px;
+        line-height: 18px;
+      }
+  }
+
+
+  .navbar-nav {
+    > li > a {
+      color: $navbar-bvod-link-color;
+      text-align: center;
+      line-height: $navbar-bvod-line-height;
+
+      > span.en {
+        font-size: $font-size-base;
+      }
+
+      &:hover,
+      &:focus {
+        color: $navbar-bvod-link-hover-color;
+        background-color: $navbar-bvod-link-hover-bg;
+      }
+    }
+    > .active > a {
+      &,
+      &:hover,
+      &:focus {
+        color: $navbar-bvod-link-active-color;
+        background: url(../img/navbar-active.png) top center no-repeat $navbar-bvod-link-active-bg;
+      }
+    }
+    > .disabled > a {
+      &,
+      &:hover,
+      &:focus {
+        color: $navbar-bvod-link-disabled-color;
+        background-color: $navbar-bvod-link-disabled-bg;
+      }
+    }
+  }
+
+  .navbar-toggle {
+    border-color: $navbar-bvod-toggle-border-color;
+    &:hover,
+    &:focus {
+      background-color: $navbar-bvod-toggle-hover-bg;
+    }
+    .icon-bar {
+      background-color: $navbar-bvod-toggle-icon-bar-bg;
+    }
+  }
+
+  .navbar-collapse,
+  .navbar-form {
+    border-color: $navbar-bvod-border;
+
+    .form-control {
+        width: 250px;
+        background: transparent;
+        color: #fff;
+    }
+
+    ::-webkit-input-placeholder {
+        color: $navbar-bvod-color;
+    }
+
+    .navbar-form {
+        padding-top: 10px;
+    }
+  }
+
+  // Dropdown menu items
+  .navbar-nav {
+    // Remove background color from open dropdown
+    > .open > a {
+      &,
+      &:hover,
+      &:focus {
+        background-color: $navbar-bvod-link-active-bg;
+        color: $navbar-bvod-link-active-color;
+      }
+    }
+
+    @media (max-width: $grid-float-breakpoint-max) {
+      // Dropdowns get custom display when collapsed
+      .open .dropdown-menu {
+        > li > a {
+          color: $navbar-bvod-link-color;
+          &:hover,
+          &:focus {
+            color: $navbar-bvod-link-hover-color;
+            background-color: $navbar-bvod-link-hover-bg;
+          }
+        }
+        > .active > a {
+          &,
+          &:hover,
+          &:focus {
+            color: $navbar-bvod-link-active-color;
+            background-color: $navbar-bvod-link-active-bg;
+          }
+        }
+        > .disabled > a {
+          &,
+          &:hover,
+          &:focus {
+            color: $navbar-bvod-link-disabled-color;
+            background-color: $navbar-bvod-link-disabled-bg;
+          }
+        }
+      }
+    }
+  }
+
+
+  // Links in navbars
+  //
+  // Add a class to ensure links outside the navbar nav are colored correctly.
+
+  .navbar-link {
+    color: $navbar-bvod-link-color;
+    &:hover {
+      color: $navbar-bvod-link-hover-color;
+    }
+  }
+
+  .btn-link {
+    color: $navbar-bvod-link-color;
+    &:hover,
+    &:focus {
+      color: $navbar-bvod-link-hover-color;
+    }
+    &[disabled],
+    fieldset[disabled] & {
+      &:hover,
+      &:focus {
+        color: $navbar-bvod-link-disabled-color;
+      }
+    }
+  }
+}
