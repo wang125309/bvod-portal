@@ -29,6 +29,22 @@ $navbar-bvod-line-height: 37px;
   background-color: $navbar-bvod-bg;
   border-color: $navbar-bvod-border;
 
+  &.headroom {
+    transition: transform 200ms linear;
+  }
+
+  &.headroom--pinned {
+    transform: translateY(0%);
+  }
+
+  &.headroom--not-top {
+    background: #233966;
+  }
+
+  &.headroom--unpinned {
+    transform: translateY(-100%);
+  }
+
   .navbar-brand {
     color: $navbar-bvod-brand-color;
     float: left;
@@ -199,4 +215,16 @@ $navbar-bvod-line-height: 37px;
       }
     }
   }
+}
+
+.navbar {
+    margin-bottom: 0px;
+    form {
+        margin-bottom: 0px;
+
+        .form-group {
+            margin-bottom: 0px;
+        }
+    }
+
 }
