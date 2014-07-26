@@ -5,8 +5,6 @@
 @import "assets/scss/lib/navbar-bvod";
 @import "assets/scss/lib/footer";
 
-
-
 .navbar {
     margin-bottom: 0px;
     form {
@@ -203,8 +201,6 @@ section.video-list {
 .video-large {
     position: relative;
     cursor: pointer;
-
-    
 
     &:hover .btn-play {
         display: block;

@@ -26,6 +26,25 @@
         {% include "video-list.html" with title="最新视频" sub_title="Recently Added Videos" content=recently.media %}
 
         {% include "video-grid.html" with title="热门视频" sub_title="Popular Videos" more="更多热门" content=popular.media %}
+
+        <section class="departments">
+            <div class="header">
+                <h4>{{ title }}  <span class="small">{{ sub_title }}</span></h4>
+            </div>
+
+            <ul class="list row">
+                {% for item in content %}
+                <li class="col-xs-6">
+                    <a class="video video-medium" href="{{ item.url }}">
+                        <img src="{{item.thumbs.m.url}}" alt=""
+                                onError="this.src='http://placehold.it/220x400&text=!'">    
+                        <i class="btn-play"></i>
+                        <div class="title">{{ item.title }}</div>
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </section>
     </div>
 
     {% include "footer.html" %}
