@@ -13,4 +13,6 @@ def index(request):
 
 
 def video(request, video_id):
-    return redirect("/index")
+    return render(request, "video.html", {
+    	
+    	})
