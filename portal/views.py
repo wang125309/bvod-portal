@@ -7,7 +7,7 @@ def index(request):
 		'featured': fetch_featured_media(), 
 		'recently': fetch_recently_media(), 
 		'popular': fetch_popular_media(), 
-	'departments': fetch_department_list()['departments'],
+        'departments': fetch_department_list()['departments'],
 		'ads': fetch_ad_list()
     })
 
