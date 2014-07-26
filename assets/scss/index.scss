@@ -14,7 +14,11 @@
             margin-bottom: 0px;
         }
     }
+
 }
+
+$video-width-indeed: 560px;
+$video-height-indeed: 315px;
 
 @mixin btn-play-base($width, $height) {
   display: none;
@@ -98,8 +102,6 @@ section.video-grid {
 
         $video-width-large: ($container-lg)* 0.4 - $grid-gutter-width; // 444px
         $video-height-large: $video-width-large * 0.85; // ~377px
-        $video-width-indeed: 560px;
-        $video-height-indeed: 315px;
         $video-large-offset: (($video-width-indeed * $video-height-large / $video-height-indeed) - $video-width-large)/2;
         .video-large {
             $bg-height: 8px;
@@ -107,12 +109,17 @@ section.video-grid {
             margin-top: -$bg-height;
             background: url(../img/video-bg.png) top center no-repeat;
             @include size($video-width-large, $video-height-large + $bg-height);
+            overflow: hidden;
 
             img {
-              position: absolute;
-              height: 100%;
-              left: -$video-large-offset;
-              clip: rect(0px, $video-width-large + $video-large-offset, $video-height-large, $video-large-offset);
+              display: block;
+              height: $video-height-large;
+              margin-left: -$video-large-offset;
+
+              &.error {
+                height: $video-height-large;
+                margin-left: 0px;; 
+              }
             }
         }
 
@@ -169,6 +176,7 @@ section.video-grid {
 
 section.video-list {
     margin-bottom: 40px;
+
     ul {
         padding-top: 12px;
         @include clearfix;
@@ -178,13 +186,23 @@ section.video-list {
 
         .video.video-medium {
             display: block;
+            overflow: hidden;
 
             &:hover .btn-play {
               display: block;
             }
 
+            $video-width: 212px;
+            $video-height: 360px;
+            $video-offset: ($video-width-indeed * $video-height / $video-height-indeed - $video-width)/2;
             img {
-              width: 100%;
+              height: $video-height;
+              margin-left: -$video-offset;
+
+              &.error {
+                height: $video-height;
+                margin-left: 0px;
+              }
             }
 
             position: relative;
