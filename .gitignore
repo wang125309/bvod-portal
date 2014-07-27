@@ -5,3 +5,4 @@ venv
 *.log
 logs/*
 *.pyc
+nohup.out
