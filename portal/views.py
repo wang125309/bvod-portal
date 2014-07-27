@@ -34,6 +34,11 @@ def org(request):
 
 @active_tab('video')
 def video_detail(request, video_id):
+    video = fetch_media_item(video_id)
+
+    keys = [] if 'categories' not in video else video['categories'].keys()
+    video['category'] = None if len(keys) == 0 else video['categories'][keys[0]]
+
     return render(request, "video-detail.html", {
-    	'video': fetch_media_item(video_id)
+    	'video': video
     })
