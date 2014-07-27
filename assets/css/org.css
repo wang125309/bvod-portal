@@ -2116,7 +2116,7 @@ body{font-family:'微软雅黑',"Helvetica Neue",Helvetica,Arial,sans-serif}
 .org-list header .head-tab{float:left}
 .org-list header .head-page,.org-list header .head-view{float:right}
 .org-list header .head-tab .nav{float:left;font-size:16px;color:#999;width:80px;text-align:center}
-.org-list header .head-tab .nav.cur{border-bottom:4px solid #4b7fc3;color:#4b7fc3;font-weight:700}
+.org-list header .head-tab .nav.cur{border-bottom:4px solid #4b7fc3;color:#4b7fc3;font-weight:700;padding-bottom:6px}
 .org-list .list{padding:0;margin:20px 0 0;list-style-type:none}
 .org-list .list .item{height:219px;padding:0;margin:0 0 20px;background-color:#fff;border-width:2px;border-color:#fff;border-style:solid;box-shadow:0 1px 3px 0 rgba(0,0,0,.2)}
 .org-list .list .item .left{border-right:1px solid #ededed}
