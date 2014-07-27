@@ -19,6 +19,13 @@ def department(request, department_id):
     return redirect("/index")
 
 
+def org(request):
+    viewtype=request.GET.get('viewtype')
+    if viewtype == 'grid':
+        return render(request, "org-grid.html",{})
+    return render(request, "org-list.html",{})
+
+
 @active_tab('video')
 def video_detail(request, video_id):
     return render(request, "video-detail.html", {
