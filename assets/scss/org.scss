@@ -4,9 +4,84 @@
 @import "assets/scss/lib/icon";
 @import "assets/scss/lib/navbar-bvod";
 @import "assets/scss/lib/footer";
+@import "assets/scss/lib/pagination";
 
+.row{
+min-height:1000px;
+}
+.img-banner{
+width:100%;
+height:200px;
+position:relative;
+margin-top:70px;
+}
+.img-banner img{
+width:100%;
+max-height:200px;
+}
+.img-banner .title{
+position:absolute;
+top:60px;
+font-size:30px;
+color:#226e98;
+}
+.img-banner .desc{
+position:absolute;
+top:116px;
+font-size:20px;
+color:#226e98;
+}
 .org-list{
 margin-top:70px;
+}
+.no-margin{
+margin-top:0;
+}
+.org-list .user-icon{
+width:14px;
+height:14px;
+background:url(../img/user.png) no-repeat;
+display:inline-block;
+margin-right:10px;
+}
+.org-list .clock-icon{
+width:14px;
+height:14px;
+background:url(../img/clock.png) no-repeat;
+display:inline-block;
+margin-right:10px;
+}
+.org-list .head-view{
+margin-right:10px;
+}
+.org-list .head-view a{
+width:42px;
+height:24px;
+float:left;
+border:1px #ededed solid;
+}
+.org-list .head-view a.cur{
+background:#1665ad;
+}
+.org-list .head-view .list{
+width:15px;
+height:12px;
+background:url(../img/list-icon-2.png) no-repeat;
+display:inline-block;
+margin:6px 13px;
+}
+.org-list .head-view .cur .list{
+background:url(../img/list-icon.png) no-repeat;
+}
+.org-list .head-view .grid{
+width:12px;
+height:12px;
+background:url(../img/grid-icon.png) no-repeat;
+display:inline-block;
+margin:6px 15px;
+}
+.org-list .head-view .cur .grid{
+background:url(../img/grid-icon-2.png) no-repeat;
 }
 .org-list header{
 height:62px;
@@ -35,7 +110,7 @@ text-align:center;
 border-bottom:4px solid #4b7fc3;
 color:#4b7fc3;
 font-weight:bold;
-padding-bottom: 6px;
+padding-bottom:6px;
 }
 
 .org-list .list{
@@ -51,8 +126,8 @@ padding:0;
 margin:0;
 margin-bottom:20px;
 background-color:  #ffffff;
-border-width: 2px;
-border-color:  #ffffff;
+border-width: 1px;
+border-color:  #ededed;
 border-style: solid;
 box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);
 }
@@ -178,8 +253,8 @@ list-style-type:none;
 .org-list .grid .item{
 position:relative;
 background-color:  #ffffff;
-border-width: 2px;
-border-color:  #ffffff;
+border-width: 1px;
+border-color:  #ededed;
 border-style: solid;
 box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);
 height: 294px;
@@ -249,8 +324,8 @@ height:100%;
 .org-list .banner{
 height:166px;
 background-color:  #ffffff;
-border-width: 2px;
-border-color:  #ffffff;
+border-width: 1px;
+border-color:  #ededed;
 border-style: solid;
 box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);
 margin-top:49px;
