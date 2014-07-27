@@ -339,15 +339,14 @@ section.video-list {
   margin-bottom: 40px;
 
   $dep-length: 7;
-  $dep-size: floor($container-lg / $dep-length); 
+  $dep-size: $container-lg / $dep-length; 
   $dep-card-size: $dep-size - $grid-gutter-width;
 
   .department-list-wrapper {
     overflow-y: hidden;
-    overflow-x: auto;
+    overflow-x: hidden;
 
     .department-list {
-      width: $dep-size * $dep-length - $grid-gutter-width/2;
 
       .department {
         width: $dep-size;
