@@ -20,7 +20,7 @@
                      {% endif %}>
 
                     <img src="http://bvod.limijiaoyin.com/images/{{ ad.image }}" 
-                         onerror="this.src='http://placehold.it/1915x567&text={{ forloop.counter }}';">
+                         onError="this.src='http://placehold.it/1915x567&text={{ forloop.counter }}';">
 
                     <div class="container">
                         <div class="meta">
@@ -33,12 +33,12 @@
                 </div>
                 {% endfor %}
             </div>
-            <!-- Controls -->
+
             <a class="left carousel-control" href="#ads" role="button" data-slide="prev">
-                <span class="glyphicon glyphicon-chevron-left"></span>
+                <i class="bvod-icon-arrow-left"></i>
             </a>
             <a class="right carousel-control" href="#ads" role="button" data-slide="next">
-                <span class="glyphicon glyphicon-chevron-right"></span>
+                <i class="bvod-icon-arrow-right"></i>
             </a>
         </div>
     </div>
@@ -59,7 +59,8 @@
         <div class="department-list-wrapper">
         <div class="department-list row">
             {% for item in departments %}
-            <div class="pull-left department">
+            <div {% if forloop.last %} class="last pull-left department"
+                 {% else %} class="pull-left department" {% endif %}>
                 <a href="department/{{ item.id }}">
                     <img src="http://bvod.limijiaoyin.com/images/{{ item.avatar }}" alt="" onError="this.src='http://placehold.it/173x173&text=!'">
                     <i class="btn-play"></i>

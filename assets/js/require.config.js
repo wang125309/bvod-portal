@@ -7,7 +7,8 @@ var require = {
         'multiline': 'components/multiline/browser',
         'backbone': 'components/backbone',
         'headroom': 'components/headroom.js/dist/headroom',
-        'velocity': 'components/velocity/jquery.velocity.min'
+        'velocity': 'components/velocity/jquery.velocity.min',
+        'jwplayer': 'js/jwplayer.html5',
     },
     shim: {
         'bootstrap': {
@@ -18,6 +19,9 @@ var require = {
         },
         'velocity': {
             deps: ['jquery']
+        },
+        'jwplayer': {
+            deps: ['js/jwplayer']
         }
     }
 };

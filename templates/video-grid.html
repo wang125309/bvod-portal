@@ -14,14 +14,14 @@
             <div class="video-large">
                 <img src="{{item.thumbs.l.url}}" 
                     onError="this.className='error';this.src='http://placehold.it/444x377&text=!'">
-                <a href="{{item.url}}" class="btn-play"></a>
+                <a href="video/{{ item.id }}" class="btn-play"></a>
                 <div class="info">
-                    <div class='title'>{{item.title}}</div>
+                    <div class='title'>{{ item.description_plain }}</div>
                     <div class='meta'>
                         <div class="watch">
-                            <i class='icon-watch-reverse'></i> {{item.views}}
+                            <i class='icon-watch-reverse'></i> {{ item.views }}
                         </div>
-                        {{item.description_plain}}
+                        {{ item.author }}
                     </div>
                 </div>
             </div>
@@ -35,15 +35,15 @@
                 <a class="video-thumbnail" href="video/{{ item.id }}">
                     <img src="{{item.thumbs.m.url}}" 
                         onError="this.className='error';this.src='http://placehold.it/212x135&text=!'">    
-                    <div class="title">{{item.title}}</div>
+                    <div class="title">{{ item.description_plain }}</div>
                 </a>
                 <div class="video-info">
-                    <div class="comment">{{item.slug}}</div>
+                    <div class="comment">{{ item.title }}</div>
                     <div class="meta clearfix">
                         <div class="watch">
-                            <i class='icon-watch'></i> {{item.views}}
+                            <i class='icon-watch'></i> {{ item.views }}
                         </div>
-                        {{item.description_plain}}
+                        {{ item.author }}
                     </div>
                 </div>
             </div>
