@@ -12,11 +12,13 @@ define(function(require) {
 
         $player = $("#player");
         jwplayer("player").setup({
-            flashplayer: 'static/js/jwplayer.flash.swf',
-            file: $player.data("url"),
             image: $player.data("image"),
             width: 1124,
-            height: 510
+            height: 510,
+            sources: [
+                {file:$player.data("high"),label:"720p HD"},
+                {file:$player.data("mid"),label:"360p SD",default:"true"}
+            ]
         });
     });
 });

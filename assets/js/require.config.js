@@ -8,7 +8,7 @@ var require = {
         'backbone': 'components/backbone',
         'headroom': 'components/headroom.js/dist/headroom',
         'velocity': 'components/velocity/jquery.velocity.min',
-        'jwplayer': 'js/jwplayer.html5',
+        'jwplayer': 'js/3R6NXBWDEeS7ByIAC0MJiQ'
     },
     shim: {
         'bootstrap': {
@@ -19,9 +19,6 @@ var require = {
         },
         'velocity': {
             deps: ['jquery']
-        },
-        'jwplayer': {
-            deps: ['js/jwplayer']
         }
     }
 };
