@@ -21,6 +21,8 @@ def department(request, department_id):
 
 def org(request):
     viewtype=request.GET.get('viewtype')
+    if viewtype == 'detail':
+        return render(request, "org-detail.html",{})
     if viewtype == 'grid':
         return render(request, "org-grid.html",{})
     return render(request, "org-list.html",{})
