@@ -119,7 +119,7 @@ $org-height-indeed: 256px;
 
     .carousel-control {
       background: transparent; 
-      filter: none
+      filter: none;
       display: block;
       @include size(20px, 35px);
       top: 50%;
