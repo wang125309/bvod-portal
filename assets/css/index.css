@@ -2162,9 +2162,9 @@ section.video-list ul .video.video-medium .title{background-image:-webkit-linear
 .video-large .info .meta .watch{float:right}
 .departments{margin-bottom:40px}
 .departments .department-list-wrapper{overflow-y:hidden;overflow-x:auto}
-.departments .department-list-wrapper .department-list{width:1150px}
-.departments .department-list-wrapper .department-list .department{width:165.71px;padding-left:10px;padding-right:10px}
+.departments .department-list-wrapper .department-list{width:1145px}
+.departments .department-list-wrapper .department-list .department{width:165px;box-sizing:border-box;padding:0 10px}
 .departments .department-list-wrapper .department-list .department a{display:block;overflow:hidden}
-.departments .department-list-wrapper .department-list .department a img{border-radius:6px;border:1px solid #eee;width:145.71px;height:145.71px}
+.departments .department-list-wrapper .department-list .department a img{border-radius:6px;border:1px solid #eee;width:145px;height:145px}
 .departments .department-list-wrapper .department-list .department .title{text-align:center}
-.departments .department-list-wrapper .department-list .department.last,.departments .department-list-wrapper .department-list .department:last-child{width:155.71px;padding-right:0}
+.departments .department-list-wrapper .department-list .department.last,.departments .department-list-wrapper .department-list .department:last-child{width:155px;padding-right:0}
