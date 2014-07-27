@@ -13,12 +13,11 @@
         <div id="ads" class="carousel carousel-fade slide" data-ride="carousel">
             <div class="carousel-inner">
                 {% for ad in ads %}
-                <div data-pos="0"
-                    {% if forloop.first %}
-                    class="active item"
-                    {% else %}
-                    class="item"
-                    {% endif %}>
+                <div {% if forloop.first %}
+                     class="active item"
+                     {% else %}
+                     class="item"
+                     {% endif %}>
 
                     <img src="http://bvod.limijiaoyin.com/images/{{ ad.image }}" 
                          onerror="this.src='http://placehold.it/1915x567&text={{ forloop.counter }}';">
@@ -59,7 +58,7 @@
         <div class="department-list row">
             {% for item in departments %}
             <div class="pull-left department">
-                <a href="departments/{{ item.id }}">
+                <a href="department/{{ item.id }}">
                     <img src="http://bvod.limijiaoyin.com/images/{{item.avatar }}" alt="" onError="this.src='http://placehold.it/173x173&text=!'">
                     <i class="btn-play"></i>
                 </a>
@@ -72,8 +71,10 @@
 
     {% include "footer.html" %}
 
-    <script type="text/javascript" src="{{ STATIC_URL }}js/require.config.js"></script>
-    <script type="text/javascript" src="{{ STATIC_URL }}components/requirejs/require.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/require.config.js">
+    </script>
+    <script type="text/javascript" src="{{ STATIC_URL }}components/requirejs/require.js">
+    </script>
     <script>require(["js/index"]);</script>
 </body>
 </html>

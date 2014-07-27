@@ -12,5 +12,11 @@ def index(request):
     })
 
 
-def video(request, video_id):
+def department(request, department_id):
     return redirect("/index")
+
+
+def video_detail(request, video_id):
+    return render(request, "video-detail.html", {
+    	'video': fetch_media_item(video_id)
+    })

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>视频中心</title>
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/video.css">
+    {% include "polyfills.html" %}
+</head>
+<body>
+    {% include "navbar.html" %}
+
+	{% include "video-content.html" %}
+
+    {% include "footer.html" %}
+
+    <script type="text/javascript" src="{{ STATIC_URL }}js/require.config.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}components/requirejs/require.js"></script>
+    <script>require(["js/index"]);</script>
+</body>
+</html>
