@@ -14,3 +14,6 @@ def index(request):
 
 def video(request, video_id):
     return redirect("/index")
+
+def org(request):
+    return render(request, "org-list.html",{})
