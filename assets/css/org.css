@@ -2110,15 +2110,30 @@ body{font-family:'微软雅黑',"Helvetica Neue",Helvetica,Arial,sans-serif}
 .footer p{font-size:12px}
 .footer a{color:#eee}
 .footer .seperator{padding:0 8px;color:#eee}
+.row{min-height:1000px}
+.img-banner{width:100%;height:200px;position:relative;margin-top:70px}
+.img-banner img{width:100%;max-height:200px}
+.img-banner .title{position:absolute;top:60px;font-size:30px;color:#226e98}
+.img-banner .desc{position:absolute;top:116px;font-size:20px;color:#226e98}
 .org-list{margin-top:70px}
+.no-margin{margin-top:0}
+.org-list .user-icon{width:14px;height:14px;background:url(../img/user.png) no-repeat;display:inline-block;margin-right:10px}
+.org-list .clock-icon{width:14px;height:14px;background:url(../img/clock.png) no-repeat;display:inline-block;margin-right:10px}
+.org-list .head-view{margin-right:10px}
+.org-list .head-view a{width:42px;height:24px;float:left;border:1px solid #ededed}
+.org-list .head-view a.cur{background:#1665ad}
+.org-list .head-view .list{width:15px;height:12px;background:url(../img/list-icon-2.png) no-repeat;display:inline-block;margin:6px 13px}
+.org-list .head-view .cur .list{background:url(../img/list-icon.png) no-repeat}
+.org-list .head-view .grid{width:12px;height:12px;background:url(../img/grid-icon.png) no-repeat;display:inline-block;margin:6px 15px}
+.org-list .head-view .cur .grid{background:url(../img/grid-icon-2.png) no-repeat}
 .org-list header{height:62px;border-bottom:1px solid #e6e5e5}
 .org-list header div{margin-top:30px}
 .org-list header .head-tab{float:left}
 .org-list header .head-page,.org-list header .head-view{float:right}
 .org-list header .head-tab .nav{float:left;font-size:16px;color:#999;width:80px;text-align:center}
-.org-list header .head-tab .nav.cur{border-bottom:4px solid #4b7fc3;color:#4b7fc3;font-weight:700}
+.org-list header .head-tab .nav.cur{border-bottom:4px solid #4b7fc3;color:#4b7fc3;font-weight:700;padding-bottom:6px}
 .org-list .list{padding:0;margin:20px 0 0;list-style-type:none}
-.org-list .list .item{height:219px;padding:0;margin:0 0 20px;background-color:#fff;border-width:2px;border-color:#fff;border-style:solid;box-shadow:0 1px 3px 0 rgba(0,0,0,.2)}
+.org-list .list .item{height:219px;padding:0;margin:0 0 20px;background-color:#fff;border-width:1px;border-color:#ededed;border-style:solid;box-shadow:0 1px 3px 0 rgba(0,0,0,.2)}
 .org-list .list .item .left{border-right:1px solid #ededed}
 .org-list .list .item .left,.right{height:100%}
 .org-list .list .item .org-head-img{float:left;width:124px;height:124px;margin:21px 11px 0}
@@ -2140,7 +2155,7 @@ body{font-family:'微软雅黑',"Helvetica Neue",Helvetica,Arial,sans-serif}
 .org-list .list .item .video-large .info .meta{color:#999;font-size:12px}
 .org-list .list .item .video-large .info .meta .watch{float:right}
 .org-list .grid{padding:0;margin:20px 0 0;list-style-type:none}
-.org-list .grid .item{position:relative;background-color:#fff;border-width:2px;border-color:#fff;border-style:solid;box-shadow:0 1px 3px 0 rgba(0,0,0,.2);height:294px;margin-bottom:20px}
+.org-list .grid .item{position:relative;background-color:#fff;border-width:1px;border-color:#ededed;border-style:solid;box-shadow:0 1px 3px 0 rgba(0,0,0,.2);height:294px;margin-bottom:20px}
 .org-list .grid .item .img{position:relative;width:100%;height:214px}
 .org-list .grid .item .tab-list{position:relative;width:100%;height:75px;padding:10px 12px}
 .org-list .grid .item .img img{width:126px;height:126px;margin:15px 46px 0}
@@ -2151,7 +2166,7 @@ body{font-family:'微软雅黑',"Helvetica Neue",Helvetica,Arial,sans-serif}
 .org-list .grid .item a.hover{display:block}
 .org-list .grid .item .tab-list .tab{float:left;width:33.3%;height:100%}
 .org-list .grid .item .tab-list img{width:100%;height:100%}
-.org-list .banner{height:166px;background-color:#fff;border-width:2px;border-color:#fff;border-style:solid;box-shadow:0 1px 3px 0 rgba(0,0,0,.2);margin-top:49px}
+.org-list .banner{height:166px;background-color:#fff;border-width:1px;border-color:#ededed;border-style:solid;box-shadow:0 1px 3px 0 rgba(0,0,0,.2);margin-top:49px}
 .org-list .banner .left{border-right:1px solid #ededed}
 .org-list .banner .org-head-img{width:124px;height:124px;float:left;margin:21px 21px 0}
 .org-list .banner .org-head-img img{width:100%;height:100%}
