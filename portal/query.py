@@ -73,3 +73,11 @@ def fetch_deparment_media(id=0, limit=7):
    api_url = base_url+'media/department_media'
    item = {'id':id, 'limit':limit}
    return fetch_query_result(api_url, item)
+
+
+def fetch_recently_department(offset=0, limit=7):
+   return fetch_department_list(offset, limit)
+
+
+def fetch_popular_department(offset=0, limit=7):
+   return fetch_department_list(offset, limit)
