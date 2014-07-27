@@ -19,7 +19,9 @@ def index(request):
 
 @active_tab('organization')
 def org(request):
-    viewtype=request.GET.get('viewtype')
+    viewtype = request.GET.get('viewtype')
+    page = request.GET.get('p', 0)
+    
     if viewtype == 'detail':
         return render(request, "org-detail.html",{})
     if viewtype == 'grid':
