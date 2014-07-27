@@ -19,3 +19,4 @@ redis
 days
 django-oauth2-provider
 django-oauth-toolkit
+django-active-tab

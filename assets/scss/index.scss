@@ -37,12 +37,16 @@
 
 .carousel-fade .carousel-control {
   background: transparent;
+  width: 100px;
 }
 
 $video-large-width-indeed: 560px;
 $video-large-height-indeed: 315px;
 $video-medium-width-indeed: 160px;
 $video-medium-height-indeed: 90px;
+
+$org-width-indeed: 256px;
+$org-height-indeed: 256px;
 
 @mixin btn-play-base($width, $height) {
   display: none;
@@ -71,6 +75,7 @@ $video-medium-height-indeed: 90px;
 
     .item {
       min-width: $container-lg;
+      min-height: 300px;
 
       .container {
         height: 100%;
@@ -110,11 +115,55 @@ $video-medium-height-indeed: 90px;
       img {
         width: 100%;
       }
+    }
+
+    .carousel-control {
+      background: transparent; 
+      filter: none;
+      display: block;
+      @include size(20px, 35px);
+      top: 50%;
+      margin-top: -18px;
+
+      &.right {
+        right: 40px;
+      }
+
+      &.left {
+        left: 40px;
+      }
 
       &:hover {
-        .btn-play-lg {
-          display: block;
+        background: transparent;
+        filter: none;
+      }
+
+      .bvod-icon-arrow-left {
+        background: url(../img/arrow-left.png) center center no-repeat;
+
+        &:hover {
+          background: url(../img/arrow-left-gray.png) center center no-repeat;
         }
+      }
+
+      .bvod-icon-arrow-right {
+        background: url(../img/arrow-right.png) center center no-repeat;
+
+        &:hover {
+          background: url(../img/arrow-right-gray.png) center center no-repeat;
+        }
+      }
+
+      .bvod-icon-arrow-left,
+      .bvod-icon-arrow-right {
+        display: block;
+        @include size(20px, 35px);
+      }
+    }
+
+    &:hover {
+      .btn-play-lg {
+        display: block;
       }
     }
 }
@@ -154,6 +203,7 @@ section.video-grid {
 
         .video {
             .video-thumbnail {
+                display: block;
                 position: relative;
                 overflow: hidden;
                 $video-width: $container-lg / 5 - $grid-gutter-width;
@@ -288,29 +338,31 @@ section.video-list {
 
 
 .departments {
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 
   $dep-length: 7;
-  $dep-size: $container-lg / 7; 
-  $dep-padding-horizontal: 10px;
+  $dep-size: $container-lg / $dep-length; 
+  $dep-card-size: $dep-size - $grid-gutter-width;
 
   .department-list-wrapper {
     overflow-y: hidden;
-    overflow-x: auto;
+    overflow-x: hidden;
 
     .department-list {
-      width: $dep-size * $dep-length - $dep-padding-horizontal;
 
       .department {
         width: $dep-size;
-        padding-left: 10px;
-        padding-right: 10px;
+        box-sizing: border-box;
+        padding: 0px $grid-gutter-width/2;
+
         a {
           display: block;
+          overflow: hidden;
+
           img {
             border-radius: 6px;
             border: 1px solid $gray-lighter;
-            width: 100%;
+            @include square($dep-card-size);
           }
         }
 
@@ -318,8 +370,8 @@ section.video-list {
           text-align: center;
         }
 
-        &:last-child {
-          width: $dep-size - $dep-padding-horizontal;
+        &.last, &:last-child {
+          width: $dep-size - $grid-gutter-width/2;
           padding-right: 0px;
         }
       }

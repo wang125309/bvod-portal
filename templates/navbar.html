@@ -1,4 +1,9 @@
-<nav class="navbar navbar-bvod navbar-fixed-top" role="navigation">
+<nav role="navigation"
+  {% if nav.tab == "index" %}
+  class="navbar navbar-bvod navbar-fixed-top" 
+  {% else %}
+  class="navbar normal navbar-bvod navbar-fixed-top" 
+  {% endif %}>
   <div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -13,19 +18,19 @@
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav tabs" style="margin-left: 40px;">
-        <li class="active">
-          <a href="#">
-            首页<br>
-            <span class='en'>HOME</span>
-          </a>
+      <ul class="nav navbar-nav tabs" style="margin-left: 60px;">
+        <li {% if nav.tab == "index" %} class="active" {% endif %}>
+          <a href="/">首页<br><span class='en'>HOME</span></a>
         </li>
-        <li>
-          <a href="#">视频<br><span class="en">VIDEO</span></a>
+        <li {% if nav.tab == "video" %} class="active" {% endif %}>
+          <a href="/video">视频<br><span class="en">VIDEO</span></a>
         </li>
-        <li><a href="#">组织<br><span class="en">ORG.</span></a></li>
+        <li {% if nav.tab == "organization" %} class="active" {% endif %}>
+          <a href="/organization">组织<br><span class="en">ORG.</span></a>
+        </li>
       </ul>
 
+      <!--
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -40,12 +45,15 @@
           </ul>
         </li>
       </ul>
+      -->
 
+      <!--
       <form class="navbar-form navbar-right" role="search">
         <div class="form-group">
           <input type="text" class="form-control" placeholder="搜索">
         </div>
       </form>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
+      -->
+    </div>
+  </div>
 </nav>
