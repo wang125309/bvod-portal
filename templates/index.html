@@ -7,7 +7,7 @@
     {% include "polyfills.html" %}
 </head>
 <body>
-    {% include "navbar.html" %}
+    {% include "navbar.html" with nav=request.nav %}
 
     <div class="banner">
         <div id="ads" class="carousel carousel-fade slide" data-ride="carousel">
@@ -61,7 +61,7 @@
             {% for item in departments %}
             <div class="pull-left department">
                 <a href="department/{{ item.id }}">
-                    <img src="http://bvod.limijiaoyin.com/images/{{item.avatar }}" alt="" onError="this.src='http://placehold.it/173x173&text=!'">
+                    <img src="http://bvod.limijiaoyin.com/images/{{ item.avatar }}" alt="" onError="this.src='http://placehold.it/173x173&text=!'">
                     <i class="btn-play"></i>
                 </a>
                 <div class="title">{{ item.title }}</div>

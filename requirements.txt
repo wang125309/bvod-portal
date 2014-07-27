@@ -1,4 +1,4 @@
-#--index-url http://pypi.douban.com/simple
+--index-url http://pypi.douban.com/simple
 
 Django
 mysql-python
@@ -19,3 +19,4 @@ redis
 days
 django-oauth2-provider
 django-oauth-toolkit
+django-active-tab
