@@ -10,12 +10,19 @@
 
 {% include "navbar.html" with nav=request.nav %}
 
-<section class="org-list container">
+<div class="img-banner">
+  <img src="../img/banner.png">
+  <div class="container">
+    <div class="title">寻找最热小组</div>
+    <div class="desc">34门学科&nbsp55个课程</div>
+  </div>
+</div>
+<section class="org-list container no-margin">
   <header>
     <div class="head-tab">
-      <span class="nav">最新</span>
-      <span class="nav cur">最热</span>
-      <span class="nav">好评</span>
+      <a href="#"><span class="nav">最新</span></a>
+      <a href="#"><span class="nav">最热</span></a>
+      <a href="#"><span class="nav cur">好评</span></a>
     </div>
     <div class="head-page">
       <span>1/6</span>
@@ -23,8 +30,8 @@
       <span>下一页</span>
     </div>
     <div class="head-view">
-      <a href="#">list<i class="list"></i></a>
-      <a href="#">grid<i class="grid"></i></a>
+      <a class="cur" href="#"><i class="list"></i></a>
+      <a href="#"><i class="grid"></i></a>
     </div>
   </header>
   <ul class="list row">
