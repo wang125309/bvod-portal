@@ -13,8 +13,30 @@
 
     <div class="video-content">
         <img src="{{ STATIC_URL }}img/watch-bg.png" alt="">
-        <div id="player-wrapper" data-url="{{ video.sources.1.url }}" 
-            data-image="{{ video.thumbs.l.url }}">
+        <div class="container">
+            <h4 class="path">视频 &gt; 信息学院 &gt; 健康</h4>
+            <div class="player-wrapper">
+                <div class="" id="player" data-url="{{ video.sources.1.url }}" 
+                    data-image="{{ video.thumbs.l.url }}">
+                </div>    
+            </div>
+            <div>
+                <div class="pull-right h4" style="margin: 3px; 0px 0px">
+                    <i class="icon-like"></i>
+                    <span class="btn-lik">喜欢</span>
+                    <span class="links">{{ video.likes }}</span>
+                    &nbsp;&nbsp;
+
+                    <i class="icon-dislike"></i>
+                    <span class="btn-dislike>"不喜欢</span>
+                    <span class="dislikes">{{ video.dislikes|default:"0" }}</span> 
+                    &nbsp;&nbsp;
+
+                    <i class="icon-share"></i>
+                    <span class="share-btn">分享</span>
+                </div>
+                <h3 class="title">{{ video.title }}</h4>
+            </div>
         </div>
     </div>
 

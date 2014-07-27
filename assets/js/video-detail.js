@@ -10,13 +10,13 @@ define(function(require) {
         var $slider = $(".banner .carousel");
         $slider.find(".active .ad-title, .active .ad-desc").show();
 
-        $player = $("#player-wrapper");
-        jwplayer("player-wrapper").setup({
+        $player = $("#player");
+        jwplayer("player").setup({
             flashplayer: 'static/js/jwplayer.flash.swf',
             file: $player.data("url"),
             image: $player.data("image"),
-            width: 1280,
-            height: 720
+            width: 1124,
+            height: 510
         });
     });
 });
