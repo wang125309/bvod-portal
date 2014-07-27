@@ -1,14 +1,20 @@
+import logging
 import requests
 import json
 
 
+logger = logging.getLogger(__name__)
 base_url = 'http://bvod.limijiaoyin.com/api/'
+
 
 def fetch_query_result(api_url, payload, type='media'):
    r = requests.get(api_url, params=payload)
    if r.status_code == 200:
-      return r.json()
+      result = r.json()
+      logger.debug("fetched data: " + str(result))
+      return result
    else:
+      logger.debug("fail to fetch data")
       return {"count":0, type:[]}
 
 
@@ -42,9 +48,12 @@ def fetch_category_tree(depth=1):
    return fetch_query_result(api_url, category, 'categories')
 
 
-def fetch_department_list(limit=7):
+def fetch_department_list(offset=0, limit=7):
    api_url = base_url+'media/departments'
-   department = {'limit':limit}
+   department = {
+      'offset': offset,
+      'limit': limit
+   }
    return fetch_query_result(api_url, department, 'departments')
 
 

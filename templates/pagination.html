@@ -1,0 +1,23 @@
+<ul class="pagination">
+    <li {% if not pagination.prev %}class="disabled"{% endif %}>
+        {% if pagination.prev %}
+        <a href="?p={{ page.prev }}">&laquo;</a>
+        {% else %}
+        <a href="#">&laquo;</a>
+        {% endif %}
+    </li>
+
+    {% for page in pagination.pages %}
+    <li {% if page == pagination.current %} class="active" {% endif %}>
+        <a href="?p={{ page }}">{{ page }}</a>
+    </li>
+    {% endfor %}
+
+    <li {% if not pagination.next %}class="disabled"{% endif %}>
+        {% if pagination.next %}
+        <a href="?p={{ page.next }}">&raquo;</a>
+        {% else %}
+        <a href="#">&raquo;</a>
+        {% endif %}
+    </li>
+</ul>
