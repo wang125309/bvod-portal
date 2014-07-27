@@ -13,250 +13,58 @@
   <header>
     <div class="head-tab">
       <a href="#"><span class="nav">最新</span></a>
+      <span class="pull-left">|</span>
       <a href="#"><span class="nav">最热</span></a>
+      <span class="pull-left">|</span>
       <a href="#"><span class="nav cur">好评</span></a>
-    </div>
-    <div class="head-page">
-      <span>1/6</span>
-      <span>上一页</span>
-      <span>下一页</span>
     </div>
     <div class="head-view">
       <a href="?viewtype=list"><i class="list"></i></a>
       <a class="cur" href="?viewtype=grid"><i class="grid"></i></a>
     </div>
   </header>
-  <ul class="grid row col-xs-30">
-    <li class="col-xs-6">
+
+  <div class="grid row">
+    {% for org in orglist %}
+    <div class="col-xs-6">
       <div class="item">
         <div class="img">
-          <img src="../images/video-cover-1.png">
+          <div class="img-wrapper">
+            <img src="http://bvod.limijiaoyin.com/images/{{ org.avatar }}"
+                onError="this.src='http://placehold.it/132&text=!'">
+          </div>
           <div class="name">健康北航人</div>
           <div class="video-info">
-            <div class="video"><span class="num">67</span><span>视频</span></div>
-            |
-            <div class="played"><span class="num">55</span><span>播放</span></div>
+            <div class="video"><span class="num">
+              67</span><span>视频</span>
+            </div>|
+            <div class="played">
+              <span class="num">55</span><span>播放</span>
+            </div>
           </div>
-          <a class="hover" href="#"><span>爱健康爱运动，这里有一群热爱运动得健儿</span></a>
+          <a click=javascript:void(0)>
+            <span>爱健康爱运动，这里有一群热爱运动得健儿</span>
+          </a>
         </div>
         <div class="tab-list">
           <div class="tab">
-            <img src="../images/video-cover-1.png">
+            <img src="../images/video-cover-1.png" onError="this.src='http://placehold.it/30&text=!'">
           </div>
           <div class="tab">
-            <img src="../images/video-cover-1.png">
+            <img src="../images/video-cover-1.png" onError="this.src='http://placehold.it/30&text=!'">
           </div>
           <div class="tab">
-            <img src="../images/video-cover-1.png">
+            <img src="../images/video-cover-1.png" onError="this.src='http://placehold.it/30&text=!'">
           </div>
         </div>
       </div>
-    </li>
-    <li class="col-xs-6">
-      <div class="item">
-        <div class="img">
-          <img src="../images/video-cover-1.png">
-          <div class="name">健康北航人</div>
-          <div class="video-info">
-            <div class="video"><span class="num">67</span><span>视频</span></div>
-            |
-            <div class="played"><span class="num">55</span><span>播放</span></div>
-          </div>
-          <a href="#"><span>爱健康爱运动，这里有一群热爱运动得健儿</span></a>
-        </div>
-        <div class="tab-list">
-          <div class="tab">
-            <img src="../images/video-cover-1.png">
-          </div>
-          <div class="tab">
-            <img src="../images/video-cover-1.png">
-          </div>
-          <div class="tab">
-            <img src="../images/video-cover-1.png">
-          </div>
-        </div>
-      </div>
-    </li>
-    <li class="col-xs-6">
-      <div class="item">
-        <div class="img">
-          <img src="../images/video-cover-1.png">
-          <div class="name">健康北航人</div>
-          <div class="video-info">
-            <div class="video"><span class="num">67</span><span>视频</span></div>
-            |
-            <div class="played"><span class="num">55</span><span>播放</span></div>
-          </div>
-          <a href="#"><span>爱健康爱运动，这里有一群热爱运动得健儿</span></a>
-        </div>
-        <div class="tab-list">
-          <div class="tab">
-            <img src="../images/video-cover-1.png">
-          </div>
-          <div class="tab">
-            <img src="../images/video-cover-1.png">
-          </div>
-          <div class="tab">
-            <img src="../images/video-cover-1.png">
-          </div>
-        </div>
-      </div>
-    </li>
-    <li class="col-xs-6">
-      <div class="item">
-        <div class="img">
-          <img src="../images/video-cover-1.png">
-          <div class="name">健康北航人</div>
-          <div class="video-info">
-            <div class="video"><span class="num">67</span><span>视频</span></div>
-            |
-            <div class="played"><span class="num">55</span><span>播放</span></div>
-          </div>
-          <a href="#"><span>爱健康爱运动，这里有一群热爱运动得健儿</span></a>
-        </div>
-        <div class="tab-list">
-          <div class="tab">
-            <img src="../images/video-cover-1.png">
-          </div>
-          <div class="tab">
-            <img src="../images/video-cover-1.png">
-          </div>
-          <div class="tab">
-            <img src="../images/video-cover-1.png">
-          </div>
-        </div>
-      </div>
-    </li>
-    <li class="col-xs-6">
-      <div class="item">
-        <div class="img">
-          <img src="../images/video-cover-1.png">
-          <div class="name">健康北航人</div>
-          <div class="video-info">
-            <div class="video"><span class="num">67</span><span>视频</span></div>
-            |
-            <div class="played"><span class="num">55</span><span>播放</span></div>
-          </div>
-          <a href="#"><span>爱健康爱运动，这里有一群热爱运动得健儿</span></a>
-        </div>
-        <div class="tab-list">
-          <div class="tab">
-            <img src="../images/video-cover-1.png">
-          </div>
-          <div class="tab">
-            <img src="../images/video-cover-1.png">
-          </div>
-          <div class="tab">
-            <img src="../images/video-cover-1.png">
-          </div>
-        </div>
-      </div>
-    </li>
-    <li class="col-xs-6">
-      <div class="item">
-        <div class="img">
-          <img src="../images/video-cover-1.png">
-          <div class="name">健康北航人</div>
-          <div class="video-info">
-            <div class="video"><span class="num">67</span><span>视频</span></div>
-            |
-            <div class="played"><span class="num">55</span><span>播放</span></div>
-          </div>
-          <a href="#"><span>爱健康爱运动，这里有一群热爱运动得健儿</span></a>
-        </div>
-        <div class="tab-list">
-          <div class="tab">
-            <img src="../images/video-cover-1.png">
-          </div>
-          <div class="tab">
-            <img src="../images/video-cover-1.png">
-          </div>
-          <div class="tab">
-            <img src="../images/video-cover-1.png">
-          </div>
-        </div>
-      </div>
-    </li>
-    <li class="col-xs-6">
-      <div class="item">
-        <div class="img">
-          <img src="../images/video-cover-1.png">
-          <div class="name">健康北航人</div>
-          <div class="video-info">
-            <div class="video"><span class="num">67</span><span>视频</span></div>
-            |
-            <div class="played"><span class="num">55</span><span>播放</span></div>
-          </div>
-          <a href="#"><span>爱健康爱运动，这里有一群热爱运动得健儿</span></a>
-        </div>
-        <div class="tab-list">
-          <div class="tab">
-            <img src="../images/video-cover-1.png">
-          </div>
-          <div class="tab">
-            <img src="../images/video-cover-1.png">
-          </div>
-          <div class="tab">
-            <img src="../images/video-cover-1.png">
-          </div>
-        </div>
-      </div>
-    </li>
-    <li class="col-xs-6">
-      <div class="item">
-        <div class="img">
-          <img src="../images/video-cover-1.png">
-          <div class="name">健康北航人</div>
-          <div class="video-info">
-            <div class="video"><span class="num">67</span><span>视频</span></div>
-            |
-            <div class="played"><span class="num">55</span><span>播放</span></div>
-          </div>
-          <a href="#"><span>爱健康爱运动，这里有一群热爱运动得健儿</span></a>
-        </div>
-        <div class="tab-list">
-          <div class="tab">
-            <img src="../images/video-cover-1.png">
-          </div>
-          <div class="tab">
-            <img src="../images/video-cover-1.png">
-          </div>
-          <div class="tab">
-            <img src="../images/video-cover-1.png">
-          </div>
-        </div>
-      </div>
-    </li>
-    <li class="col-xs-6">
-      <div class="item">
-        <div class="img">
-          <img src="../images/video-cover-1.png">
-          <div class="name">健康北航人</div>
-          <div class="video-info">
-            <div class="video"><span class="num">67</span><span>视频</span></div>
-            |
-            <div class="played"><span class="num">55</span><span>播放</span></div>
-          </div>
-          <a href="#"><span>爱健康爱运动，这里有一群热爱运动得健儿</span></a>
-        </div>
-        <div class="tab-list">
-          <div class="tab">
-            <img src="../images/video-cover-1.png">
-          </div>
-          <div class="tab">
-            <img src="../images/video-cover-1.png">
-          </div>
-          <div class="tab">
-            <img src="../images/video-cover-1.png">
-          </div>
-        </div>
-      </div>
-    </li>
-  </ul>
-  <footer>
-  <div class="foot-page"><span>上一页</span><span>1</span><span>1</span><span>1</span><span>1</span><span>下一页</span></div>
-  </footer>
+    </div>
+    {% endfor %}
+  </div>
+
+  <footer style="text-align: center;">{% include "pagination.html" %}</footer>
 </section>
+
 {% include "footer.html" %}
 </body>
 </html>

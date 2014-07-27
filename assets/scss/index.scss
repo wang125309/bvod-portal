@@ -101,7 +101,7 @@ $org-height-indeed: 256px;
         }
       }
 
-    @media (min-width: $screen-lg-min) {
+      @media (min-width: $screen-lg-min) {
         .container {
           position: absolute;
           top: 0px;
@@ -112,8 +112,11 @@ $org-height-indeed: 256px;
         }
       }
 
-      img {
+      > img {
         width: 100%;
+        @media (max-width: $container-lg) {
+          width: $container-lg;
+        }
       }
     }
 

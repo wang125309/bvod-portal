@@ -19,17 +19,12 @@
 </div>
 <section class="org-list container no-margin">
   <header>
-    <div class="head-tab">
+    <div class="head-tab pull-left">
       <a href="#"><span class="nav">最新</span></a>
       <span class="pull-left">|</span>
       <a href="#"><span class="nav">最热</span></a>
       <span class="pull-left">|</span>
       <a href="#"><span class="nav cur">好评</span></a>
-    </div>
-    <div class="head-page">
-      <span>1/6</span>
-      <span>上一页</span>
-      <span>下一页</span>
     </div>
     <div class="head-view">
       <a class="cur" href="?viewtype=list"><i class="list"></i></a>
@@ -38,12 +33,15 @@
   </header>
   <ul class="list row">
     {% for item in orglist %}
+    {% if forloop.last %}
+    <li class="last item col-xs-30">
+    {% else %}
     <li class="item col-xs-30">
+    {% endif %}
       <div class="left col-xs-12">
         <a class="org-head-img"><img src="http://bvod.limijiaoyin.com/images/{{ item.avatar }}"></a>
         <div class="org-head-info">
           <span class="name">{{ item.name }}</span>
-          <span class="owner">{{ item.avatar }}</span>
           <div class="video-info">
             <div class="video"><span class="num">67</span><span>视频</span></div>
             <div class="played"><span class="num">55</span><span>播放</span></div>
