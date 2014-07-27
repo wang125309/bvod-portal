@@ -116,6 +116,48 @@ $org-height-indeed: 256px;
       }
     }
 
+    .carousel-control {
+      background: transparent; 
+      display: block;
+      @include size(20px, 35px);
+      top: 50%;
+      margin-top: -18px;
+
+      &.right {
+        right: 40px;
+      }
+
+      &.left {
+        left: 40px;
+      }
+
+      &:hover {
+        background: transparent;
+      }
+
+      .bvod-icon-arrow-left {
+        background: url(../img/arrow-left.png) center center no-repeat;
+
+        &:hover {
+          background: url(../img/arrow-left-gray.png) center center no-repeat;
+        }
+      }
+
+      .bvod-icon-arrow-right {
+        background: url(../img/arrow-right.png) center center no-repeat;
+
+        &:hover {
+          background: url(../img/arrow-right-gray.png) center center no-repeat;
+        }
+      }
+
+      .bvod-icon-arrow-left,
+      .bvod-icon-arrow-right {
+        display: block;
+        @include size(20px, 35px);
+      }
+    }
+
     &:hover {
       .btn-play-lg {
         display: block;

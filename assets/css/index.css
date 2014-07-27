@@ -2122,6 +2122,15 @@ body{font-family:'微软雅黑',"Helvetica Neue",Helvetica,Arial,sans-serif}
 .banner .item .container .meta .ad-desc,.banner .item .container .meta .ad-title{display:none}
 @media (min-width:1200px){.banner .item .container{position:absolute;top:0;left:50%;width:1160px;height:100%;margin-left:-580px}}
 .banner .item img{width:100%}
+.banner .carousel-control{background:0 0;display:block;width:20px;height:35px;top:50%;margin-top:-18px}
+.banner .carousel-control.right{right:40px}
+.banner .carousel-control.left{left:40px}
+.banner .carousel-control:hover{background:0 0}
+.banner .carousel-control .bvod-icon-arrow-left{background:url(../img/arrow-left.png) center center no-repeat}
+.banner .carousel-control .bvod-icon-arrow-left:hover{background:url(../img/arrow-left-gray.png) center center no-repeat}
+.banner .carousel-control .bvod-icon-arrow-right{background:url(../img/arrow-right.png) center center no-repeat}
+.banner .carousel-control .bvod-icon-arrow-right:hover{background:url(../img/arrow-right-gray.png) center center no-repeat}
+.banner .carousel-control .bvod-icon-arrow-left,.banner .carousel-control .bvod-icon-arrow-right{display:block;width:20px;height:35px}
 .banner:hover .btn-play-lg{display:block}
 section.video-grid{margin-bottom:40px}
 section.video-grid .grid{padding-top:12px}

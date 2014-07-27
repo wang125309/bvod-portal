@@ -20,7 +20,7 @@
                      {% endif %}>
 
                     <img src="http://bvod.limijiaoyin.com/images/{{ ad.image }}" 
-                         onerror="this.src='http://placehold.it/1915x567&text={{ forloop.counter }}';">
+                         onError="this.src='http://placehold.it/1915x567&text={{ forloop.counter }}';">
 
                     <div class="container">
                         <div class="meta">
@@ -33,12 +33,12 @@
                 </div>
                 {% endfor %}
             </div>
-            <!-- Controls -->
+            
             <a class="left carousel-control" href="#ads" role="button" data-slide="prev">
-                <span class="glyphicon glyphicon-chevron-left"></span>
+                <i class="bvod-icon-arrow-left"></i>
             </a>
             <a class="right carousel-control" href="#ads" role="button" data-slide="next">
-                <span class="glyphicon glyphicon-chevron-right"></span>
+                <i class="bvod-icon-arrow-right"></i>
             </a>
         </div>
     </div>
