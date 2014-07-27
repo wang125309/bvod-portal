@@ -57,11 +57,11 @@ def fetch_ad_list(limit=7):
 def fetch_media_item(id=0):
    api_url = base_url+'media/get'
    item = {'id':id}
-   r = requests.get(api_url, item)
+   r = requests.get(api_url, params=item)
    if r.status_code == 200:
       return r.json()
    else:
       return {"error": "No match found"}
 
 if __name__ == '__main__':
-	print fetch_ad_list(1)
+	print fetch_media_item(1)

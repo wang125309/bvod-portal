@@ -12,7 +12,7 @@ def index(request):
     })
 
 
-def video(request, video_id):
-    return render(request, "video.html", {
-    	
-    	})
+def video_detail(request, video_id):
+    return render(request, "video-detail.html", {
+    	'video': fetch_media_item(video_id)
+    })
