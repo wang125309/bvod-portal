@@ -1,17 +1,14 @@
 <div class="video-content">
 	<img src="{{ STATIC_URL }}img/watch-bg.png" alt="">
-	<div id="{{video.slug}}-player-wrapper">
-	<div class="mcore-playerbox">
-		<a id="{{video.slug}}" href="{{video.sources.1.url}}">
-			<img alt="Click to download..." src="{{video.thumbs.l.url}}">
-			<div id="{{video.slug}}_display_iconBackground" style="background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAEpJREFUeNrszwENADAIA7DhX8ENoBMZ5KR10EryckCJiIiIiIiIiIiIiIiIiIiIiIh8GmkRERERERERERERERERERERERGRHSPAAPlXH1phYpYaAAAAAElFTkSuQmCC);">
-				<div id="{{video.slug}}_display_icon" style="background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAALdJREFUeNrs18ENgjAYhmFouDOCcQJGcARHgE10BDcgTOIosAGwQOuPwaQeuFRi2p/3Sb6EC5L3QCxZBgAAAOCorLW1zMn65TrlkH4NcV7QNcUQt7Gn7KIhxA+qNIR81spOGkL8oFJDyLJRdosqKDDkK+iX5+d7huzwM40xptMQMkjIOeRGo+VkEVvIPfTGIpKASfYIfT9iCHkHrBEzf4gcUQ56aEzuGK/mw0rHpy4AAACAf3kJMACBxjAQNRckhwAAAABJRU5ErkJggg==);"></div>
-			</div>
-		</a>
+	<div id="player-wrapper">
 	</div>
-	<script type="text/javascript" src="{{ STATIC_URL }}js/jwplayer.min.js"></script>
 	<script type="text/javascript">
-		mcore.initPlayerController('{{video.slug}}-player-wrapper', new mcore.JWPlayer({"width": 1280, "controlbar": "bottom", "streamer": "start", "autostart": false, "players": [{"src": "/scripts/third-party/jw_player/player.swf", "type": "flash"}, {"type": "html5"}, {"type": "download"}], "stretching": "exactfit", "type": "http", "height": 720}, null), undefined);
+	    jwplayer("player-wrapper").setup({ 
+			flashplayer: '{{ STATIC_URL }}js/jwplayer.flash.swf', 
+	        file: "{{video.sources.1.url}}",
+	        image: "{{video.thumbs.l.url}}",
+	        width: 1280,
+	        height: 720
+	    });
 	</script>
-</div>
 </div>
