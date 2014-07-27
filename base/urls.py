@@ -14,6 +14,5 @@ urlpatterns = patterns('',
     url(r'^$', portal.views.index),
     url(r'^index$', portal.views.index),
     url(r'^organization$', portal.views.org),
-    url(r'^department/(?P<department_id>\d+)$', portal.views.department),
     url(r'^video/(?P<video_id>\d+)$', portal.views.video_detail)
 )

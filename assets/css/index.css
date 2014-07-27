@@ -2085,7 +2085,7 @@ body{font-family:'微软雅黑',"Helvetica Neue",Helvetica,Arial,sans-serif}
 @media (min-width:768px){.navbar>.container .navbar-bvod .navbar-brand,.navbar>.container-fluid .navbar-bvod .navbar-brand{margin-left:-15px}}
 .navbar-bvod .navbar-text{color:#efeff1}
 .navbar-bvod .navbar-nav.tabs{font-size:18px}
-.navbar-bvod .navbar-nav.tabs>li>a{padding-left:25px;padding-right:25px;line-height:18px}
+.navbar-bvod .navbar-nav.tabs>li>a{padding-left:30px;padding-right:30px;line-height:18px}
 .navbar-bvod .navbar-nav>li>a{color:#efeff1;text-align:center;line-height:37px}
 .navbar-bvod .navbar-nav>li>a>span.en{font-size:14px}
 .navbar-bvod .navbar-nav>li>a:focus,.navbar-bvod .navbar-nav>li>a:hover{color:#efeff1;background-color:transparent}
