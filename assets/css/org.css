@@ -2120,7 +2120,7 @@ body{background:#FAF9F9}
 .no-margin{margin-top:0}
 .org-list .user-icon{width:14px;height:14px;background:url(../img/user.png) no-repeat;display:inline-block;margin-right:10px}
 .org-list .clock-icon{width:14px;height:14px;background:url(../img/clock.png) no-repeat;display:inline-block;margin-right:10px}
-.org-list .head-view a{width:42px;height:24px;float:left;border:1px solid #ededed}
+.org-list .head-view a{width:42px;height:24px;float:left;border:1px solid #ededed;background:#fff}
 .org-list .head-view a.cur{background:#1665ad;border:1px solid #1665ad}
 .org-list .head-view .list{width:15px;height:12px;background:url(../img/list-icon-2.png) no-repeat;display:inline-block;margin:5px 13px}
 .org-list .head-view .cur .list{background:url(../img/list-icon.png) no-repeat}
