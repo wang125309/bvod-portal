@@ -1,4 +1,5 @@
 import requests
+import json
 
 
 base_url = 'http://bvod.limijiaoyin.com/api/'
@@ -55,19 +56,11 @@ def fetch_ad_list(limit=7):
 
 
 def fetch_media_item(id=0):
-   api_url = base_url+'media/get'
-   item = {'id':id}
-   r = requests.get(api_url, params=item)
-   if r.status_code == 200:
-      return r.json()
-   else:
-      return {"error": "No match found"}
+   r = requests.get(base_url + "media/get", params={'id':id})
+   return r.json() if r.status_code == 200 else None
+
 
 def fetch_deparment_media(id=0, limit=7):
    api_url = base_url+'media/department_media'
    item = {'id':id, 'limit':limit}
    return fetch_query_result(api_url, item)
-
-
-if __name__ == '__main__':
-	print fetch_media_item(1)
