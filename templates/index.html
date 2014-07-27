@@ -33,7 +33,7 @@
                 </div>
                 {% endfor %}
             </div>
-            
+
             <a class="left carousel-control" href="#ads" role="button" data-slide="prev">
                 <i class="bvod-icon-arrow-left"></i>
             </a>
@@ -59,7 +59,8 @@
         <div class="department-list-wrapper">
         <div class="department-list row">
             {% for item in departments %}
-            <div class="pull-left department">
+            <div {% if forloop.last %} class="last pull-left department"
+                 {% else %} class="pull-left department" {% endif %}>
                 <a href="department/{{ item.id }}">
                     <img src="http://bvod.limijiaoyin.com/images/{{ item.avatar }}" alt="" onError="this.src='http://placehold.it/173x173&text=!'">
                     <i class="btn-play"></i>

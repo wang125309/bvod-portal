@@ -75,6 +75,7 @@ $org-height-indeed: 256px;
 
     .item {
       min-width: $container-lg;
+      min-height: 300px;
 
       .container {
         height: 100%;
@@ -335,7 +336,7 @@ section.video-list {
 
 
 .departments {
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 
   $dep-length: 7;
   $dep-size: $container-lg / 7; 
@@ -367,7 +368,7 @@ section.video-list {
           text-align: center;
         }
 
-        &:last-child {
+        &.last, &:last-child {
           width: $dep-size - $grid-gutter-width/2;
           padding-right: 0px;
         }
