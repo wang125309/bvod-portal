@@ -2102,6 +2102,7 @@ body{font-family:'微软雅黑',"Helvetica Neue",Helvetica,Arial,sans-serif}
 .navbar-bvod .btn-link[disabled]:focus,.navbar-bvod .btn-link[disabled]:hover,fieldset[disabled] .navbar-bvod .btn-link:focus,fieldset[disabled] .navbar-bvod .btn-link:hover{color:#ccc}
 .navbar,.navbar form,.navbar form .form-group{margin-bottom:0}
 .footer{background:#1665ad;color:#eee}
+.footer .container{background:url(../img/footer_shadow.png) top center no-repeat}
 .footer .icon img{max-width:100%}
 .footer p{font-size:12px}
 .footer a{color:#eee}
