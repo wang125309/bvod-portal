@@ -19,14 +19,18 @@
                     {% else %}
                     class="item"
                     {% endif %}>
-                    <img src="http://bvod.limijiaoyin.com/images/{{ ad.image }}" onerror="this.src='http://placehold.it/1915x567&text={{ forloop.counter }}';">
+
+                    <img src="http://bvod.limijiaoyin.com/images/{{ ad.image }}" 
+                         onerror="this.src='http://placehold.it/1915x567&text={{ forloop.counter }}';">
+
                     <div class="container">
-                        <a href="#" class="btn-play-lg"></a>
                         <div class="meta">
                             <h3 class="ad-title">{{ ad.title }}</h3>
                             <p class="ad-desc">{{ ad.desc }}</p>
                         </div>
                     </div>
+                    
+                    <a href="{{ ad.url }}" class="btn-play-lg"></a>
                 </div>
                 {% endfor %}
             </div>

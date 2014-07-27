@@ -37,6 +37,7 @@
 
 .carousel-fade .carousel-control {
   background: transparent;
+  width: 100px;
 }
 
 $video-large-width-indeed: 560px;
@@ -110,11 +111,11 @@ $video-medium-height-indeed: 90px;
       img {
         width: 100%;
       }
+    }
 
-      &:hover {
-        .btn-play-lg {
-          display: block;
-        }
+    &:hover {
+      .btn-play-lg {
+        display: block;
       }
     }
 }

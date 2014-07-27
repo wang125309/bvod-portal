@@ -10505,7 +10505,8 @@ body {
   background: transparent; }
 
 .carousel-fade .carousel-control {
-  background: transparent; }
+  background: transparent;
+  width: 100px; }
 
 .btn-play {
   display: none;
@@ -10561,8 +10562,8 @@ body {
         margin-left: -580px; } }
     .banner .item img {
       width: 100%; }
-    .banner .item:hover .btn-play-lg {
-      display: block; }
+  .banner:hover .btn-play-lg {
+    display: block; }
 
 section.video-grid {
   margin-bottom: 40px; }
