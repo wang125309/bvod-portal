@@ -15,10 +15,6 @@ def index(request):
 
 
 @active_tab('organization')
-def department(request, department_id):
-    return redirect("/index")
-
-
 def org(request):
     viewtype=request.GET.get('viewtype')
     if viewtype == 'detail':
