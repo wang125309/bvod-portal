@@ -39,7 +39,10 @@
     <li class="item col-xs-30">
     {% endif %}
       <div class="left col-xs-12">
-        <a class="org-head-img"><img src="http://bvod.limijiaoyin.com/images/{{ item.avatar }}"></a>
+        <a class="org-head-img">
+          <img onError="this.src='http://placehold.it/150&text=!'"
+            src="http://bvod.limijiaoyin.com/images/{{ item.avatar }}">
+        </a>
         <div class="org-head-info">
           <span class="name">{{ item.name }}</span>
           <div class="video-info">
