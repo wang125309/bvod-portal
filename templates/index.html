@@ -12,39 +12,23 @@
     <div class="banner">
         <div id="ads" class="carousel carousel-fade slide" data-ride="carousel">
             <div class="carousel-inner">
-                <div class="item active" data-pos="0">
-                    <img src="{{ STATIC_URL }}img/banner.png" alt="">
-                    <!-- <img src="http://placehold.it/1915x567&text=1" alt=""> -->
+                {% for ad in ads %}
+                <div data-pos="0"
+                    {% if forloop.first %}
+                    class="active item"
+                    {% else %}
+                    class="item"
+                    {% endif %}>
+                    <img src="http://bvod.limijiaoyin.com/images/{{ ad.image }}" onerror="this.src='http://placehold.it/1915x567&text={{ forloop.counter }}';">
                     <div class="container">
                         <a href="#" class="btn-play-lg"></a>
                         <div class="meta">
-                            <h3 class="ad-title">健康之路</h3>
-                            <p class="ad-desc">《健康之路》是一档大型日播医学科普类节目。拥有权威的专家，给您最贴心的服务。明辨疾病蛛丝马迹，解读征兆背后奥秘，指点难题解决方向。</p>
+                            <h3 class="ad-title">{{ ad.title }}</h3>
+                            <p class="ad-desc">{{ ad.desc }}</p>
                         </div>
                     </div>
                 </div>
-                <div class="item" data-pos="1">
-                    <!-- <img src="{{ STATIC_URL }}img/banner.png" alt=""> -->
-                    <img src="http://placehold.it/1915x567&text=2" alt="">
-                    <div class="container">
-                        <a href="#" class="btn-play-lg"></a>
-                        <div class="meta">
-                            <h3 class="ad-title">健康之路1</h3>
-                            <p class="ad-desc">《健康之路》是一档大型日播医学科普类节目。拥有权威的专家，给您最贴心的服务。明辨疾病蛛丝马迹，解读征兆背后奥秘，指点难题解决方向。</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="item" data-pos="2">
-                    <!-- <img src="{{ STATIC_URL }}img/banner.png" alt=""> -->
-                    <img src="http://placehold.it/1915x567&text=3" alt="">
-                    <div class="container">
-                        <a href="#" class="btn-play-lg"></a>
-                        <div class="meta">
-                            <h3 class="ad-title">健康之路2</h3>
-                            <p class="ad-desc">《健康之路》是一档大型日播医学科普类节目。拥有权威的专家，给您最贴心的服务。明辨疾病蛛丝马迹，解读征兆背后奥秘，指点难题解决方向。</p>
-                        </div>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
             <!-- Controls -->
             <a class="left carousel-control" href="#ads" role="button" data-slide="prev">
