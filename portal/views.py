@@ -1,5 +1,8 @@
 from django.shortcuts import render, redirect
+from django.core.paginator import Paginator
+
 import django_active_tab as active_tab
+
 from query import *
 
 
