@@ -10586,6 +10586,7 @@ section.video-grid {
     section.video-grid .grid .row {
       margin-bottom: 16px; }
     section.video-grid .grid .video .video-thumbnail {
+      display: block;
       position: relative;
       overflow: hidden;
       width: 212px;

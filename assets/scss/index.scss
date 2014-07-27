@@ -155,6 +155,7 @@ section.video-grid {
 
         .video {
             .video-thumbnail {
+                display: block;
                 position: relative;
                 overflow: hidden;
                 $video-width: $container-lg / 5 - $grid-gutter-width;

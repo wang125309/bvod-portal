@@ -14,3 +14,6 @@ def index(request):
 
 def video(request, video_id):
     return redirect("/index")
+
+def department(request, department_id):
+    return redirect("/index")

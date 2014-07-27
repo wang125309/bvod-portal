@@ -30,11 +30,11 @@
                 <div class="row">
             {% endif %}
             <div class="col-xs-10 video">
-                <div class="video-thumbnail">
+                <a class="video-thumbnail" href="video/{{ item.id }}">
                     <img src="{{item.thumbs.m.url}}" 
                         onError="this.className='error';this.src='http://placehold.it/212x135&text=!'">    
                     <div class="title">{{item.title}}</div>
-                </div>
+                </a>
                 <div class="video-info">
                     <div class="comment">{{item.slug}}</div>
                     <div class="meta clearfix">
