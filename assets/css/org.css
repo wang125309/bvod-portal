@@ -2072,6 +2072,9 @@ body{font-family:'微软雅黑',"Helvetica Neue",Helvetica,Arial,sans-serif}
 .icon-more{width:11px;height:18px;display:inline-block;vertical-align:top;background:url(../img/more-arrow.png) top center no-repeat}
 .icon-history{background:url(../img/history.png) center center no-repeat;width:16px;height:16px;display:inline-block;vertical-align:middle}
 .icon-watch{height:10px;width:15px;background:url(../img/watch.png) left center no-repeat;display:inline-block;vertical-align:baseline}
+.icon-like{width:20px;height:18px;display:inline-block;vertical-align:top;background:url(../img/like.png) center center no-repeat}
+.icon-dislike{width:20px;height:18px;display:inline-block;vertical-align:top;background:url(../img/dislike.png) center center no-repeat}
+.icon-share{width:20px;height:15px;display:inline-block;vertical-align:top;background:url(../img/share.png) center center no-repeat}
 .navbar-bvod{background-image:-webkit-linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.3) 50%,rgba(0,0,0,.05));background-image:-o-linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.3) 50%,rgba(0,0,0,.05));background-image:linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.3) 50%,rgba(0,0,0,.05));background-repeat:no-repeat;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#B3000000', endColorstr='#0D000000', GradientType=0);background-color:transparent;border-color:transparent,6.5%}
 .navbar-bvod.headroom{transition:transform 200ms linear}
 .navbar-bvod.headroom--pinned{transform:translateY(0%)}

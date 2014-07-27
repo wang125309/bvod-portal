@@ -39,3 +39,15 @@
     display: inline-block;
     vertical-align: baseline;
 }
+
+.icon-like {
+  @include bvod-icon("../img/like.png", 20px, 18px, top);
+}
+
+.icon-dislike {
+  @include bvod-icon("../img/dislike.png", 20px, 18px, top);
+}
+
+.icon-share {
+  @include bvod-icon("../img/share.png", 20px, 15px, top);
+}
