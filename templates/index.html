@@ -7,18 +7,17 @@
     {% include "polyfills.html" %}
 </head>
 <body>
-    {% include "navbar.html" %}
+    {% include "navbar.html" with nav=request.nav %}
 
     <div class="banner">
         <div id="ads" class="carousel carousel-fade slide" data-ride="carousel">
             <div class="carousel-inner">
                 {% for ad in ads %}
-                <div data-pos="0"
-                    {% if forloop.first %}
-                    class="active item"
-                    {% else %}
-                    class="item"
-                    {% endif %}>
+                <div {% if forloop.first %}
+                     class="active item"
+                     {% else %}
+                     class="item"
+                     {% endif %}>
 
                     <img src="http://bvod.limijiaoyin.com/images/{{ ad.image }}" 
                          onerror="this.src='http://placehold.it/1915x567&text={{ forloop.counter }}';">
@@ -52,15 +51,17 @@
 
     <section class="departments container">
         <div class="header">
-            <a href="#" class="h4 more pull-right">更多组织<i class="icon-more"></i></a>
+            <a href="organizations" class="h4 more pull-right">
+                更多组织 <i style="margin-left: 5px;" class="icon-more"></i>
+            </a>
             <h4> 热门组织  <span class="small">Popular organization</span> </h4>
         </div>
         <div class="department-list-wrapper">
         <div class="department-list row">
             {% for item in departments %}
             <div class="pull-left department">
-                <a href="departments/{{ item.id }}">
-                    <img src="http://bvod.limijiaoyin.com/images/{{item.avatar }}" alt="" onError="this.src='http://placehold.it/173x173&text=!'">
+                <a href="department/{{ item.id }}">
+                    <img src="http://bvod.limijiaoyin.com/images/{{ item.avatar }}" alt="" onError="this.src='http://placehold.it/173x173&text=!'">
                     <i class="btn-play"></i>
                 </a>
                 <div class="title">{{ item.title }}</div>
@@ -72,8 +73,10 @@
 
     {% include "footer.html" %}
 
-    <script type="text/javascript" src="{{ STATIC_URL }}js/require.config.js"></script>
-    <script type="text/javascript" src="{{ STATIC_URL }}components/requirejs/require.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/require.config.js">
+    </script>
+    <script type="text/javascript" src="{{ STATIC_URL }}components/requirejs/require.js">
+    </script>
     <script>require(["js/index"]);</script>
 </body>
 </html>

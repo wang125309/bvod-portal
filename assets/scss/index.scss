@@ -45,6 +45,9 @@ $video-large-height-indeed: 315px;
 $video-medium-width-indeed: 160px;
 $video-medium-height-indeed: 90px;
 
+$org-width-indeed: 256px;
+$org-height-indeed: 256px;
+
 @mixin btn-play-base($width, $height) {
   display: none;
   position: absolute;
@@ -155,6 +158,7 @@ section.video-grid {
 
         .video {
             .video-thumbnail {
+                display: block;
                 position: relative;
                 overflow: hidden;
                 $video-width: $container-lg / 5 - $grid-gutter-width;
@@ -293,25 +297,27 @@ section.video-list {
 
   $dep-length: 7;
   $dep-size: $container-lg / 7; 
-  $dep-padding-horizontal: 10px;
+  $dep-card-size: $dep-size - $grid-gutter-width;
 
   .department-list-wrapper {
     overflow-y: hidden;
     overflow-x: auto;
 
     .department-list {
-      width: $dep-size * $dep-length - $dep-padding-horizontal;
+      width: $dep-size * $dep-length - $grid-gutter-width/2;
 
       .department {
         width: $dep-size;
-        padding-left: 10px;
-        padding-right: 10px;
+        padding-left: $grid-gutter-width/2;
+        padding-right: $grid-gutter-width/2;
         a {
           display: block;
+          overflow: hidden;
+
           img {
             border-radius: 6px;
             border: 1px solid $gray-lighter;
-            width: 100%;
+            @include square($dep-card-size);
           }
         }
 
@@ -320,7 +326,7 @@ section.video-list {
         }
 
         &:last-child {
-          width: $dep-size - $dep-padding-horizontal;
+          width: $dep-size - $grid-gutter-width/2;
           padding-right: 0px;
         }
       }

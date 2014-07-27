@@ -1,79 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>视频中心</title>
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/org.css">
+    {% include "polyfills.html" %}
+</head>
+<body>
+{% include "navbar.html" with nav=request.nav %}
+
 <section class="org-list container">
   <header>
     <div class="head-tab">
       <span class="nav">最新</span>
-      <span class="nav">最热</span>
+      <span class="nav cur">最热</span>
       <span class="nav">好评</span>
     </div>
-    <div class="head-view">
-      <a href="#"><i class="list"></i></a>
-      <a href="#"><i class="grid"></i></a>
+    <div class="head-page">
+      <span>1/6</span>
+      <span>上一页</span>
+      <span>下一页</span>
     </div>
-    <div class="head-page"></div>
+    <div class="head-view">
+      <a href="#">list<i class="list"></i></a>
+      <a href="#">grid<i class="grid"></i></a>
+    </div>
   </header>
   <ul class="list row">
-    <li class="item">
-      <div class="left">
+    <li class="item col-xs-30">
+      <div class="left col-xs-12">
         <a class="org-head-img"><img src="../images/org-head.png"></a>
         <div class="org-head-info">
           <span class="name">健康北航人</span>
           <span class="owner">欧阳小胖</span>
           <div class="video-info">
-            <div class="video"><span>67</span><span>视频</span></div>
-            <div class="played"><span>55</span><span>播放</span></div>
+            <div class="video"><span class="num">67</span><span>视频</span></div>
+            <div class="played"><span class="num">55</span><span>播放</span></div>
           </div>
         </div>
         <div class="org-head-desc">
           <span>爱健康爱运动，这里有一群热爱运动的健儿</span>
         </div>
       </div>
-      <div class="right">
+      <div class="right col-xs-18">
         <!--video item-->
-        <div class="video-large">
-          <img src="../images/video-cover-1.png">
-          <a href="#">瑜伽教程（3）</a>
+        <div class="video-large col-xs-10">
+          <div class="img">
+            <img src="../images/video-cover-1.png">
+            <a href="#">瑜伽课教程（三）</a>
+          </div>
           <div class="info">
             <div class="title">美女教练陪你做瑜伽</div>
             <div class="meta">
               <div class="watch">
-                <i class="icon-watch-reverse"></i>1.3万
+                <i class="icon-watch"></i>1.3万
               </div>
               博雅课堂
             </div>
           </div>
         </div>
         <!--video item-->
-        <div class="video-large">
-          <img src="../images/video-cover-1.png">
-          <a href="#">瑜伽教程（3）</a>
+        <!--video item-->
+        <div class="video-large col-xs-10">
+          <div class="img">
+            <img src="../images/video-cover-1.png">
+            <a href="#">瑜伽教程（3）</a>
+          </div>
           <div class="info">
             <div class="title">美女教练陪你做瑜伽</div>
             <div class="meta">
               <div class="watch">
-                <i class="icon-watch-reverse"></i>1.3万
+                <i class="icon-watch"></i>1.3万
               </div>
               博雅课堂
             </div>
           </div>
         </div>
         <!--video item-->
-        <div class="video-large">
-          <img src="../images/video-cover-1.png">
-          <a href="#">瑜伽教程（3）</a>
+        <!--video item-->
+        <div class="video-large col-xs-10">
+          <div class="img">
+            <img src="../images/video-cover-1.png">
+            <a href="#">瑜伽教程（3）</a>
+          </div>
           <div class="info">
             <div class="title">美女教练陪你做瑜伽</div>
             <div class="meta">
               <div class="watch">
-                <i class="icon-watch-reverse"></i>1.3万
+                <i class="icon-watch"></i>1.3万
               </div>
               博雅课堂
             </div>
           </div>
         </div>
+        <!--video item-->
       </div>
     </li>
   </ul>
   <footer>
-    <div class="foot-page"></div>
+  <div class="foot-page"><span>上一页</span><span>1</span><span>1</span><span>1</span><span>1</span><span>下一页</span></div>
   </footer>
 </section>
+{% include "footer.html" %}
+</body>
+</html>

@@ -1,9 +1,11 @@
 <section class="video-grid container">
     <div class="header">
         {% if more %}
-        <a href="#" class="h4 more pull-right">{{ more }}<i class="icon-more"></i></a>
+        <a href="#" class="h4 more pull-right">
+            {{ more }}<i style="margin-left: 5px;" class="icon-more"></i>
+        </a>
         {% endif %}
-        <h4>{{ title }}  <span class="small">{{ sub_title }}</span></h4>
+        <h4>{{ title }}&nbsp;&nbsp;<span class="small">{{ sub_title }}</span></h4>
     </div>
     <div class="grid row">
         {% for item in content %}
@@ -30,11 +32,11 @@
                 <div class="row">
             {% endif %}
             <div class="col-xs-10 video">
-                <div class="video-thumbnail">
+                <a class="video-thumbnail" href="video/{{ item.id }}">
                     <img src="{{item.thumbs.m.url}}" 
                         onError="this.className='error';this.src='http://placehold.it/212x135&text=!'">    
                     <div class="title">{{item.title}}</div>
-                </div>
+                </a>
                 <div class="video-info">
                     <div class="comment">{{item.slug}}</div>
                     <div class="meta clearfix">
