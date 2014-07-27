@@ -13,7 +13,7 @@ min-height:1000px;
 width:100%;
 height:200px;
 position:relative;
-margin-top:70px;
+margin-top:68px;
 }
 .img-banner img{
 width:100%;
@@ -62,13 +62,14 @@ border:1px #ededed solid;
 }
 .org-list .head-view a.cur{
 background:#1665ad;
+border:1px #1665ad solid;
 }
 .org-list .head-view .list{
 width:15px;
 height:12px;
 background:url(../img/list-icon-2.png) no-repeat;
 display:inline-block;
-margin:6px 13px;
+margin:5px 13px;
 }
 .org-list .head-view .cur .list{
 background:url(../img/list-icon.png) no-repeat;
@@ -78,7 +79,7 @@ width:12px;
 height:12px;
 background:url(../img/grid-icon.png) no-repeat;
 display:inline-block;
-margin:6px 15px;
+margin:5px 15px;
 }
 .org-list .head-view .cur .grid{
 background:url(../img/grid-icon-2.png) no-repeat;
@@ -92,6 +93,9 @@ margin-top:30px;
 }
 .org-list header .head-tab{
 float:left;
+    .pull-left {
+        color: #ededed;
+    }
 }
 .org-list header .head-view{
 float:right;
@@ -129,7 +133,7 @@ background-color:  #ffffff;
 border-width: 1px;
 border-color:  #ededed;
 border-style: solid;
-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);
+box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.15);
 }
 
 .org-list .list .item .left{

@@ -11,7 +11,7 @@
 {% include "navbar.html" with nav=request.nav %}
 
 <div class="img-banner">
-  <img src="{{ STATIC_URL }}img/banner.png">
+  <img src="{{ STATIC_URL }}img/org-banner.png">
   <div class="container">
     <div class="title">寻找最热小组</div>
     <div class="desc">34门学科&nbsp55个课程</div>
@@ -21,7 +21,9 @@
   <header>
     <div class="head-tab">
       <a href="#"><span class="nav">最新</span></a>
+      <span class="pull-left">|</span>
       <a href="#"><span class="nav">最热</span></a>
+      <span class="pull-left">|</span>
       <a href="#"><span class="nav cur">好评</span></a>
     </div>
     <div class="head-page">
@@ -30,18 +32,18 @@
       <span>下一页</span>
     </div>
     <div class="head-view">
-      <a class="cur" href="#"><i class="list"></i></a>
-      <a href="#"><i class="grid"></i></a>
+      <a class="cur" href="?viewtype=list"><i class="list"></i></a>
+      <a href="?viewtype=grid"><i class="grid"></i></a>
     </div>
   </header>
   <ul class="list row">
     {% for item in orglist %}
     <li class="item col-xs-30">
       <div class="left col-xs-12">
-        <a class="org-head-img"><img src="{{item.avatar}}"></a>
+        <a class="org-head-img"><img src="http://bvod.limijiaoyin.com/images/{{ item.avatar }}"></a>
         <div class="org-head-info">
-          <span class="name">{{item.name}}</span>
-          <span class="owner">{{item.avatar}}</span>
+          <span class="name">{{ item.name }}</span>
+          <span class="owner">{{ item.avatar }}</span>
           <div class="video-info">
             <div class="video"><span class="num">67</span><span>视频</span></div>
             <div class="played"><span class="num">55</span><span>播放</span></div>

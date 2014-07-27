@@ -45,8 +45,7 @@ def pagination(count, current, per_page):
     result = {
         'current': current,
         'pages': pages,
-        'prev': pages[0] - 1 if firstPage.has_previous() else None,
-        'next': pages[-1] + 1 if lastPage.has_next() else None
+        'page': p.page(current)
     }
 
     logger.debug(result)
