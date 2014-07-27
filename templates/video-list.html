@@ -5,7 +5,7 @@
     <ul class="list row">
         {% for item in content %}
         <li class="col-xs-6">
-            <a class="video video-medium" href="{{ item.url }}">
+            <a class="video video-medium" href="video/{{ item.id }}">
                 <img src="{{item.thumbs.m.url}}" alt=""
                     onError="this.className='error';this.src='http://placehold.it/212x360&text=!'">    
                 <i class="btn-play"></i>
