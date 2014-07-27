@@ -63,5 +63,8 @@ def fetch_media_item(id=0):
    else:
       return {"error": "No match found"}
 
+def fetch_deparment_videos(limit=7):
+   return fetch_featured_media()
+
 if __name__ == '__main__':
 	print fetch_media_item(1)
