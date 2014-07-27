@@ -24,8 +24,12 @@ def org(request):
     if viewtype == 'detail':
         return render(request, "org-detail.html",{})
     if viewtype == 'grid':
-        return render(request, "org-grid.html",{})
-    return render(request, "org-list.html",{})
+        return render(request, "org-grid.html",{
+        	'orglist':fetch_department_list()['departments']
+        })
+    return render(request, "org-list.html",{
+        	'orglist':fetch_department_list()['departments']
+        })
 
 
 @active_tab('video')
