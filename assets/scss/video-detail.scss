@@ -122,6 +122,9 @@ body {
 }
 
 .related-video {
+	@include card;
+	padding: 10px;
+	
 	.title {
 		height: 40px;
     	overflow: hidden;
