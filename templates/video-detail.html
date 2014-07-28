@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <title>视频中心</title>
     <link rel="stylesheet" href="{{ STATIC_URL }}css/video-detail.css">
-    <script type="text/javascript" src="{{ STATIC_URL }}js/jwplayer.js"></script>
-    <script type="text/javascript" src="{{ STATIC_URL }}js/jwplayer.html5.js"></script>
     {% include "polyfills.html" %}
 </head>
 <body>
@@ -16,7 +14,7 @@
         <div class="container">
             <h4 class="path">视频 &gt; 信息学院 &gt; 健康</h4>
             <div class="player-wrapper">
-                <div class="" id="player" data-url="{{ video.sources.1.url }}" 
+                <div class="" id="player" data-high="{{ video.sources.0.url }}" data-mid="{{ video.sources.1.url }}"
                     data-image="{{ video.thumbs.l.url }}">
                 </div>    
             </div>
