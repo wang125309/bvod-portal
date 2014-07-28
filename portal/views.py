@@ -53,41 +53,32 @@ def pagination(count, current, per_page):
 
 
 @active_tab('organization')
-def org(request):
-    viewtype = request.GET.get('viewtype', 'list')
-
-    if viewtype == 'detail':
-        return render(request, "org-detail.html",{})
-
+def org(request, view_type):
     count = fetch_department_list(offset=0, limit=0)['count']
     page = int(request.GET.get('p', None) or '1')
 
-    if viewtype == 'grid':
-        paginator = pagination(count, page, 15)
-        departments = fetch_department_list(offset=(paginator['current']-1)*15, limit=15)['departments']
-        for department in departments:
-            media = fetch_department_media(department['id'], limit=3)
-            department['media'] = []
-            for media in media['media']:
-                department['media'].append(media)
+    per_page = 15 if view_type == 'grid' else 5
+    paginator = pagination(count, page, per_page)
 
-        return render(request, "org-grid.html",{
-        	'orglist': departments,
-            'pagination': paginator
-        })
+    offset = (paginator['current'] - 1) * per_page
+    limit = per_page
+    departments = fetch_department_list(offset, limit)['departments']
 
-    paginator = pagination(count, page, 5)
-    departments = fetch_department_list(offset=(paginator['current']-1)*15, limit=15)['departments']
-    for department in departments:
-        media = fetch_department_media(department['id'], limit=3)
-        department['media'] = []
-        for media in media['media']:
-            department['media'].append(media)
+    def add_media(dep):
+        dep['media'] = fetch_department_media(dep['id'], limit=3)['media']
+        return dep
 
-    return render(request, "org-list.html",{
+    departments = map(add_media, departments)
+
+    return render(request, 'org-' + view_type + '.html', {
         'orglist': departments,
         'pagination': paginator 
     })
+
+
+@active_tab('organization')
+def org_detail(request, org_id):
+    return render(request, "org-detail.html",{})
 
 
 @active_tab('video')
