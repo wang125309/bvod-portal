@@ -384,11 +384,9 @@ color:#000;
     list-style-type:none;
 }
 .org-list .detail .item{
-height:179px;
-padding:0;
-margin:0;
-margin-bottom:20px;
+    @include video-card(212px, 135px);
 }
+
 .org-list .detail .item .img{
 width:100%;
 height:125px;
