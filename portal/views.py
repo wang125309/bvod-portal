@@ -54,20 +54,33 @@ def pagination(count, current, per_page):
 
 @active_tab('organization')
 def org(request, view_type):
-    count = fetch_department_list(offset=0, limit=0)['count']
-    page = int(request.GET.get('p', None) or '1')
-
     per_page = 15 if view_type == 'grid' else 5
-    paginator = pagination(count, page, per_page)
+    page = int(request.GET.get('p', None) or '1')
+    choicetype = request.GET.get('choicetype', '')
 
+    count = fetch_department_list(offset=0, limit=0)['count']
+    paginator = pagination(count, page, per_page)
     offset = (paginator['current'] - 1) * per_page
     limit = per_page
     departments = fetch_department_list(offset, limit)['departments']
     if choicetype == 'new':
+        count = fetch_recently_department(offset=0, limit=0)['count']
+        logger.debug(count)
+        paginator = pagination(count, page, per_page)
+        offset = (paginator['current'] - 1) * per_page
+        limit = per_page
         departments = fetch_recently_department(offset, limit)['departments']
     elif choicetype == 'hot':
+        count = fetch_popular_department(offset=0, limit=0)['count']
+        paginator = pagination(count, page, per_page)
+        offset = (paginator['current'] - 1) * per_page
+        limit = per_page
         departments = fetch_popular_department(offset, limit)['departments']
-    else:
+    elif choicetype == 'good':
+        count = fetch_praise_department(offset=0, limit=0)['count']
+        paginator = pagination(count, page, per_page)
+        offset = (paginator['current'] - 1) * per_page
+        limit = per_page
         departments = fetch_praise_department(offset, limit)['departments']
 
     def add_media(dep):
@@ -78,7 +91,8 @@ def org(request, view_type):
 
     return render(request, 'org-' + view_type + '.html', {
         'orglist': departments,
-        'pagination': paginator 
+        'pagination': paginator,
+        'choicetype': choicetype 
     })
 
 
