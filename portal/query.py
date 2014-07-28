@@ -105,10 +105,10 @@ def fake_department(offset=0, limit=7):
             "videos": [{
                "count": 1,
                "media": [{
-                  "description": null,
+                  "description": "null",
                   "views": 0,
                   "likes": 0,
-                  "podcast": null,
+                  "podcast": "null",
                   "id": 256,
                   "categories": {},
                   "author": "admin",
