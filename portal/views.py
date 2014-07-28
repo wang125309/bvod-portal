@@ -54,16 +54,22 @@ def pagination(count, current, per_page):
 
 @active_tab('organization')
 def org(request, view_type):
-    count = fetch_department_list(offset=0, limit=0)['count']
-    page = int(request.GET.get('p', None) or '1')
-
     per_page = 15 if view_type == 'grid' else 5
-    paginator = pagination(count, page, per_page)
+    page = int(request.GET.get('p', None) or '1')
+    choicetype = request.GET.get('choicetype', 'new')
+    fetch = fetch_recently_department
 
+    if choicetype == 'hot':
+        fetch = fetch_popular_department
+    elif choicetype == 'good':
+        fetch = fetch_praise_department
+
+    count = fetch(offset=0, limit=0)['count']
+    paginator = pagination(count, page, per_page)
     offset = (paginator['current'] - 1) * per_page
     limit = per_page
-    departments = fetch_department_list(offset, limit)['departments']
-
+    departments = fetch(offset, limit)['departments']
+    
     def add_media(dep):
         dep['media'] = fetch_department_media(dep['id'], limit=3)['media']
         return dep
@@ -72,14 +78,18 @@ def org(request, view_type):
 
     return render(request, 'org-' + view_type + '.html', {
         'orglist': departments,
-        'pagination': paginator 
+        'pagination': paginator,
+        'choicetype': choicetype 
     })
 
 
 @active_tab('organization')
 def org_detail(request, org_id):
     paginator = pagination(0, 1, 20)
+    choicetype = request.GET.get('choicetype', '')
+
     return render(request, "org-detail.html",{
+        'choicetype': choicetype,
         'pagination': paginator
     })
 

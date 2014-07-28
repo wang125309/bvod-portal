@@ -20,15 +20,27 @@
 <section class="org-list container no-margin">
   <header>
     <div class="head-tab pull-left">
-      <a href="#"><span class="nav">最新</span></a>
-      <span class="pull-left">|</span>
-      <a href="#"><span class="nav">最热</span></a>
-      <span class="pull-left">|</span>
-      <a href="#"><span class="nav cur">好评</span></a>
+      {% if choicetype == "new" %}
+        <a href="?choicetype=new"><span class="nav cur">最新</span></a>
+      {% else %}
+        <a href="?choicetype=new"><span class="nav">最新</span></a>
+      {% endif %}
+        <span class="pull-left">|</span>
+      {% if choicetype == "hot" %}
+        <a href="?choicetype=hot"><span class="nav cur">最热</span></a>
+      {% else %}
+        <a href="?choicetype=hot"><span class="nav">最热</span></a>
+      {% endif %}
+        <span class="pull-left">|</span>
+      {% if choicetype == "good" %}
+        <a href="?choicetype=good"><span class="nav cur">好评</span></a>
+      {% else %}
+        <a href="?choicetype=good"><span class="nav">好评</span></a>
+      {% endif %}
     </div>
     <div class="head-view">
-      <a class="cur" href="list"><i class="list"></i></a>
-      <a href="grid"><i class="grid"></i></a>
+      <a class="cur" href="list?choicetype={{ choicetype }}"><i class="list"></i></a>
+      <a href="grid?choicetype={{ choicetype }}"><i class="grid"></i></a>
     </div>
   </header>
   <ul class="organizations list">
