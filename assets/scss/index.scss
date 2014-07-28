@@ -4,6 +4,7 @@
 @import "assets/scss/lib/icon";
 @import "assets/scss/lib/navbar-bvod";
 @import "assets/scss/lib/footer";
+@import "assets/scss/lib/video-card";
 
 .header {
  .more {
@@ -188,6 +189,10 @@ section.video-grid {
             @include size($video-width-large, $video-height-large + $bg-height);
             overflow: hidden;
 
+            .title {
+              font-size: $font-size-h3;
+            }
+
             img {
               display: block;
               height: $video-height-large;
@@ -205,57 +210,7 @@ section.video-grid {
         }
 
         .video {
-            .video-thumbnail {
-                display: block;
-                position: relative;
-                overflow: hidden;
-                $video-width: $container-lg / 5 - $grid-gutter-width;
-                $video-height: 135px;
-                @include size($video-width, $video-height);
-                $video-medium-offset: (($video-medium-width-indeed * $video-height / $video-medium-height-indeed) - $video-width)/2;
-
-                img {
-                  height: $video-height;
-                  margin-left: -$video-medium-offset;
-
-                  &.error {
-                    height: 100%;
-                    margin-left: 0px;
-                  }
-                }
-
-                .title {
-                    @include text-overflow;
-                    padding: 6px 12px;
-                    position: absolute;
-                    width: 100%;
-                    bottom: 0px;
-                    background: rgba(0, 0, 0, .6);
-                    color: $gray-lighter;
-                    font-size: $font-size-small;
-                }
-            }
-
-            .video-info {
-                div.comment {
-                    margin: 8px 0px 5px;
-                    @include text-overflow;
-                }
-
-                .meta {
-                    @include text-overflow;
-                    color: $gray-light;
-                    font-size: $font-size-small;
-                    margin-bottom: 8px;
-
-                    
-                    div.watch {
-                        color: $gray-light;
-                        float: right;
-                        font-size: $font-size-small;
-                    }
-                }
-            }
+          @include video-card($container-lg/5 - $grid-gutter-width, 135px);
         }
     }
 }

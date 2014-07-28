@@ -1,0 +1,53 @@
+$video-width-indeed: 160px;
+$video-height-indeed: 90px;
+
+@mixin video-card($video-width, $video-height) {
+    $video-offset: (($video-width-indeed * $video-height / $video-height-indeed) - $video-width)/2;
+    
+    .video-thumbnail {
+        display: block;
+        position: relative;
+        overflow: hidden;
+        @include size($video-width, $video-height);
+
+        > img {
+            height: $video-height;
+            margin-left: -$video-offset;
+
+            &.error {
+                height: 100%;
+                margin-left: 0px;
+            }
+        }
+
+        .comment {
+            @include text-overflow;
+            @include opacity(.6);
+            background: $gray-darker;
+            padding: $padding-base-vertical $padding-base-horizontal;
+            position: absolute;
+            width: 100%;
+            bottom: 0px;
+            color: white;
+        }
+    }
+
+    .video-info {
+        div.title {
+            margin: 3px 0px;
+            font-size: $font-size-large;
+            @include text-overflow;
+        }
+
+        .meta {
+            @include text-overflow;
+            color: $gray-light;
+            margin-bottom: 8px;
+                    
+            div.watch {
+                color: $gray-light;
+                float: right;
+            }
+        }
+    }
+}

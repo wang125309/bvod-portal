@@ -78,7 +78,10 @@ def org(request, view_type):
 
 @active_tab('organization')
 def org_detail(request, org_id):
-    return render(request, "org-detail.html",{})
+    paginator = pagination(0, 1, 20)
+    return render(request, "org-detail.html",{
+        'pagination': paginator
+    })
 
 
 @active_tab('video')

@@ -82,8 +82,10 @@ def fetch_recently_department(offset=0, limit=7):
 def fetch_popular_department(offset=0, limit=7):
    return fake_department(offset, limit)
 
+
 def fetch_praise_department(offset=0, limit=7):
    return fake_department(offset, limit)
+
 
 def fetch_related_media(id=1,limit=3):
    return fetch_popular_media(limit)

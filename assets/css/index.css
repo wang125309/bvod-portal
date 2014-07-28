@@ -2140,16 +2140,17 @@ body{font-family:'微软雅黑',"Helvetica Neue",Helvetica,Arial,sans-serif}
 section.video-grid{margin-bottom:40px}
 section.video-grid .grid{padding-top:12px}
 section.video-grid .grid .video-large{padding-top:8px;margin-top:-8px;background:url(../img/video-bg.png) top center no-repeat;width:444px;height:385.4px;overflow:hidden}
+section.video-grid .grid .video-large .title{font-size:24px}
 section.video-grid .grid .video-large img{display:block;height:377.4px;margin-left:-113.47px}
 section.video-grid .grid .video-large img.error{height:377.4px;margin-left:0}
 section.video-grid .grid .row{margin-bottom:16px}
 section.video-grid .grid .video .video-thumbnail{display:block;position:relative;overflow:hidden;width:212px;height:135px}
-section.video-grid .grid .video .video-thumbnail img{height:135px;margin-left:-14px}
-section.video-grid .grid .video .video-thumbnail img.error{height:100%;margin-left:0}
-section.video-grid .grid .video .video-thumbnail .title{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;padding:6px 12px;position:absolute;width:100%;bottom:0;background:rgba(0,0,0,.6);color:#eee;font-size:12px}
-section.video-grid .grid .video .video-info div.comment{margin:8px 0 5px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-section.video-grid .grid .video .video-info .meta{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#777;font-size:12px;margin-bottom:8px}
-section.video-grid .grid .video .video-info .meta div.watch{color:#777;float:right;font-size:12px}
+section.video-grid .grid .video .video-thumbnail>img{height:135px;margin-left:-14px}
+section.video-grid .grid .video .video-thumbnail>img.error{height:100%;margin-left:0}
+section.video-grid .grid .video .video-thumbnail .comment{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;opacity:.6;filter:alpha(opacity=60);background:#222;padding:6px 12px;position:absolute;width:100%;bottom:0;color:#fff}
+section.video-grid .grid .video .video-info div.title{margin:3px 0;font-size:18px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+section.video-grid .grid .video .video-info .meta{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#777;margin-bottom:8px}
+section.video-grid .grid .video .video-info .meta div.watch{color:#777;float:right}
 section.video-list{margin-bottom:40px}
 section.video-list ul{padding-top:12px;list-style:none;padding-left:0;margin-bottom:0}
 section.video-list ul:after,section.video-list ul:before{content:" ";display:table}
