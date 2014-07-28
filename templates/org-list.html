@@ -27,35 +27,48 @@
       <a href="choicetype=good"><span class="nav cur">好评</span></a>
     </div>
     <div class="head-view">
-      <a class="cur" href="?viewtype=list"><i class="list"></i></a>
-      <a href="?viewtype=grid"><i class="grid"></i></a>
+      <a class="cur" href="list"><i class="list"></i></a>
+      <a href="grid"><i class="grid"></i></a>
     </div>
   </header>
-  <ul class="list row">
+  <ul class="organizations list">
     {% for item in orglist %}
+
     {% if forloop.last %}
-    <li class="last item col-xs-30">
+    <li class="last item row">
     {% else %}
-    <li class="item col-xs-30">
+    <li class="item row">
     {% endif %}
+
       <div class="left col-xs-12">
-        <a class="org-head-img">
-          <img onError="this.src='http://placehold.it/150&text=!'"
-            src="http://bvod.limijiaoyin.com/images/{{ item.avatar }}">
-        </a>
-        <div class="org-head-info">
-          <span class="name">{{ item.name }}</span>
-          <div class="video-info">
-            <div class="video"><span class="num">67</span><span>视频</span></div>
-            <div class="played"><span class="num">55</span><span>播放</span></div>
+        <div class="row">
+          <div class="col-xs-10">
+            <a href="/organization/{{ item.id }}" class="org-head-img">
+              <img onError="this.src='http://placehold.it/150&text=!'"
+                src="http://bvod.limijiaoyin.com/images/{{ item.avatar }}">
+            </a>  
           </div>
+          
+          <div class="col-xs-20">
+            <div class="org-head-info">
+              <span class="name">{{ item.name }}</span>
+              <div class="video-info">
+                <div class="video"><span class="num">67</span><span>视频</span></div>
+                <div class="played"><span class="num">55</span><span>播放</span></div>
+              </div>
+            </div>
+          </div>  
         </div>
-        <div class="org-head-desc">
-          <span>{{item.desc}}</span>
-        </div>
+        
+        {% if item.desc %}
+        <div class="org-head-desc">{{ item.desc }}</div>
+        {% endif %}
       </div>
+
       <div class="right col-xs-18">
         {% for media in item.media %}
+        {% include 'video-card.html' with video=media class='video col-xs-10' %}
+        <!--
         <div class="video-large col-xs-10">
           <div class="img">
             <img src="../images/video-cover-1.png">
@@ -71,6 +84,7 @@
             </div>
           </div>
         </div>
+        -->
         {% endfor %}
       </div>
     </li>
