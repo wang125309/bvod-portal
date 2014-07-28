@@ -1,23 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<<<<<<< HEAD
-    <head>
-        <meta charset="UTF-8">
-        <title>视频中心</title>
-        <link rel="stylesheet" href="{{ STATIC_URL }}css/video-detail.css">
-        {% include "polyfills.html" %}
-    </head>
-    <body>
-        {% include "navbar.html" with nav=request.nav %}
-        <div class="video-content">
-            <img src="{{ STATIC_URL }}img/watch-bg.png" alt="">
-            <div class="container">
-                <h4 class="path">视频 &gt; 信息学院 &gt; 健康</h4>
-                <div class="player-wrapper">
-                    <div class="" id="player" data-high="{{ video.sources.0.url }}" data-mid="{{ video.sources.1.url }}"
-                        data-image="{{ video.thumbs.l.url }}">
-                    </div>
-=======
 <head>
     <meta charset="UTF-8">
     <title>视频中心</title>
@@ -66,8 +48,7 @@
                 </div>
                 <div class="form-group">
                     <textarea type="text" readonly class="form-control" placeholder="我来说两句"
-                    style="resize: none" id="title" name="comment"></textarea>
->>>>>>> lucky/master
+                        style="resize: none" id="title" name="comment"></textarea>
                 </div>
                 <div>
                     <div class="pull-right h4" style="margin: 3px; 0px 0px">

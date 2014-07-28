@@ -16,12 +16,12 @@
         <div class="left">
           <div class="row">
             <a class="org-head-img col-xs-9">
-              <img src="../images/org-head.png"
+              <img src="http://bvod.limijiaoyin.com/images{{ department.avatar }}"
                   onError="this.src='http://placehold.it/200&text=!'">
             </a>
             <div class="org-head-info col-xs-11">
-              <span class="name">健康北航人</span>
-              <span class="owner"><i class="user-icon"></i>欧阳小胖</span>
+              <span class="name">{{ department.name }}</span>
+              <span class="owner"><i class="user-icon"></i>{{ department.owner }}</span>
               <span class="owner"><i class="clock-icon"></i>2014-05-24</span>
             </div>
             <div class="video col-xs-5">
@@ -38,22 +38,7 @@
           <div class="desc-wrapper">
             <div class="org-head-desc">
               <h4>简介</h4>
-              <p>
-                爱健康爱运动，这里有一群热爱运动的健儿
-                爱健康爱运动，这里有一群热爱运动的健儿
-                爱健康爱运动，这里有一群热爱运动的健儿
-                爱健康爱运动，这里有一群热爱运动的健儿
-                爱健康爱运动，这里有一群热爱运动的健儿
-                爱健康爱运动，这里有一群热爱运动的健儿
-                爱健康爱运动，这里有一群热爱运动的健儿
-                爱健康爱运动，这里有一群热爱运动的健儿
-                爱健康爱运动，这里有一群热爱运动的健儿
-                爱健康爱运动，这里有一群热爱运动的健儿
-                爱健康爱运动，这里有一群热爱运动的健儿
-                爱健康爱运动，这里有一群热爱运动的健儿
-                爱健康爱运动，这里有一群热爱运动的健儿
-                爱健康爱运动，这里有一群热爱运动的健儿
-              </p>  
+              <p>{{ department.desc }}</p>
             </div>
           </div>
         </div>
@@ -64,26 +49,27 @@
   <header>
     <div class="head-tab">
       {% if choicetype == "new" %}
-        <a href="?choicetype=new"><span class="nav cur">最新</span></a>
+      <a href="?choicetype=new"><span class="nav cur">最新</span></a>
       {% else %}
-        <a href="?choicetype=new"><span class="nav">最新</span></a>
+      <a href="?choicetype=new"><span class="nav">最新</span></a>
       {% endif %}
-        <span class="pull-left">|</span>
+      <span class="pull-left">|</span>
       {% if choicetype == "hot" %}
-        <a href="?choicetype=hot"><span class="nav cur">最热</span></a>
+      <a href="?choicetype=hot"><span class="nav cur">最热</span></a>
       {% else %}
-        <a href="?choicetype=hot"><span class="nav">最热</span></a>
+      <a href="?choicetype=hot"><span class="nav">最热</span></a>
       {% endif %}
-        <span class="pull-left">|</span>
+      <span class="pull-left">|</span>
       {% if choicetype == "good" %}
-        <a href="?choicetype=good"><span class="nav cur">好评</span></a>
+      <a href="?choicetype=good"><span class="nav cur">好评</span></a>
       {% else %}
-        <a href="?choicetype=good"><span class="nav">好评</span></a>
+      <a href="?choicetype=good"><span class="nav">好评</span></a>
       {% endif %}
     </div>
   </header>
 
   <div class="detail row">
+    {% for video in media %}
     <div class="col-xs-6">
       <div class="item">
         <a class="video-thumbnail" href="video/{{ video.id }}">
@@ -100,6 +86,7 @@
             </div>
         </div>
       </div>
+      {% endfor %}
     </div>
   </div>
 
