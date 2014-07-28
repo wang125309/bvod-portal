@@ -122,15 +122,18 @@ body {
 }
 
 .related-video {
-	@include card();
-	p {
-		font-weight: bold;
-		letter-spacing: 1px;
-	}
-	.info {
+	.title {
+		height: 40px;
+    	overflow: hidden;
+		text-overflow: ellipsis;
 		padding-bottom: 10px;
-		padding-top: 10px;
+		p {
+			font-weight: bold;
+			letter-spacing: 1px;
+			word-break: break-all;
+		}
 	}
+	
 	.info:not(:last-child) {
 		border-bottom: 1px solid #eee;
 	}
