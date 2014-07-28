@@ -115,7 +115,7 @@ def fetch_related_media(id=1,limit=3):
 # ------------------------
 def fake_department(offset=0, limit=7):
    s = {
-         "count": 8,
+         "count": 1,
          "departments": [{
             "desc": "mmmkkkdfdf",
             "id": 11,

@@ -9,7 +9,7 @@
 
     {% for page in pagination.pages %}
     <li {% if page == pagination.current %} class="active" {% endif %}>
-        <a href="?p={{ page }}">{{ page }}</a>
+        <a href="?p={{ page }}&choicetype={{ choicetype }}">{{ page }}</a>
     </li>
     {% endfor %}
 
