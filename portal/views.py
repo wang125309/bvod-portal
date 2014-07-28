@@ -107,7 +107,8 @@ def org_detail(request, org_id):
 @active_tab('video')
 def video_detail(request, video_id):
     video = fetch_media_item(video_id)
-
+    related = fetch_related_media(video_id)
+    
     keys = [] if 'categories' not in video else video['categories'].keys()
     video['category'] = None if len(keys) == 0 else video['categories'][keys[0]]
 
