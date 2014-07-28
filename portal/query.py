@@ -37,10 +37,10 @@ def fetch_popular_media(limit=7):
    return fetch_query_result(api_url, popular)
 
 # http://bvod.limijiaoyin.com/api/media/praise
-def fetch_praise_media(limit=7):
-   api_url = base_url+'media/praise'
-   praise = {'limit':limit}
-   return fetch_query_result(api_url, praise)
+# def fetch_praise_media(limit=7):
+#    api_url = base_url+'media/praise'
+#    praise = {'limit':limit}
+#    return fetch_query_result(api_url, praise)
 
 # http://bvod.limijiaoyin.com/api/categories/tree
 def fetch_category_tree(depth=1):
@@ -104,9 +104,9 @@ def fetch_category_recently_media(offset=0, limit=7):
 def fetch_category_popular_media(offset=0, limit=7):
    return fetch_popular_media()
 
-# http://bvod.limijiaoyin.com/api/media/praise
+# http://bvod.limijiaoyin.com/api/media/popular
 def fetch_category_priase_media(offset=0, limit=7):
-   return fetch_priase_media()
+   return fetch_popular_media()
 
 
 def fetch_department_detail(id=1):
