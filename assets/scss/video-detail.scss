@@ -125,26 +125,41 @@ body {
 	@include card;
 	padding: 10px;
 	
-	.title {
-		height: 40px;
-    	overflow: hidden;
-		padding-bottom: 10px;
+	.info {
 		margin-bottom: 10px;
-		p {
-			font-weight: bold;
-			letter-spacing: 1px;
-			word-break: break-all;
+
+		.img {
+			display: block;
+			img {
+				width: 212px;
+			}
 		}
-	}
-	
-	.info:not(:last-child) {
-		border-bottom: 1px solid #eee;
-	}
-	.name {
-		color: $gray-light;
-	}
-	.video-info {
-		color: $gray-light;
+
+		.title {
+			margin-bottom: 3px;
+			max-height: $line-height-computed * 2;
+	    	overflow: hidden;
+
+			> a {
+				letter-spacing: 1px;
+				font-weight: 500;
+				word-break: break-all;
+				color: $gray-dark;
+			}
+		}
+		
+		
+		.name {
+			color: $gray-light;
+		}
+
+		.video-info {
+			color: $gray-light;
+		}
+
+		&.last, &:last-child {
+			margin-bottom: 0px;	
+		}
 	}
 }
 
