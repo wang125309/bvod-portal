@@ -28,42 +28,37 @@
         <span class="cont">爱健康爱运动，这里有一群热爱运动的健儿</span>
       </div>
   </div>
+
   <header>
     <div class="head-tab">
       <a href="#"><span class="nav">最新</span></a>
       <a href="#"><span class="nav">最热</span></a>
       <a href="#"><span class="nav cur">好评</span></a>
     </div>
-    <div class="head-page">
-      <span>1/6</span>
-      <span>上一页</span>
-      <span>下一页</span>
-    </div>
   </header>
-  <ul class="detail row col-xs-30">
-    <li class="col-xs-6">
+
+  <div class="detail row">
+    <div class="col-xs-6">
       <div class="item">
-          <div class="img">
-            <img src="../images/video-cover-1.png">
-            <a href="#">瑜伽课教程（三）</a>
-          </div>
-          <div class="info">
-            <div class="title">美女教练陪你做瑜伽</div>
-            <div class="meta">
-              <div class="watch">
-                <i class="icon-watch"></i>1.3万
-              </div>
-              博雅课堂
+        <a class="video-thumbnail" href="video/{{ video.id }}">
+          <img src="{{ video.thumbs.m.url }}" 
+              onError="this.className='error';this.src='http://placehold.it/212x135&text=!'">    
+          <div class="comment"></div>
+        </a>
+        <div class="video-info">
+            <div class="title"></div>
+            <div class="meta clearfix">
+                <div class="watch">
+                    <i class='icon-watch'></i>
+                </div>
             </div>
-          </div>
+        </div>
       </div>
-    </li>
-  </ul>
-  <footer>
-  <div class="foot-page"><span>上一页</span><span>1</span><span>1</span><span>1</span><span>1</span><span>下一页</span></div>
-  </footer>
+    </div>
+  </div>
+
+  <footer style="text-align: center;">{% include "pagination.html" %}</footer>
 </section>
 {% include "footer.html" %}
 </body>
 </html>
-

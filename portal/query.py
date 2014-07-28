@@ -1,3 +1,4 @@
+#coding: utf-8
 import logging
 import requests
 import json
@@ -17,11 +18,13 @@ def fetch_query_result(api_url, payload, type='media'):
       logger.debug("fail to fetch data")
       return {"count":0, type:[]}
 
+
 # http://bvod.limijiaoyin.com/api/media
 def fetch_featured_media(limit=7):
    api_url = base_url+'media'
    featured = {'type':'video', 'featured':'true', 'limit':limit}
    return fetch_query_result(api_url, featured)
+
 
 # http://bvod.limijiaoyin.com/api/media/latest
 def fetch_recently_media(limit=5):
@@ -29,11 +32,13 @@ def fetch_recently_media(limit=5):
    recently = {'limit':limit}
    return fetch_query_result(api_url, recently)
 
+
 # http://bvod.limijiaoyin.com/api/media/popular
 def fetch_popular_media(limit=7):
    api_url = base_url+'media/popular'
    popular = {'limit':limit}
    return fetch_query_result(api_url, popular)
+
 
 # http://bvod.limijiaoyin.com/api/media/praise
 # def fetch_praise_media(limit=7):
@@ -41,11 +46,13 @@ def fetch_popular_media(limit=7):
 #    praise = {'limit':limit}
 #    return fetch_query_result(api_url, praise)
 
+
 # http://bvod.limijiaoyin.com/api/categories/tree
 def fetch_category_tree(depth=1):
    api_url = base_url+'categories/tree'
    category = {'depth':depth}
    return fetch_query_result(api_url, category, 'categories')
+
 
 # http://bvod.limijiaoyin.com/api/media/departments
 def fetch_department_list(offset=0, limit=7):
@@ -56,6 +63,14 @@ def fetch_department_list(offset=0, limit=7):
    }
    return fetch_query_result(api_url, department, 'departments')
 
+
+# http://bvod.limijiaoyin.com/api/media/department_media
+def fetch_department_media(id=0, limit=7):
+   api_url = base_url+'media/department_media'
+   item = {'id':id, 'limit':limit}
+   return fetch_query_result(api_url, item)
+
+
 # http://bvod.limijiaoyin.com/api/media/ads
 def fetch_ad_list(limit=7):
    api_url = base_url+'media/ads'
@@ -63,10 +78,12 @@ def fetch_ad_list(limit=7):
    result = fetch_query_result(api_url, ad, 'ads')
    return result['ads'][:limit]
 
+
 # http://bvod.limijiaoyin.com/api/media/get
 def fetch_media_item(id=0):
    r = requests.get(base_url + "media/get", params={'id':id})
    return r.json() if r.status_code == 200 else {}
+
 
 # http://bvod.limijiaoyin.com/api/media/department_media
 def fetch_deparment_media(id=0, limit=7):
@@ -74,21 +91,26 @@ def fetch_deparment_media(id=0, limit=7):
    item = {'id':id, 'limit':limit}
    return fetch_query_result(api_url, item)
 
+
 # ------------
 def fetch_recently_department(offset=0, limit=7):
    return fake_department(offset, limit)
+
 
 # ----------------
 def fetch_popular_department(offset=0, limit=7):
    return fake_department(offset, limit)
 
+
 # ----------------
 def fetch_praise_department(offset=0, limit=7):
    return fake_department(offset, limit)
 
+
 # http://bvod.limijiaoyin.com/api/media/popular
 def fetch_related_media(id=1,limit=3):
    return fetch_popular_media(limit)
+
 
 # ------------------------
 def fake_department(offset=0, limit=7):
@@ -153,6 +175,7 @@ def fake_department(offset=0, limit=7):
       }
    return s
 
+
 # http://bvod.limijiaoyin.com/api/media/latest
 def fetch_category_recently_media(offset=0, limit=7):
    s = {
@@ -204,9 +227,11 @@ def fetch_category_recently_media(offset=0, limit=7):
             }
    return s
 
+
 # http://bvod.limijiaoyin.com/api/media/popular
 def fetch_category_popular_media(offset=0, limit=7):
    return fetch_category_recently_media()
+
 
 # http://bvod.limijiaoyin.com/api/media/popular
 def fetch_category_priase_media(offset=0, limit=7):

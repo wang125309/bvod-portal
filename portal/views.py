@@ -53,26 +53,34 @@ def pagination(count, current, per_page):
 
 
 @active_tab('organization')
-def org(request):
-    viewtype = request.GET.get('viewtype', 'list')
-
-    if viewtype == 'detail':
-        return render(request, "org-detail.html",{})
-
+def org(request, view_type):
     count = fetch_department_list(offset=0, limit=0)['count']
     page = int(request.GET.get('p', None) or '1')
 
-    if viewtype == 'grid':
-        paginator = pagination(count, page, 15)
-        return render(request, "org-grid.html",{
-        	'orglist': fetch_department_list(offset=(paginator['current']-1)*15, limit=15)['departments'],
-            'pagination': paginator
-        })
+    per_page = 15 if view_type == 'grid' else 5
+    paginator = pagination(count, page, per_page)
 
-    paginator = pagination(count, page, 5)
-    return render(request, "org-list.html",{
-        'orglist': fetch_department_list(offset=(paginator['current']-1)*5, limit=5)['departments'],
+    offset = (paginator['current'] - 1) * per_page
+    limit = per_page
+    departments = fetch_department_list(offset, limit)['departments']
+
+    def add_media(dep):
+        dep['media'] = fetch_department_media(dep['id'], limit=3)['media']
+        return dep
+
+    departments = map(add_media, departments)
+
+    return render(request, 'org-' + view_type + '.html', {
+        'orglist': departments,
         'pagination': paginator 
+    })
+
+
+@active_tab('organization')
+def org_detail(request, org_id):
+    paginator = pagination(0, 1, 20)
+    return render(request, "org-detail.html",{
+        'pagination': paginator
     })
 
 
