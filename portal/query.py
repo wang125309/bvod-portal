@@ -69,10 +69,12 @@ def fetch_media_item(id=0):
    return r.json() if r.status_code == 200 else {}
 
 # http://bvod.limijiaoyin.com/api/media/department_media
-def fetch_deparment_media(id=0, limit=7):
+# fake!!!!!!
+def fetch_deparment_media(id=0, offset=0, limit=7):
    api_url = base_url+'media/department_media'
    item = {'id':id, 'limit':limit}
-   return fetch_query_result(api_url, item)
+   all = fetch_query_result(api_url, item)['media']
+   return all[offset:offset+limit]
 
 # ------------
 def fetch_recently_department(offset=0, limit=7):

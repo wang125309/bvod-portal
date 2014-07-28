@@ -2131,7 +2131,7 @@ body{background-color:#FAF9F9}
 .video-card .category{padding:5px 0;border-bottom:1px solid #eee}
 .video-card .category h5.value{font-weight:400;color:#777;font-size:14px}
 .related-video{box-shadow:0 1px 3px rgba(0,0,0,.2);padding:20px}
-.related-video .title{height:40px;overflow:hidden;text-overflow:ellipsis;padding-bottom:10px}
+.related-video .title{height:40px;overflow:hidden;padding-bottom:10px;margin-bottom:10px}
 .related-video .title p{font-weight:700;letter-spacing:1px;word-break:break-all}
 .related-video .info{padding-bottom:10px;padding-top:10px}
 .related-video .info:not(:last-child){border-bottom:1px solid #eee}
