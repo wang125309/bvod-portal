@@ -109,3 +109,9 @@ def fetch_category_priase_media(offset=0, limit=7):
    return fetch_priase_media()
 
 
+def fetch_category_detail(id=1):
+   return {
+      "name":"附中",
+      "desc":"初めまして",
+      "avatar":"11.png"
+   }
