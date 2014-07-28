@@ -69,7 +69,7 @@ def fetch_media_item(id=0):
    return r.json() if r.status_code == 200 else None
 
 
-def fetch_deparment_media(id=0, limit=7):
+def fetch_department_media(id=0, limit=7):
    api_url = base_url+'media/department_media'
    item = {'id':id, 'limit':limit}
    return fetch_query_result(api_url, item)

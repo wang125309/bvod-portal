@@ -55,57 +55,23 @@
         </div>
       </div>
       <div class="right col-xs-18">
-        <!--video item-->
+        {% for media in item.media %}
         <div class="video-large col-xs-10">
           <div class="img">
             <img src="../images/video-cover-1.png">
-            <a href="#">瑜伽课教程（三）</a>
+            <a href="#">{{ media.description_plain }}</a>
           </div>
           <div class="info">
-            <div class="title">美女教练陪你做瑜伽</div>
+            <div class="title">{{ media.title }}</div>
             <div class="meta">
               <div class="watch">
-                <i class="icon-watch"></i>1.3万
+                <i class="icon-watch"></i>  {{ media.views }}
               </div>
-              博雅课堂
+              {{ media.author }}
             </div>
           </div>
         </div>
-        <!--video item-->
-        <!--video item-->
-        <div class="video-large col-xs-10">
-          <div class="img">
-            <img src="../images/video-cover-1.png">
-            <a href="#">瑜伽教程（3）</a>
-          </div>
-          <div class="info">
-            <div class="title">美女教练陪你做瑜伽</div>
-            <div class="meta">
-              <div class="watch">
-                <i class="icon-watch"></i>1.3万
-              </div>
-              博雅课堂
-            </div>
-          </div>
-        </div>
-        <!--video item-->
-        <!--video item-->
-        <div class="video-large col-xs-10">
-          <div class="img">
-            <img src="../images/video-cover-1.png">
-            <a href="#">瑜伽教程（3）</a>
-          </div>
-          <div class="info">
-            <div class="title">美女教练陪你做瑜伽</div>
-            <div class="meta">
-              <div class="watch">
-                <i class="icon-watch"></i>1.3万
-              </div>
-              博雅课堂
-            </div>
-          </div>
-        </div>
-        <!--video item-->
+        {% endfor %}
       </div>
     </li>
     {% endfor %}

@@ -64,14 +64,28 @@ def org(request):
 
     if viewtype == 'grid':
         paginator = pagination(count, page, 15)
+        departments = fetch_department_list(offset=(paginator['current']-1)*15, limit=15)['departments']
+        for department in departments:
+            media = fetch_department_media(department['id'], limit=3)
+            department['media'] = []
+            for media in media['media']:
+                department['media'].append(media)
+
         return render(request, "org-grid.html",{
-        	'orglist': fetch_department_list(offset=(paginator['current']-1)*15, limit=15)['departments'],
+        	'orglist': departments,
             'pagination': paginator
         })
 
     paginator = pagination(count, page, 5)
+    departments = fetch_department_list(offset=(paginator['current']-1)*15, limit=15)['departments']
+    for department in departments:
+        media = fetch_department_media(department['id'], limit=3)
+        department['media'] = []
+        for media in media['media']:
+            department['media'].append(media)
+
     return render(request, "org-list.html",{
-        'orglist': fetch_department_list(offset=(paginator['current']-1)*5, limit=5)['departments'],
+        'orglist': departments,
         'pagination': paginator 
     })
 
