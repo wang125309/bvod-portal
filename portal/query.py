@@ -1,3 +1,4 @@
+#coding: utf-8
 import logging
 import requests
 import json
@@ -63,6 +64,13 @@ def fetch_department_list(offset=0, limit=7):
       'limit': limit
    }
    return fetch_query_result(api_url, department, 'departments')
+
+
+# http://bvod.limijiaoyin.com/api/media/department_media
+def fetch_department_media(id=0, limit=7):
+   api_url = base_url+'media/department_media'
+   item = {'id':id, 'limit':limit}
+   return fetch_query_result(api_url, item)
 
 
 # http://bvod.limijiaoyin.com/api/media/ads

@@ -205,9 +205,9 @@ width:67px;
 .org-list .list .item .org-head-desc {
     @include text-overflow;
     font-size:14px;
-    background: $gray-lighter;
+    background: #fafafa;
     padding: $padding-base-vertical $padding-base-horizontal;
-    color: $gray-light;
+    color: #999;
 }
 
 .org-list .list .item .org-head-desc-empty {
