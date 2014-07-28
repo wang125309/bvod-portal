@@ -210,6 +210,14 @@ width:67px;
     color: $gray-light;
 }
 
+.org-list .list .item .org-head-desc-empty {
+    @include text-overflow;
+    font-size:14px;
+    background: transparent;
+    padding: $padding-base-vertical $padding-base-horizontal;
+    color: $gray-light;
+}
+
 .org-list .list .item .video {
     @include video-card(200px, 135px);
 }

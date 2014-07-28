@@ -2148,6 +2148,7 @@ body{background:#FAF9F9}
 .org-list .list .item .org-head-info .video-info div:first-child{padding-left:0;border-right:1px solid #e6e5e5;width:67px}
 .org-list .list .item .org-head-info .video-info span{float:left}
 .org-list .list .item .org-head-desc{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:14px;background:#eee;padding:6px 12px;color:#777}
+.org-list .list .item .org-head-desc-empty{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:14px;background:0 0;padding:6px 12px;color:#777}
 .org-list .list .item .video .video-thumbnail{display:block;position:relative;overflow:hidden;width:200px;height:135px}
 .org-list .list .item .video .video-thumbnail>img{height:135px;margin-left:-20px}
 .org-list .list .item .video .video-thumbnail>img.error{height:100%;margin-left:0}
