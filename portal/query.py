@@ -1,4 +1,3 @@
-#coding: utf-8
 import logging
 import requests
 import json
@@ -18,13 +17,11 @@ def fetch_query_result(api_url, payload, type='media'):
       logger.debug("fail to fetch data")
       return {"count":0, type:[]}
 
-
 # http://bvod.limijiaoyin.com/api/media
 def fetch_featured_media(limit=7):
    api_url = base_url+'media'
    featured = {'type':'video', 'featured':'true', 'limit':limit}
    return fetch_query_result(api_url, featured)
-
 
 # http://bvod.limijiaoyin.com/api/media/latest
 def fetch_recently_media(limit=5):
@@ -32,13 +29,11 @@ def fetch_recently_media(limit=5):
    recently = {'limit':limit}
    return fetch_query_result(api_url, recently)
 
-
 # http://bvod.limijiaoyin.com/api/media/popular
 def fetch_popular_media(limit=7):
    api_url = base_url+'media/popular'
    popular = {'limit':limit}
    return fetch_query_result(api_url, popular)
-
 
 # http://bvod.limijiaoyin.com/api/media/praise
 # def fetch_praise_media(limit=7):
@@ -46,13 +41,11 @@ def fetch_popular_media(limit=7):
 #    praise = {'limit':limit}
 #    return fetch_query_result(api_url, praise)
 
-
 # http://bvod.limijiaoyin.com/api/categories/tree
 def fetch_category_tree(depth=1):
    api_url = base_url+'categories/tree'
    category = {'depth':depth}
    return fetch_query_result(api_url, category, 'categories')
-
 
 # http://bvod.limijiaoyin.com/api/media/departments
 def fetch_department_list(offset=0, limit=7):
@@ -63,14 +56,6 @@ def fetch_department_list(offset=0, limit=7):
    }
    return fetch_query_result(api_url, department, 'departments')
 
-
-# http://bvod.limijiaoyin.com/api/media/department_media
-def fetch_department_media(id=0, limit=7):
-   api_url = base_url+'media/department_media'
-   item = {'id':id, 'limit':limit}
-   return fetch_query_result(api_url, item)
-
-
 # http://bvod.limijiaoyin.com/api/media/ads
 def fetch_ad_list(limit=7):
    api_url = base_url+'media/ads'
@@ -78,12 +63,10 @@ def fetch_ad_list(limit=7):
    result = fetch_query_result(api_url, ad, 'ads')
    return result['ads'][:limit]
 
-
 # http://bvod.limijiaoyin.com/api/media/get
 def fetch_media_item(id=0):
    r = requests.get(base_url + "media/get", params={'id':id})
    return r.json() if r.status_code == 200 else {}
-
 
 # http://bvod.limijiaoyin.com/api/media/department_media
 def fetch_deparment_media(id=0, limit=7):
@@ -91,31 +74,26 @@ def fetch_deparment_media(id=0, limit=7):
    item = {'id':id, 'limit':limit}
    return fetch_query_result(api_url, item)
 
-
 # ------------
 def fetch_recently_department(offset=0, limit=7):
    return fake_department(offset, limit)
-
 
 # ----------------
 def fetch_popular_department(offset=0, limit=7):
    return fake_department(offset, limit)
 
-
 # ----------------
 def fetch_praise_department(offset=0, limit=7):
    return fake_department(offset, limit)
 
-
 # http://bvod.limijiaoyin.com/api/media/popular
 def fetch_related_media(id=1,limit=3):
-   return fetch_popular_media(limit)
-
+   return fetch_popular_media(limit)['media']
 
 # ------------------------
 def fake_department(offset=0, limit=7):
    s = {
-         "count": 8,
+         "count": limit,
          "departments": [{
             "desc": "mmmkkkdfdf",
             "id": 11,
@@ -123,61 +101,13 @@ def fake_department(offset=0, limit=7):
             "avatar": "11.jpg",
             "boss": "sdfasfas",
             "video_count": 32,
-            "play_count": 23,
-            "videos": [{
-               "count": 1,
-               "media": [{
-                  "description": "null",
-                  "views": 0,
-                  "likes": 0,
-                  "podcast": "null",
-                  "id": 256,
-                  "categories": {},
-                  "author": "admin",
-                  "url": "http://bvod.limijiaoyin.com/media/54c9f6b9de087e480a90f234a0a5173e_720flv-41",
-                  "title": "54c9f6b9de087e480a90f234a0a5173e_720.flv",
-                  "publish_on": "2014-07-27 20:49:12",
-                  "slug": "54c9f6b9de087e480a90f234a0a5173e_720flv-41",
-                  "comment_count": 0,
-                  "urls": [{
-                     "url": "http://bvod.limijiaoyin.com/data/media/51ec3007db8bfbacd2918b637f4dd087_720.mp4",
-                     "width": 1280,
-                     "quality": "720",
-                     "height": 720
-                  }, {
-                     "url": "http://bvod.limijiaoyin.com/data/media/51ec3007db8bfbacd2918b637f4dd087_360.mp4",
-                     "width": 480,
-                     "quality": "360",
-                     "height": 360
-                  }],
-                  "description_plain": "",
-                  "type": "video",
-                  "thumbs": {
-                     "s": {
-                        "url": "http://bvod.limijiaoyin.com/images/media/256s.jpg",
-                        "x": 210,
-                        "y": 135
-                     },
-                     "m": {
-                        "url": "http://bvod.limijiaoyin.com/images/media/256m.jpg",
-                        "x": 234,
-                        "y": 400
-                     },
-                     "l": {
-                        "url": "http://bvod.limijiaoyin.com/images/media/256l.jpg",
-                        "x": 444,
-                        "y": 377
-                     }
-                  }
-               }]
-            }]
-         }]
+            "play_count": 23
+         } for i in range(limit)]
       }
    return s
 
-
 # http://bvod.limijiaoyin.com/api/media/latest
-def fetch_category_recently_media(offset=0, limit=7):
+def fetch_category_recently_media(id=1, offset=0, limit=7):
    s = {
                "count": limit,
                "media": [{
@@ -227,14 +157,12 @@ def fetch_category_recently_media(offset=0, limit=7):
             }
    return s
 
-
 # http://bvod.limijiaoyin.com/api/media/popular
-def fetch_category_popular_media(offset=0, limit=7):
+def fetch_category_popular_media(id=1, offset=0, limit=7):
    return fetch_category_recently_media()
 
-
 # http://bvod.limijiaoyin.com/api/media/popular
-def fetch_category_priase_media(offset=0, limit=7):
+def fetch_category_priase_media(id=1, offset=0, limit=7):
    return fetch_category_recently_media()
 
 

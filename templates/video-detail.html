@@ -102,57 +102,26 @@
                 </div>
                 <h3>相关视频</h3>
                 <div class="related-video">
+                    {% for item in related %}
                     <div class="row info">
                         <div class="col-xs-30 item">
                             <div class="col-xs-15">
                                 <div class="img">
-                                    <img src="../images/video-cover-1.png">
-                                    
+                                    <img src="{{ item.thumbs.m.url }}">
                                 </div>
                             </div>
                             <div class="col-xs-15">
-                                <p>爱健康爱运动，这里有一群热爱运动得健儿</p>
-                                <div class="name">健康北航人</div>
+                                <div class="title">
+                                    <p>{{ item.title }}</p>
+                                </div>
+                                <div class="name">{{ item.author }}</div>
                                 <div class="video-info">
-                                    <div class="played"><i class="icon-watch"></i><span class="num">&nbsp;&nbsp;55</span></div>
+                                    <div class="played"><i class="icon-watch"></i><span class="num">&nbsp;&nbsp;{{ item.views }}</span></div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="row info">
-                        <div class="col-xs-30 item">
-                            <div class="col-xs-15">
-                                <div class="img">
-                                    <img src="../images/video-cover-1.png">
-                                    
-                                </div>
-                            </div>
-                            <div class="col-xs-15">
-                                <p>爱健康爱运动，这里有一群热爱运动得健儿</p>
-                                <div class="name">健康北航人</div>
-                                <div class="video-info">
-                                    <div class="played"><i class="icon-watch"></i><span class="num">&nbsp;&nbsp;55</span></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row info">
-                        <div class="col-xs-30 item">
-                            <div class="col-xs-15">
-                                <div class="img">
-                                    <img src="../images/video-cover-1.png">
-                                    
-                                </div>
-                            </div>
-                            <div class="col-xs-15">
-                                <p>爱健康爱运动，这里有一群热爱运动得健儿</p>
-                                <div class="name">健康北航人</div>
-                                <div class="video-info">
-                                    <div class="played"><i class="icon-watch"></i><span class="num">&nbsp;&nbsp;55</span></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>
