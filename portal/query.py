@@ -181,8 +181,13 @@ def fetch_category_priase_media(id=1, offset=0, limit=7):
 
 
 def fetch_department_detail(id=1):
-   return {
-      "name":"sfasfasfasf",
-      "desc":"werfwfasf",
-      "avatar":"11.png"
-   }
+   api_url = base_url + 'media/departments'
+   payload = {'id':id}
+   r = requests.get(api_url, params=payload)
+   if r.status_code == 200:
+      result = r.json()
+      logger.debug("fetched data: " + str(result))
+      return result
+   else:
+      logger.debug("fail to fetch data")
+      return {}
