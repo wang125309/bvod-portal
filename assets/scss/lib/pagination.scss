@@ -3,6 +3,7 @@
 // --------------------------------------------------
 $pagination-active-bg: #1665ad;
 $pagination-active-border: #1665ad;
+
 .pagination {
   display: inline-block;
   padding-left: 0;
@@ -88,4 +89,14 @@ $pagination-active-border: #1665ad;
 // Small
 .pagination-sm {
   @include pagination-size(4px, 12px, $font-size-small, 0px);
+}
+
+.pagination-wrapper {
+  .pagination {
+    margin: 0px;
+  }
+
+  padding: 20px 0px;
+  height: 67px;
+  text-align: center;
 }

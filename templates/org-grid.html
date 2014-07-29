@@ -39,7 +39,13 @@
   <div class="organizations grid row">
     {% for org in orglist %}
     <div class="col-xs-6">
+
+      {% if forloop.count >= 10 %}
+      <div class="item last">
+      {% else %}
       <div class="item">
+      {% endif %}
+
         <div class="img">
           <div class="img-wrapper">
             <img src="http://bvod.limijiaoyin.com/images/{{ org.avatar }}"
@@ -74,7 +80,9 @@
     {% endfor %}
   </div>
 
-  <footer style="text-align: center;">{% include "pagination.html" %}</footer>
+  <footer class="pagination-wrapper">
+    {% include "pagination.html" %}
+  </footer>
 </section>
 
 {% include "footer.html" %}
