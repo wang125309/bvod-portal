@@ -61,7 +61,7 @@ def fetch_category_tree(depth=1):
 
 def fetch_media_item(id=0):
    item = {'id':id}
-   return fetch_query_result(media_url, item)['media']
+   return fetch_query_result(media_url, item)['media'][0]
 
 
 def fetch_related_media(id=1,limit=3):
@@ -92,7 +92,7 @@ def fetch_department_media(slug, offset=0, limit=7):
 
 def fetch_department_detail(id=1):
    department = {'id':id}
-   return fetch_query_result(departments_url, department, 'departments')['departments']
+   return fetch_query_result(departments_url, department, 'departments')['departments'][0]
 
 
 def fetch_recently_department(offset=0, limit=7):
