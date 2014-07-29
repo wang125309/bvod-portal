@@ -109,7 +109,7 @@ def fake_department(offset=0, limit=7):
    return {
          "count": limit,
          "departments": [{
-            "desc": "mmmkkkdfdf",
+            "desc": "mmmkkkdfdfdfkjd",
             "id": 11,
             "name": "jiji",
             "avatar": "11.jpg",

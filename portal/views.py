@@ -95,6 +95,10 @@ def org_detail(request, org_id):
     paginator = pagination(count, page, per_page)
     offset = (page - 1) * per_page
     media = fetch_department_media(org_id, offset, limit=per_page)['media']
+    logger.debug("media")
+    logger.debug(media)
+    logger.debug("department")
+    logger.debug(department)
 
     return render(request, "org-detail.html",{
         'media': media,
