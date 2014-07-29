@@ -100,7 +100,7 @@ def video_detail(request, video_id):
     related = fetch_related_media(video_id)
 
     keys = [] if 'categories' not in video else video['categories'].keys()
-    video['category'] = None if len(keys) == 0 else video['categories'][keys[0]]
+    video['category'] = None# if len(keys) == 0 else video['categories'][keys[0]]
 
     video['views'] = commaSeparatedNumber(video['views'])
     video['likes'] = commaSeparatedNumber(video['likes'])

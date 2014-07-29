@@ -21,7 +21,7 @@ def fetch_query_result(api_url, payload, type='media'):
 
 ####################### front page ##########################
 def fetch_featured_media(limit=7):
-   featured = {'type':'video', 'featured':'１', 'limit':limit}
+   featured = {'featured':'1', 'limit':limit}
    return fetch_query_result(media_url, featured)
 
 
