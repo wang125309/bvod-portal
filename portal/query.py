@@ -182,7 +182,11 @@ def fetch_category_priase_media(id=1, offset=0, limit=7):
 
 def fetch_department_detail(id=1):
    return {
-      "name":"sfasfasfasf",
-      "desc":"werfwfasf",
-      "avatar":"11.png"
+      "name": "sfasfasfasf",
+      "desc": "werfwfasf",
+      "boss": "hello",
+      "create_time": "2014-03-03",
+      "avatar": "11.png",
+      "video_count": 57,
+      "play_count": 55
    }

@@ -72,6 +72,8 @@ def org(request, view_type):
     
     def add_media(dep):
         dep['media'] = fetch_department_media(dep['id'], limit=3)['media']
+        logger.debug("hello:")
+        logger.debug(dep)
         return dep
 
     departments = map(add_media, departments)
@@ -96,6 +98,7 @@ def org_detail(request, org_id):
 
     return render(request, "org-detail.html",{
         'media': media,
+        'count': count,
         'department': department,
         'choicetype': choicetype,
         'pagination': paginator
