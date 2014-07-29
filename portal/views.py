@@ -69,9 +69,11 @@ def org(request, view_type):
     offset = (paginator['current'] - 1) * per_page
     limit = per_page
     departments = fetch(offset, limit)['departments']
+    logger.debug("departments:ccv")
+    logger.debug(departments)
     
     def add_media(dep):
-        dep['media'] = fetch_department_media(dep['id'], limit=3)['media']
+        dep['media'] = fetch_department_media(dep['id'], limit=3)
         logger.debug("hello:")
         logger.debug(dep)
         return dep
@@ -90,11 +92,16 @@ def org_detail(request, org_id):
     choicetype = request.GET.get('choicetype', 'new')
     page = int(request.GET.get('p', None) or '1')
     department = fetch_department_detail(org_id)
-    count = fetch_department_media(org_id, offset=0, limit=0)['count']
+    fetch = fetch_department_recently_media
+    if choicetype == 'hot':
+        fetch = fetch_department_popular_media
+    elif choicetype == 'good':
+        fetch = fetch_department_priase_media
+    count = fetch(org_id, offset=0, limit=0)['count']
     per_page = 10
     paginator = pagination(count, page, per_page)
     offset = (page - 1) * per_page
-    media = fetch_department_media(org_id, offset, limit=per_page)['media']
+    media = fetch_department_media(org_id, offset, limit=per_page)
     logger.debug("media")
     logger.debug(media)
     logger.debug("department")

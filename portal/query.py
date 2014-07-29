@@ -85,7 +85,7 @@ def fetch_category_priase_media(slug, offset=0, limit=7):
 
 
 #################### department page #######################
-def fetch_deparment_media(slug, offset=0, limit=7):
+def fetch_department_media(slug, offset=0, limit=7):
    items = {'department':slug, 'limit':limit, 'offset':offset}
    return fetch_query_result(media_url, items)['media']
 
