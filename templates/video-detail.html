@@ -1,141 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>视频中心</title>
-    <link rel="stylesheet" href="{{ STATIC_URL }}css/video-detail.css">
-    {% include "polyfills.html" %}
-</head>
-<body>
-    {% include "navbar.html" with nav=request.nav %}
-
-    <div class="video-content">
-        <img src="{{ STATIC_URL }}img/watch-bg.png" alt="">
-        <div class="container">
-            <h4 class="path">视频 &gt; 信息学院 &gt; 健康</h4>
-            <div class="player-wrapper">
-                <div class="" id="player" data-high="{{ video.sources.0.url }}" data-mid="{{ video.sources.1.url }}"
-                    data-image="{{ video.thumbs.l.url }}">
-                </div>    
-            </div>
-            <div>
-                <div class="pull-right h4" style="margin: 3px; 0px 0px">
-                    <i class="icon-like"></i>
-                    <span class="btn-lik">喜欢</span>
-                    <span class="links">{{ video.likes|default:"0" }}</span>
-                    &nbsp;&nbsp;
-
-                    <i class="icon-dislike"></i>
-                    <span class="btn-dislike">不喜欢</span>
-                    <span class="dislikes">{{ video.dislikes|default:"0" }}</span> 
-                    &nbsp;&nbsp;
-
-                    <i class="icon-share"></i>
-                    <span class="share-btn">分享</span>
+    <head>
+        <meta charset="UTF-8">
+        <title>视频中心</title>
+        <link rel="stylesheet" href="{{ STATIC_URL }}css/video-detail.css">
+        {% include "polyfills.html" %}
+    </head>
+    <body>
+        {% include "navbar.html" with nav=request.nav %}
+        <div class="video-content">
+            <img src="{{ STATIC_URL }}img/watch-bg.png" alt="">
+            <div class="container">
+                <h4 class="path">视频 &gt; 信息学院 &gt; 健康</h4>
+                <div class="player-wrapper">
+                    <div class="" id="player" data-high="{{ video.sources.0.url }}" data-mid="{{ video.sources.1.url }}"
+                        data-image="{{ video.thumbs.l.url }}">
+                    </div>
                 </div>
-                <h3 class="title">{{ video.title }}</h4>
+                <div>
+                    <div class="pull-right h4" style="margin: 3px; 0px 0px">
+                        <i class="icon-like"></i>
+                        <span class="btn-lik">喜欢</span>
+                        <span class="links">{{ video.likes|default:"0" }}</span>
+                        &nbsp;&nbsp;
+
+                        <i class="icon-dislike"></i>
+                        <span class="btn-dislike">不喜欢</span>
+                        <span class="dislikes">{{ video.dislikes|default:"0" }}</span> 
+                        &nbsp;&nbsp;
+
+                        <i class="icon-share"></i>
+                        <span class="share-btn">分享</span>
+                    </div>
+                    <h3 class="title">{{ video.title }}</h4>
+                </div>
             </div>
         </div>
-    </div>
 
-        <div class="container video-meta">
-            <div class="col-xs-18" style="padding-right: 30px;">
-                <h3>评论<small style="margin-top: 9px;" class="pull-right">0/144</small></h3>
-                <form action="" role="form">
-                    <div class="form-group">
-                        <input type="text" class="form-control" id="title"
-                        readonly placeholder="昵称" name="title">
-                    </div>
-                    <div class="form-group">
-                        <textarea type="text" readonly class="form-control" placeholder="我来说两句"
-                        style="resize: none" id="title" name="comment"></textarea>
-                    </div>
-                    <div class="form-group">
-                        <button class="btn btn-default pull-right" disabled="disabled">发表评论</button>
-                    </div>
-                </form>
-                <img src="{{ STATIC_URL }}img/no-comment.png" alt="" style="max-width: 100%">
-            </div>
-            <div class="col-xs-12">
-                <h3>视频信息</h3>
-                <div class="video-card">
-                    <div class="row info">
-                        <div class="col-xs-18">
-                            <div class="col-xs-10">
-                                <span style="font-size: 60px;color: #777;"
-                                class="glyphicon glyphicon-user"></span>
-                            </div>
-                            <div class="col-xs-20">
-                                <h4>{{ video.author }}</h4>
-                                <h4 class="small">
-                                {% if video.publish_on and video.publish_on != "None" %}
-                                    {{ video.publish_on|default:"" }}
-                                {% endif %}
-                                </h4>
-                            </div>
+            <div class="container video-meta">
+                <div class="col-xs-18" style="padding-right: 30px;">
+                    <h3>评论<small style="margin-top: 9px;" class="pull-right">0/144</small></h3>
+                    <form action="" role="form">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="title"
+                            readonly placeholder="昵称" name="title">
                         </div>
-                        <div class="col-xs-6 views">
-                            <h4>{{ video.views|default:"0" }}</h4>
-                            <h4>播放</h4>
+                        <div class="form-group">
+                            <textarea type="text" readonly class="form-control" placeholder="我来说两句"
+                            style="resize: none" id="title" name="comment"></textarea>
                         </div>
-                        <div class="col-xs-6 comments">
-                            <h4>{{ video.comment_count|default:"0" }}</h4>
-                            <h4>评论</h4>
+                        <div class="form-group">
+                            <button class="btn btn-default pull-right" disabled="disabled">发表评论</button>
                         </div>
-                    </div>
-                    <div class="desc">
-                        <h5>简介</h5>
-                        <p>{{ video.description_plain|default:"暂无简介" }}</p>
-                    </div>
-                    <div class="category row">
-                        <div class="col-xs-4">
-                            <h5>分类</h5>
-                        </div>
-                        <div class="col-xs-26">
-                            <h5 class='value'>{{ video.category|default:"无" }}</h5>
-                        </div>
-                    </div>
-                    <div class="tags row">
-                        <div class="col-xs-4">
-                            <h5>标签</h5>
-                        </div>
-                        <div class="col-xs-26">
-                            <h5 class='value'>{{ video.category|default:"无" }}</h5>
-                        </div>
-                    </div>
+                    </form>
+                    <img src="{{ STATIC_URL }}img/no-comment.png" alt="" style="max-width: 100%">
                 </div>
-                <h3>相关视频</h3>
-                <div class="related-video">
-                    {% for item in related %}
-                    {% if forloop.last %}
-                    <div class="info last">
-                    {% else %}
-                    <div class="info">
-                    {% endif %}
-                        <div class="row">
-                            <div class="col-xs-16">
-                                <a href="/video/{{ item.id }}" class="img">
-                                    <img src="{{ item.thumbs.m.url }}">
-                                </a>
+                <div class="col-xs-12">
+                    <h3>视频信息</h3>
+                    <div class="video-card">
+                        <div class="row info">
+                            <div class="col-xs-18">
+                                <div class="col-xs-10">
+                                    <span style="font-size: 60px;color: #777;"
+                                    class="glyphicon glyphicon-user"></span>
+                                </div>
+                                <div class="col-xs-20">
+                                    <h4>{{ video.author }}</h4>
+                                    <h4 class="small">
+                                    {% if video.publish_on and video.publish_on != "None" %}
+                                        {{ video.publish_on|default:"" }}
+                                    {% endif %}
+                                    </h4>
+                                </div>
                             </div>
-                            <div class="col-xs-14">
-                                <p class="title">
-                                    <a href="/video/{{ item.id }}">{{ item.title }}</a>
-                                </p>
-                                <div class="name">{{ item.author }}</div>
-                                <div class="video-info">
-                                    <div class="played"><i class="icon-watch"></i><span class="num">&nbsp;&nbsp;{{ item.views }}</span></div>
+                            <div class="col-xs-6 views">
+                                <h4>{{ video.views|default:"0" }}</h4>
+                                <h4>播放</h4>
+                            </div>
+                            <div class="col-xs-6 comments">
+                                <h4>{{ video.comment_count|default:"0" }}</h4>
+                                <h4>评论</h4>
+                            </div>
+                        </div>
+                        <div class="desc">
+                            <h5>简介</h5>
+                            <p>{{ video.description_plain|default:"暂无简介" }}</p>
+                        </div>
+                        <div class="category row">
+                            <div class="col-xs-4">
+                                <h5>分类</h5>
+                            </div>
+                            <div class="col-xs-26">
+                                <h5 class='value'>{{ video.category|default:"无" }}</h5>
+                            </div>
+                        </div>
+                        <div class="tags row">
+                            <div class="col-xs-4">
+                                <h5>标签</h5>
+                            </div>
+                            <div class="col-xs-26">
+                                <h5 class='value'>{{ video.category|default:"无" }}</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <h3>相关视频</h3>
+                    <div class="related-video">
+                        {% for item in related %}
+                        {% if forloop.last %}
+                        <div class="info last">
+                        {% else %}
+                        <div class="info">
+                        {% endif %}
+                            <div class="row">
+                                <div class="col-xs-16">
+                                    <a href="/video/{{ item.id }}" class="img">
+                                        <img src="{{ item.thumbs.m.url }}">
+                                    </a>
+                                </div>
+                                <div class="col-xs-14">
+                                    <p class="title">
+                                        <a href="/video/{{ item.id }}">{{ item.title }}</a>
+                                    </p>
+                                    <div class="name">{{ item.author }}</div>
+                                    <div class="video-info">
+                                        <div class="played"><i class="icon-watch"></i><span class="num">&nbsp;&nbsp;{{ item.views }}</span></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                        {% endfor %}
                     </div>
-                    {% endfor %}
                 </div>
             </div>
-        </div>
-    <script type="text/javascript" src="{{ STATIC_URL }}js/require.config.js"></script>
-    <script type="text/javascript" src="{{ STATIC_URL }}components/requirejs/require.js"></script>
-    <script>require(["js/video-detail"]);</script>
-    {% include "footer.html" %}
-</body>
+        <script type="text/javascript" src="{{ STATIC_URL }}js/require.config.js"></script>
+        <script type="text/javascript" src="{{ STATIC_URL }}components/requirejs/require.js"></script>
+        <script>require(["js/video-detail"]);</script>
+        {% include "footer.html" %}
+    </body>
 </html>
