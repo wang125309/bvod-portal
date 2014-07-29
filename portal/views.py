@@ -6,7 +6,7 @@ from django.core.paginator import Paginator
 import django_active_tab as active_tab
 
 from query import *
-
+from utils import *
 
 logger = logging.getLogger(__name__)
 
@@ -115,8 +115,14 @@ def video_detail(request, video_id):
     related = fetch_related_media(video_id)
 
     keys = [] if 'categories' not in video else video['categories'].keys()
-    video['category'] = None if len(keys) == 0 else video['categories'][keys[0]]
+    video['category'] = None# if len(keys) == 0 else video['categories'][keys[0]]
 
+    video['views'] = commaSeparatedNumber(video['views'])
+    video['likes'] = commaSeparatedNumber(video['likes'])
+    video['dislikes'] = commaSeparatedNumber(video['dislikes'])
+    video['comment_count'] = commaSeparatedNumber(video['comment_count'])
+
+    video['publish_on'] = fancyDate(video['publish_on'])
     return render(request, "video-detail.html", {
     	'video': video,
         'related':related
