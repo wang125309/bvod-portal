@@ -7,3 +7,5 @@ logs/*
 *.pyc
 nohup.out
 uwsgi.pid
+_static
+portal_static

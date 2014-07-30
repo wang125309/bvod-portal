@@ -9,3 +9,4 @@ ALLOWED_HOSTS = '*'
 from base.common import *
 from base.loggers import LOGGING
 
+STATIC_URL = "/portal_static/"
