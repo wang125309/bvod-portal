@@ -106,6 +106,10 @@ body {
 			font-weight: normal;
 			color: $gray-light;
 			font-size: $font-size-base;
+			.tag {
+				background-color: rgb(245, 245, 245);
+				padding: 1px 3px;
+			}
 		}
 	}
 
