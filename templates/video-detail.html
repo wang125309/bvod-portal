@@ -112,6 +112,7 @@
                     </div>
                 </div>
             </div>
+            {% if related %}
             <h3>相关视频</h3>
             <div class="related-video">
                 {% for item in related %}
@@ -137,6 +138,7 @@
                 </div>
                 {% endfor %}
             </div>
+            {% endif %}
         </div>
     </div>
     <script type="text/javascript" src="{{ STATIC_URL }}js/require.config.js"></script>
