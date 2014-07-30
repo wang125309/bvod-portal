@@ -1,5 +1,5 @@
 var require = {
-    baseUrl: "/static",
+    baseUrl: "/portal_static",
     paths: {
         'underscore': 'components/underscore/underscore.js',
         'jquery': 'components/jquery/dist/jquery.min',
