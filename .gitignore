@@ -6,3 +6,4 @@ venv
 logs/*
 *.pyc
 nohup.out
+uwsgi.pid
