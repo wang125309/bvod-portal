@@ -36,7 +36,7 @@ def fetch_popular_media(limit=7):
 
 
 def fetch_ad_list(limit=7):
-   api_url = base_url+'media/ads'
+   api_url = base_url+'ads'
    ad = {}
    result = fetch_query_result(api_url, ad, 'ads')
    return result['ads'][:limit]
@@ -60,12 +60,10 @@ def fetch_category_tree(depth=1):
 
 
 def fetch_media_item(id=0):
+   api_url = media_url+'/get'
    item = {'id':id}
-   return fetch_query_result(media_url, item)['media'][0]
+   return fetch_query_result(api_url, item)
 
-
-def fetch_related_media(id=1,limit=3):
-   return fetch_popular_media(limit)['media']
 
 def fetch_category_recently_media(slug, offset=0, limit=7):
    items = {'category':slug, 'offset':offset, 'limit':limit, 'order':'publish_on desc'}

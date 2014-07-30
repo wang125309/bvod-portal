@@ -97,10 +97,13 @@ def org_detail(request, org_id):
 @active_tab('video')
 def video_detail(request, video_id):
     video = fetch_media_item(video_id)
-    related = fetch_related_media(video_id)
+    if 'error' in video:
+        return redirect('http://bvod.limijiaoyin.com/wa')
 
-    keys = [] if 'categories' not in video else video['categories'].keys()
-    video['category'] = None if len(keys) == 0 else video['categories'][keys[0]]
+    related = video['related_media'][:3]
+    video['related_media'] = []
+
+    video['category'] = '/'.join(video['categories'].values())
 
     video['views'] = commaSeparatedNumber(video['views'])
     video['likes'] = commaSeparatedNumber(video['likes'])
