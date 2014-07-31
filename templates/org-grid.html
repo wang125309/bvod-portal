@@ -48,39 +48,38 @@
 
         <div class="img">
           <div class="img-wrapper">
-            <img src="http://bvod.limijiaoyin.com/images/{{ org.avatar }}"
+            <img src="{{ org.avatar }}"
                 onError="this.src='http://placehold.it/132&text=!'">
           </div>
           <div class="name">{{ org.name }}</div>
           <div class="video-info">
             <div class="video"><span class="num">
-              {{ org.video_count }}</span><span>视频</span>
+              {{ org.media }}</span><span>视频</span>
             </div>|
             <div class="played">
-              <span class="num">{{ org.play_count }}</span><span>播放</span>
+              <span class="num">{{ org.views }}</span><span>播放</span>
             </div>
           </div>
-          <a href="/organization/{{ org.id }}">
-            <span>{{ org.desc }}</span>
+          <a class="big" href="/organization/{{ org.id }}">
+            <span>{{ org.description }}</span>
           </a>
         </div>
         <div class="tab-list">
-          <div class="tab">
-            <img src="../images/video-cover-1.png" onError="this.src='http://placehold.it/30&text=!'">
-          </div>
-          <div class="tab">
-            <img src="../images/video-cover-1.png" onError="this.src='http://placehold.it/30&text=!'">
-          </div>
-          <div class="tab">
-            <img src="../images/video-cover-1.png" onError="this.src='http://placehold.it/30&text=!'">
-          </div>
+          {% for media in org.medias %}
+            <div class="tab">
+            <a href="../video/{{ media.id }}" class="tab-a">
+                  <img src="{{ media.thumbs.m.url }}" 
+                      onError="this.className='error';this.src='http://placehold.it/212x135&text=!'">
+            </a>
+            </div>
+          {% endfor %}
         </div>
       </div>
     </div>
     {% endfor %}
   </div>
 
-  <footer class="pagination-wrapper">
+  <footer class="pagination-wrapper" style="text-align: center;">
     {% include "pagination.html" %}
   </footer>
 </section>

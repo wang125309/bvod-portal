@@ -12,25 +12,33 @@ body {
 }
 
 .organizations {
-    min-height:1000px;
+    min-height: 1000px;
+}
+
+.organizations.grid {
+    min-height: 314px * 3;
+}
+
+.pagination {
+    margin-top: 0px;
 }
 
 .img-banner{
-width:100%;
-height:200px;
-position:relative;
-margin-top:68px;
+    width:100%;
+    position:relative;
+    margin-top:68px;
 }
 .img-banner img{
-width:100%;
-max-height:200px;
+    width:100%;
+    max-height:200px;
 }
 .img-banner .title{
-position:absolute;
-top:60px;
-font-size:30px;
-color:#226e98;
+    position:absolute;
+    top:60px;
+    font-size:30px;
+    color:#226e98;
 }
+
 .img-banner .desc{
 position:absolute;
 top:116px;
@@ -151,7 +159,7 @@ list-style-type:none;
     margin-bottom: 20px;
 }
 
-.org-list .list .item .org-head-img {
+.org-list .org-head-img {
     @include square(124px);
     display: block;
     border: 3px solid #fff;
@@ -159,18 +167,18 @@ list-style-type:none;
     box-shadow: 0px 1px 3px rgba(0, 0, 0, .3);
 }
 
-.org-list .list .item .org-head-img img{
+.org-list .org-head-img img{
     @include square(100%);
     border-radius: 8px;
     box-shadow: inset -1px 1px 4px rgba(0, 0, 0, .2);
 }
 
-.org-list .list .item .org-head-info .name{
+.org-list .org-head-info .name{
 display:block;
 font-size:20px;
 color:#000;
 }
-.org-list .list .item .org-head-info .owner{
+.org-list .org-head-info .owner{
 display:block;
 font-size:12px;
 color:#999;
@@ -194,7 +202,7 @@ border-right:1px solid #e6e5e5;
 width:67px;
 }
 
-.org-list .list .item .org-head-desc {
+.org-list .org-head-desc {
     @include text-overflow;
     font-size:14px;
     background: #fafafa;
@@ -202,7 +210,7 @@ width:67px;
     color: #999;
 }
 
-.org-list .list .item .org-head-desc-empty {
+.org-list .org-head-desc-empty {
     @include text-overflow;
     font-size:14px;
     background: transparent;
@@ -219,12 +227,16 @@ width:67px;
 margin-top:20px;
 }
 .org-list .grid .item{
-position:relative;
-background-color:  #ffffff;
-border: none;
-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);
-height: 294px;
-margin-bottom:20px;
+    position:relative;
+    background-color:  #ffffff;
+    border: none;
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);
+    height: 294px;
+    margin-bottom:20px;
+    
+    &.last, &:last-child {
+        margin-bottom: 20px;
+    }
 }
 .org-list .grid .item .img {
     position:relative;
@@ -330,6 +342,7 @@ height:100%;
     font-size:20px;
     color:#000;
     display:block;
+    margin-bottom:20px;
 }
 
 .org-list .banner .org-head-info .owner{

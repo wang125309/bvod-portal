@@ -2,6 +2,7 @@ import logging
 
 from django.shortcuts import render, redirect
 from django.core.paginator import Paginator
+from datetime import datetime
 
 import django_active_tab as active_tab
 
@@ -73,9 +74,9 @@ def org(request, view_type):
     logger.debug(departments)
     
     def add_media(dep):
-        dep['media'] = fetch_department_media(dep['id'], limit=3)
+        dep['medias'] = fetch_department_media(dep['slug'], limit=3)
         logger.debug("hello:")
-        logger.debug(dep)
+        logger.debug(dep['medias'])
         return dep
 
     departments = map(add_media, departments)
@@ -92,23 +93,25 @@ def org_detail(request, org_id):
     choicetype = request.GET.get('choicetype', 'new')
     page = int(request.GET.get('p', None) or '1')
     department = fetch_department_detail(org_id)
+    department['created_on'] = datetime.datetime.strptime(department['created_on'], "%Y-%m-%d %H:%M:%S").date().isoformat()    
+
     fetch = fetch_department_recently_media
     if choicetype == 'hot':
         fetch = fetch_department_popular_media
     elif choicetype == 'good':
         fetch = fetch_department_priase_media
-    count = fetch(org_id, offset=0, limit=0)['count']
-    per_page = 10
+
+    per_page = 15
+    count = fetch(department['slug'])['count']
     paginator = pagination(count, page, per_page)
-    offset = (page - 1) * per_page
-    media = fetch_department_media(org_id, offset, limit=per_page)
-    logger.debug("media")
-    logger.debug(media)
-    logger.debug("department")
-    logger.debug(department)
+    offset = (paginator['current'] - 1) * per_page
+    medias = fetch(department['slug'], offset, per_page)['media']
+    logger.debug("fdskfjdskf")
+    logger.debug(medias)
+    #offset = (page - 1) * per_page
 
     return render(request, "org-detail.html",{
-        'media': media,
+        'medias': medias,
         'count': count,
         'department': department,
         'choicetype': choicetype,
