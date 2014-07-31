@@ -13,6 +13,7 @@ body {
 	height: 660px;
 	margin-bottom: 40px;
 	margin-top: 68px;
+	background-color: #E7E7E7;
 
 	$bg-width-indeed: 1600px;
 	$bg-height-indeed: 725px;
@@ -106,6 +107,10 @@ body {
 			font-weight: normal;
 			color: $gray-light;
 			font-size: $font-size-base;
+			.tag {
+				background-color: rgb(245, 245, 245);
+				padding: 1px 3px;
+			}
 		}
 	}
 
@@ -122,44 +127,31 @@ body {
 }
 
 .related-video {
-	@include card;
-	padding: 10px;
+	@include card();
+	.title {
+		height: 40px;
+    	overflow: hidden;
+		padding-bottom: 10px;
+		margin-bottom: 10px;
+		p {
+			font-weight: bold;
+			letter-spacing: 1px;
+			word-break: break-all;
+		}
+	}
 	
 	.info {
-		margin-bottom: 10px;
-
-		.img {
-			display: block;
-			img {
-				width: 212px;
-			}
-		}
-
-		.title {
-			margin-bottom: 3px;
-			max-height: $line-height-computed * 2;
-	    	overflow: hidden;
-
-			> a {
-				letter-spacing: 1px;
-				font-weight: 500;
-				word-break: break-all;
-				color: $gray-dark;
-			}
-		}
-		
-		
-		.name {
-			color: $gray-light;
-		}
-
-		.video-info {
-			color: $gray-light;
-		}
-
-		&.last, &:last-child {
-			margin-bottom: 0px;	
-		}
+		padding-bottom: 10px;
+		padding-top: 10px;
+	}
+	.info:not(:last-child) {
+		border-bottom: 1px solid #eee;
+	}
+	.name {
+		color: $gray-light;
+	}
+	.video-info {
+		color: $gray-light;
 	}
 }
 

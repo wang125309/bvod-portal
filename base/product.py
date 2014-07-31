@@ -8,4 +8,3 @@ ALLOWED_HOSTS = '*'
 
 from base.common import *
 from base.loggers import LOGGING
-
