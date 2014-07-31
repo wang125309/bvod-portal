@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>视频中心</title>
-    <link rel="stylesheet" href="{{ STATIC_URL }}css/org.css">
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/org-detail.css">
     {% include "polyfills.html" %}
 </head>
 <body>
@@ -15,20 +15,22 @@
       <div class="col-xs-14">
         <div class="left">
           <div class="row">
-            <a class="org-head-img col-xs-9">
-              <img src="http://bvod.limijiaoyin.com/images{{ department.avatar }}"
-                  onError="this.src='http://placehold.it/200&text=!'">
-            </a>
+            <div class="col-xs-9">
+              <a class="org-head-img">
+                <img src="{{ department.avatar }}"
+                    onError="this.src='http://placehold.it/200&text=!'">
+              </a>
+            </div>
             <div class="org-head-info col-xs-11">
               <span class="name">{{ department.name }}</span>
-              <span class="owner"><i class="user-icon"></i>{{ department.owner }}</span>
-              <span class="owner"><i class="clock-icon"></i>2014-05-24</span>
+              <!--<span class="owner"><i class="user-icon"></i>{{ department.boss }}</span>-->
+              <span class="owner"><i class="clock-icon"></i>{{ department.created_on }}</span>
             </div>
             <div class="video col-xs-5">
-              <div class="num">67</div><div>视频</div>
+              <div class="num">{{ department.media }}</div><div>视频</div>
             </div>
             <div class="played col-xs-5">
-              <div class="num">55</div><div>播放</div>
+              <div class="num">{{ department.views }}</div><div>播放</div>
             </div>
           </div>
         </div>
@@ -38,7 +40,7 @@
           <div class="desc-wrapper">
             <div class="org-head-desc">
               <h4>简介</h4>
-              <p>{{ department.desc }}</p>
+              <p>{{ department.description }}</p>
             </div>
           </div>
         </div>
@@ -69,28 +71,37 @@
   </header>
 
   <div class="detail row">
-    {% for video in media %}
+    {% if count == 0 %}
+    <div class="col-xs-30" style="height: 200px; text-align: center">
+      该组织目前没有视频信息！
+    </div>
+    {% else %}
+    {% for video in medias %}
     <div class="col-xs-6">
       <div class="item">
-        <a class="video-thumbnail" href="video/{{ video.id }}">
+        <!--<input type="text" class="hide"/>-->
+        <a class="video-thumbnail" href="../video/{{ video.id }}">
           <img src="{{ video.thumbs.m.url }}" 
               onError="this.className='error';this.src='http://placehold.it/212x135&text=!'">    
-          <div class="comment"></div>
+          <div class="comment">{{ video.description_plain }}</div>
         </a>
         <div class="video-info">
-            <div class="title"></div>
+            <div class="title">{{ video.title }}</div>
             <div class="meta clearfix">
                 <div class="watch">
-                    <i class='icon-watch'></i>
+                    <i class='icon-watch'></i>{{ video.views }}
                 </div>
+                {{ video.author }}
             </div>
         </div>
       </div>
-      {% endfor %}
     </div>
+    {% endfor %}
+    {% endif %}
   </div>
 
-  <footer style="text-align: center;">{% include "pagination.html" %}</footer>
+
+  <footer class="pagination-wrapper" style="text-align: center;">{% include "pagination.html" %}</footer>
 </section>
 {% include "footer.html" %}
 </body>

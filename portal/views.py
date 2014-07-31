@@ -2,6 +2,7 @@ import logging
 
 from django.shortcuts import render, redirect
 from django.core.paginator import Paginator
+from datetime import datetime
 
 import django_active_tab as active_tab
 
@@ -69,9 +70,13 @@ def org(request, view_type):
     offset = (paginator['current'] - 1) * per_page
     limit = per_page
     departments = fetch(offset, limit)['departments']
+    logger.debug("departments:ccv")
+    logger.debug(departments)
     
     def add_media(dep):
-        dep['media'] = fetch_department_media(dep['id'], limit=3)['media']
+        dep['medias'] = fetch_deparment_media(dep['slug'], limit=3)
+        logger.debug("hello:")
+        logger.debug(dep['medias'])
         return dep
 
     departments = map(add_media, departments)
@@ -88,14 +93,26 @@ def org_detail(request, org_id):
     choicetype = request.GET.get('choicetype', 'new')
     page = int(request.GET.get('p', None) or '1')
     department = fetch_department_detail(org_id)
-    count = fetch_department_media(org_id, offset=0, limit=0)['count']
-    per_page = 10
+    department['created_on'] = datetime.datetime.strptime(department['created_on'], "%Y-%m-%d %H:%M:%S").date().isoformat()    
+
+    fetch = fetch_department_recently_media
+    if choicetype == 'hot':
+        fetch = fetch_department_popular_media
+    elif choicetype == 'good':
+        fetch = fetch_department_priase_media
+
+    per_page = 15
+    count = fetch(department['slug'])['count']
     paginator = pagination(count, page, per_page)
-    offset = (page - 1) * per_page
-    media = fetch_department_media(org_id, offset, limit=per_page)['media']
+    offset = (paginator['current'] - 1) * per_page
+    medias = fetch(department['slug'], offset, per_page)['media']
+    logger.debug("fdskfjdskf")
+    logger.debug(medias)
+    #offset = (page - 1) * per_page
 
     return render(request, "org-detail.html",{
-        'media': media,
+        'medias': medias,
+        'count': count,
         'department': department,
         'choicetype': choicetype,
         'pagination': paginator

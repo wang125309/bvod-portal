@@ -51,18 +51,18 @@
 
     <section class="departments container">
         <div class="header">
-            <a href="organization" class="h4 more pull-right">
-                更多组织 <i style="margin-left: 5px;" class="icon-more"></i>
+            <a href="organization/list" class="h4 more pull-right">
+                更多组织<i style="margin-left: 5px;" class="icon-more"></i>
             </a>
-            <h4> 热门组织  <span class="small">Popular organization</span> </h4>
+            <h4>热门组织&nbsp;&nbsp;<span class="small">Popular Organization</span> </h4>
         </div>
         <div class="department-list-wrapper">
         <div class="department-list row">
             {% for item in departments %}
             <div {% if forloop.last %} class="last pull-left department"
                  {% else %} class="pull-left department" {% endif %}>
-                <a href="department/{{ item.id }}">
-                    <img src="http://bvod.limijiaoyin.com/images/{{ item.avatar }}" alt="" onError="this.src='http://placehold.it/173x173&text=!'">
+                <a href="organization/{{ item.id }}">
+                    <img src="{{ item.avatar }}" alt="" onError="this.src='http://placehold.it/173x173&text=!'">
                     <i class="btn-play"></i>
                 </a>
                 <div class="title">{{ item.title }}</div>
