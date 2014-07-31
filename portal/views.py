@@ -74,7 +74,7 @@ def org(request, view_type):
     logger.debug(departments)
     
     def add_media(dep):
-        dep['medias'] = fetch_department_media(dep['slug'], limit=3)
+        dep['medias'] = fetch_deparment_media(dep['slug'], limit=3)
         logger.debug("hello:")
         logger.debug(dep['medias'])
         return dep
