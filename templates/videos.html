@@ -21,42 +21,42 @@
     <div class="col-xs-6">
         <div class="row list-group" id="accordion" data-spy="affix" data-offset-top="169" data-offset-bottom="100">
           {% if category_slug == '' %}
-            <a href="/video" class="active list-group-item" id="all">
+            <a href="/video?type={{ type }}" class="active list-group-item" id="all">
               全部视频
             </a>
           {% else %}
-            <a href="/video" class="list-group-item" id="all">
+            <a href="/video?type={{ type }}" class="list-group-item" id="all">
               全部视频
             </a>
           {% endif  %}
           {% for item in category %}
             {% if item.children %}
               {% if category_slug == item.slug %}
-                <a data-target="#{{ item.slug }}" class="list-group-item active dropup" id="{{ item.slug }}" data-toggle="collapse">
+                <a data-target="#{{ item.slug }}?type={{ type }}" class="list-group-item active dropup" id="{{ item.slug }}" data-toggle="collapse">
                   {{ item.name }}<b class="caret"></b>
                 </a>
                 <div class="collapse in" id="{{ item.slug }}">
               {% else %}
-                <a data-target="#{{ item.slug }}" class="list-group-item" id="{{ item.slug }}" data-toggle="collapse">
+                <a data-target="#{{ item.slug }}?type={{ type }}" class="list-group-item" id="{{ item.slug }}" data-toggle="collapse">
                   {{ item.name }}<b class="caret"></b>
                 </a>
                 <div class="collapse" id="{{ item.slug }}">
               {% endif %}
                 {% for subitem in item.children %}
                   {% if sub_category_slug == subitem.slug %}
-                    <a class="list-group-item active" style="background-color:#FAF9F9;"  href="/video/{{ item.slug }}/{{ subitem.slug }}">{{ subitem.name }}</a>
+                    <a class="list-group-item active" style="background-color:#FAF9F9;"  href="/video/{{ item.slug }}/{{ subitem.slug }}?type={{ type }}">{{ subitem.name }}</a>
                   {% else %}
-                    <a class="list-group-item" style="background-color:#FAF9F9;" href="/video/{{ item.slug }}/{{ subitem.slug }}">{{ subitem.name }}</a>
+                    <a class="list-group-item" style="background-color:#FAF9F9;" href="/video/{{ item.slug }}/{{ subitem.slug }}?type={{ type }}">{{ subitem.name }}</a>
                   {% endif %}
                 {% endfor %}
               </div>
             {% else %}
               {% if category_slug == item.slug %}
-                <a href="/video/{{ item.slug }}" class="active list-group-item">
+                <a href="/video/{{ item.slug }}?type={{ type }}" class="active list-group-item">
                   {{ item.name }}
                 </a>
               {% else %}
-                <a href="/video/{{ item.slug }}" class="list-group-item">
+                <a href="/video/{{ item.slug }}?type={{ type }}" class="list-group-item">
                   {{ item.name }}
                 </a>
               {% endif %}
