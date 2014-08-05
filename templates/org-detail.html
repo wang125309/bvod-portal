@@ -23,7 +23,6 @@
             </div>
             <div class="org-head-info col-xs-11">
               <span class="name">{{ department.name }}</span>
-              <!--<span class="owner"><i class="user-icon"></i>{{ department.boss }}</span>-->
               <span class="owner"><i class="clock-icon"></i>{{ department.created_on }}</span>
             </div>
             <div class="video col-xs-5">
@@ -80,7 +79,7 @@
     <div class="col-xs-6">
       <div class="item">
         <!--<input type="text" class="hide"/>-->
-        <a class="video-thumbnail" href="../video/{{ video.id }}">
+        <a class="video-thumbnail" href="/video/{{ video.id }}">
           <img src="{{ video.thumbs.m.url }}" 
               onError="this.className='error';this.src='http://placehold.it/212x135&text=!'">    
           <div class="comment">{{ video.description_plain }}</div>

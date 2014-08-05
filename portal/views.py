@@ -140,3 +140,48 @@ def video_detail(request, video_id):
     	'video': video,
         'related':related
     })
+
+@active_tab('video')
+def video(request, category_slug='', sub_category_slug=''):
+    per_page = 16
+    page = int(request.GET.get('p', None) or '1')
+    choicetype = request.GET.get('choicetype', 'new')
+    
+    if category_slug == '':
+        if choicetype == 'hot':
+            fetch = fetch_popular_media
+        elif choicetype == 'good':
+            fetch = fetch_praise_media
+        else:
+            fetch = fetch_recently_media
+        count = fetch()['count']
+        paginator = pagination(count, page, per_page)
+        offset = (paginator['current'] - 1) * per_page
+        limit = per_page
+        videos = fetch(limit)['media']
+
+    else:
+        fetch = fetch_category_recently_media
+        if choicetype == 'hot':
+            fetch = fetch_category_popular_media
+        elif choicetype == 'good':
+            fetch = fetch_category_priase_media
+        count = fetch(category_slug)['count']
+        paginator = pagination(count, page, per_page)
+        offset = (paginator['current'] - 1) * per_page
+        limit = per_page
+        if sub_category_slug == '':
+            videos = fetch(category_slug, offset, limit)['media']
+        else :
+            videos = fetch(sub_category_slug, offset, limit)['media']
+
+    category = fetch_category_tree()['categories']
+    return render(request, "videos.html", {
+        'content': videos,
+        'category': category,
+        'choicetype': choicetype,
+        'pagination': paginator,
+        'category_slug': category_slug,
+        'sub_category_slug': sub_category_slug,
+        'count': count
+    })
