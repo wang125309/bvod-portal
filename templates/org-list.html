@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>视频中心</title>
+    <title>北航视频</title>
     <link rel="stylesheet" href="{{ STATIC_URL }}css/org-list.css">
     {% include "polyfills.html" %}
 </head>
@@ -20,27 +20,27 @@
 <section class="org-list container no-margin">
   <header>
     <div class="head-tab pull-left">
-      {% if choicetype == "new" %}
-        <a href="?choicetype=new"><span class="nav cur">最新</span></a>
+      {% if type == "new" %}
+        <a href="typee=new"><span class="nav cur">最新</span></a>
       {% else %}
-        <a href="?choicetype=new"><span class="nav">最新</span></a>
+        <a href="?type=new"><span class="nav">最新</span></a>
       {% endif %}
         <span class="pull-left">|</span>
-      {% if choicetype == "hot" %}
-        <a href="?choicetype=hot"><span class="nav cur">最热</span></a>
+      {% if type == "hot" %}
+        <a href="?type=hot"><span class="nav cur">最热</span></a>
       {% else %}
-        <a href="?choicetype=hot"><span class="nav">最热</span></a>
+        <a href="?type=hot"><span class="nav">最热</span></a>
       {% endif %}
         <span class="pull-left">|</span>
-      {% if choicetype == "good" %}
-        <a href="?choicetype=good"><span class="nav cur">好评</span></a>
+      {% if type == "good" %}
+        <a href="?type=good"><span class="nav cur">好评</span></a>
       {% else %}
-        <a href="?choicetype=good"><span class="nav">好评</span></a>
+        <a href="?type=good"><span class="nav">好评</span></a>
       {% endif %}
     </div>
     <div class="head-view">
-      <a class="cur" href="list?choicetype={{ choicetype }}"><i class="list"></i></a>
-      <a href="grid?choicetype={{ choicetype }}"><i class="grid"></i></a>
+      <a class="cur" href="list?type={{ type }}"><i class="list"></i></a>
+      <a href="grid?type={{ type }}"><i class="grid"></i></a>
     </div>
   </header>
   <ul class="organizations list">
@@ -80,8 +80,15 @@
       </div>
 
       <div class="right col-xs-18">
+        {% if item.medias %}
         {% for media in item.medias %}
         {% include 'video-card.html' with video=media class='video col-xs-10' %}
+        {% endfor %}
+        {% else %}
+          <div class="col-xs-30" style="text-align: center">
+            <img src="{{ STATIC_URL }}img/org_empty.png" style="margin-top:40px;">
+          </div>
+        {% endif %}
         <!--
         <div class="video-large col-xs-10">
           <div class="img">
@@ -99,7 +106,6 @@
           </div>
         </div>
         -->
-        {% endfor %}
       </div>
     </li>
     {% endfor %}

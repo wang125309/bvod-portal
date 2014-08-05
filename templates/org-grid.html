@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>视频中心</title>
+    <title>北航视频</title>
     <link rel="stylesheet" href="{{ STATIC_URL }}css/org-grid.css">
     {% include "polyfills.html" %}
 </head>
@@ -12,27 +12,27 @@
 <section class="org-list container">
   <header>
     <div class="head-tab">
-      {% if choicetype == "new" %}
-        <a href="?choicetype=new"><span class="nav cur">最新</span></a>
+      {% if type == "new" %}
+        <a href="?type=new"><span class="nav cur">最新</span></a>
       {% else %}
-        <a href="?choicetype=new"><span class="nav">最新</span></a>
+        <a href="?type=new"><span class="nav">最新</span></a>
       {% endif %}
         <span class="pull-left">|</span>
-      {% if choicetype == "hot" %}
-        <a href="?choicetype=hot"><span class="nav cur">最热</span></a>
+      {% if type == "hot" %}
+        <a href="?type=hot"><span class="nav cur">最热</span></a>
       {% else %}
-        <a href="?choicetype=hot"><span class="nav">最热</span></a>
+        <a href="?type=hot"><span class="nav">最热</span></a>
       {% endif %}
         <span class="pull-left">|</span>
-      {% if choicetype == "good" %}
-        <a href="?choicetype=good"><span class="nav cur">好评</span></a>
+      {% if type == "good" %}
+        <a href="?type=good"><span class="nav cur">好评</span></a>
       {% else %}
-        <a href="?choicetype=good"><span class="nav">好评</span></a>
+        <a href="?type=good"><span class="nav">好评</span></a>
       {% endif %}
     </div>
     <div class="head-view">
-      <a href="list?choicetype={{ choicetype }}"><i class="list"></i></a>
-      <a class="cur" href="grid?choicetpe={{ choicefield}}"><i class="grid"></i></a>
+      <a href="list?type={{ type }}"><i class="list"></i></a>
+      <a class="cur" href="grid?type={{ type }}"><i class="grid"></i></a>
     </div>
   </header>
 

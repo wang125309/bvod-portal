@@ -57,12 +57,12 @@ def pagination(count, current, per_page):
 def org(request, view_type):
     per_page = 15 if view_type == 'grid' else 5
     page = int(request.GET.get('p', None) or '1')
-    choicetype = request.GET.get('choicetype', 'new')
+    type = request.GET.get('type', 'new')
     
     fetch = fetch_recently_department
-    if choicetype == 'hot':
+    if type == 'hot':
         fetch = fetch_popular_department
-    elif choicetype == 'good':
+    elif type == 'good':
         fetch = fetch_praise_department
 
     count = fetch(offset=0, limit=0)['count']
@@ -84,21 +84,21 @@ def org(request, view_type):
     return render(request, 'org-' + view_type + '.html', {
         'orglist': departments,
         'pagination': paginator,
-        'choicetype': choicetype 
+        'type': type 
     })
 
 
 @active_tab('organization')
 def org_detail(request, org_id):
-    choicetype = request.GET.get('choicetype', 'new')
+    type = request.GET.get('type', 'new')
     page = int(request.GET.get('p', None) or '1')
     department = fetch_department_detail(org_id)
     department['created_on'] = datetime.datetime.strptime(department['created_on'], "%Y-%m-%d %H:%M:%S").date().isoformat()    
 
     fetch = fetch_department_recently_media
-    if choicetype == 'hot':
+    if type == 'hot':
         fetch = fetch_department_popular_media
-    elif choicetype == 'good':
+    elif type == 'good':
         fetch = fetch_department_priase_media
 
     per_page = 15
@@ -114,7 +114,7 @@ def org_detail(request, org_id):
         'medias': medias,
         'count': count,
         'department': department,
-        'choicetype': choicetype,
+        'type': type,
         'pagination': paginator
     })
 
@@ -145,12 +145,12 @@ def video_detail(request, video_id):
 def video(request, category_slug='', sub_category_slug=''):
     per_page = 16
     page = int(request.GET.get('p', None) or '1')
-    choicetype = request.GET.get('choicetype', 'new')
+    type = request.GET.get('type', 'new')
     
     if category_slug == '':
-        if choicetype == 'hot':
+        if type == 'hot':
             fetch = fetch_popular_media
-        elif choicetype == 'good':
+        elif type == 'good':
             fetch = fetch_praise_media
         else:
             fetch = fetch_recently_media
@@ -162,9 +162,9 @@ def video(request, category_slug='', sub_category_slug=''):
 
     else:
         fetch = fetch_category_recently_media
-        if choicetype == 'hot':
+        if type == 'hot':
             fetch = fetch_category_popular_media
-        elif choicetype == 'good':
+        elif type == 'good':
             fetch = fetch_category_priase_media
         count = fetch(category_slug)['count']
         paginator = pagination(count, page, per_page)
@@ -179,7 +179,7 @@ def video(request, category_slug='', sub_category_slug=''):
     return render(request, "videos.html", {
         'content': videos,
         'category': category,
-        'choicetype': choicetype,
+        'type': type,
         'pagination': paginator,
         'category_slug': category_slug,
         'sub_category_slug': sub_category_slug,
