@@ -67,7 +67,7 @@
         <div class="tab-list">
           {% for media in org.medias %}
             <div class="tab">
-            <a href="../video/{{ media.id }}" class="tab-a">
+            <a href="/video/{{ media.id }}" class="tab-a">
                   <img src="{{ media.thumbs.m.url }}" 
                       onError="this.className='error';this.src='http://placehold.it/212x135&text=!'">
             </a>
