@@ -51,7 +51,7 @@
 
     <section class="departments container">
         <div class="header">
-            <a href="organization/list" class="h4 more pull-right">
+            <a href="org/list" class="h4 more pull-right">
                 更多组织<i style="margin-left: 5px;" class="icon-more"></i>
             </a>
             <h4>热门组织&nbsp;&nbsp;<span class="small">Popular Organization</span> </h4>
@@ -61,7 +61,7 @@
             {% for item in departments %}
             <div {% if forloop.last %} class="last pull-left department"
                  {% else %} class="pull-left department" {% endif %}>
-                <a href="organization/{{ item.id }}">
+                <a href="org/{{ item.id }}">
                     <img src="{{ item.avatar }}" alt="" onError="this.src='http://placehold.it/173x173&text=!'">
                     <i class="btn-play"></i>
                 </a>
