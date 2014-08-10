@@ -25,6 +25,13 @@
     background: url(../img/more-arrow.png) top center no-repeat;
 }
 
+.icon-more-small {
+    height: 14px;
+    margin-top: 1px;
+    margin-left: 5px;
+    background-size: 100% 100%;
+}
+
 .icon-history {
     background: url(../img/history.png) center center no-repeat;
     @include size(16px, 16px);
