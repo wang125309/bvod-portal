@@ -10,12 +10,23 @@
     <ul class="list row">
         {% for item in content %}
         <li class="col-xs-6">
-            <a class="video video-medium" href="video/{{ item.id }}">
-                <img src="{{item.thumbs.m.url}}" alt=""
-                    onError="this.className='error';this.src='http://placehold.it/212x360&text=!'">    
-                <i class="btn-play"></i>
-                <div class="title">{{ item.title }}</div>
-            </a>
+            <div class="item">
+                <a class="video video-medium" href="video/{{ item.id }}">
+                    <img src="{{item.thumbs.m.url}}" alt=""
+                        onError="this.className='error';this.src='http://placehold.it/212x360&text=!'">    
+                    <div class="comment">{{ item.description_plain }}</div>
+                    <i class="btn-play"></i>
+                </a>
+            </div>
+            <div class="video-info">
+              <div class="title">{{ item.title }}</div>
+              <div class="meta clearfix">
+                  <div class="watch">
+                      <i class='icon-watch'></i>{{ item.views }}
+                  </div>
+                    {{ item.author }}
+              </div>
+            </div>
         </li>
         {% endfor %}
     </ul>
