@@ -2069,6 +2069,7 @@ body{font-family:'微软雅黑',"Helvetica Neue",Helvetica,Arial,sans-serif}
 .icon-logo{width:50px;height:50px;display:inline-block;vertical-align:top;background:url(../img/logo.png) center center no-repeat}
 .icon-watch-reverse{width:17px;height:12px;display:inline-block;vertical-align:baseline;background:url(../img/watch-reverse.png) center center no-repeat}
 .icon-more{width:11px;height:18px;display:inline-block;vertical-align:top;background:url(../img/more-arrow.png) top center no-repeat}
+.icon-more-small{height:14px;margin-top:1px;margin-left:5px;background-size:100% 100%}
 .icon-history{background:url(../img/history.png) center center no-repeat;width:16px;height:16px;display:inline-block;vertical-align:middle}
 .icon-watch{height:10px;width:15px;background:url(../img/watch.png) left center no-repeat;display:inline-block;vertical-align:baseline}
 .icon-like{width:20px;height:18px;display:inline-block;vertical-align:top;background:url(../img/like.png) center center no-repeat}
