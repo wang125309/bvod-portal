@@ -69,6 +69,13 @@ body {
 	box-shadow: 0px 1px 3px rgba(0, 0, 0, .2);
 	padding: 20px;
 }
+.container .col-xs-12 .video-card .info .col-xs-18 {
+    padding-top:8px;
+}
+
+.container .col-xs-12 .video-card .info .col-xs-18 h4{
+    margin-top:8px;
+}
 
 .video-card {
 	@include card();

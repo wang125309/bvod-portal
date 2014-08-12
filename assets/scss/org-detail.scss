@@ -406,11 +406,12 @@ height:100%;
 }
 .org-list .detail{
     padding:0;
-    margin-top:20px;
+    margin-top:0px;
     list-style-type:none;
 }
 .org-list .detail .item{
     @include video-card(212px, 135px);
+    margin-top:20px;
 }
 
 .org-list .detail .item .img{
@@ -441,6 +442,10 @@ position:relative;
     margin-top:10px;
 }
 
+
+.org-list .detail .item .video-info .meta{
+    margin-bottom:0px;
+}
 .org-list .detail .item .info .meta{
     font-size:$font-size-base;
     color: $gray-light;

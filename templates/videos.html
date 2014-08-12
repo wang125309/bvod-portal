@@ -88,7 +88,7 @@
       </header>
 
       <div class="detail row">
-        {% if count == 0 %}
+        {% if not content %}
           <div class="col-xs-30" style="height: 200px; text-align: center">
             <img src="{{ STATIC_URL }}img/video_empty.png" style="margin-top:100px;">
           </div>
@@ -122,6 +122,9 @@
   <footer class="pagination-wrapper col-xs-24 col-xs-offset-6" style="text-align: center;">
       {% include "pagination.html" %}
   </footer>
+  {% else %}
+  <div style="height:20px;">
+  </div>
   {% endif %}
 </section>
 

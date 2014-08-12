@@ -183,10 +183,11 @@ padding-bottom:6px;
 
 .org-list .detail{
     padding:0;
-    margin-top:20px;
+    margin-top:0px;
     list-style-type:none;
 }
 .org-list .detail .item{
+    margin-top:20px;
     @include video-card(212px, 135px);
 }
 
@@ -218,6 +219,9 @@ position:relative;
     margin-top:10px;
 }
 
+.org-list .detail .item .video-info .meta{
+    margin-bottom:0px;
+}
 .org-list .detail .item .info .meta{
     font-size:$font-size-base;
     color: $gray-light;

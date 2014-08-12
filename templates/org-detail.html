@@ -103,8 +103,9 @@
     {% endif %}
   </div>
 
-
+  {% if count > 10 %}
   <footer class="pagination-wrapper" style="text-align: center;">{% include "pagination.html" %}</footer>
+  {% endif %}
 </section>
 {% include "footer.html" %}
 </body>

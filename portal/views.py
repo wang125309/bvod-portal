@@ -102,7 +102,7 @@ def org_detail(request, org_id):
     elif type == 'good':
         fetch = fetch_department_priase_media
 
-    per_page = 15
+    per_page = 10
     count = fetch(department['slug'])['count']
     paginator = pagination(count, page, per_page)
     offset = (paginator['current'] - 1) * per_page
@@ -167,13 +167,17 @@ def video(request, category_slug='', sub_category_slug=''):
             fetch = fetch_category_popular_media
         elif type == 'good':
             fetch = fetch_category_priase_media
-        count = fetch(category_slug)['count']
-        paginator = pagination(count, page, per_page)
-        offset = (paginator['current'] - 1) * per_page
-        limit = per_page
         if sub_category_slug == '':
+            count = fetch(category_slug)['count']
+            paginator = pagination(count, page, per_page)
+            offset = (paginator['current'] - 1) * per_page
+            limit = per_page
             videos = fetch(category_slug, offset, limit)['media']
         else :
+            count = fetch(sub_category_slug)['count']
+            paginator = pagination(count, page, per_page)
+            offset = (paginator['current'] - 1) * per_page
+            limit = per_page
             videos = fetch(sub_category_slug, offset, limit)['media']
 
     category = fetch_category_tree()['categories']
