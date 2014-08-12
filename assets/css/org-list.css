@@ -2114,7 +2114,8 @@ body{font-family:'微软雅黑',"Helvetica Neue",Helvetica,Arial,sans-serif}
 .pagination-wrapper{padding:20px 0;height:67px;text-align:center}
 .pagination-wrapper .pagination{margin:0}
 body{background:#FAF9F9}
-.organizations{min-height:1000px}
+.organizations{min-height:500px}
+.org-list ul{margin-bottom:0}
 .organizations.grid{min-height:942px}
 .pagination{margin-top:0}
 .img-banner{width:100%;position:relative;margin-top:68px}

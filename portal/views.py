@@ -84,7 +84,8 @@ def org(request, view_type):
     return render(request, 'org-' + view_type + '.html', {
         'orglist': departments,
         'pagination': paginator,
-        'type': type 
+        'type': type,
+        'count': count 
     })
 
 

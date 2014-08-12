@@ -12,7 +12,8 @@ body {
 }
 
 .organizations {
-    min-height:1000px;
+    min-height:500px;
+    margin-top:0px;
 }
 
 .img-banner{
@@ -129,7 +130,8 @@ list-style-type:none;
 
 .org-list .list .item {
     margin: 0px;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
+    margin-top: 20px;
     background-color: white;
     border: none;
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
@@ -216,7 +218,7 @@ width:67px;
 
 /*grid page*/
 .org-list .grid{
-margin-top:20px;
+margin-top:0px;
 }
 .org-list .grid .item{
 position:relative;
@@ -224,7 +226,8 @@ background-color:  #ffffff;
 border: none;
 box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);
 height: 294px;
-margin-bottom:20px;
+margin-bottom:0px;
+margin-top:20px;
 }
 .org-list .grid .item .img {
     position:relative;

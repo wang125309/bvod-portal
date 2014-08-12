@@ -8,10 +8,28 @@
 @import "assets/scss/lib/pagination";
 @import "assets/scss/lib/video-card";
 
+.col-xs-6 .comment{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    opacity: .6;
+    filter: alpha(opacity=60);
+    background: #222;
+    padding: 6px 12px;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    color: #fff;
+}
+
 .hello {
     width: 25%;
     padding: 0px 10px;
     float: left;
+}
+
+.content {
+    min-height: 700px;
 }
 
 .collapse .active{
@@ -77,11 +95,7 @@
 
 
 .affix{
-    top:62px;
-}
-
-.content{
-    min-height: 1000px;
+    top:68px;
 }
 
 .org-list .row .list-group .list-group-item{
@@ -211,4 +225,14 @@ position:relative;
 
 .org-list .detail .item .info .meta .watch{
     float:right;
+}
+
+.col-xs-6 .video-info .watch{
+    float:right;
+}
+
+.col-xs-6 .video-info .title{
+    font-size:$font-size-large;
+    color:#000;
+    margin-top:10px;
 }

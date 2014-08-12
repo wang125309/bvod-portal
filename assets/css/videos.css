@@ -2114,7 +2114,9 @@ body{font-family:'微软雅黑',"Helvetica Neue",Helvetica,Arial,sans-serif}
 .pagination-sm>li:last-child>a,.pagination-sm>li:last-child>span{border-bottom-right-radius:0;border-top-right-radius:0}
 .pagination-wrapper{padding:20px 0;height:67px;text-align:center}
 .pagination-wrapper .pagination{margin:0}
+.col-xs-6 .comment{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;opacity:.6;filter:alpha(opacity=60);background:#222;padding:6px 12px;position:absolute;width:100%;bottom:0;color:#fff}
 .hello{width:25%;padding:0 10px;float:left}
+.content{min-height:700px}
 .collapse .active,.collapse .active:focus,.collapse .active:hover{color:#428bca;border-color:#ddd}
 .collapse a:focus,.collapse a:hover{color:#428bca}
 .list-group-item:first-child{border-top-right-radius:0;border-top-left-radius:0}
@@ -2127,8 +2129,7 @@ body{font-family:'微软雅黑',"Helvetica Neue",Helvetica,Arial,sans-serif}
 .list-group-item{border-bottom-width:0}
 .list-group .collapse a{margin-bottom:0}
 .org-list .row .list-group .caret{margin-left:140px}
-.affix{top:62px}
-.content{min-height:1000px}
+.affix{top:68px}
 .org-list .row .list-group .list-group-item{width:212px}
 body{background:#FAF9F9}
 .pagination{margin-top:0}
@@ -2159,4 +2160,5 @@ body{background:#FAF9F9}
 .org-list .detail .item .img a{width:100%;position:absolute;bottom:0;background:#000;opacity:.5;filter:alpha(opacity=50);color:#eee;padding:6px 12px;font-size:14px;cursor:auto;text-decoration:none}
 .org-list .detail .item .info .title{font-size:18px;color:#000;margin-top:10px}
 .org-list .detail .item .info .meta{font-size:14px;color:#777}
-.org-list .detail .item .info .meta .watch{float:right}
+.col-xs-6 .video-info .watch,.org-list .detail .item .info .meta .watch{float:right}
+.col-xs-6 .video-info .title{font-size:18px;color:#000;margin-top:10px}

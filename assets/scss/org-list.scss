@@ -12,7 +12,11 @@ body {
 }
 
 .organizations {
-    min-height: 1000px;
+    min-height: 500px;
+}
+
+.org-list ul {
+    margin-bottom:0px;
 }
 
 .organizations.grid {
