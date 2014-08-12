@@ -44,6 +44,7 @@
     </div>
   </header>
   <ul class="organizations list">
+    {% if orglist %}
     {% for item in orglist %}
 
     {% if forloop.last %}
@@ -109,10 +110,21 @@
       </div>
     </li>
     {% endfor %}
+    {% else %}
+        <div class="col-xs-30" style="text-align: center">
+          <img src="{{ STATIC_URL }}img/org_empty.png" style="margin-top:40px;">
+        </div>
+    {% endif %}
+
   </ul>
+  {% if count > 5%}
   <footer class="pagination-wrapper" style="text-align: center;">
     {% include "pagination.html" %}
   </footer>
+  {% else %}
+  <div style="height:20px;">
+  </div>
+  {% endif %}
 </section>
 {% include "footer.html" %}
 </body>

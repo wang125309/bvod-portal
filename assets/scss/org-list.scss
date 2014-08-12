@@ -12,7 +12,11 @@ body {
 }
 
 .organizations {
-    min-height: 1000px;
+    min-height: 500px;
+}
+
+.org-list ul {
+    margin-bottom:0px;
 }
 
 .organizations.grid {
@@ -184,9 +188,10 @@ list-style-type:none;
 }
 
 .org-list .list .item .org-head-info .name{
-display:block;
-font-size:20px;
-color:#000;
+    margin-top:9px;
+    display:block;
+    font-size:20px;
+    color:#000;
 }
 .org-list .list .item .org-head-info .owner{
 display:block;

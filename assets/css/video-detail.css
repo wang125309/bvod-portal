@@ -2120,6 +2120,8 @@ body{background-color:#FAF9F9}
 .video-content .title{max-width:400px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .video-comment{margin-left:300px;float:left;width:40%}
 .video-meta{margin-bottom:40px}
+.container .col-xs-12 .video-card .info .col-xs-18{padding-top:8px}
+.container .col-xs-12 .video-card .info .col-xs-18 h4{margin-top:8px}
 .video-card{box-shadow:0 1px 3px rgba(0,0,0,.2);padding:20px}
 .video-card .info{border-bottom:1px solid #eee}
 .video-card .small,.video-card small{font-weight:400}

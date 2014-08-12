@@ -37,6 +37,7 @@
   </header>
 
   <div class="organizations grid row">
+    {% if orglist %}
     {% for org in orglist %}
     <div class="col-xs-6">
 
@@ -77,11 +78,20 @@
       </div>
     </div>
     {% endfor %}
+    {% else %}
+        <div class="col-xs-30" style="text-align: center">
+          <img src="{{ STATIC_URL }}img/org_empty.png" style="margin-top:40px;">
+        </div>
+    {% endif %}
   </div>
-
+  {% if count > 15 %}
   <footer class="pagination-wrapper" style="text-align: center;">
     {% include "pagination.html" %}
   </footer>
+  {% else %}
+  <div style="height:20px;">
+  </div>
+  {% endif %}
 </section>
 
 {% include "footer.html" %}

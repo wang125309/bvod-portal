@@ -2161,6 +2161,8 @@ section.video-list ul .video.video-medium:hover .btn-play{display:block}
 section.video-list ul .video.video-medium img{height:360px;margin-left:-214px}
 section.video-list ul .video.video-medium img.error{height:360px;margin-left:0}
 section.video-list ul .video.video-medium .title{background-image:-webkit-linear-gradient(rgba(0,0,0,0),rgba(0,0,0,.3) 50%,#000);background-image:-o-linear-gradient(rgba(0,0,0,0),rgba(0,0,0,.3) 50%,#000);background-image:linear-gradient(rgba(0,0,0,0),rgba(0,0,0,.3) 50%,#000);background-repeat:no-repeat;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#FF000000', GradientType=0);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;position:absolute;bottom:0;width:100%;padding:45px 15px 15px;color:#eee}
+section.video-list ul .video-info .watch{float:right}
+section.video-list ul .video-info .title{margin:3px 0;font-size:18px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .video-large{position:relative;cursor:pointer}
 .video-large:hover .btn-play{display:block}
 .video-large .info{color:#eee;position:absolute;width:100%;bottom:0;padding:30px 20px;background-image:-webkit-linear-gradient(rgba(0,0,0,0),rgba(0,0,0,.3) 50%,rgba(0,0,0,.5));background-image:-o-linear-gradient(rgba(0,0,0,0),rgba(0,0,0,.3) 50%,rgba(0,0,0,.5));background-image:linear-gradient(rgba(0,0,0,0),rgba(0,0,0,.3) 50%,rgba(0,0,0,.5));background-repeat:no-repeat;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#80000000', GradientType=0);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
@@ -2174,3 +2176,4 @@ section.video-list ul .video.video-medium .title{background-image:-webkit-linear
 .departments .department-list-wrapper .department-list .department a img{border-radius:6px;border:1px solid #eee;width:145.71px;height:145.71px}
 .departments .department-list-wrapper .department-list .department .title{text-align:center}
 .departments .department-list-wrapper .department-list .department.last,.departments .department-list-wrapper .department-list .department:last-child{width:155.71px;padding-right:0}
+.col-xs-6 .comment{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;opacity:.6;filter:alpha(opacity=60);background:#222;padding:6px 12px;position:absolute;width:100%;bottom:0;color:#fff}

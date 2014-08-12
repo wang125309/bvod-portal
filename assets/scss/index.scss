@@ -245,6 +245,7 @@ section.video-list {
                 margin-left: 0px;
               }
             }
+        
 
             position: relative;
             box-sizing: border-box;
@@ -259,6 +260,17 @@ section.video-list {
                 padding: 45px 15px 15px;
                 color: $gray-lighter;
             }
+        }
+
+        .video-info .watch{
+            float: right;
+        }
+        .video-info .title{
+            margin: 3px 0;
+            font-size: 18px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
         }
     }
 }
@@ -335,4 +347,17 @@ section.video-list {
       }
     }
   }
+}
+.col-xs-6 .comment{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    opacity: .6;
+    filter: alpha(opacity=60);
+    background: #222;
+    padding: 6px 12px;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    color: #fff;
 }
