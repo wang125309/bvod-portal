@@ -62,7 +62,7 @@ def fetch_category_tree(depth=1):
 
 def fetch_media_item(id=0):
    api_url = media_url+'/get'
-   item = {'id': id}
+   item = {'id': id, 'preview':'1'}
    return fetch_query_result(api_url, item)
 
 
