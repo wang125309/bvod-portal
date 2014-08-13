@@ -74,6 +74,11 @@
             </a>
             </div>
           {% endfor %}
+          {% if not org.medias %}
+            <div class="tab1">
+                该组织目前没有视频！
+            </div>
+          {% endif %}
         </div>
       </div>
     </div>

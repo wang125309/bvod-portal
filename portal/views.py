@@ -70,8 +70,6 @@ def org(request, view_type):
     offset = (paginator['current'] - 1) * per_page
     limit = per_page
     departments = fetch(offset, limit)['departments']
-    logger.debug("departments:ccv")
-    logger.debug(departments)
     
     def add_media(dep):
         dep['medias'] = fetch_deparment_media(dep['slug'], limit=3)
@@ -85,7 +83,7 @@ def org(request, view_type):
         'orglist': departments,
         'pagination': paginator,
         'type': type,
-        'count': count 
+        'count': count,
     })
 
 
@@ -93,7 +91,11 @@ def org(request, view_type):
 def org_detail(request, org_id):
     type = request.GET.get('type', 'new')
     page = int(request.GET.get('p', None) or '1')
-    department = fetch_department_detail(org_id)
+    try :
+        department = fetch_department_detail(org_id)
+    except:
+        return redirect('http://bvod.limijiaoyin.com/wa')
+    
     department['created_on'] = datetime.datetime.strptime(department['created_on'], "%Y-%m-%d %H:%M:%S").date().isoformat()    
 
     fetch = fetch_department_recently_media
