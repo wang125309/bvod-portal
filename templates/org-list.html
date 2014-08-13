@@ -46,7 +46,6 @@
   <ul class="organizations list">
     {% if orglist %}
     {% for item in orglist %}
-
     {% if forloop.last %}
     <li class="last item row">
     {% else %}
@@ -126,5 +125,8 @@
   {% endif %}
 </section>
 {% include "footer.html" %}
+<script type="text/javascript" src="{{ STATIC_URL }}components/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/org-list.js">
+</script>
 </body>
 </html>

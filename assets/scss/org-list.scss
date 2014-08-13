@@ -15,6 +15,10 @@ body {
     min-height: 500px;
 }
 
+li.item.row:hover {
+    cursor: pointer;
+}
+
 .org-list ul {
     margin-bottom:0px;
 }
