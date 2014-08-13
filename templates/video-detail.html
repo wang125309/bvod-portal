@@ -63,10 +63,12 @@
                 <div class="row info">
                     <div class="col-xs-18">
                         <div class="col-xs-10">
+                          <a class="org-head-img">
                             <img src="{{ video.department.avatar }}" alt="" onError="this.src='http://placehold.it/50x50&text=!'">
+                          </a>
                         </div>
                         <div class="col-xs-20">
-                            <h4>{{ video.department.name }}</h4>
+                            <h4>{{ video.department.name }}&nbsp;</h4>
                             <h4 class="small">
                             {% if video.publish_on and video.publish_on != "None" %}
                                 {{ video.publish_on|default:"" }}
