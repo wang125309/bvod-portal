@@ -2115,6 +2115,7 @@ body{font-family:'微软雅黑',"Helvetica Neue",Helvetica,Arial,sans-serif}
 .pagination-wrapper .pagination{margin:0}
 body{background:#FAF9F9}
 .organizations{min-height:500px}
+li.item.row:hover{cursor:pointer}
 .org-list ul{margin-bottom:0}
 .organizations.grid{min-height:942px}
 .org-head-info a{color:#000}
