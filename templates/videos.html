@@ -32,12 +32,12 @@
           {% for item in category %}
             {% if item.children %}
               {% if category_slug == item.slug %}
-                <a data-target="#{{ item.slug }}?type={{ type }}" class="list-group-item active dropup" id="{{ item.slug }}" data-toggle="collapse">
+                <a data-target="#{{ item.slug }}" class="list-group-item active dropup hi" id="{{ item.slug }}" data-toggle="collapse">
                   {{ item.name }}<b class="caret"></b>
                 </a>
                 <div class="collapse in" id="{{ item.slug }}">
               {% else %}
-                <a data-target="#{{ item.slug }}?type={{ type }}" class="list-group-item" id="{{ item.slug }}" data-toggle="collapse">
+                <a data-target="#{{ item.slug }}" class="list-group-item hi" id="{{ item.slug }}" data-toggle="collapse">
                   {{ item.name }}<b class="caret"></b>
                 </a>
                 <div class="collapse" id="{{ item.slug }}">
@@ -49,7 +49,7 @@
                     <a class="list-group-item" style="background-color:#FAF9F9;" href="/video/{{ item.slug }}/{{ subitem.slug }}?type={{ type }}">{{ subitem.name }}</a>
                   {% endif %}
                 {% endfor %}
-              </div>
+                </div>
             {% else %}
               {% if category_slug == item.slug %}
                 <a href="/video/{{ item.slug }}?type={{ type }}" class="active list-group-item">

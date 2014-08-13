@@ -52,7 +52,6 @@
     {% else %}
     <li class="item row">
     {% endif %}
-
       <div class="left col-xs-12">
         <div class="row">
           <div class="col-xs-10">
@@ -64,7 +63,7 @@
           
           <div class="col-xs-20">
             <div class="org-head-info">
-              <span class="name"><a href="/org/{{ item.id }}">{{ item.name }}</a></span>
+              <span class="name">{{ item.name }}</span>
               <div class="video-info">
                 <div class="video"><span class="num">{{ item.media }} </span><span>视频</span></div>
                 <div class="played"><span class="num">{{ item.views }} </span><span>播放</span></div>

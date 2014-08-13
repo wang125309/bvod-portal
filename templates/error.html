@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>404错误发生</title>
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/error.css">
+    {% include "polyfills.html" %}
+</head>
+<body>
+{% include "navbar.html" with nav=request.nav %}
+<section class="org-list container no-margin">
+    <img  class='error' src="{{ STATIC_URL }}img/error.png">
+</section>
+{% include "footer.html" %}
+</body>
+</html>
