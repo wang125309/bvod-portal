@@ -52,7 +52,6 @@ def pagination(count, current, per_page):
     logger.debug(result)
     return result
 
-
 @active_tab('organization')
 def org(request, view_type):
     per_page = 15 if view_type == 'grid' else 5
@@ -94,7 +93,7 @@ def org_detail(request, org_id):
     try :
         department = fetch_department_detail(org_id)
     except:
-        return redirect('http://bvod.limijiaoyin.com/wa')
+        return render(request, 'error.html')
     
     department['created_on'] = datetime.datetime.strptime(department['created_on'], "%Y-%m-%d %H:%M:%S").date().isoformat()    
 
@@ -126,7 +125,7 @@ def org_detail(request, org_id):
 def video_detail(request, video_id):
     video = fetch_media_item(video_id)
     if 'error' in video:
-        return redirect('http://bvod.limijiaoyin.com/wa')
+        return render(request, 'error.html')
 
     related = video['related_media'][:3]
     video['related_media'] = []
