@@ -182,6 +182,8 @@ def video(request, category_slug='', sub_category_slug=''):
             videos = fetch(sub_category_slug, offset, limit)['media']
 
     category = fetch_category_tree()['categories']
+    logger.debug('hi, videos')
+    logger.debug(videos)
     return render(request, "videos.html", {
         'content': videos,
         'category': category,

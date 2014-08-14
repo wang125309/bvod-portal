@@ -15,4 +15,7 @@ $(function(){
             $(".list-group > .active+div").addClass('in');
         }
     });
+    //var height = window.screen.availHeight - 372;
+    //document.getElementById('con').style.minHeight = height+'px';
+            $(".footer").stickyFooter();
 });

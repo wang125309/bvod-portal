@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <title>北航视频</title>
     <link rel="stylesheet" href="{{ STATIC_URL }}css/videos.css">
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/jquery.stickyfooter.css">
     {% include "polyfills.html" %}
 </head>
-<body>
+<body id="#body">
 {% include "navbar.html" with nav=request.nav %}
 
 <div class="img-banner">
@@ -64,7 +65,7 @@
           {% endfor %}
         </div>
     </div>
-    <div class="col-xs-24 content">
+    <div class="col-xs-24 content" id="page">
       <header>
         <div class="head-tab">
           {% if type == "new" %}
@@ -107,7 +108,7 @@
                   <div class="watch">
                       <i class='icon-watch'></i>&nbsp;{{ video.views }}
                   </div>
-                    {{ video.author }}
+                    {{ video.department.name }}
               </div>
             </div>
           </div>
@@ -119,7 +120,7 @@
   </div>
 
   {% if count > 16 %}
-  <footer class="pagination-wrapper col-xs-24 col-xs-offset-6" style="text-align: center;">
+  <footer class="pagination-wrapper col-xs-24 col-xs-offset-6" id="footer" style="text-align: center;">
       {% include "pagination.html" %}
   </footer>
   {% else %}
@@ -133,6 +134,7 @@
 <script type="text/javascript" src="{{ STATIC_URL }}components/bootstrap/js/dropdown.js"></script>
 <script type="text/javascript" src="{{ STATIC_URL }}components/bootstrap/js/collapse.js"></script>
 <script type="text/javascript" src="{{ STATIC_URL }}components/bootstrap/js/affix.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}components/jquery.stickyFooter/src/jquery.stickyFooter.js"></script>
 <script type="text/javascript" src="{{ STATIC_URL }}js/videos.js"></script>
 </body>
 </html>

@@ -2116,7 +2116,6 @@ body{font-family:'微软雅黑',"Helvetica Neue",Helvetica,Arial,sans-serif}
 .pagination-wrapper .pagination{margin:0}
 .col-xs-6 .comment{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;opacity:.6;filter:alpha(opacity=60);background:#222;padding:6px 12px;position:absolute;width:100%;bottom:0;color:#fff}
 .hello{width:25%;padding:0 10px;float:left}
-.content{min-height:700px}
 .collapse .active,.collapse .active:focus,.collapse .active:hover{color:#428bca;border-color:#ddd}
 .collapse a:focus,.collapse a:hover{color:#428bca}
 .list-group-item:first-child{border-top-right-radius:0;border-top-left-radius:0}
