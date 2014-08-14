@@ -65,7 +65,7 @@
                     <img src="{{ item.avatar }}" alt="" onError="this.src='http://placehold.it/173x173&text=!'">
                     <i class="btn-play"></i>
                 </a>
-                <div class="title">{{ item.title }}</div>
+                <div class="title">{{ item.name }}</div>
             </div>
             {% endfor %}
         </div>
@@ -79,5 +79,9 @@
     <script type="text/javascript" src="{{ STATIC_URL }}components/requirejs/require.js">
     </script>
     <script>require(["js/index"]);</script>
+<script type="text/javascript" src="{{ STATIC_URL }}components/jquery.stickyFooter/src/jquery.stickyFooter.js"></script>
+<script type="text/javascript">
+    $(".footer").stickyFooter();
+</script>
 </body>
 </html>

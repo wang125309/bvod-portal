@@ -556,7 +556,7 @@ select{background:#fff!important}
 .glyphicon-tree-deciduous:before{content:"\e200"}
 *,:after,:before{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
 html{font-size:10px;-webkit-tap-highlight-color:transparent}
-body{font-size:14px;line-height:1.42857;color:#333;background-color:#fff}
+body{font-size:14px;line-height:1.42857;color:#333}
 button,input,select,textarea{font-family:inherit;font-size:inherit;line-height:inherit}
 a{color:#428bca;text-decoration:none}
 a:focus,a:hover{color:#2a6596;text-decoration:underline}
@@ -2112,6 +2112,8 @@ body{font-family:'微软雅黑',"Helvetica Neue",Helvetica,Arial,sans-serif}
 .footer a{color:#eee}
 .footer .seperator{padding:0 8px;color:#eee}
 .header .more{margin:0}
+body{background:#FAF9F9}
+div.loop3{margin-bottom:0}
 .carousel-fade .item{-webkit-transition:opacity 1s;-moz-transition:opacity 1s;-ms-transition:opacity 1s;-o-transition:opacity 1s;transition:opacity 1s}
 .carousel-fade .active.left{left:0;opacity:0;z-index:2}
 .carousel-fade .next{left:0;opacity:1;z-index:1}
@@ -2144,7 +2146,8 @@ section.video-grid .grid .video-large{padding-top:8px;margin-top:-8px;background
 section.video-grid .grid .video-large .title{font-size:24px}
 section.video-grid .grid .video-large img{display:block;height:377.4px;margin-left:-113.47px}
 section.video-grid .grid .video-large img.error{height:377.4px;margin-left:0}
-section.video-grid .grid .row{margin-bottom:16px}
+section.video-grid .grid .row{margin-bottom:0}
+section.video-grid .grid .video-info .title{margin:3px 0;font-size:18px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 section.video-grid .grid .video .video-thumbnail{display:block;position:relative;overflow:hidden;width:212px;height:135px}
 section.video-grid .grid .video .video-thumbnail>img{height:135px;margin-left:-14px}
 section.video-grid .grid .video .video-thumbnail>img.error{height:100%;margin-left:0}
@@ -2158,11 +2161,13 @@ section.video-list ul:after,section.video-list ul:before{content:" ";display:tab
 section.video-list ul:after{clear:both}
 section.video-list ul .video.video-medium{display:block;overflow:hidden;position:relative;box-sizing:border-box}
 section.video-list ul .video.video-medium:hover .btn-play{display:block}
-section.video-list ul .video.video-medium img{height:360px;margin-left:-214px}
-section.video-list ul .video.video-medium img.error{height:360px;margin-left:0}
+section.video-list ul .video.video-medium img{height:200px;margin-left:-71.78px}
+section.video-list ul .video.video-medium img.error{height:200px;margin-left:0}
 section.video-list ul .video.video-medium .title{background-image:-webkit-linear-gradient(rgba(0,0,0,0),rgba(0,0,0,.3) 50%,#000);background-image:-o-linear-gradient(rgba(0,0,0,0),rgba(0,0,0,.3) 50%,#000);background-image:linear-gradient(rgba(0,0,0,0),rgba(0,0,0,.3) 50%,#000);background-repeat:no-repeat;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#FF000000', GradientType=0);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;position:absolute;bottom:0;width:100%;padding:45px 15px 15px;color:#eee}
+section.video-list ul .video-info{background:#fff;padding:10px 8px}
 section.video-list ul .video-info .watch{float:right}
-section.video-list ul .video-info .title{margin:3px 0;font-size:18px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+section.video-list ul .video-info .title{font-size:18px;margin-bottom:3px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+section.video-list ul .item{border:none;box-shadow:0 1px 3px 0 rgba(0,0,0,.2)}
 .video-large{position:relative;cursor:pointer}
 .video-large:hover .btn-play{display:block}
 .video-large .info{color:#eee;position:absolute;width:100%;bottom:0;padding:30px 20px;background-image:-webkit-linear-gradient(rgba(0,0,0,0),rgba(0,0,0,.3) 50%,rgba(0,0,0,.5));background-image:-o-linear-gradient(rgba(0,0,0,0),rgba(0,0,0,.3) 50%,rgba(0,0,0,.5));background-image:linear-gradient(rgba(0,0,0,0),rgba(0,0,0,.3) 50%,rgba(0,0,0,.5));background-repeat:no-repeat;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#80000000', GradientType=0);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
@@ -2170,10 +2175,10 @@ section.video-list ul .video-info .title{margin:3px 0;font-size:18px;overflow:hi
 .video-large .info .meta{color:#eee}
 .video-large .info .meta .watch{float:right}
 .departments{margin-bottom:40px}
-.departments .department-list-wrapper{overflow-y:hidden;overflow-x:hidden}
+.departments .department-list-wrapper{overflow-y:hidden;overflow-x:hidden;padding-top:12px}
 .departments .department-list-wrapper .department-list .department{width:165.71px;box-sizing:border-box;padding:0 10px}
-.departments .department-list-wrapper .department-list .department a{display:block;overflow:hidden}
+.departments .department-list-wrapper .department-list .department a{display:block;overflow:hidden;height:146.71px}
 .departments .department-list-wrapper .department-list .department a img{border-radius:6px;border:1px solid #eee;width:145.71px;height:145.71px}
-.departments .department-list-wrapper .department-list .department .title{text-align:center}
+.departments .department-list-wrapper .department-list .department .title{margin-top:15px;text-align:center}
 .departments .department-list-wrapper .department-list .department.last,.departments .department-list-wrapper .department-list .department:last-child{width:155.71px;padding-right:0}
 .col-xs-6 .comment{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;opacity:.6;filter:alpha(opacity=60);background:#222;padding:6px 12px;position:absolute;width:100%;bottom:0;color:#fff}

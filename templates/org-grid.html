@@ -9,7 +9,7 @@
 <body>
 {% include "navbar.html" with nav=request.nav %}
 
-<section class="org-list container">
+<section class="org-list container" id="con">
   <header>
     <div class="head-tab">
       {% if type == "new" %}
@@ -76,7 +76,7 @@
           {% endfor %}
           {% if not org.medias %}
             <div class="tab1">
-                该组织目前没有视频！
+                <img src="{{ STATIC_URL }}img/empty1.png" />
             </div>
           {% endif %}
         </div>
@@ -100,5 +100,10 @@
 </section>
 
 {% include "footer.html" %}
+<script type="text/javascript" src="{{ STATIC_URL }}components/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}components/jquery.stickyFooter/src/jquery.stickyFooter.js"></script>
+<script type="text/javascript">
+    $(".footer").stickyFooter();
+</script>
 </body>
 </html>
