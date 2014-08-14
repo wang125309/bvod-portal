@@ -1,5 +1,6 @@
 --index-url http://pypi.douban.com/simple
 
+trunkate
 Django
 mysql-python
 django-parsley
