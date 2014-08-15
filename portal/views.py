@@ -8,6 +8,7 @@ import django_active_tab as active_tab
 
 from query import *
 from utils import *
+import truncate
 
 logger = logging.getLogger(__name__)
 
@@ -72,6 +73,7 @@ def org(request, view_type):
     
     def add_media(dep):
         dep['medias'] = fetch_deparment_media(dep['slug'], limit=3)
+        dep['description'] = truncate(dep['description'], 35)
         logger.debug("hello:")
         logger.debug(dep['medias'])
         return dep
@@ -182,6 +184,8 @@ def video(request, category_slug='', sub_category_slug=''):
             videos = fetch(sub_category_slug, offset, limit)['media']
 
     category = fetch_category_tree()['categories']
+    logger.debug('hi, videos')
+    logger.debug(videos)
     return render(request, "videos.html", {
         'content': videos,
         'category': category,

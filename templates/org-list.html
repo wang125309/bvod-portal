@@ -17,7 +17,7 @@
     <div class="desc">34门学科&nbsp55个课程</div>
   </div>
 </div>
-<section class="org-list container no-margin">
+<section class="org-list container no-margin" id="con">
   <header>
     <div class="head-tab pull-left">
       {% if type == "new" %}
@@ -126,6 +126,7 @@
 </section>
 {% include "footer.html" %}
 <script type="text/javascript" src="{{ STATIC_URL }}components/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}components/jquery.stickyFooter/src/jquery.stickyFooter.js"></script>
 <script type="text/javascript" src="{{ STATIC_URL }}js/org-list.js">
 </script>
 </body>

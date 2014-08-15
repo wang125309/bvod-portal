@@ -291,11 +291,16 @@ font-size:18px;
 text-align:center;
 padding:70px 20px 0;
 display:none;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .org-list .grid .item .big .hover{
 display:block;
 }
 .org-list .grid .item .big span{
+    overflow: hidden;
+    text-overflow: ellipsis;
+
 }
 .org-list .grid .item .tab-list .tab{
     float:left;
@@ -304,16 +309,7 @@ display:block;
     height:100%;
 }
 .org-list .grid .item .tab-list .tab1{
-    float:left;
-    width:100%;
-    padding: 2px;
-    height:100%;
-    display:block;
-    height:51px;
-    background:#999;
-    color:white;
-    padding: 0;
-    vertical-align:middle;
+    margin:10px, 8px;
 }
 .org-list .grid .item .tab-list .tab .tab-a{
     display:block;

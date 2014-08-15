@@ -17,16 +17,15 @@
                     <div class="comment">{{ item.description_plain }}</div>
                     <i class="btn-play"></i>
                 </a>
-            
-                <div class="video-info">
-                  <div class="title">{{ item.title }}</div>
-                  <div class="meta clearfix">
-                      <div class="watch">
-                          <i class='icon-watch'></i>&nbsp;{{ item.views }}
-                      </div>
-                        {{ item.department.name }}
+            </div>
+            <div class="video-info">
+              <div class="title">{{ item.title }}</div>
+              <div class="meta clearfix">
+                  <div class="watch">
+                      <i class='icon-watch'></i>&nbsp;{{ item.views }}
                   </div>
-                </div>
+                    {{ item.department.name }}
+              </div>
             </div>
         </li>
         {% endfor %}
