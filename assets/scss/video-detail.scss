@@ -8,7 +8,59 @@
 body {
 	background-color: #FAF9F9;
 }
+.verify_password_container {
+    display: none;
+    width: 510px;
+    height: 90px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-left: -255px;
+    z-index:9998;
+    .password_box {
+        border-radius: 5px;        
+        z-index: 9999;
+        width: 510px;
+        height: 90px;
+        position: relative;
+        background-color: white;
+        padding: 20px;
 
+        #verify_password {
+            @include size(470px,50px);
+            background-color: #f5f5f5;
+            border-radius: 4px;
+            padding-left: 12px;
+            border: 1px solid #d1d1d1;
+            font-size: 14px;
+            &:focus {
+                outline:none;
+            }
+        }
+        
+
+        .submit_box {
+            position: relative;
+            @include size(30px,30px);
+            top: -40px;
+            left: -10px;
+            float: right;
+            background: url(../img/verify_password.png);
+            border-radius: 50%;
+            background-size: 100% 100%;
+           
+            #verify_submit {
+                @include size(100%,100%);
+                @include opacity(0);
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    
+}
 .video-content {
 	height: 660px;
 	margin-bottom: 40px;
