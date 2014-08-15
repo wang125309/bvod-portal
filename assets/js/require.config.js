@@ -8,7 +8,8 @@ var require = {
         'backbone': 'components/backbone',
         'headroom': 'components/headroom.js/dist/headroom',
         'velocity': 'components/velocity/jquery.velocity.min',
-        'jwplayer': 'js/3R6NXBWDEeS7ByIAC0MJiQ'
+        'jwplayer': 'js/3R6NXBWDEeS7ByIAC0MJiQ',
+        'jrumble': 'js/jquery.jrumble.1.3.min'
     },
     shim: {
         'bootstrap': {
@@ -18,6 +19,9 @@ var require = {
             deps: ['jquery']
         },
         'velocity': {
+            deps: ['jquery']
+        },
+        'jrumble': {
             deps: ['jquery']
         }
     }

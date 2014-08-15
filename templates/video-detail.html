@@ -7,6 +7,18 @@
     {% include "polyfills.html" %}
 </head>
 <body>
+    <div class="verify_password_container">
+        <div class="password_box">
+          <div id='verify_password_form'>
+               <input type="password" name="password" id="verify_password" placeholder="请输入视频密码"> 
+               <input type="hidden" name="video_id" value="{{ video.id }}" data-password="{{ video.password }}" data-videoid="{{ video.id }}">
+               <div class='submit_box'>
+                 <button type="submit" name="submit" value="" id="verify_submit"></button>
+               </div>
+            </div>
+        </div>
+    </div>
+
     {% include "navbar.html" with nav=request.nav %}
 
     <div class="video-content">
