@@ -151,37 +151,23 @@ def video(request, category_slug='', sub_category_slug=''):
     page = int(request.GET.get('p', None) or '1')
     type = request.GET.get('type', 'new')
     
-    if category_slug == '':
-        if type == 'hot':
-            fetch = fetch_popular_media
-        elif type == 'good':
-            fetch = fetch_praise_media
-        else:
-            fetch = fetch_recently_media
-        count = fetch()['count']
+    fetch = fetch_category_recently_media     
+    if type == 'hot':
+        fetch = fetch_category_popular_media
+    elif type == 'good':
+        fetch = fetch_category_priase_media
+    if sub_category_slug == '':
+        count = fetch(category_slug)['count']
         paginator = pagination(count, page, per_page)
         offset = (paginator['current'] - 1) * per_page
         limit = per_page
-        videos = fetch(limit)['media']
-
-    else:
-        fetch = fetch_category_recently_media
-        if type == 'hot':
-            fetch = fetch_category_popular_media
-        elif type == 'good':
-            fetch = fetch_category_priase_media
-        if sub_category_slug == '':
-            count = fetch(category_slug)['count']
-            paginator = pagination(count, page, per_page)
-            offset = (paginator['current'] - 1) * per_page
-            limit = per_page
-            videos = fetch(category_slug, offset, limit)['media']
-        else :
-            count = fetch(sub_category_slug)['count']
-            paginator = pagination(count, page, per_page)
-            offset = (paginator['current'] - 1) * per_page
-            limit = per_page
-            videos = fetch(sub_category_slug, offset, limit)['media']
+        videos = fetch(category_slug, offset, limit)['media']
+    else :
+        count = fetch(sub_category_slug)['count']
+        paginator = pagination(count, page, per_page)
+        offset = (paginator['current'] - 1) * per_page
+        limit = per_page
+        videos = fetch(sub_category_slug, offset, limit)['media']
 
     category = fetch_category_tree()['categories']
     logger.debug('hi, videos')
