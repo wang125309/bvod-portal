@@ -2111,6 +2111,13 @@ body{font-family:'微软雅黑',"Helvetica Neue",Helvetica,Arial,sans-serif}
 .footer a{color:#eee}
 .footer .seperator{padding:0 8px;color:#eee}
 body{background-color:#FAF9F9}
+.verify_password_container{display:none;width:510px;height:90px;position:fixed;top:50%;left:50%;margin-left:-255px;z-index:9998}
+.verify_password_container .password_box{border-radius:5px;z-index:9999;width:510px;height:90px;position:relative;background-color:#fff;padding:20px}
+.verify_password_container .password_box #verify_password{width:470px;height:50px;background-color:#f5f5f5;border-radius:4px;padding-left:12px;border:1px solid #d1d1d1;font-size:14px}
+.verify_password_container .password_box #verify_password:focus{outline:0}
+.verify_password_container .password_box .submit_box{position:relative;width:30px;height:30px;top:-40px;left:-10px;float:right;background:url(../img/verify_password.png) 0 0/100% 100%;border-radius:50%}
+.verify_password_container .password_box .submit_box #verify_submit{width:100%;height:100%;opacity:0;filter:alpha(opacity=0)}
+.verify_password_container .password_box .submit_box #verify_submit:hover{cursor:pointer}
 .video-content{height:660px;margin-bottom:40px;margin-top:68px;background-color:#E7E7E7}
 .video-content img{position:absolute;top:68px;left:0;width:100%;height:660px;z-index:1000}
 .video-content .player-wrapper{border:8px solid #fff;height:526px;background-color:#222;box-shadow:0 1px 1px rgba(0,0,0,.2)}
