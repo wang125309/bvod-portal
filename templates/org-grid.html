@@ -12,23 +12,11 @@
 <section class="org-list container" id="con">
   <header>
     <div class="head-tab">
-      {% if type == "new" %}
-        <a href="?type=new"><span class="nav cur">最新</span></a>
-      {% else %}
-        <a href="?type=new"><span class="nav">最新</span></a>
-      {% endif %}
+        <a href="?type=new"><span {% if type == 'new' %} class="nav cur" {% else %} class="nav" {% endif %}>最新</span></a>
         <span class="pull-left">|</span>
-      {% if type == "hot" %}
-        <a href="?type=hot"><span class="nav cur">最热</span></a>
-      {% else %}
-        <a href="?type=hot"><span class="nav">最热</span></a>
-      {% endif %}
+        <a href="?type=hot"><span {% if type == "hot" %} class="nav cur" {% else %} class="nav" {% endif %}>最热</span></a>
         <span class="pull-left">|</span>
-      {% if type == "good" %}
-        <a href="?type=good"><span class="nav cur">好评</span></a>
-      {% else %}
-        <a href="?type=good"><span class="nav">好评</span></a>
-      {% endif %}
+        <a href="?type=good"><span {% if type == "good" %} class="nav cur" {% else %} class="nav" {% endif %}>好评</span></a>
     </div>
     <div class="head-view">
       <a href="list?type={{ type }}"><i class="list"></i></a>
@@ -37,6 +25,7 @@
   </header>
 
   <div class="organizations grid row">
+    <div class="col-xs-30"></div>
     {% if orglist %}
     {% for org in orglist %}
     <div class="col-xs-6">
@@ -76,7 +65,7 @@
           {% endfor %}
           {% if not org.medias %}
             <div class="tab1">
-                <img src="{{ STATIC_URL }}img/empty1.png" />
+                <img src="{{ STATIC_URL }}img/empty.png" />
             </div>
           {% endif %}
         </div>
@@ -84,13 +73,14 @@
     </div>
     {% endfor %}
     {% else %}
-        <div class="col-xs-30" style="text-align: center">
-          <img src="{{ STATIC_URL }}img/org_empty.png" style="margin-top:40px;">
+        <div class="col-xs-30 org-empty">
+          <span></span>
+          <img src="{{ STATIC_URL }}img/org_empty.png">
         </div>
     {% endif %}
   </div>
   {% if count > 15 %}
-  <footer class="pagination-wrapper" style="text-align: center;">
+  <footer class="pagination-wrapper page" style="text-align: center;">
     {% include "pagination.html" %}
   </footer>
   {% else %}
@@ -104,6 +94,14 @@
 <script type="text/javascript" src="{{ STATIC_URL }}components/jquery.stickyFooter/src/jquery.stickyFooter.js"></script>
 <script type="text/javascript">
     $(".footer").stickyFooter();
+    if($('.org-empty')[0]){
+        var height = $('.footer')[0].offsetTop - $(".organizations")[0].offsetTop;
+        $(".org-empty")[0].style.height = height + 'px'; 
+    }
+    if($('.page')[0]){
+        var marginTemp = $(".footer")[0].offsetTop - $(".page")[0].offsetTop -67;
+        $(".page")[0].style.marginTop = marginTemp + 'px';
+    }
 </script>
 </body>
 </html>

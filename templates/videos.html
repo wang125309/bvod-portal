@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="{{ STATIC_URL }}css/jquery.stickyfooter.css">
     {% include "polyfills.html" %}
 </head>
-<body id="#body">
+<body class="body">
 {% include "navbar.html" with nav=request.nav %}
 
 <div class="img-banner">
@@ -65,42 +65,25 @@
           {% endfor %}
         </div>
     </div>
-    <div class="col-xs-24 content" id="page">
+    <div class="col-xs-24 content">
       <header>
         <div class="head-tab">
-          {% if type == "new" %}
-            <a href="?type=new"><span class="nav cur">最新</span></a>
-          {% else %}
-            <a href="?type=new"><span class="nav">最新</span></a>
-          {% endif %}
+            <a href="?type=new"><span {% if type == 'new' %} class="nav cur" {% else %} class="nav" {% endif %}>最新</span></a>
             <span class="pull-left">|</span>
-          {% if type == "hot" %}
-            <a href="?type=hot"><span class="nav cur">最热</span></a>
-          {% else %}
-            <a href="?type=hot"><span class="nav">最热</span></a>
-          {% endif %}
+            <a href="?type=hot"><span {% if type == "hot" %} class="nav cur" {% else %} class="nav" {% endif %}>最热</span></a>
             <span class="pull-left">|</span>
-          {% if type == "good" %}
-            <a href="?type=good"><span class="nav cur">好评</span></a>
-          {% else %}
-            <a href="?type=good"><span class="nav">好评</span></a>
-          {% endif %}
+            <a href="?type=good"><span {% if type == "good" %} class="nav cur" {% else %} class="nav" {% endif %}>好评</span></a>
         </div>
       </header>
 
       <div class="detail row">
-        {% if not content %}
-          <div class="col-xs-30" style="height: 200px; text-align: center">
-            <img src="{{ STATIC_URL }}img/video_empty.png" style="margin-top:100px;">
-          </div>
-        {% else %}
+      <div class="col-xs-30"></div>
         {% for video in content %}
-          <div class="hello">
-            <div class="item">
+            <div class="item hello">
               <a class="video-thumbnail" href="/video/{{ video.id }}">
                 <img src="{{ video.thumbs.m.url }}" 
                     onError="this.className='error';this.src='http://placehold.it/212x135&text=!'">    
-                <div class="comment">{{ video.description_plain }}</div>
+                <div class="comment">{{ video.abstract }}</div>
               </a>
             <div class="video-info">
               <div class="title">{{ video.title }}</div>
@@ -112,15 +95,19 @@
               </div>
             </div>
           </div>
-        </div>
         {% endfor %}
+        {% if not content %}
+          <div class="col-xs-30 video-empty">
+          <span></span>
+            <img src="{{ STATIC_URL }}img/video_empty.png">
+          </div>
         {% endif %}
       </div>
     </div>
   </div>
 
   {% if count > 16 %}
-  <footer class="pagination-wrapper col-xs-24 col-xs-offset-6" id="footer" style="text-align: center;">
+  <footer class="pagination-wrapper col-xs-24 col-xs-offset-6 page" style="text-align: center;">
       {% include "pagination.html" %}
   </footer>
   {% else %}

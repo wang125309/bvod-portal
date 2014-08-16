@@ -15,7 +15,13 @@ $(function(){
             $(".list-group > .active+div").addClass('in');
         }
     });
-    //var height = window.screen.availHeight - 372;
-    //document.getElementById('con').style.minHeight = height+'px';
-            $(".footer").stickyFooter();
+    $(".footer").stickyFooter();
+    if($(".video-empty")[0]){    
+        var height = $('.footer')[0].offsetTop - $(".detail")[0].offsetTop - 268;
+        $(".video-empty")[0].style.height = height + 'px';
+    }
+    if($(".page")[0]){
+        var marginTemp = $(".footer")[0].offsetTop - $(".page")[0].offsetTop -67;
+        $(".page")[0].style.marginTop = marginTemp + 'px';
+    }
 });

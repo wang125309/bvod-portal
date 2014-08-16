@@ -16,7 +16,7 @@
                     onError="this.className='error';this.src='http://placehold.it/444x377&text=!'">
                     <a href="video/{{ item.id }}" class="btn-play"></a>
                 <div class="info">
-                    <div class='title'>{{ item.description_plain }}</div>
+                    <div class='title'>{{ item.abstract }}</div>
                     <div class='meta'>
                         <div class="watch">
                             <i class='icon-watch-reverse'></i>&nbsp;{{ item.views }}
@@ -36,7 +36,7 @@
                 <a class="video-thumbnail" href="/video/{{ item.id }}">
                     <img src="{{ item.thumbs.m.url }}" 
                         onError="this.className='error';this.src='http://placehold.it/212x135&text=!'">    
-                    <div class="comment">{{ item.description_plain }}</div>
+                    <div class="comment">{{ item.abstract }}</div>
                 </a>
             <div class="video-info">
                 <div class="title">{{ item.title }}</div>
