@@ -105,7 +105,7 @@ def org_detail(request, org_id):
     elif type == 'good':
         fetch = fetch_department_priase_media
 
-    per_page = 10
+    per_page = 20
     count = fetch(department['slug'])['count']
     paginator = pagination(count, page, per_page)
     offset = (paginator['current'] - 1) * per_page

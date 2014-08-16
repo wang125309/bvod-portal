@@ -21,7 +21,7 @@ $(function(){
         $(".video-empty")[0].style.height = height + 'px';
     }
     if($(".page")[0]){
-        var marginTemp = $(".footer")[0].offsetTop - $(".page")[0].offsetTop -67;
+        var marginTemp = $(".footer")[0].offsetTop - $(".page")[0].offsetTop -107;
         $(".page")[0].style.marginTop = marginTemp + 'px';
     }
 });
