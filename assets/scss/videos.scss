@@ -8,6 +8,8 @@
 @import "assets/scss/lib/pagination";
 @import "assets/scss/lib/video-card";
 
+
+
 .video-empty{
     display: table-cell;
     text-align: center;
@@ -100,6 +102,10 @@ a.hi{
     margin-top: 30px;
     margin-left: 0px;
     margin-right: 0px;
+    
+    div.collapse a{
+        background-color: #FAF9F9;
+    }
 }
 
 .list-group-item {
