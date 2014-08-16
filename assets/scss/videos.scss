@@ -8,6 +8,23 @@
 @import "assets/scss/lib/pagination";
 @import "assets/scss/lib/video-card";
 
+.video-empty{
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+
+    span{
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+    }
+
+    img{
+        vertical-align: middle;
+    }
+}
+
+
 .col-xs-6 .comment{
     overflow: hidden;
     text-overflow: ellipsis;

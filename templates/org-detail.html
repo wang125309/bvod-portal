@@ -53,30 +53,19 @@
 
   <header>
     <div class="head-tab">
-      {% if type == "new" %}
-      <a href="?type=new"><span class="nav cur">最新</span></a>
-      {% else %}
-      <a href="?type=new"><span class="nav">最新</span></a>
-      {% endif %}
-      <span class="pull-left">|</span>
-      {% if type == "hot" %}
-      <a href="?type=hot"><span class="nav cur">最热</span></a>
-      {% else %}
-      <a href="?type=hot"><span class="nav">最热</span></a>
-      {% endif %}
-      <span class="pull-left">|</span>
-      {% if type == "good" %}
-      <a href="?type=good"><span class="nav cur">好评</span></a>
-      {% else %}
-      <a href="?type=good"><span class="nav">好评</span></a>
-      {% endif %}
+        <a href="?type=new"><span {% if type == 'new' %} class="nav cur" {% else %} class="nav" {% endif %}>最新</span></a>
+        <span class="pull-left">|</span>
+        <a href="?type=hot"><span {% if type == "hot" %} class="nav cur" {% else %} class="nav" {% endif %}>最热</span></a>
+        <span class="pull-left">|</span>
+        <a href="?type=good"><span {% if type == "good" %} class="nav cur" {% else %} class="nav" {% endif %}>好评</span></a>
     </div>
   </header>
 
   <div class="detail row">
     {% if count == 0 %}
-    <div class="col-xs-30" style="text-align:center;" id="img">
-       <img src="{{ STATIC_URL }}img/org_empty.png" style="margin-top:50px;">
+    <div class="col-xs-30 org-empty">
+       <span></span>
+       <img src="{{ STATIC_URL }}img/org_empty.png">
     </div>
     {% else %}
     {% for video in medias %}
@@ -86,7 +75,7 @@
         <a class="video-thumbnail" href="/video/{{ video.id }}">
           <img src="{{ video.thumbs.m.url }}" 
               onError="this.className='error';this.src='http://placehold.it/212x135&text=!'">    
-          <div class="comment">{{ video.description_plain }}</div>
+          <div class="comment">{{ video.abstract }}</div>
         </a>
         <div class="video-info">
             <div class="title">{{ video.title }}</div>
@@ -103,8 +92,8 @@
     {% endif %}
   </div>
 
-  {% if count > 10 %}
-  <footer class="pagination-wrapper" style="text-align: center;">{% include "pagination.html" %}</footer>
+  {% if true %}
+  <footer class="pagination-wrapper page" style="text-align: center;">{% include "pagination.html" %}</footer>
   {% endif %}
 </section>
 {% include "footer.html" %}
@@ -112,6 +101,14 @@
 <script type="text/javascript" src="{{ STATIC_URL }}components/jquery.stickyFooter/src/jquery.stickyFooter.js"></script>
 <script type="text/javascript">
     $(".footer").stickyFooter();
+    if($('.org-empty')[0]){
+        var height = $('.footer')[0].offsetTop - $(".detail")[0].offsetTop;
+        $(".org-empty")[0].style.height = height + 'px'; 
+    }
+    if($('.page')[0]){
+        var marginTemp = $(".footer")[0].offsetTop - $(".page")[0].offsetTop -67;
+        $(".page")[0].style.marginTop = marginTemp + 'px';
+    }
 </script>
 </body>
 </html>

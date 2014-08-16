@@ -11,8 +11,22 @@ body {
     background: #FAF9F9;
 }
 
+.org-empty{
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+
+    span{
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+    }
+
+    img{
+        vertical-align: middle;
+    }
+}
 .organizations {
-    min-height:500px;
     margin-top:0px;
 }
 
@@ -308,8 +322,8 @@ display:block;
     padding: 2px;
     height:100%;
 }
-.org-list .grid .item .tab-list .tab1{
-    margin:10px, 8px;
+.org-list .grid .item .tab-list .tab1 img{
+    margin-top:8px;
 }
 .org-list .grid .item .tab-list .tab .tab-a{
     display:block;

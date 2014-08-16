@@ -2,7 +2,7 @@
     <a class="video-thumbnail" href="/video/{{ video.id }}">
         <img src="{{ video.thumbs.m.url }}" 
             onError="this.className='error';this.src='http://placehold.it/212x135&text=!'">    
-        <div class="comment">{{ video.description_plain }}</div>
+        <div class="comment">{{ video.abstract }}</div>
     </a>
     <div class="video-info">
         <div class="title">{{ video.title }}</div>
