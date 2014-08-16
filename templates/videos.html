@@ -21,46 +21,29 @@
   <div class="row">
     <div class="col-xs-6">
         <div class="row list-group" id="accordion" data-spy="affix" data-offset-top="169" data-offset-bottom="100">
-          {% if category_slug == '' %}
-            <a href="/video?type={{ type }}" class="active list-group-item" id="all">
-              全部视频
+            <a href="/video?type={{ type }}" {% if category_slug == '' %} class="active list-group-item" \
+                {% else %} class="list-group-item" {% endif %} id="all">
+                全部视频
             </a>
-          {% else %}
-            <a href="/video?type={{ type }}" class="list-group-item" id="all">
-              全部视频
-            </a>
-          {% endif  %}
           {% for item in category %}
             {% if item.children %}
-              {% if category_slug == item.slug %}
-                <a data-target="#{{ item.slug }}" class="list-group-item active dropup hi" id="{{ item.slug }}" data-toggle="collapse">
-                  {{ item.name }}<b class="caret"></b>
+                <a data-target="#{{ item.slug }}" {% if category_slug == item.slug %} class="list-group-item active dropup hi" \
+                    {% else %}  class="list-group-item hi" {% endif %} id="{{ item.slug }}" data-toggle="collapse">
+                    {{ item.name }}<b class="caret"></b>
                 </a>
-                <div class="collapse in" id="{{ item.slug }}">
-              {% else %}
-                <a data-target="#{{ item.slug }}" class="list-group-item hi" id="{{ item.slug }}" data-toggle="collapse">
-                  {{ item.name }}<b class="caret"></b>
-                </a>
-                <div class="collapse" id="{{ item.slug }}">
-              {% endif %}
+                <div {% if category_slug == item.slug %} class="collapse in" {% else %} class="collapse" {% endif %} id="{{ item.slug }}">
+
                 {% for subitem in item.children %}
-                  {% if sub_category_slug == subitem.slug %}
-                    <a class="list-group-item active" style="background-color:#FAF9F9;"  href="/video/{{ item.slug }}/{{ subitem.slug }}?type={{ type }}">{{ subitem.name }}</a>
-                  {% else %}
-                    <a class="list-group-item" style="background-color:#FAF9F9;" href="/video/{{ item.slug }}/{{ subitem.slug }}?type={{ type }}">{{ subitem.name }}</a>
-                  {% endif %}
+                    <a {% if sub_category_slug == subitem.slug %} class="list-group-item active" \
+                        {% else %} class="list-group-item" {% endif %} href="/video/{{ item.slug }}/{{ subitem.slug }}?type={{ type }}">
+                        {{ subitem.name }}</a>
                 {% endfor %}
                 </div>
             {% else %}
-              {% if category_slug == item.slug %}
-                <a href="/video/{{ item.slug }}?type={{ type }}" class="active list-group-item">
-                  {{ item.name }}
+                <a href="/video/{{ item.slug }}?type={{ type }}" \
+                    {% if category_slug == item.slug %} class="active list-group-item" {% else %} class="list-group-item" {% endif%}>
+                    {{ item.name }}
                 </a>
-              {% else %}
-                <a href="/video/{{ item.slug }}?type={{ type }}" class="list-group-item">
-                  {{ item.name }}
-                </a>
-              {% endif %}
             {% endif %}
           {% endfor %}
         </div>
@@ -107,12 +90,11 @@
   </div>
 
   {% if count > 16 %}
-  <footer class="pagination-wrapper col-xs-24 col-xs-offset-6 page" style="text-align: center;">
-      {% include "pagination.html" %}
-  </footer>
+      <footer class="pagination-wrapper col-xs-24 col-xs-offset-6 page">
+          {% include "pagination.html" %}
+      </footer>
   {% else %}
-  <div style="height:40px;">
-  </div>
+      <div style="height:40px;"></div>
   {% endif %}
 </section>
 

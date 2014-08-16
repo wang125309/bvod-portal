@@ -34,11 +34,7 @@
   <ul class="organizations list">
     {% if orglist %}
     {% for item in orglist %}
-    {% if forloop.last %}
-    <li class="last item row">
-    {% else %}
-    <li class="item row">
-    {% endif %}
+      <li {% if forloop.last %} class="last item row" {% else %} class="item row" {% endif %}>
       <div class="left col-xs-12">
         <div class="row">
           <div class="col-xs-10">
@@ -68,9 +64,9 @@
 
       <div class="right col-xs-18">
         {% if item.medias %}
-        {% for media in item.medias %}
-        {% include 'video-card.html' with video=media class='video col-xs-10' %}
-        {% endfor %}
+          {% for media in item.medias %}
+            {% include 'video-card.html' with video=media class='video col-xs-10' %}
+          {% endfor %}
         {% else %}
           <div class="col-xs-30" style="text-align: center">
             <img src="{{ STATIC_URL }}img/org_empty.png" style="margin-top:40px;">
@@ -88,12 +84,12 @@
 
   </ul>
   {% if count > 5 %}
-  <footer class="pagination-wrapper page" style="text-align: center;">
-    {% include "pagination.html" %}
-  </footer>
+      <footer class="pagination-wrapper page" style="text-align: center;">
+          {% include "pagination.html" %}
+      </footer>
   {% else %}
-  <div style="height:40px;">
-  </div>
+     <div style="height:40px;">
+      </div>
   {% endif %}
 </section>
 {% include "footer.html" %}
