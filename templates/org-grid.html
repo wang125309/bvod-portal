@@ -80,12 +80,12 @@
     {% endif %}
   </div>
   {% if count > 15 %}
-  <footer class="pagination-wrapper page" style="text-align: center;">
-    {% include "pagination.html" %}
-  </footer>
+      <footer class="pagination-wrapper page">
+          {% include "pagination.html" %}
+      </footer>
   {% else %}
-  <div style="height:20px;">
-  </div>
+      <div style="height:40px;">
+      </div>
   {% endif %}
 </section>
 
@@ -99,7 +99,7 @@
         $(".org-empty")[0].style.height = height + 'px'; 
     }
     if($('.page')[0]){
-        var marginTemp = $(".footer")[0].offsetTop - $(".page")[0].offsetTop -67;
+        var marginTemp = $(".footer")[0].offsetTop - $(".page")[0].offsetTop -107;
         $(".page")[0].style.marginTop = marginTemp + 'px';
     }
 </script>
