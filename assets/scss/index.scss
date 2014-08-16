@@ -199,6 +199,9 @@ section.video-grid {
 
             .title {
               font-size: $font-size-h3;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
             }
 
             img {

@@ -92,8 +92,10 @@
     {% endif %}
   </div>
 
-  {% if true %}
+  {% if count > 20 %}
   <footer class="pagination-wrapper page" style="text-align: center;">{% include "pagination.html" %}</footer>
+  {% else %}
+      <div style="height:40px;"></div>
   {% endif %}
 </section>
 {% include "footer.html" %}
@@ -106,7 +108,7 @@
         $(".org-empty")[0].style.height = height + 'px'; 
     }
     if($('.page')[0]){
-        var marginTemp = $(".footer")[0].offsetTop - $(".page")[0].offsetTop -67;
+        var marginTemp = $(".footer")[0].offsetTop - $(".page")[0].offsetTop -107;
         $(".page")[0].style.marginTop = marginTemp + 'px';
     }
 </script>
