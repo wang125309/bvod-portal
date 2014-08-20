@@ -10381,7 +10381,6 @@ define("jquery", function(){});
             $elem = $(this.element); 
 
          //first reset
-        $elem.prop("style", "");
         $elem.attr("style", "");
          
         //set footer height
@@ -10408,7 +10407,6 @@ define("jquery", function(){});
             //must stick to bottom
             $elem.css(css);
         } else {
-            $elem.prop("style", "");
             $elem.attr("style", "");
             $elem.css(obj.options.css);
         }
@@ -10426,6 +10424,7 @@ define("jquery", function(){});
     };
 
 })( jQuery, window, document );
+
 define("sticky", ["jquery"], function(){});
 
 define('org-detail',['require','jquery','sticky'],function(require){

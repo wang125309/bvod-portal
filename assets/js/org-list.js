@@ -12853,7 +12853,6 @@ define("headroom", function(){});
             $elem = $(this.element); 
 
          //first reset
-        $elem.prop("style", "");
         $elem.attr("style", "");
          
         //set footer height
@@ -12880,7 +12879,6 @@ define("headroom", function(){});
             //must stick to bottom
             $elem.css(css);
         } else {
-            $elem.prop("style", "");
             $elem.attr("style", "");
             $elem.css(obj.options.css);
         }
@@ -12898,6 +12896,7 @@ define("headroom", function(){});
     };
 
 })( jQuery, window, document );
+
 define("sticky", ["jquery"], function(){});
 
 define('org-list',['require','jquery','bootstrap','headroom','sticky'],function(require){
