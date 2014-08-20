@@ -29,9 +29,6 @@
     "es5-shim": "~4.0.1",
     "respond": "~1.4.2",
     "html5shiv": "~3.7.2",
-    "jquery.stickyFooter": "~1.1.1"
-  },
-  "resolutions": {
-    "jquery": ">= 1.9.0"
+    "jquery.stickyFooter": "git@github.com:lucknessbuaa/jquery.stickyFooter.git",
   }
 }
