@@ -8,14 +8,10 @@
 </head>
 <body>
 
-{% include "navbar.html" with nav=request.nav %}
+{% include "navbar.html" with nav=request.nav type="" %}
 
 <div class="img-banner">
-  <img src="{{ STATIC_URL }}img/org-banner.png">
-  <div class="container">
-    <div class="title">寻找最热小组</div>
-    <div class="desc">34门学科&nbsp55个课程</div>
-  </div>
+  <img src="{{ STATIC_URL }}img/orgBanner.jpg">
 </div>
 <section class="org-list container no-margin" id="con">
   <header>
@@ -93,9 +89,9 @@
   {% endif %}
 </section>
 {% include "footer.html" %}
-<script type="text/javascript" src="{{ STATIC_URL }}components/jquery/dist/jquery.min.js"></script>
-<script type="text/javascript" src="{{ STATIC_URL }}components/jquery.stickyFooter/src/jquery.stickyFooter.js"></script>
-<script type="text/javascript" src="{{ STATIC_URL }}js/org-list.js">
+<script type="text/javascript" src="{{ STATIC_URL }}components/requirejs/require.js">
 </script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/org-list.js"></script>
+<script>require(["org-list"]);</script>
 </body>
 </html>

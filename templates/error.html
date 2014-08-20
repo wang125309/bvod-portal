@@ -9,8 +9,21 @@
 <body>
 {% include "navbar.html" with nav=request.nav %}
 <section class="org-list container no-margin">
+<div class="empty">
+    <span></span>
     <img  class='error' src="{{ STATIC_URL }}img/error.png">
+</div>
 </section>
 {% include "footer.html" %}
+<script type="text/javascript" src="{{ STATIC_URL }}components/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}components/jquery.stickyFooter/src/jquery.stickyFooter.js"></script>
+<script type="text/javascript">
+    $(".footer").stickyFooter();
+    if($('.empty')[0]){
+        var height = $('.footer')[0].offsetTop - $(".empty")[0].offsetTop - 68;
+        $(".empty")[0].style.height = height + 'px'; 
+    }
+
+</script>
 </body>
 </html>

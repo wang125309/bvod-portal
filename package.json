@@ -17,5 +17,9 @@
     "map-stream": "~0.1.0",
     "gulp-util": "~3.0.0",
     "gulp-minify-css": "~0.3.7"
+  },
+  "dependencies": {
+    "async": "~0.9.0",
+    "underscore": "~1.6.0"
   }
 }

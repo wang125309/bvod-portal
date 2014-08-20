@@ -11,13 +11,24 @@ body {
     background: #FAF9F9;
 }
 
-.org-list {
-    min-height: 1000px;
-}
-
 img.error{
     margin-top: 130px;
     margin-left: 163px;
+}
+.empty{
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+
+    span{
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+    }
+
+    img{
+        vertical-align: middle;
+    }
 }
 
 .organizations.grid {

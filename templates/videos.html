@@ -8,19 +8,15 @@
     {% include "polyfills.html" %}
 </head>
 <body class="body">
-{% include "navbar.html" with nav=request.nav %}
+{% include "navbar.html" with nav=request.nav type="" %}
 
 <div class="img-banner">
-  <img src="{{ STATIC_URL }}img/org-banner.png">
-  <div class="container">
-    <div class="title">北航课程大全</div>
-    <div class="desc">34门学科&nbsp55个课程</div>
-  </div>
+  <img src="{{ STATIC_URL }}img/videoBanner.jpg">
 </div>
 <section class="org-list container no-margin">
   <div class="row">
     <div class="col-xs-6">
-        <div class="row list-group" id="accordion" data-spy="affix" data-offset-top="169" data-offset-bottom="100">
+        <div class="row list-group" id="accordion">
             <a href="/video?type={{ type }}" {% if category_slug == '' %} class="active list-group-item" \
                 {% else %} class="list-group-item" {% endif %} id="all">
                 全部视频
@@ -28,7 +24,7 @@
           {% for item in category %}
             {% if item.children %}
                 <a data-target="#{{ item.slug }}" {% if category_slug == item.slug %} class="list-group-item active dropup hi" \
-                    {% else %}  class="list-group-item hi" {% endif %} id="{{ item.slug }}" data-toggle="collapse">
+                    {% else %}  class="list-group-item hi" {% endif %} id="a{{ item.slug }}" data-toggle="collapse">
                     {{ item.name }}<b class="caret"></b>
                 </a>
                 <div {% if category_slug == item.slug %} class="collapse in" {% else %} class="collapse" {% endif %} id="{{ item.slug }}">
@@ -66,7 +62,7 @@
               <a class="video-thumbnail" href="/video/{{ video.id }}">
                 <img src="{{ video.thumbs.m.url }}" 
                     onError="this.className='error';this.src='http://placehold.it/212x135&text=!'">    
-                <div class="comment">{{ video.abstract }}</div>
+                <div class="comment">{% if video.abstract != None %}{{ video.abstract }}{% else %}&nbsp;{% endif %}</div>
               </a>
             <div class="video-info">
               <div class="title">{{ video.title }}</div>
@@ -99,11 +95,9 @@
 </section>
 
 {% include "footer.html" %}
-<script type="text/javascript" src="{{ STATIC_URL }}components/jquery/dist/jquery.min.js"></script>
-<script type="text/javascript" src="{{ STATIC_URL }}components/bootstrap/js/dropdown.js"></script>
-<script type="text/javascript" src="{{ STATIC_URL }}components/bootstrap/js/collapse.js"></script>
-<script type="text/javascript" src="{{ STATIC_URL }}components/bootstrap/js/affix.js"></script>
-<script type="text/javascript" src="{{ STATIC_URL }}components/jquery.stickyFooter/src/jquery.stickyFooter.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}components/requirejs/require.js">
+</script>
 <script type="text/javascript" src="{{ STATIC_URL }}js/videos.js"></script>
+<script>require(["videos"]);</script>
 </body>
 </html>

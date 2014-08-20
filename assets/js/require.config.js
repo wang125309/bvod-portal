@@ -1,7 +1,7 @@
-var require = {
-    baseUrl: "/portal_static",
+module.exports = {
+    baseUrl: "./assets",
     paths: {
-        'underscore': 'components/underscore/underscore.js',
+        'underscore': 'components/underscore/underscore',
         'jquery': 'components/jquery/dist/jquery.min',
         'bootstrap': 'components/bootstrap/dist/js/bootstrap',
         'multiline': 'components/multiline/browser',
@@ -9,7 +9,19 @@ var require = {
         'headroom': 'components/headroom.js/dist/headroom',
         'velocity': 'components/velocity/jquery.velocity.min',
         'jwplayer': 'js/3R6NXBWDEeS7ByIAC0MJiQ',
-        'jrumble': 'js/jquery.jrumble.1.3.min'
+        'jrumble': 'js/jquery.jrumble.1.3.min',
+        'dropdown': 'components/bootstrap/js/dropdown',
+        'collapse':'components/bootstrap/js/collapse',
+        'affix':'components/bootstrap/js/affix',
+        'sticky': 'components/jquery.stickyFooter/src/jquery.stickyFooter',
+
+        //app modules
+        'index': 'jss/index',
+        'videos': 'jss/videos',
+        'video-detail': 'jss/video-detail',
+        'org-list': 'jss/org-list',
+        'org-grid': 'jss/org-grid',
+        'org-detail': 'jss/org-detail',
     },
     shim: {
         'bootstrap': {
@@ -23,6 +35,18 @@ var require = {
         },
         'jrumble': {
             deps: ['jquery']
-        }
+        },
+        'sticky': {
+            deps: ['jquery']
+        },
+        'dropdown': {
+            deps: ['jquery']
+        },
+        'collapse': {
+            deps: ['jquery']
+        },
+        'affix': {
+            deps: ['jquery']
+        },
     }
 };

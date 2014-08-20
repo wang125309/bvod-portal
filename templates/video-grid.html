@@ -12,11 +12,12 @@
         {% if forloop.first %}
         <div class="col-xs-12">
             <div class="video-large">
+              <a href="video/{{ item.id }}">
                 <img src="{{item.thumbs.l.url}}" 
                     onError="this.className='error';this.src='http://placehold.it/444x377&text=!'">
-                    <a href="video/{{ item.id }}" class="btn-play"></a>
+                    <i class="btn-play"></i>
                 <div class="info">
-                    <div class='title'>{{ item.abstract }}</div>
+                    <div class='title'>{{ item.title }}</div>
                     <div class='meta'>
                         <div class="watch">
                             <i class='icon-watch-reverse'></i>&nbsp;{{ item.views }}
@@ -24,6 +25,7 @@
                         {{ item.department.name }}
                     </div>
                 </div>
+              </a>
             </div>
         </div>
         {% else %}
@@ -36,7 +38,7 @@
                 <a class="video-thumbnail" href="/video/{{ item.id }}">
                     <img src="{{ item.thumbs.m.url }}" 
                         onError="this.className='error';this.src='http://placehold.it/212x135&text=!'">    
-                    <div class="comment">{{ item.abstract }}</div>
+                    <div class="comment">{% if item.abstract != None %}{{ item.abstract }}{% else %}&nbsp;{% endif %}</div>
                 </a>
             <div class="video-info">
                 <div class="title">{{ item.title }}</div>
