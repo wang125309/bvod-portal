@@ -7,7 +7,7 @@
     {% include "polyfills.html" %}
 </head>
 <body>
-{% include "navbar.html" with nav=request.nav %}
+{% include "navbar.html" with nav=request.nav type="normal" %}
 
 <section class="org-list container" id="con">
   <header>
@@ -51,7 +51,9 @@
             </div>
           </div>
           <a class="big" href="/org/{{ org.id }}">
-            <span>{{ org.description }}</span>
+            <div>
+              <span>{{ org.description }}</span>
+            </div>
           </a>
         </div>
         <div class="tab-list">
@@ -90,18 +92,9 @@
 </section>
 
 {% include "footer.html" %}
-<script type="text/javascript" src="{{ STATIC_URL }}components/jquery/dist/jquery.min.js"></script>
-<script type="text/javascript" src="{{ STATIC_URL }}components/jquery.stickyFooter/src/jquery.stickyFooter.js"></script>
-<script type="text/javascript">
-    $(".footer").stickyFooter();
-    if($('.org-empty')[0]){
-        var height = $('.footer')[0].offsetTop - $(".organizations")[0].offsetTop;
-        $(".org-empty")[0].style.height = height + 'px'; 
-    }
-    if($('.page')[0]){
-        var marginTemp = $(".footer")[0].offsetTop - $(".page")[0].offsetTop -107;
-        $(".page")[0].style.marginTop = marginTemp + 'px';
-    }
+<script type="text/javascript" src="{{ STATIC_URL }}components/requirejs/require.js">
 </script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/org-grid.js"></script>
+<script>require(["org-grid"]);</script>
 </body>
 </html>
