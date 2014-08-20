@@ -12498,7 +12498,6 @@ define("bootstrap", ["jquery"], function(){});
             $elem = $(this.element); 
 
          //first reset
-        $elem.prop("style", "");
         $elem.attr("style", "");
          
         //set footer height
@@ -12525,7 +12524,6 @@ define("bootstrap", ["jquery"], function(){});
             //must stick to bottom
             $elem.css(css);
         } else {
-            $elem.prop("style", "");
             $elem.attr("style", "");
             $elem.css(obj.options.css);
         }
@@ -12543,6 +12541,7 @@ define("bootstrap", ["jquery"], function(){});
     };
 
 })( jQuery, window, document );
+
 define("sticky", ["jquery"], function(){});
 
 define('org-grid',['require','jquery','bootstrap','sticky'],function(require){

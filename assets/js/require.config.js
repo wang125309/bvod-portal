@@ -21,7 +21,7 @@ module.exports = {
         'video-detail': 'jss/video-detail',
         'org-list': 'jss/org-list',
         'org-grid': 'jss/org-grid',
-        'org-detail': 'jss/org-detail',
+        'org-detail': 'jss/org-detail'
     },
     shim: {
         'bootstrap': {
@@ -47,6 +47,6 @@ module.exports = {
         },
         'affix': {
             deps: ['jquery']
-        },
+        }
     }
 };

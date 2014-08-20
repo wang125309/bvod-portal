@@ -23,17 +23,31 @@
             </a>
           {% for item in category %}
             {% if item.children %}
-                <a data-target="#{{ item.slug }}" {% if category_slug == item.slug %} class="list-group-item active dropup hi" \
-                    {% else %}  class="list-group-item hi" {% endif %} id="a{{ item.slug }}" data-toggle="collapse">
+                <a data-target="#{{ item.slug }}" {% if category_slug == item.slug %} {% if forloop.last %}\
+                    class="list-group-item active dropup hi last" {% else %} class="list-group-item active dropup hi" {% endif %}\
+                    {% else %}  {% if forloop.last %} class="list-group-item hi last" {% else %} class="list-group-item hi"{% endif %} \
+                    {% endif %} id="a{{ item.slug }}">
                     {{ item.name }}<b class="caret"></b>
                 </a>
                 <div {% if category_slug == item.slug %} class="collapse in" {% else %} class="collapse" {% endif %} id="{{ item.slug }}">
 
+                {% if forloop.last %}
+                {% for subitem in item.children %}
+                    <a {% if sub_category_slug == subitem.slug %} \
+                        {% if forloop.last %} class="list-group-item active last" {% else %} class="list-group-item active" {% endif %}\
+                        {% else %} \
+                        {% if forloop.last %}class="list-group-item last" {% else %} class="list-group-item" {% endif %}\
+                        {% endif %} \
+                        href="/video/{{ item.slug }}/{{ subitem.slug }}?type={{ type }}">
+                        {{ subitem.name }}</a>
+                {% endfor %}
+                {% else %}
                 {% for subitem in item.children %}
                     <a {% if sub_category_slug == subitem.slug %} class="list-group-item active" \
                         {% else %} class="list-group-item" {% endif %} href="/video/{{ item.slug }}/{{ subitem.slug }}?type={{ type }}">
                         {{ subitem.name }}</a>
                 {% endfor %}
+                {% endif %}
                 </div>
             {% else %}
                 <a href="/video/{{ item.slug }}?type={{ type }}" \

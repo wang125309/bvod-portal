@@ -79,13 +79,10 @@
     border-bottom-right-radius: 0px;
     border-bottom-left-radius: 0px;
 }
-#accordion > a:last-child {
+#accordion a.last {
     border-bottom-width:1px;
 }
 a.hi{
-    border-bottom-width:1px;
-}
-#accordion > div:last-child > a:last-child{
     border-bottom-width:1px;
 }
 

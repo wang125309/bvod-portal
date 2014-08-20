@@ -2123,7 +2123,7 @@ body{font-family:'微软雅黑',"Helvetica Neue",Helvetica,Arial,sans-serif}
 .collapse a:focus,.collapse a:hover{color:#428bca}
 .list-group-item:first-child{border-top-right-radius:0;border-top-left-radius:0}
 .list-group-item:last-child{border-bottom-right-radius:0;border-bottom-left-radius:0}
-#accordion>a:last-child,#accordion>div:last-child>a:last-child,a.hi{border-bottom-width:1px}
+#accordion a.last,a.hi{border-bottom-width:1px}
 .list-group ul li{list-style-type:none}
 .list-group ul li a{color:#000}
 .list-group ul li a.click{color:#428bca}

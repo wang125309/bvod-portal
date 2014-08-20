@@ -2,26 +2,27 @@ define(function(require){
     require("jquery");
     require("bootstrap");
     require("headroom");
-    require("dropdown");
-    require("collapse");
     require("affix");
     require("sticky");
 
     $(function(){
         var headroom = new Headroom($(".navbar-bvod")[0]);
         headroom.init();
+
         $('.list-group > a').click(function(){
             if($(this).attr('id') == $(".list-group > .active").attr('id')){
                 if($(".list-group > .active+div").hasClass('in')){
-                    $(".list-group > .active+div").removeClass('active');
+                    $(".list-group > .active+div").removeClass('active in');
                     $(this).removeClass('active dropup');
                 }else{
                     $(this).addClass('active dropup');
+                    $(".list-group > .active + div").addClass('in');
                 }
             }else{
                 $(".list-group > .active + div").removeClass('in');
                 $(".list-group .active").removeClass('active dropup');
                 $(this).addClass("active dropup");
+                $(".list-group > .active + div").addClass('in');
             }
         });
         $(".footer").stickyFooter();

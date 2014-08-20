@@ -22,7 +22,7 @@ define(function(require) {
                 height: 510,
                 sources: [
                     {file:$player.data("high"),label:"720p HD"},
-                    {file:$player.data("mid"),label:"360p SD",default:"true"}
+                    {file:$player.data("mid"),label:"360p SD","default":"true"}
                 ]
             });
         }else {
@@ -41,7 +41,7 @@ define(function(require) {
                         height: 510,
                         sources: [
                             {file:$player.data("high"),label:"720p HD"},
-                            {file:$player.data("mid"),label:"360p SD",default:"true"}
+                            {file:$player.data("mid"),label:"360p SD","default":"true"}
                         ]
                     });
                 }else {
