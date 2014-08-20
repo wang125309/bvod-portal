@@ -16281,7 +16281,7 @@ Velocity's structure:
             $elem = $(this.element); 
 
          //first reset
-        //$elem.prop("style", "");
+        $elem.prop("style", "");
         $elem.attr("style", "");
          
         //set footer height
@@ -16308,7 +16308,7 @@ Velocity's structure:
             //must stick to bottom
             $elem.css(css);
         } else {
-            //$elem.prop("style", "");
+            $elem.prop("style", "");
             $elem.attr("style", "");
             $elem.css(obj.options.css);
         }
@@ -16326,7 +16326,6 @@ Velocity's structure:
     };
 
 })( jQuery, window, document );
-
 define("sticky", ["jquery"], function(){});
 
 define('index',['require','jquery','bootstrap','headroom','velocity','sticky'],function(require) {

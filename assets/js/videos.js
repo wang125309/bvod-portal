@@ -13325,7 +13325,7 @@ define("affix", ["jquery"], function(){});
             $elem = $(this.element); 
 
          //first reset
-        //$elem.prop("style", "");
+        $elem.prop("style", "");
         $elem.attr("style", "");
          
         //set footer height
@@ -13352,7 +13352,7 @@ define("affix", ["jquery"], function(){});
             //must stick to bottom
             $elem.css(css);
         } else {
-            //$elem.prop("style", "");
+            $elem.prop("style", "");
             $elem.attr("style", "");
             $elem.css(obj.options.css);
         }
@@ -13370,7 +13370,6 @@ define("affix", ["jquery"], function(){});
     };
 
 })( jQuery, window, document );
-
 define("sticky", ["jquery"], function(){});
 
 define('videos',['require','jquery','bootstrap','headroom','dropdown','collapse','affix','sticky'],function(require){
