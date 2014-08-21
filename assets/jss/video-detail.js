@@ -4,6 +4,8 @@ define(function(require) {
     require("headroom");
     require("jwplayer");
     require("jrumble");
+    require("jwplayhtml5");
+    require("jwpsrv");
 
     $(function() {
         var headroom = new Headroom($(".navbar-bvod")[0]);
@@ -20,6 +22,8 @@ define(function(require) {
                 image: $player.data("image"),
                 width: 1124,
                 height: 510,
+                html5player: "../portal_static/js/jwplayer.html5.js",
+                flashplayer: "../portal_static/js/jwplayer.flash.swf",
                 sources: [
                     {file:$player.data("high"),label:"720p HD"},
                     {file:$player.data("mid"),label:"360p SD","default":"true"}
@@ -39,6 +43,8 @@ define(function(require) {
                         image: $player.data("image"),
                         width: 1124,
                         height: 510,
+                        html5player: "../portal_static/js/jwplayer.html5.js",
+                        flashplayer: "../portal_static/js/jwplayer.flash.swf",
                         sources: [
                             {file:$player.data("high"),label:"720p HD"},
                             {file:$player.data("mid"),label:"360p SD","default":"true"}

@@ -2132,7 +2132,7 @@ body{font-family:'微软雅黑',"Helvetica Neue",Helvetica,Arial,sans-serif}
 .list-group-item{border-bottom-width:0}
 .list-group .collapse a{margin-bottom:0}
 .org-list .row .list-group .caret{float:right;margin-top:8px}
-.affix{top:68px}
+.affix{top:0}
 .org-list .row .list-group .list-group-item{width:212px}
 body{background:#FAF9F9}
 .pagination{margin-top:0}
