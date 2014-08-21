@@ -38,7 +38,7 @@ define(function(require){
         $("#accordion").affix({
             offset:{
                 top: function(){
-                    return $(".img-banner>img")[0].height - 68;
+                    return $(".img-banner>img")[0].height;
                 },
                 bottom: function(){
                     return $(".footer")[0].height;

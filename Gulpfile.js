@@ -1,6 +1,8 @@
 var gulp = require("gulp");
 var sass = require("gulp-sass");
 var cssmin = require("gulp-minify-css");
+var uglify = require('gulp-uglify');
+
 
 var async = require("async");
 var rjs = require("requirejs");
@@ -32,6 +34,12 @@ gulp.task('rjs', function(callback) {
     async.series([
         compile(["index", "video-detail", "videos", "org-list", "org-grid", "org-detail"], "assets/jss")
     ], callback);
+});
+
+gulp.task('uglify', ['rjs'], function(){
+    return gulp.src("assets/js/*.js")
+        .pipe(uglify())
+        .pipe(gulp.dest("assets/js/"))
 });
 
 gulp.task('sass', function() {
