@@ -2,7 +2,12 @@ var gulp = require("gulp");
 var sass = require("gulp-sass");
 var cssmin = require("gulp-minify-css");
 var uglify = require('gulp-uglify');
-
+var changed = require("gulp-changed");
+var tinypng = require("gulp-tinypng");
+var base64 = require('gulp-base64');
+var imagemin = require("gulp-imagemin");
+var pngcrush = require("imagemin-pngcrush");
+var minifyCSS = require('gulp-minify-css');
 
 var async = require("async");
 var rjs = require("requirejs");
@@ -48,10 +53,40 @@ gulp.task('sass', function() {
             outputStyle: 'compressed',
             errLogToConsole: true
         }))
+        .pipe(base64({
+            baseDir: 'assets/scss',
+            maxImageSize: 48 * 1024
+        }))
         .pipe(cssmin({
             keepBreaks: true
         }))
         .pipe(gulp.dest("assets/css"));
+});
+
+gulp.task('image-png', function() {
+    return gulp.src("assets/imgb/*.png")
+        .pipe(changed('assets/img'))
+        .pipe(tinypng('9kl3nT2f8qC-AaApBVXDeQt-37ArLMNs'))
+        .on('error', console.error)
+        .pipe(gulp.dest("assets/img"));
+});
+
+gulp.task('image-other', function() {
+    return gulp.src("assets/imgb/*.{jpg,jpeg,gif}")
+        .pipe(changed('assets/img'))
+        .pipe(imagemin({
+            progressive: true,
+            use: [pngcrush()]
+        }))
+        .pipe(gulp.dest("assets/img"));
+});
+
+gulp.task('image', ['image-png', 'image-other']);
+
+gulp.task('minify-css', function() {
+    gulp.src('assets/css/*.css')
+        .pipe(minifyCSS({keepBreaks:true}))
+        .pipe(gulp.dest('assets/css/'));
 });
 
 gulp.task("watch-sass", function() {
