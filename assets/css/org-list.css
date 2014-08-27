@@ -860,7 +860,7 @@ textarea.form-control{height:auto}
 input[type=search]{-webkit-appearance:none}
 input[type=date],input[type=datetime-local],input[type=month],input[type=time]{line-height:34px;line-height:1.42857 \0}
 .form-horizontal .form-group-sm input[type=date].form-control,.form-horizontal .form-group-sm input[type=datetime-local].form-control,.form-horizontal .form-group-sm input[type=month].form-control,.form-horizontal .form-group-sm input[type=time].form-control,.input-group-sm>.input-group-btn>input[type=date].btn,.input-group-sm>.input-group-btn>input[type=datetime-local].btn,.input-group-sm>.input-group-btn>input[type=month].btn,.input-group-sm>.input-group-btn>input[type=time].btn,.input-group-sm>input[type=date].form-control,.input-group-sm>input[type=date].input-group-addon,.input-group-sm>input[type=datetime-local].form-control,.input-group-sm>input[type=datetime-local].input-group-addon,.input-group-sm>input[type=month].form-control,.input-group-sm>input[type=month].input-group-addon,.input-group-sm>input[type=time].form-control,.input-group-sm>input[type=time].input-group-addon,input[type=date].input-sm,input[type=datetime-local].input-sm,input[type=month].input-sm,input[type=time].input-sm{line-height:30px}
-.form-horizontal .form-group-lg input[type=date].form-control,.form-horizontal .form-group-lg input[type=datetime-local].form-control,.form-horizontal .form-group-lg input[type=month].form-control,.form-horizontal .form-group-lg input[type=time].form-control,.input-group-lg>.input-group-btn>input[type=date].btn,.input-group-lg>.input-group-btn>input[type=datetime-local].btn,.input-group-lg>.input-group-btn>input[type=month].btn,.input-group-lg>.input-group-btn>input[type=time].btn,.input-group-lg>input[type=date].form-control,.input-group-lg>input[type=date].input-group-addon,.input-group-lg>input[type=datetime-local].form-control,.input-group-lg>input[type=datetime-local].input-group-addon,.input-group-lg>input[type=month].form-control,.input-group-lg>input[type=month].input-group-addon,.input-group-lg>input[type=time].form-control,.input-group-lg>input[type=time].input-group-addon,input[type=date].input-lg,input[type=datetime-local].input-lg,input[type=month].input-lg,input[type=time].input-lg{line-height:46px}
+.form-horizontal .form-group-lg input[type=date].form-control,.form-horizontal .form-group-lg input[type=datetime-local].form-control,.form-horizontal .form-group-lg input[type=month].form-control,.form-horizontal .form-group-lg input[type=time].form-control,.input-group-lg>.input-group-btn>input[type=date].btn,.input-group-lg>.input-group-btn>input[type=datetime-local].btn,.input-group-lg>.input-group-btn>input[type=month].btn,.input-group-lg>.input-group-btn>input[type=time].btn,.input-group-lg>input[type=date].form-control,.input-group-lg>input[type=date].input-group-addon,.input-group-lg>input[type=datetime-local].form-control,.input-group-lg>input[type=datetime-local].input-group-addon,.input-group-lg>input[type=month].form-control,.input-group-lg>input[type=month].input-group-addon,.input-group-lg>input[type=time].form-control,.input-group-lg>input[type=time].input-group-addon,input[type=date].input-lg,input[type=datetime-local].input-lg,input[type=month].input-lg,input[type=time].input-lg{line-height:44px}
 .form-group{margin-bottom:15px}
 .checkbox,.radio{position:relative;display:block;min-height:20px;margin-top:10px;margin-bottom:10px}
 .checkbox label,.radio label{padding-left:20px;margin-bottom:0;font-weight:400;cursor:pointer}
@@ -874,13 +874,13 @@ input[type=date],input[type=datetime-local],input[type=month],input[type=time]{l
 .form-horizontal .form-group-sm .form-control,.input-group-sm>.form-control,.input-group-sm>.input-group-addon,.input-group-sm>.input-group-btn>.btn,.input-sm{height:30px;padding:5px 10px;font-size:12px;line-height:1.5;border-radius:3px}
 .form-horizontal .form-group-sm select.form-control,.input-group-sm>.input-group-btn>select.btn,.input-group-sm>select.form-control,.input-group-sm>select.input-group-addon,select.input-sm{height:30px;line-height:30px}
 .form-horizontal .form-group-sm select[multiple].form-control,.form-horizontal .form-group-sm textarea.form-control,.input-group-sm>.input-group-btn>select[multiple].btn,.input-group-sm>.input-group-btn>textarea.btn,.input-group-sm>select[multiple].form-control,.input-group-sm>select[multiple].input-group-addon,.input-group-sm>textarea.form-control,.input-group-sm>textarea.input-group-addon,select[multiple].input-sm,textarea.input-sm{height:auto}
-.form-horizontal .form-group-lg .form-control,.input-group-lg>.form-control,.input-group-lg>.input-group-addon,.input-group-lg>.input-group-btn>.btn,.input-lg{height:46px;padding:10px 16px;font-size:18px;line-height:1.33;border-radius:6px}
-.form-horizontal .form-group-lg select.form-control,.input-group-lg>.input-group-btn>select.btn,.input-group-lg>select.form-control,.input-group-lg>select.input-group-addon,select.input-lg{height:46px;line-height:46px}
+.form-horizontal .form-group-lg .form-control,.input-group-lg>.form-control,.input-group-lg>.input-group-addon,.input-group-lg>.input-group-btn>.btn,.input-lg{height:44px;padding:10px 16px;font-size:16px;line-height:1.33;border-radius:6px}
+.form-horizontal .form-group-lg select.form-control,.input-group-lg>.input-group-btn>select.btn,.input-group-lg>select.form-control,.input-group-lg>select.input-group-addon,select.input-lg{height:44px;line-height:44px}
 .form-horizontal .form-group-lg select[multiple].form-control,.form-horizontal .form-group-lg textarea.form-control,.input-group-lg>.input-group-btn>select[multiple].btn,.input-group-lg>.input-group-btn>textarea.btn,.input-group-lg>select[multiple].form-control,.input-group-lg>select[multiple].input-group-addon,.input-group-lg>textarea.form-control,.input-group-lg>textarea.input-group-addon,select[multiple].input-lg,textarea.input-lg{height:auto}
 .has-feedback{position:relative}
 .has-feedback .form-control{padding-right:42.5px}
 .form-control-feedback{position:absolute;top:25px;right:0;z-index:2;display:block;width:34px;height:34px;line-height:34px;text-align:center}
-.form-horizontal .form-group-lg .input-lg+.form-control,.input-group-lg>.input-group-btn>.input-lg+.btn,.input-group-lg>.input-lg+.form-control,.input-group-lg>.input-lg+.input-group-addon,.input-lg+.form-control-feedback,.input-lg+.form-horizontal .form-group-lg .form-control,.input-lg+.input-group-lg>.form-control,.input-lg+.input-group-lg>.input-group-addon,.input-lg+.input-group-lg>.input-group-btn>.btn{width:46px;height:46px;line-height:46px}
+.form-horizontal .form-group-lg .input-lg+.form-control,.input-group-lg>.input-group-btn>.input-lg+.btn,.input-group-lg>.input-lg+.form-control,.input-group-lg>.input-lg+.input-group-addon,.input-lg+.form-control-feedback,.input-lg+.form-horizontal .form-group-lg .form-control,.input-lg+.input-group-lg>.form-control,.input-lg+.input-group-lg>.input-group-addon,.input-lg+.input-group-lg>.input-group-btn>.btn{width:44px;height:44px;line-height:44px}
 .form-horizontal .form-group-sm .input-sm+.form-control,.input-group-sm>.input-group-btn>.input-sm+.btn,.input-group-sm>.input-sm+.form-control,.input-group-sm>.input-sm+.input-group-addon,.input-sm+.form-control-feedback,.input-sm+.form-horizontal .form-group-sm .form-control,.input-sm+.input-group-sm>.form-control,.input-sm+.input-group-sm>.input-group-addon,.input-sm+.input-group-sm>.input-group-btn>.btn{width:30px;height:30px;line-height:30px}
 .has-success .checkbox,.has-success .checkbox-inline,.has-success .control-label,.has-success .help-block,.has-success .radio,.has-success .radio-inline{color:#3c763d}
 .has-success .form-control{border-color:#3c763d;-webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,.075);box-shadow:inset 0 1px 1px rgba(0,0,0,.075)}
@@ -958,7 +958,7 @@ input[type=date],input[type=datetime-local],input[type=month],input[type=time]{l
 .btn-link,.btn-link:active,.btn-link:focus,.btn-link:hover{border-color:transparent}
 .btn-link:focus,.btn-link:hover{color:#2a6596;text-decoration:underline;background-color:transparent}
 .btn-link[disabled]:focus,.btn-link[disabled]:hover,fieldset[disabled] .btn-link:focus,fieldset[disabled] .btn-link:hover{color:#777;text-decoration:none}
-.btn-group-lg>.btn,.btn-lg{padding:10px 16px;font-size:18px;line-height:1.33;border-radius:6px}
+.btn-group-lg>.btn,.btn-lg{padding:10px 16px;font-size:16px;line-height:1.33;border-radius:6px}
 .btn-group-sm>.btn,.btn-sm{padding:5px 10px;font-size:12px;line-height:1.5;border-radius:3px}
 .btn-group-xs>.btn,.btn-xs{padding:1px 5px;font-size:12px;line-height:1.5;border-radius:3px}
 .btn-block{display:block;width:100%}
@@ -1043,7 +1043,7 @@ tbody.collapse.in{display:table-row-group}
 .input-group-addon,.input-group-btn{width:1%;white-space:nowrap;vertical-align:middle}
 .input-group-addon{padding:6px 12px;font-size:14px;font-weight:400;line-height:1;color:#555;text-align:center;background-color:#eee;border:1px solid #ccc;border-radius:4px}
 .form-horizontal .form-group-sm .input-group-addon.form-control,.input-group-addon.input-sm,.input-group-sm>.input-group-addon,.input-group-sm>.input-group-addon.form-control,.input-group-sm>.input-group-btn>.input-group-addon.btn{padding:5px 10px;font-size:12px;border-radius:3px}
-.form-horizontal .form-group-lg .input-group-addon.form-control,.input-group-addon.input-lg,.input-group-lg>.input-group-addon,.input-group-lg>.input-group-addon.form-control,.input-group-lg>.input-group-btn>.input-group-addon.btn{padding:10px 16px;font-size:18px;border-radius:6px}
+.form-horizontal .form-group-lg .input-group-addon.form-control,.input-group-addon.input-lg,.input-group-lg>.input-group-addon,.input-group-lg>.input-group-addon.form-control,.input-group-lg>.input-group-btn>.input-group-addon.btn{padding:10px 16px;font-size:16px;border-radius:6px}
 .input-group-addon input[type=checkbox],.input-group-addon input[type=radio]{margin-top:0}
 .input-group .form-control:first-child,.input-group-addon:first-child,.input-group-btn:first-child>.btn,.input-group-btn:first-child>.btn-group>.btn,.input-group-btn:first-child>.dropdown-toggle,.input-group-btn:last-child>.btn-group:not(:last-child)>.btn,.input-group-btn:last-child>.btn:not(:last-child):not(.dropdown-toggle){border-bottom-right-radius:0;border-top-right-radius:0}
 .input-group-addon:first-child{border-right:0}
@@ -1116,7 +1116,7 @@ tbody.collapse.in{display:table-row-group}
 @media (min-width:768px){.navbar-fixed-bottom,.navbar-fixed-top{border-radius:0}}
 .navbar-fixed-top{top:0;border-width:0 0 1px}
 .navbar-fixed-bottom{bottom:0;margin-bottom:0;border-width:1px 0 0}
-.navbar-brand{float:left;padding:15px;font-size:18px;line-height:20px;height:50px}
+.navbar-brand{float:left;padding:15px;font-size:16px;line-height:20px;height:50px}
 .navbar-brand:focus,.navbar-brand:hover{text-decoration:none}
 @media (min-width:768px){.navbar>.container .navbar-brand,.navbar>.container-fluid .navbar-brand{margin-left:-15px}}
 .navbar-toggle{position:relative;float:right;margin-right:15px;padding:9px 10px;margin-top:8px;margin-bottom:8px;background-color:transparent;background-image:none;border:1px solid transparent;border-radius:4px}
@@ -2071,13 +2071,14 @@ body{font-family:'微软雅黑',"Helvetica Neue",Helvetica,Arial,sans-serif}
 .navbar-bvod .navbar-brand:focus,.navbar-bvod .navbar-brand:hover{text-decoration:none}
 @media (min-width:768px){.navbar>.container .navbar-bvod .navbar-brand,.navbar>.container-fluid .navbar-bvod .navbar-brand{margin-left:-15px}}
 .navbar-bvod .navbar-text{color:#efeff1}
-.navbar-bvod .navbar-nav.tabs{font-size:18px}
+.navbar-bvod .navbar-nav.tabs{font-size:16px}
 .navbar-bvod .navbar-nav.tabs>li>a{padding-left:30px;padding-right:30px;line-height:18px}
 .navbar-bvod .navbar-nav>li>a{color:#efeff1;text-align:center;line-height:37px}
 .navbar-bvod .navbar-nav>li>a>span.en{font-size:14px}
 .navbar-bvod .navbar-nav>li>a:focus,.navbar-bvod .navbar-nav>li>a:hover{color:#efeff1;background-color:transparent}
 .navbar-bvod .navbar-nav>.active>a,.navbar-bvod .navbar-nav>.active>a:focus,.navbar-bvod .navbar-nav>.active>a:hover{color:#efeff1;background:url(../img/navbar-active.png) top center no-repeat}
 .navbar-bvod .navbar-nav>.disabled>a,.navbar-bvod .navbar-nav>.disabled>a:focus,.navbar-bvod .navbar-nav>.disabled>a:hover{color:#ccc;background-color:transparent}
+.navbar-bvod .navbar-nav>li>a:hover{color:#efeff1;background:url(../img/navbar-active.png) top center no-repeat}
 .navbar-bvod .navbar-toggle{border-color:#fff}
 .navbar-bvod .navbar-toggle .icon-bar,.navbar-bvod .navbar-toggle:focus,.navbar-bvod .navbar-toggle:hover{background-color:#fff}
 .navbar-bvod .navbar-collapse,.navbar-bvod .navbar-form{border-color:transparent,6.5%}
@@ -2105,7 +2106,7 @@ body{font-family:'微软雅黑',"Helvetica Neue",Helvetica,Arial,sans-serif}
 .pagination>li>a:focus,.pagination>li>a:hover,.pagination>li>span:focus,.pagination>li>span:hover{color:#2a6596;background-color:#eee;border-color:#ddd}
 .pagination>.active>a,.pagination>.active>a:focus,.pagination>.active>a:hover,.pagination>.active>span,.pagination>.active>span:focus,.pagination>.active>span:hover{z-index:2;color:#fff;background-color:#1665ad;border-color:#1665ad;cursor:default}
 .pagination>.disabled>a,.pagination>.disabled>a:focus,.pagination>.disabled>a:hover,.pagination>.disabled>span,.pagination>.disabled>span:focus,.pagination>.disabled>span:hover{color:#777;background-color:#fff;border-color:#ddd;cursor:not-allowed}
-.pagination-lg>li>a,.pagination-lg>li>span{padding:10px 16px;font-size:18px}
+.pagination-lg>li>a,.pagination-lg>li>span{padding:10px 16px;font-size:16px}
 .pagination-lg>li:first-child>a,.pagination-lg>li:first-child>span{border-bottom-left-radius:6px;border-top-left-radius:6px}
 .pagination-lg>li:last-child>a,.pagination-lg>li:last-child>span{border-bottom-right-radius:6px;border-top-right-radius:6px}
 .pagination-sm>li>a,.pagination-sm>li>span{padding:4px 12px;font-size:12px}
@@ -2123,7 +2124,7 @@ body{background:#FAF9F9}
 .img-banner .container{height:100%;position:absolute;top:0;left:0}
 .img-banner .container .meta{width:400px;height:auto;position:absolute;top:50%;left:10px;color:#fff}
 .img-banner .container .meta .title{font-size:30px;color:#226e98}
-.img-banner .container .meta .desc{font-size:18px;color:#226e98}
+.img-banner .container .meta .desc{font-size:16px;color:#226e98}
 @media (min-width:1200px){.img-banner .container{position:absolute;top:0;left:50%;width:1160px;height:100%;margin-left:-580px}}
 li.item.row:hover{cursor:pointer}
 .org-list ul{margin-bottom:0}
@@ -2165,6 +2166,6 @@ li.item.row:hover{cursor:pointer}
 .org-list .list .item .video .video-thumbnail>img{height:124px;margin-left:-10.22px}
 .org-list .list .item .video .video-thumbnail>img.error{height:100%;margin-left:0}
 .org-list .list .item .video .video-thumbnail .comment{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;opacity:.6;filter:alpha(opacity=60);background:#222;padding:6px 12px;position:absolute;width:100%;bottom:0;color:#fff}
-.org-list .list .item .video .video-info div.title{margin:3px 0;font-size:18px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.org-list .list .item .video .video-info div.title{margin:3px 0;font-size:16px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .org-list .list .item .video .video-info .meta{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#777;margin-bottom:8px}
 .org-list .list .item .video .video-info .meta div.watch{color:#777;float:right}

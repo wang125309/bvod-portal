@@ -69,7 +69,9 @@
 .collapse a:focus{
     color: #428bca;
 }
-
+.list-group-item {
+    cursor: pointer;
+}
 .list-group-item:first-child {
     border-top-right-radius: 0px;
     border-top-left-radius: 0px;

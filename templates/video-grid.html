@@ -17,7 +17,7 @@
                     onError="this.className='error';this.src='http://placehold.it/444x377&text=!'">
                     <i class="btn-play"></i>
                 <div class="info">
-                    <div class='title'>{{ item.title }}</div>
+                    <a href="video/{{ item.id }}"><div class='title'>{{ item.title }}</div></a>
                     <div class='meta'>
                         <div class="watch">
                             <i class='icon-watch-reverse'></i>&nbsp;{{ item.views }}
@@ -39,9 +39,10 @@
                     <img src="{{ item.thumbs.m.url }}" 
                         onError="this.className='error';this.src='http://placehold.it/212x135&text=!'">    
                     <div class="comment">{% if item.abstract != None %}{{ item.abstract }}{% else %}&nbsp;{% endif %}</div>
+                    <i class="btn-play"></i>
                 </a>
             <div class="video-info">
-                <div class="title">{{ item.title }}</div>
+                <a href="/video/{{ item.id }}"><div class="title">{{ item.title }}</div></a>
                 <div class="meta clearfix" {% if forloop.counter > 4 %} style="margin-bottom:0px;" {% endif %}>
                     <div class="watch">
                         <i class='icon-watch'></i>&nbsp;{{ item.views }}
