@@ -115,6 +115,13 @@ $navbar-bvod-line-height: 37px;
       }
     }
   }
+  
+  .navbar-nav {
+    > li > a:hover {
+      color: $navbar-bvod-link-active-color;
+      background: url(../img/navbar-active.png) top center no-repeat $navbar-bvod-link-active-bg;
+    }
+  }
 
   .navbar-toggle {
     border-color: $navbar-bvod-toggle-border-color;
