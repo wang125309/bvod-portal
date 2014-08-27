@@ -11,7 +11,6 @@
   margin: 0px;
  } 
 }
-
 body{
     background: #FAF9F9;
 }
@@ -19,7 +18,15 @@ body{
 div.loop3{
     margin-bottom:0px;
 }
-
+$link_black:#333;
+a {
+  color:$link_black;
+  text-decrotion:none;
+}
+a:focus, a:hover {
+  color:$link_black*0.85;
+  text-decrotion:none;
+}
 .carousel-fade .item {
   -webkit-transition: opacity 1s; 
   -moz-transition: opacity 1s; 
@@ -185,11 +192,19 @@ section.video-grid {
 
     .grid {
         padding-top: 12px;
-
+        .video-thumbnail:hover .btn-play {
+          display:block;
+        }
         $video-width-large: ($container-lg)* 0.4 - $grid-gutter-width; // 444px
         $video-height-large: $video-width-large * 0.85; // ~377px
         $video-large-offset: (($video-large-width-indeed * $video-height-large / $video-large-height-indeed) - $video-width-large)/2;
         .video-large {
+            
+            a {
+              text-decoration:none;
+              color:#fff;
+            }
+            
             $bg-height: 8px;
             padding-top: $bg-height;
             margin-top: -$bg-height;
@@ -220,12 +235,22 @@ section.video-grid {
             margin-bottom: 0px;
         }
 
-        .video-info .title{
+        .video-info { 
+          
+          a {
+            text-decoration:none;
+            color:$link_black;
+          }
+          a:hover {
+            color:$link_black*0.85;
+          }
+          .title{
             margin: 3px 0;
             font-size: 18px;
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
+          }
         }
         .video {
           @include video-card($container-lg/5 - $grid-gutter-width, 135px);
@@ -267,7 +292,14 @@ section.video-list {
 
             position: relative;
             box-sizing: border-box;
-
+            
+            a {
+              text-decoration:none;
+              color:$link_black;
+            }
+            a:hover {
+              color:$link_black*0.85;
+            }
             .title {
                 @include gradient-vertical-three-colors(rgba(0, 0, 0, 0), rgba(0, 0, 0, .3), 50%, rgba(0, 0, 0, 1));
                 @include text-overflow;
@@ -287,7 +319,14 @@ section.video-list {
             .watch{
                 float: right;
             }
-
+            $black:#333;
+            a {
+              text-decoration:none;
+              color:$black;
+            }
+            a:hover {
+              color:$black*0.85;
+            }
             .title {
                 font-size: $font-size-large;
                 margin-bottom: 3px;

@@ -1,4 +1,4 @@
-define(function(require) {
+ define(function(require) {
     require("jquery");
     require("bootstrap");
     require("headroom");
@@ -19,7 +19,7 @@ define(function(require) {
         }).on('slide.bs.carousel', function() {
             $prevTitle = $slider.find(".active .ad-title");
             $prevDesc = $slider.find(".active .ad-desc");
-        }).on('slid.bs.carousel', function() {
+        }).on('slide.bs.carousel', function() {
             $prevTitle.hide();
             $prevDesc.hide();
             var $title = $slider.find(".active .ad-title");

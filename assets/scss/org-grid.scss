@@ -82,10 +82,12 @@ float:left;
 border:1px #ededed solid;
 background: #fff
 }
+
 .org-list .head-view a.cur{
 background:#1665ad;
 border:1px #1665ad solid;
 }
+
 .org-list .head-view .list{
 width:15px;
 height:12px;
@@ -269,6 +271,7 @@ margin-top:20px;
 
 .org-list .grid .item .tab-list{
     position:relative;
+    background:#f5f5f5;
     width:100%;
     height:75px;
     padding:10px 8px;
@@ -300,8 +303,7 @@ display:inline;
 position:absolute;
 height:100%;
 width:100%;
-background:#000;
-@include opacity(.5);
+background:rgba(0,0,0,0.5);
 top:0;
 color:#fff;
 font-size:18px;
@@ -454,8 +456,8 @@ position:relative;
     width:100%;
     position:absolute;
     bottom: 0px;
-    background:#000;
-    @include opacity(.5);
+    background:rgba(0,0,0,0.5);
+    
     color:$gray-lighter;
     padding: $padding-base-vertical $padding-base-horizontal;
     font-size:$font-size-base;
