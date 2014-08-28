@@ -99,7 +99,8 @@ body {
 	}
 
 	.title {
-		max-width: 400px;;
+		max-width: 400px;
+		line-height: 32px;
 		@include text-overflow();
 	}
 }
@@ -171,10 +172,12 @@ body {
 
 	.views {
 		text-align: center;
+		color:#999;
 	}
 
 	.comments {
 		text-align: center;
+		color:#999;
 	}
 
 	.tags {
