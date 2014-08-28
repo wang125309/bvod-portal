@@ -2161,7 +2161,7 @@ section.video-grid .grid .video-info .title{margin:3px 0;font-size:18px;overflow
 section.video-grid .grid .video .video-thumbnail{display:block;position:relative;overflow:hidden;width:212px;height:135px}
 section.video-grid .grid .video .video-thumbnail>img{height:135px;margin-left:-14px}
 section.video-grid .grid .video .video-thumbnail>img.error{height:100%;margin-left:0}
-section.video-grid .grid .video .video-thumbnail .comment{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;opacity:.6;filter:alpha(opacity=60);background:#222;padding:6px 12px;position:absolute;width:100%;bottom:0;color:#fff}
+section.video-grid .grid .video .video-thumbnail .comment{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;background:rgba(0,0,0,.5);padding:6px 12px;position:absolute;width:100%;bottom:0;color:#fff}
 section.video-grid .grid .video .video-info div.title{margin:3px 0;font-size:16px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 section.video-grid .grid .video .video-info .meta{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#777;margin-bottom:8px}
 section.video-grid .grid .video .video-info .meta div.watch{color:#777;float:right}
@@ -2198,4 +2198,4 @@ section.video-list ul .item{border:none;box-shadow:0 1px 3px 0 rgba(0,0,0,.2)}
 .departments .department-list-wrapper .department-list .department a img{border-radius:6px;border:1px solid #eee;width:145.71px;height:145.71px}
 .departments .department-list-wrapper .department-list .department .title{margin-top:15px;text-align:center}
 .departments .department-list-wrapper .department-list .department.last,.departments .department-list-wrapper .department-list .department:last-child{width:155.71px;padding-right:0}
-.col-xs-6 .comment{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;opacity:.6;filter:alpha(opacity=60);background:#222;padding:6px 12px;position:absolute;width:100%;bottom:0;color:#fff}
+.col-xs-6 .comment{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;background:rgba(0,0,0,.5);padding:6px 12px;position:absolute;width:100%;bottom:0;color:#fff}
