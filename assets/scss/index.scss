@@ -192,8 +192,23 @@ section.video-grid {
 
     .grid {
         padding-top: 12px;
+        .video-thumbnail .btn-play {
+          background-size:60px;
+        }
         .video-thumbnail:hover .btn-play {
           display:block;
+        }
+        .video-thumbnail .comment {
+          height:0;
+          padding:0 12px !important;
+          transition: height 0.5s;
+          -moz-transition: height 0.5s;  
+          -webkit-transition: height 0.5s; 
+          -o-transition: height 0.5s;  
+        }
+        .video-thumbnail:hover .comment {
+          padding:6px 12px !important;
+          height:30px;
         }
         $video-width-large: ($container-lg)* 0.4 - $grid-gutter-width; // 444px
         $video-height-large: $video-width-large * 0.85; // ~377px
@@ -267,15 +282,31 @@ section.video-list {
         list-style: none;
         padding-left: 0px;
         margin-bottom: 0px;
-
+        .video-medium {
+          .comment {
+            height:0;
+            padding:0 12px !important;
+            transition: height 0.5s;
+            -moz-transition: height 0.5s;  
+            -webkit-transition: height 0.5s; 
+            -o-transition: height 0.5s;  
+          }
+        }
+        .video-medium:hover .comment {
+          padding:6px 12px !important;
+          height:30px;
+        }
         .video.video-medium {
             display: block;
             overflow: hidden;
-
+            .btn-play {
+              background-size:60px;
+            }
             &:hover .btn-play {
               display: block;
             }
-
+           
+           
             $video-width: 212px;
             $video-height: 200px;
             $video-offset: ($video-large-width-indeed * $video-height / $video-large-height-indeed - $video-width)/2;

@@ -50,7 +50,7 @@ $navbar-bvod-line-height: 37px;
     float: left;
     padding: $navbar-padding-vertical $navbar-padding-horizontal;
     font-size: $font-size-h3;
-    line-height: 50px;
+    line-height: 60px;
     padding: 7px 0px;
     height: $navbar-height;
 
@@ -72,7 +72,7 @@ $navbar-bvod-line-height: 37px;
   }
 
   .navbar-nav.tabs {
-      font-size: $font-size-large;
+      font-size: 18px;
 
       > li > a {
         padding-left: 30px;
