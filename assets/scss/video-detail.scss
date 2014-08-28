@@ -99,7 +99,8 @@ body {
 	}
 
 	.title {
-		max-width: 400px;;
+		max-width: 400px;
+		line-height: 32px;
 		@include text-overflow();
 	}
 }
@@ -112,7 +113,15 @@ body {
 
 .video-info {
 }
-
+$link_color:#333;
+.path a {
+	text-decoration : none;
+	color : $link_color ;
+}
+.path a:hover {
+	color : $link_color*0.85 ;
+	text-decoration : none;
+}
 .video-meta {
 	margin-bottom: 40px;
 }
@@ -171,10 +180,12 @@ body {
 
 	.views {
 		text-align: center;
+		color:#999;
 	}
 
 	.comments {
 		text-align: center;
+		color:#999;
 	}
 
 	.tags {

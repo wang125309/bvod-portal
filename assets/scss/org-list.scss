@@ -109,10 +109,14 @@ li.item.row:hover {
     float:left;
     border:1px #ededed solid;
     background: #fff
-    }
-        .org-list .head-view a.cur{
-        background:#1665ad;
-        border:1px #1665ad solid;
+}
+.org-list .head-view a:hover {
+    background:#1665ad;
+    border:1px #1665ad solid;
+}
+.org-list .head-view a.cur{
+    background:#1665ad;
+    border:1px #1665ad solid;
 }
 .org-list .head-view .list{
     width:15px;
@@ -210,7 +214,6 @@ float:right;
 .org-list .list .item .org-head-img {
     @include square(124px);
     display: block;
-    border: 3px solid #fff;
     border-radius: 8px;
     box-shadow: 0px 1px 3px rgba(0, 0, 0, .3);
 }

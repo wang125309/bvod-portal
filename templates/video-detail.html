@@ -24,7 +24,7 @@
     <div class="video-content">
         <img src="{{ STATIC_URL }}img/watch-bg.png" alt="">
         <div class="container">
-            <h4 class="path">视频 &gt; {{ video.department.name }}</h4>
+            <h4 class="path"><a href="/video">视频</a> &gt; {{ video.department.name }}</h4>
             <div class="player-wrapper">
                 <div class="" id="player" data-high="{{ video.sources.0.url }}" data-mid="{{ video.sources.1.url }}"
                     data-image="{{ video.thumbs.l.url }}">
