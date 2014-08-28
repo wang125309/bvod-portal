@@ -454,9 +454,7 @@ section.video-list {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    opacity: .6;
-    filter: alpha(opacity=60);
-    background: #222;
+    background: rgba(0,0,0,0.5);
     padding: 6px 12px;
     position: absolute;
     width: 100%;

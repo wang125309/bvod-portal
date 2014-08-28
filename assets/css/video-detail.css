@@ -2127,6 +2127,8 @@ body{background-color:#FAF9F9}
 .video-content img.jwlogo{display:none}
 .video-content .title{max-width:400px;line-height:32px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .video-comment{margin-left:300px;float:left;width:40%}
+.path a{text-decoration:none;color:#333}
+.path a:hover{color:#2b2b2b;text-decoration:none}
 .video-meta{margin-bottom:40px}
 .container .col-xs-12 .video-card .info .col-xs-18{padding-top:3px;padding-bottom:5px}
 .container .col-xs-12 .video-card .info .col-xs-18 h4{margin-top:8px}

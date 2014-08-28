@@ -2157,7 +2157,7 @@ body{background:#FAF9F9}
 .org-list .list .item .video .video-thumbnail{display:block;position:relative;overflow:hidden;width:200px;height:135px}
 .org-list .list .item .video .video-thumbnail>img{height:135px;margin-left:-20px}
 .org-list .list .item .video .video-thumbnail>img.error{height:100%;margin-left:0}
-.org-list .list .item .video .video-thumbnail .comment{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;opacity:.6;filter:alpha(opacity=60);background:#222;padding:6px 12px;position:absolute;width:100%;bottom:0;color:#fff}
+.org-list .list .item .video .video-thumbnail .comment{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;background:rgba(0,0,0,.5);padding:6px 12px;position:absolute;width:100%;bottom:0;color:#fff}
 .org-list .list .item .video .video-info div.title{margin:3px 0;font-size:16px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .org-list .list .item .video .video-info .meta{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#777;margin-bottom:8px}
 .org-list .list .item .video .video-info .meta div.watch{color:#777;float:right}
@@ -2201,7 +2201,7 @@ body{background:#FAF9F9}
 .org-list .detail .item .video-thumbnail{display:block;position:relative;overflow:hidden;width:212px;height:135px}
 .org-list .detail .item .video-thumbnail>img{height:135px;margin-left:-14px}
 .org-list .detail .item .video-thumbnail>img.error{height:100%;margin-left:0}
-.org-list .detail .item .video-thumbnail .comment{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;opacity:.6;filter:alpha(opacity=60);background:#222;padding:6px 12px;position:absolute;width:100%;bottom:0;color:#fff}
+.org-list .detail .item .video-thumbnail .comment{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;background:rgba(0,0,0,.5);padding:6px 12px;position:absolute;width:100%;bottom:0;color:#fff}
 .org-list .detail .item .video-info div.title{margin:3px 0;font-size:16px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .org-list .detail .item .video-info .meta{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#777;margin-bottom:8px}
 .org-list .detail .item .video-info .meta div.watch{color:#777;float:right}
