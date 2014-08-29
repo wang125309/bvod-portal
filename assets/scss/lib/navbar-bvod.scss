@@ -36,19 +36,13 @@ $navbar-bvod-line-height: 37px;
   &.headroom--pinned {
     transform: translateY(0%);
   }
-
-  &.normal, &.headroom--not-top {
-    background: #233966;
-  }
-
-  &.headroom--unpinned {
-    transform: translateY(-100%);
-  }
+  
 
   .navbar-brand {
     color: $navbar-bvod-brand-color;
     float: left;
     padding: $navbar-padding-vertical $navbar-padding-horizontal;
+
     font-size: $font-size-h3;
     line-height: 60px;
     padding: 7px 0px;
@@ -221,6 +215,29 @@ $navbar-bvod-line-height: 37px;
         color: $navbar-bvod-link-disabled-color;
       }
     }
+  }
+  &.headroom--top {
+    transition: background 0.5s;
+    -moz-transition: backgound 0.5s;
+    -webkit-transition: background 0.5s;
+    -o-transition: backgound 0.5s;
+    background:transform;  
+
+  }
+
+  &.headroom--unpinned {
+    transform: translateY(-100%);
+    -moz-transform: translateY(-100%);
+    -webkit-transform: translateY(-100%);
+    -o-transform: translateY(-100%);
+  }
+  &.normal, &.headroom--not-top {
+    background: #233966;
+    transition: opacity 1s;
+    -moz-transition: opacity 1s;
+    -webkit-transition: opacity 1s;
+    -o-transition: opacity 1s;
+    opacity:1;  
   }
 }
 
