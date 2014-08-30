@@ -141,17 +141,8 @@ $org-height-indeed: 256px;
       filter: none;
       display: block;
       @include size(20px, 35px);
-      top: 50%;
-      margin-top: -18px;
-
-      &.right {
-        right: 40px;
-      }
-
-      &.left {
-        left: 40px;
-      }
-
+	  height:100%;
+	  width:20%;
       &:hover {
         background: transparent;
         filter: none;
@@ -160,7 +151,11 @@ $org-height-indeed: 256px;
       .bvod-icon-arrow-left {
         background: url(../img/arrow-left.png) center center no-repeat;
 		opacity : 0.5 ;
-        &:hover {
+        left:40px;
+		position:absolute;
+		top:50%;
+		margin-top:-17.5px;
+		&:hover {
           background: url(../img/arrow-left-gray.png) center center no-repeat;
         }
       }
@@ -168,7 +163,11 @@ $org-height-indeed: 256px;
       .bvod-icon-arrow-right {
         background: url(../img/arrow-right.png) center center no-repeat;
 		opacity : 0.5 ;
-        &:hover {
+        position:absolute;
+		right:40px;
+		top:50%;
+		margin-top:-17.5px;
+		&:hover {
           background: url(../img/arrow-right-gray.png) center center no-repeat;
         }
       }
