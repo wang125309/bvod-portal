@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>北航视频</title>
-    <link rel="stylesheet" href="{{ STATIC_URL }}css/index.css">
-    {% include "polyfills.html" %}
-    <link rel="shortcut icon" href="{{ STATIC_URL }}img/logo.png" />
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/index.css" />
+	<link rel="shortcut icon" href="{{ STATIC_URL }}img/logo.png" />
+	{% include "polyfills.html" %}
+    
 </head>
 <body>
     {% include "navbar.html" with nav=request.nav type="" %}
@@ -25,13 +26,18 @@
 
                     <div class="container">
                         <div class="meta">
-                            <h3 class="ad-title">{{ ad.title }}</h3>
-                            <p class="ad-desc">{{ ad.description }}</p>
+							{% if ad.title != None %}
+							<h3 class="ad-title">{{ ad.title }}</h3>
+							{% endif %}
+							{% if ad.description != None %}
+							<p class="ad-desc">{{ ad.description }}</p>
+							{% endif %}
                         </div>
                     </div>
-                    
+                    {% if ad.url %} 
                     <a href="{{ ad.url }}" class="btn-play-lg"></a>
-                </div>
+					{% endif %}
+				</div>
                 {% endfor %}
             </div>
 

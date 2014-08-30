@@ -159,7 +159,7 @@ $org-height-indeed: 256px;
 
       .bvod-icon-arrow-left {
         background: url(../img/arrow-left.png) center center no-repeat;
-
+		opacity : 0.5 ;
         &:hover {
           background: url(../img/arrow-left-gray.png) center center no-repeat;
         }
@@ -167,7 +167,7 @@ $org-height-indeed: 256px;
 
       .bvod-icon-arrow-right {
         background: url(../img/arrow-right.png) center center no-repeat;
-
+		opacity : 0.5 ;
         &:hover {
           background: url(../img/arrow-right-gray.png) center center no-repeat;
         }
@@ -260,7 +260,7 @@ section.video-grid {
             color:$link_black*0.85;
           }
           .title{
-            margin: 3px 0;
+            margin: 6px 0 0 !important;
             font-size: 18px;
             overflow: hidden;
             text-overflow: ellipsis;
