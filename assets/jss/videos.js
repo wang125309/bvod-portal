@@ -46,5 +46,7 @@ define(function(require){
 
             }
         });
+		
     });
+	
 });

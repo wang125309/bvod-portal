@@ -33,7 +33,13 @@
                 }
             });
         });
-
+		$(".btn-play").on("click",function(e){
+			$(this).css("display","block");
+			var value = $(this).css("background-size");
+			$(this).animate({"background-size":parseFloat(value)*1.2,},200,function(){
+				$(this).fadeOut();	
+			});	
+		});
         $(".footer").stickyFooter();
     });
 });
