@@ -17,5 +17,6 @@ urlpatterns = patterns('',
     url(r'^org/(?P<org_id>\d+)$', portal.views.org_detail),
     url(r'^video/(?P<video_id>\d+)$', portal.views.video_detail),
     url(r'^video$', portal.views.video),
-    url(r'^video/(?P<category_slug>.*)/(?P<sub_category_slug>.*)$', portal.views.video)
+    url(r'^video/(?P<category_slug>.*)/(?P<sub_category_slug>.*)$', portal.views.video),
+	url(r'^search$',portal.views.search)
 )
