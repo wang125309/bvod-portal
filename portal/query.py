@@ -122,3 +122,5 @@ def fetch_department_priase_media(slug, offset=0, limit=7):
    items = {'department':slug, 'offset':offset, 'limit':limit, 'order':'likes desc'}
    return fetch_query_result(media_url, items)
 ###########################################################
+
+

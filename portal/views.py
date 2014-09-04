@@ -181,3 +181,9 @@ def video(request, category_slug='', sub_category_slug=''):
         'sub_category_slug': sub_category_slug,
         'count': count
     })
+
+@active_tab('video')
+def search(request,keyword=''):
+	per_page = 16 
+		
+	return render(request, "search.html")

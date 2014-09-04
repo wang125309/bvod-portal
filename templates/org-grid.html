@@ -7,9 +7,12 @@
     {% include "polyfills.html" %}
 </head>
 <body>
-{% include "navbar.html" with nav=request.nav type="normal" %}
+{% include "navbar.html" with nav=request.nav type="" %}
 
-<section class="org-list container" id="con">
+<div class="img-banner">
+  <img src="{{ STATIC_URL }}img/orgBanner.png">
+</div>
+<section class="org-list container no-margin" id="con">
   <header>
     <div class="head-tab">
         <a href="?type=new"><span {% if type == 'new' %} class="nav cur" {% else %} class="nav" {% endif %}>最新</span></a>
