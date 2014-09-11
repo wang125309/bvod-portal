@@ -36,7 +36,7 @@
             <div class="col-xs-10">
             <div class="video">
                 <a class="video-thumbnail" href="/video/{{ item.id }}">
-                    <img src="{{ item.thumbs.m.url }}" 
+                    <img src="{{ item.thumbs.l.url }}" 
                         onError="this.className='error';this.src='http://placehold.it/212x135&text=!'">    
                     <div class="comment">{% if item.abstract != None %}{{ item.abstract }}{% else %}&nbsp;{% endif %}</div>
                     <i class="btn-play"></i>

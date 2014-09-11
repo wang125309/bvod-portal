@@ -1,7 +1,7 @@
 <ul class="pagination pagination-sm">
     <li {% if not pagination.page.has_previous %}class="disabled"{% endif %}>
         {% if pagination.page.has_previous %}
-        <a href="?p={{ pagination.page.previous_page_number }}">上一页</a>
+		<a href="?p={{ pagination.page.previous_page_number }}&type={{ type }}&t={{ t }}&q={{ q }}">上一页</a>
         {% else %}
         <a href="#">上一页</a>
         {% endif %}
@@ -9,13 +9,13 @@
 
     {% for page in pagination.pages %}
     <li {% if page == pagination.current %} class="active" {% endif %}>
-        <a href="?p={{ page }}&type={{ type }}">{{ page }}</a>
+	<a href="?p={{ page }}&type={{ type }}&q={{ q }}&t={{ t }}">{{ page }}</a>
     </li>
     {% endfor %}
 
     <li {% if not pagination.page.has_next %}class="disabled"{% endif %}>
         {% if pagination.page.has_next %}
-        <a href="?p={{ pagination.page.next_page_number }}">下一页</a>
+		<a href="?p={{ pagination.page.next_page_number }}&type={{ type }}&t={{ t }}&q={{ q }}">下一页</a>
         {% else %}
         <a href="#">下一页</a>
         {% endif %}

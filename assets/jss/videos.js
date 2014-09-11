@@ -43,10 +43,9 @@ define(function(require){
                 bottom: function(){
                     return $(".footer")[0].height;
                 }
-
             }
         });
-		
+			
     });
 	
 });

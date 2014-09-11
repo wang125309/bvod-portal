@@ -83,6 +83,14 @@ define(function(require) {
                     document.attachEvent("onkeypress", enterEvent);
                 } 
             });
+			
         }
+		$(".share-btn").click(function(){
+			var share_url_before = "<iframe height=498 width=510 src='";
+			var share_url = $(this).data("url"); 
+			var share_url_after = "' frameboard=0 allowfullscreen></iframe>";
+			share_url = share_url_before + share_url + share_url_after ;
+			alert(share_url);
+		});
     });
 });
