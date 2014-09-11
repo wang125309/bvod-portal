@@ -2151,7 +2151,7 @@ section.video-grid .grid .video-thumbnail:hover .comment{padding:6px 12px!import
 section.video-grid .grid .video-large{padding-top:8px;margin-top:-8px;background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAb0AAAAHAgMAAADhZntwAAAADFBMVEUAAAA7OE87OE87OE+Yv4IIAAAABHRSTlMAgE0a6hO1KAAAAB9JREFUKM9jYGDg/08v8IdhZACtVXQEDCMBhNIXOAAAfnnWoHkSAAQAAAAASUVORK5CYII=) top center no-repeat;width:444px;height:385.4px;overflow:hidden}
 section.video-grid .grid .video-large a{text-decoration:none;color:#fff}
 section.video-grid .grid .video-large .title{font-size:24px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-section.video-grid .grid .video-large img{display:block;height:377.4px}
+section.video-grid .grid .video-large img{display:block;height:387.4px}
 section.video-grid .grid .video-large img.error{height:377.4px;margin-left:0}
 section.video-grid .grid .row{margin-bottom:0}
 section.video-grid .grid .video-info a{text-decoration:none;color:#333}

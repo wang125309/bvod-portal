@@ -235,7 +235,7 @@ section.video-grid {
 
             img {
               display: block;
-              height: $video-height-large;
+              height: $video-height-large +10;
               &.error {
                 height: $video-height-large;
                 margin-left: 0px;; 
