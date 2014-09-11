@@ -2167,7 +2167,7 @@ body{background:#FAF9F9}
 .org-list .detail{padding:0;margin-top:0;list-style-type:none}
 .org-list .detail .item{margin-top:20px}
 .org-list .detail .item .video-thumbnail{display:block;position:relative;overflow:hidden;width:212px;height:135px}
-.org-list .detail .item .video-thumbnail>img{height:135px;margin-left:-14px}
+.org-list .detail .item .video-thumbnail>img{min-height:135px;max-height:212px;margin-left:-14px}
 .org-list .detail .item .video-thumbnail>img.error{height:100%;margin-left:0}
 .org-list .detail .item .video-thumbnail .comment{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;background:rgba(0,0,0,.5);padding:6px 12px;position:absolute;width:100%;bottom:0;color:#fff}
 .org-list .detail .item .video-info div.title{margin:3px 0;font-size:16px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
