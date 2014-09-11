@@ -235,8 +235,9 @@ section.video-grid {
 
             img {
               display: block;
-              height: $video-height-large +10;
-              &.error {
+              height: $video-height-large ;
+              margin-left: -($video-large-offset);
+			  &.error {
                 height: $video-height-large;
                 margin-left: 0px;; 
               }
@@ -309,7 +310,7 @@ section.video-list {
             $video-offset: ($video-large-width-indeed * $video-height / $video-large-height-indeed - $video-width)/2;
             img {
               height: $video-height;
-				
+			  margin-left:-$video-offset;		
               &.error {
 				height: $video-height;
 				margin-left: 0px;
