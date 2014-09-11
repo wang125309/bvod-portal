@@ -1,7 +1,6 @@
 define(function(require) {
     require("jquery");
     require("bootstrap");
-    require("headroom");
     require("jwplayer");
     require("jrumble");
     require("jwplayhtml5");
