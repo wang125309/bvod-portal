@@ -2,7 +2,8 @@ define(function(require) {
     require("jquery");
     require("bootstrap");
     require("jwplayer");
-    require("jrumble");
+    require("headroom");
+	require("jrumble");
     require("jwplayhtml5");
     require("jwpsrv");
 
