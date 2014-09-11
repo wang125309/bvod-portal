@@ -311,8 +311,9 @@ section.video-list {
               height: $video-height;
 
               &.error {
-                height: $video-height;
-                margin-left: 0px;
+                min-height: $video-height;
+                max-width: $video-width;
+				margin-left: 0px;
               }
             }
         
