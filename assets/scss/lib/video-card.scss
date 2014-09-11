@@ -11,8 +11,8 @@ $video-height-indeed: 90px;
         @include size($video-width, $video-height);
 
         > img {
-            min-height: $video-height;
-            max-height: $video-width;
+            min-width: $video-width;
+            height: $video-height;
 			margin-left: -$video-offset;
 
             &.error {
