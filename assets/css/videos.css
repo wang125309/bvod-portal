@@ -2130,7 +2130,7 @@ body{font-family:'微软雅黑',Helvetica,Helvetica,"Helvetica Neue",Helvetica,A
 .list-group ul li{list-style-type:none}
 .list-group ul li a{color:#000}
 .list-group ul li a.click{color:#428bca}
-.org-list .row .list-group{margin-top:30px;margin-left:0;margin-right:0}
+.org-list .row .list-group{margin-top:30px;margin-left:0;margin-right:0;border-bottom:1px solid #dcdcdc}
 .org-list .row .list-group div.collapse a{background-color:#FAF9F9}
 .list-group-item{border-bottom-width:0}
 .list-group .collapse a{margin-bottom:0}
