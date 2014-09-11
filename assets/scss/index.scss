@@ -309,10 +309,9 @@ section.video-list {
             $video-offset: ($video-large-width-indeed * $video-height / $video-large-height-indeed - $video-width)/2;
             img {
               height: $video-height;
-
+				
               &.error {
-                min-height: $video-height;
-                max-width: $video-width;
+				height: $video-height;
 				margin-left: 0px;
               }
             }
