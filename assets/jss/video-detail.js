@@ -8,8 +8,6 @@ define(function(require) {
     require("jwpsrv");
 
     $(function() {
-        var headroom = new Headroom($(".navbar-bvod")[0]);
-        headroom.init();
         var $slider = $(".banner .carousel");
         $slider.find(".active .ad-title, .active .ad-desc").show();
 
