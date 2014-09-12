@@ -2151,14 +2151,14 @@ section.video-grid .grid .video-thumbnail:hover .comment{padding:6px 12px!import
 section.video-grid .grid .video-large{padding-top:8px;margin-top:-8px;background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAb0AAAAHAgMAAADhZntwAAAADFBMVEUAAAA7OE87OE87OE+Yv4IIAAAABHRSTlMAgE0a6hO1KAAAAB9JREFUKM9jYGDg/08v8IdhZACtVXQEDCMBhNIXOAAAfnnWoHkSAAQAAAAASUVORK5CYII=) top center no-repeat;width:444px;height:385.4px;overflow:hidden}
 section.video-grid .grid .video-large a{text-decoration:none;color:#fff}
 section.video-grid .grid .video-large .title{font-size:24px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-section.video-grid .grid .video-large img{display:block;height:387.4px}
+section.video-grid .grid .video-large img{display:block;height:377.4px;margin-left:-113.47px}
 section.video-grid .grid .video-large img.error{height:377.4px;margin-left:0}
 section.video-grid .grid .row{margin-bottom:0}
 section.video-grid .grid .video-info a{text-decoration:none;color:#333}
 section.video-grid .grid .video-info a:hover{color:#2b2b2b}
 section.video-grid .grid .video-info .title{margin:6px 0 0!important;font-size:18px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 section.video-grid .grid .video .video-thumbnail{display:block;position:relative;overflow:hidden;width:212px;height:135px}
-section.video-grid .grid .video .video-thumbnail>img{min-width:212px;height:135px;margin-left:-14px}
+section.video-grid .grid .video .video-thumbnail>img{height:135px;margin-left:-14px}
 section.video-grid .grid .video .video-thumbnail>img.error{height:100%;margin-left:0}
 section.video-grid .grid .video .video-thumbnail .comment{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;background:rgba(0,0,0,.5);padding:6px 12px;position:absolute;width:100%;bottom:0;color:#fff}
 section.video-grid .grid .video .video-info div.title{margin:3px 0;font-size:16px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
@@ -2173,7 +2173,7 @@ section.video-list ul .video-medium:hover .comment{padding:6px 12px!important;he
 section.video-list ul .video.video-medium{display:block;overflow:hidden;position:relative;box-sizing:border-box}
 section.video-list ul .video.video-medium .btn-play{background-size:60px}
 section.video-list ul .video.video-medium:hover .btn-play{display:block}
-section.video-list ul .video.video-medium img{height:200px}
+section.video-list ul .video.video-medium img{height:200px;margin-left:-71.78px}
 section.video-list ul .video.video-medium img.error{height:200px;margin-left:0}
 section.video-list ul .video.video-medium a{text-decoration:none;color:#333}
 section.video-list ul .video.video-medium a:hover{color:#2b2b2b}
