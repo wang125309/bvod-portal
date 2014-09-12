@@ -183,7 +183,31 @@ def video(request, category_slug='', sub_category_slug=''):
     })
 
 @active_tab('video')
-def search(request,keyword=''):
-	per_page = 16 
-		
-	return render(request, "search.html")
+def search(request,q='',t='media'):
+	per_page = 10 
+	q = request.GET.get("q")
+	t = request.GET.get("t")
+	limit = per_page
+	if t == 'media':
+		videos = fetch_search_media(q,limit)
+		count = videos['count']
+		page = int(request.GET.get('p', None) or '1')
+		offset = (page-1)*10
+		videos = fetch_search_media(q,limit,offset)
+		paginator = pagination(count, page, per_page)
+		return render(request, "search.html",{
+			'q':q,
+			'videos':videos,
+			't':t,
+			'count':count,
+			'pagination':paginator
+		})
+	elif t == 'department':
+		department = fetch_search_department(q,limit)
+		return render(request,"search",{
+			'q':q,
+			'departments':departments,
+			't':t
+		})
+
+	
