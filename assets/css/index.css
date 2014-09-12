@@ -2158,7 +2158,7 @@ section.video-grid .grid .video-info a{text-decoration:none;color:#333}
 section.video-grid .grid .video-info a:hover{color:#2b2b2b}
 section.video-grid .grid .video-info .title{margin:6px 0 0!important;font-size:18px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 section.video-grid .grid .video .video-thumbnail{display:block;position:relative;overflow:hidden;width:212px;height:135px}
-section.video-grid .grid .video .video-thumbnail>img{height:135px;margin-left:-14px}
+section.video-grid .grid .video .video-thumbnail>img{min-height:135px;max-height:212px;margin-left:-14px}
 section.video-grid .grid .video .video-thumbnail>img.error{height:100%;margin-left:0}
 section.video-grid .grid .video .video-thumbnail .comment{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;background:rgba(0,0,0,.5);padding:6px 12px;position:absolute;width:100%;bottom:0;color:#fff}
 section.video-grid .grid .video .video-info div.title{margin:3px 0;font-size:16px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
@@ -2174,7 +2174,7 @@ section.video-list ul .video.video-medium{display:block;overflow:hidden;position
 section.video-list ul .video.video-medium .btn-play{background-size:60px}
 section.video-list ul .video.video-medium:hover .btn-play{display:block}
 section.video-list ul .video.video-medium img{height:200px}
-section.video-list ul .video.video-medium img.error{height:200px;margin-left:0}
+section.video-list ul .video.video-medium img.error{min-height:200px;max-width:212px;margin-left:0}
 section.video-list ul .video.video-medium a{text-decoration:none;color:#333}
 section.video-list ul .video.video-medium a:hover{color:#2b2b2b}
 section.video-list ul .video.video-medium .title{background-image:-webkit-linear-gradient(rgba(0,0,0,0),rgba(0,0,0,.3) 50%,#000);background-image:-o-linear-gradient(rgba(0,0,0,0),rgba(0,0,0,.3) 50%,#000);background-image:linear-gradient(rgba(0,0,0,0),rgba(0,0,0,.3) 50%,#000);background-repeat:no-repeat;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#FF000000', GradientType=0);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;position:absolute;bottom:0;width:100%;padding:45px 15px 15px;color:#eee}
