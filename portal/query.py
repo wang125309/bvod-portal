@@ -131,4 +131,4 @@ def fetch_search_media(key, limit=7 ,offset=10):
 
 def fetch_search_department(key,limit=7,offset=10):
    items = {'search':key, 'limit':limit ,'offset':offset }
-   return fetch_query_result(media_url, items)
+   return fetch_query_result(departments_url, items)
