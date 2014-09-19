@@ -4,7 +4,7 @@ import json
 
 
 logger = logging.getLogger(__name__)
-base_url = 'http://bvod.limijiaoyin.com/api/'
+base_url = 'http://bl.limijiaoyin.com/api/'
 media_url = base_url + 'media'
 categories_url = base_url + 'categories'
 departments_url = base_url + 'departments'
