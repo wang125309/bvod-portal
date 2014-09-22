@@ -249,6 +249,14 @@ $navbar-bvod-line-height: 37px;
         .form-group {
             margin-bottom: 0px;
         }
+		.search_tools {
+			background: url(../img/search_tools.png) top center no-repeat; 
+			position: absolute;
+			width:36px;
+			height:36px;
+			margin-left:214px;
+			margin-top:-27px;
+		}
     }
 
 }

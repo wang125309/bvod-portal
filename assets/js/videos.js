@@ -176,13 +176,59 @@ define("affix", ["jquery"], function(){});
 !function(a,b){function c(b,c){this.element=b,this.options=a.extend({},e,c),this._defaults=e,this._name=d,this.init()}var d="stickyFooter",e={removeNegativMargin:!0,css:{}};c.prototype.init=function(){var c=this;this.footerHeight=0,this.footerTop=0,c.positionFooter(),setTimeout(function(){a(b).scroll(function(){c.positionFooter()}).resize(function(){c.positionFooter()})},100)},c.prototype.positionFooter=function(){var c=this,d=a(this.element);d.attr("style",""),c.footerHeight=d.height();var e=d.offset();if(e=e.top||0,c.options.removeNegativMargin&&"-"===d.css("margin-top")[0]&&d.css("margin-top",0),e<a(b).height()-(c.footerHeight+20)){var f=a.extend({},{position:"fixed",bottom:0,left:0,right:0},c.options.css);d.css(f)}else d.attr("style",""),d.css(c.options.css)},a.fn[d]=function(b){return this.each(function(){a.data(this,"plugin_"+d)||a.data(this,"plugin_"+d,new c(this,b))})}}(jQuery,window,document);
 define("sticky", ["jquery"], function(){});
 
-define('videos',['require','jquery','bootstrap','headroom','affix','sticky'],function(require){
+define("search-history",['require','jquery'],function(require){
+	require("jquery");
+	var Search_menu = function(json) {
+		var back = $('<div class="search_history"></div>').appendTo($(".history-query").parent());
+		var back_ul = $('<ul class="back_ul"></ul>').appendTo(back);
+		for(i in json) {
+			var li = $('<li>'+json[i]+'</li>').appendTo(back_ul);
+		}
+		$(".history-query").attr({"placeholder":"大家正在热搜："+json[0]});
+		return back;
+	}
+	var event_listener = function(back) {
+		$(".history-query").click(function(){
+			$(this).parent().attr({
+				"tabindex":"1"
+			});
+			$(this).parent().focus();
+			back.css({
+				"display":"block"
+			});
+		});
+		$(".back_ul li").on("click",function(){
+			$(".history-query").attr({
+				"value":$(this).text()
+			});
+		});
+		$(".form-group").on("keydown",function(){
+			$(".history-query").focus();
+		});
+		$(".form-group").on("blur",function(){
+			back.css({
+				"display":"none"
+			});
+		});
+	}
+	$(function(){
+		$.get("/api/media?hot_search=1",function(json){
+			back = Search_menu(json);
+			event_listener(back);	
+		},"json");
+		$(".search_tools").on("click",function(){
+			$("#search").submit();	
+		});	
+	});
+});
+
+define('videos',['require','jquery','bootstrap','headroom','affix','sticky','search-history'],function(require){
     require("jquery");
     require("bootstrap");
     require("headroom");
     require("affix");
     require("sticky");
-
+	require("search-history");
     $(function(){
         var headroom = new Headroom($(".navbar-bvod")[0]);
         headroom.init();

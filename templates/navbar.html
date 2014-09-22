@@ -47,12 +47,17 @@
       </ul>
       -->
 
-      <form class="navbar-form navbar-right" action="/search" role="search">
-        <div class="form-group">
-			<input type="text" class="form-control history-query" id="q" name="q" placeholder="搜索" autocomplete="off" value={{ q }} />	
-		  <input type="hidden" id="t" name="t" value="{% if t %}{{ t }}{% else %}media{% endif %}"/>
-		</div>
-	</form>
+		<form id="search" class="navbar-form navbar-right" action="/search" role="search">
+			<div class="form-group">
+				{% if q %}
+					<input type="text" class="form-control history-query" id="q" name="q" placeholder="搜索" autocomplete="off" value={{ q }} />	
+				{% else  %}
+					<input type="text" class="form-control history-query" id="q" name="q" placeholder="搜索" autocomplete="off" />	
+				{% endif %}
+				<input type="hidden" id="t" name="t" value="{% if t %}{{ t }}{% else %}media{% endif %}"/>
+				<i class="search_tools"></i>
+			</div>
+		</form>
       
     </div>
   </div>

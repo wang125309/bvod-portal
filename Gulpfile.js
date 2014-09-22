@@ -37,7 +37,7 @@ gulp.task('rjs', function(callback) {
     }
 
     async.series([
-        compile(["index", "video-detail", "videos", "org-list", "org-grid", "org-detail"], "assets/jss")
+        compile(["index","search" ,"video-detail", "videos", "org-list", "org-grid", "org-detail","search-history"], "assets/jss")
     ], callback);
 });
 

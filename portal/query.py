@@ -121,7 +121,12 @@ def fetch_department_popular_media(slug, offset=0, limit=7):
 def fetch_department_priase_media(slug, offset=0, limit=7):
    items = {'department':slug, 'offset':offset, 'limit':limit, 'order':'likes desc'}
    return fetch_query_result(media_url, items)
-###########################################################
+
+def fetch_hot_search():
+   items = {'hot_search':1}
+   return fetch_query_result(media_url)
+
+##########################################################
 
 #####################search###############################
 def fetch_search_media(key, limit=7 ,offset=10):
