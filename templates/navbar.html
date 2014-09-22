@@ -47,12 +47,12 @@
       </ul>
       -->
 
-      <!--<form class="navbar-form navbar-right" action="/search" role="search">
+      <form class="navbar-form navbar-right" action="/search" role="search">
         <div class="form-group">
-          <input type="text" class="form-control" id="q" name="q" placeholder="搜索">	
+			<input type="text" class="form-control history-query" id="q" name="q" placeholder="搜索" autocomplete="off" value={{ q }} />	
 		  <input type="hidden" id="t" name="t" value="{% if t %}{{ t }}{% else %}media{% endif %}"/>
 		</div>
-	</form>-->
+	</form>
       
     </div>
   </div>
