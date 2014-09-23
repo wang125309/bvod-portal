@@ -54,7 +54,7 @@
 				{% else  %}
 					<input type="text" class="form-control history-query" id="q" name="q" placeholder="搜索" autocomplete="off" />	
 				{% endif %}
-				<input type="hidden" id="t" name="t" value="{% if t %}{{ t }}{% else %}media{% endif %}"/>
+				<input type="hidden" id="t" name="t" value="{% if t %}{{ t }}{% else %}{% if nav.tab == 'video' %}media{% elif nav.tab == 'organization' %}department{% else %}media{% endif %}{% endif %}"/>
 				<i class="search_tools"></i>
 			</div>
 		</form>

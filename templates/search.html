@@ -11,7 +11,7 @@
 {% include "navbar.html" with nav=request.nav type="normal" %}
 <div class="container">
 	<section class="query_result no_margin pull-left">
-	<h5>搜索: {{ keyword }}/共<span class="blue-strong">
+	<h5>搜索: {{ q }}&nbsp;/&nbsp;共<span class="blue-strong">
 			{% if videos.count %}
 				{{ videos.count }}
 			{% elif departments.count %}
@@ -39,7 +39,7 @@
 						{% ifequal j.quality "720" %}
 						<div class="item hello">
 							<a class="video-thumbnail" href="{{ j.url  }}">
-								<img src="{{ i.thumbs.m.url }}"/>
+								<img src="{{ i.thumbs.m.url }}" onError="this.className='error';this.src='http://placehold.it/610x377&text=!'"/>
 								<div class="comment">&nbsp;
 									{% ifnotequal i.description None %}
 									{{ i.description }}

@@ -6,7 +6,9 @@ define("search-history",function(require){
 		for(i in json) {
 			var li = $('<li>'+json[i]+'</li>').appendTo(back_ul);
 		}
-		$(".history-query").attr({"placeholder":"大家正在热搜："+json[0]});
+		var k = parseInt(6*Math.random());
+		
+		$(".history-query").attr({"placeholder":"大家正在热搜："+json[k]});
 		return back;
 	}
 	var event_listener = function(back) {
@@ -23,6 +25,10 @@ define("search-history",function(require){
 			$(".history-query").attr({
 				"value":$(this).text()
 			});
+			setTimeout(function(){
+				$("#search").submit();
+			},300);
+
 		});
 		$(".form-group").on("keydown",function(){
 			$(".history-query").focus();
