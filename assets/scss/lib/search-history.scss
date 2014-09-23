@@ -2,7 +2,8 @@
 	outline : none;
 }
 .search_tools {
-	cursor : pointer ;
+	background-size : 19px;
+    cursor : pointer ;
 }
 .search_history {
 	position:absolute;
@@ -25,7 +26,7 @@
 		}
 		li:hover {
 			padding-left:30px;
-			background: url(../img/search_tools.png) no-repeat #fff;
+			background: url(../img/search_tool.png) no-repeat #fff;
 			background-position:10px;
 			background-size:15px;
 			cursor:pointer;
