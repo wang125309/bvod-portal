@@ -182,7 +182,6 @@ def video(request, category_slug='', sub_category_slug=''):
         'count': count
     })
 
-@active_tab('video')
 def search(request,q='',t='media'):
 	per_page = 10 
 	q = request.GET.get("q")

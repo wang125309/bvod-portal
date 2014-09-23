@@ -1,10 +1,10 @@
 @import "assets/components/bootstrap-sass-official/assets/stylesheets/bootstrap";
-@import "assets/components/bootstrap-sass-official/assets/stylesheets/bootstrap/_dropdowns";
 @import "assets/scss/lib/grid30";
 @import "assets/scss/lib/font-bvod";
 @import "assets/scss/lib/icon";
 @import "assets/scss/lib/navbar-bvod";
 @import "assets/scss/lib/footer";
+@import "assets/scss/lib/search-history";
 @import "assets/scss/lib/pagination";
 @import "assets/scss/lib/video-card";
 .blue-strong {
@@ -13,9 +13,22 @@
 	margin-right:2px;
 	font-size:16px;
 }
+.grid:first-child {
+	padding-left:0;
+}
 .query_result {
 	margin-top:90px;
 	width:100%;
+	min-height:750px;
+	.search_empty_wrap {
+
+		text-align: center;
+		width:100%;
+		.search_empty {
+			margin-top:100px;
+		}
+	}
+		
 	.head-view .cur .grid{
 		background:url(../img/grid-icon-2.png) no-repeat;
 	}
@@ -23,11 +36,11 @@
 		margin-top:20px;
 	}
 	header{
-		height:62px;
+		height:48px;
 		border-bottom:1px solid #e6e5e5;
 	}
 	header div{
-		margin-top:30px;
+		margin-top:15px;
 	}
 	header .head-tab{
 		float:left;
@@ -51,9 +64,16 @@
 		font-weight:bold;
 		padding-bottom:6px;
 	}
-	.item {
+	.hello {
 		display:inline-block ;
 		vertical-align:top;
+		padding-right:10px;
+	}
+	.item {
+
+		display:inline-block ;
+		vertical-align:top;
+
 	}
 	.video-thumbnail {
 		display: block;
@@ -100,8 +120,6 @@
 	}
 }
 .footer {
-	position:absolute;
-	bottom:0;
 	width:100%;
 }
 .org-list .grid .item{
