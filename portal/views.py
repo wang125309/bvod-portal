@@ -182,32 +182,65 @@ def video(request, category_slug='', sub_category_slug=''):
         'count': count
     })
 
-@active_tab('video')
 def search(request,q='',t='media'):
 	per_page = 10 
 	q = request.GET.get("q")
 	t = request.GET.get("t")
 	limit = per_page
-	if t == 'media':
-		videos = fetch_search_media(q,limit)
-		count = videos['count']
-		page = int(request.GET.get('p', None) or '1')
-		offset = (page-1)*10
-		videos = fetch_search_media(q,limit,offset)
-		paginator = pagination(count, page, per_page)
-		return render(request, "search.html",{
-			'q':q,
-			'videos':videos,
-			't':t,
-			'count':count,
-			'pagination':paginator
-		})
-	elif t == 'department':
-		department = fetch_search_department(q,limit)
-		return render(request,"search",{
-			'q':q,
-			'departments':departments,
-			't':t
-		})
 
-	
+	if t == 'media':
+		if len(q) > 0 :
+			videos = fetch_search_media(q,limit)
+			count = videos['count']
+			page = int(request.GET.get('p', None) or '1')
+			offset = (page-1)*10
+			videos = fetch_search_media(q,limit,offset)
+			paginator = pagination(count, page, per_page)
+			return render(request, "search.html",{
+				'q':q,
+				'videos':videos,
+				't':t,
+				'count':count,
+				'pagination':paginator
+			})
+		else :
+			return render(request,"search.html",{
+				'q':q,
+				'videos':{},
+				't':t,
+				'count':0
+			})
+	elif t == 'department':
+		if len(q) > 0 :
+			departments = fetch_search_department(q,limit)
+			count = departments['count']
+			page = int(request.GET.get('p', None) or '1')
+			offset = (page-1)*10
+			departments = fetch_search_department(q,limit,offset)
+			paginator = pagination(count, page, per_page)
+			limit = per_page
+			orgs = fetch_search_department(q, limit,offset)['departments']
+    
+			def add_media(dep):
+				dep['medias'] = fetch_deparment_media(dep['slug'], limit=3)
+				dep['description'] = truncate(dep['description'], 35)
+				return dep
+
+			orgs = map(add_media, orgs)
+
+			return render(request, "search.html",{
+				'q':q,
+				'departments':departments,
+				't':t,
+				'count':count,
+				'pagination':paginator,
+				'orgs':orgs,
+			})
+		else :
+			return render(request,"search.html",{
+				'q':q,
+				'departments':{},
+				't':t,
+				'count':0,
+				'orgs':{}
+			})

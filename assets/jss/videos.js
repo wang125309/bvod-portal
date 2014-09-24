@@ -4,7 +4,7 @@ define(function(require){
     require("headroom");
     require("affix");
     require("sticky");
-
+	require("search-history");
     $(function(){
         var headroom = new Headroom($(".navbar-bvod")[0]);
         headroom.init();

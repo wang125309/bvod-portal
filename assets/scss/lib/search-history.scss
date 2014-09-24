@@ -1,0 +1,35 @@
+.form-group {
+	outline : none;
+}
+.search_tools {
+	background-size : 19px;
+    cursor : pointer ;
+}
+.search_history {
+	position:absolute;
+	display:none;
+	
+	.back_ul {
+		width:250px;
+		background:rgba(245,245,245,0.9);
+		padding:0;
+		margin-top:3px;
+		border-radius:3px;
+		border:1px solid #dcdcdc;
+		li {
+			border-bottom:1px solid #dcdcdc;
+			list-style : none;
+			padding:10px;
+		}
+		li:last-child {
+			border:none;
+		}
+		li:hover {
+			padding-left:30px;
+			background: url(../img/search_tool.png) no-repeat #fff;
+			background-position:10px;
+			background-size:15px;
+			cursor:pointer;
+		}
+	}
+}

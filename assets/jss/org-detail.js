@@ -1,7 +1,7 @@
 define(function(require){
     require("jquery");
     require("sticky");
-
+	require("search-history");
     $(function(){
         $(".footer").stickyFooter();
         if($('.org-empty')[0]){

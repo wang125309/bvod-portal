@@ -3,8 +3,8 @@
     require("bootstrap");
     require("headroom");
     require("velocity");
-    require("sticky");
-
+	require("search-history");
+	require("sticky");
     $(function() {
         var headroom = new Headroom($(".navbar-bvod")[0]);
         headroom.init();

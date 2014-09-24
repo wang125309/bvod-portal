@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>北航视频</title>
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/search.css">
+	<link rel="stylesheet" href="{{ STATIC_URL }}css/jquery.stickyfooter.css">
+    {% include "polyfills.html" %}
+</head>
+
+<body class="body">
+{% include "navbar.html" with nav=request.nav type="normal" %}
+<div class="container">
+	<section class="query_result no_margin pull-left">
+	<h5>搜索: {{ q }}&nbsp;/&nbsp;共<span class="blue-strong">
+			{% if videos.count %}
+				{{ videos.count }}
+			{% elif departments.count %}
+				{{ departments.count }}
+			{% else %}
+				0
+			{% endif %}
+		</span>个结果</h5>
+		<header>
+		<div class="head-tab pull-left">
+			<a href="?q={{ q }}&t=media"><span class="nav {% ifequal t 'media' %} cur {% endifequal %}">视频</span></a>
+			<a href="?q={{ q }}&t=department"><span class="nav {% ifequal t 'department' %} cur {% endifequal %}">组织</span></a>
+		</div>
+		</header>
+		<div class="result_div detail">
+			
+			{% if count == 0 %}
+			<div class="search_empty_wrap">
+				<img class="search_empty" src="{{ STATIC_URL }}img/search_noresult.png"/>
+			</div>
+			{% endif %}
+			{% ifequal t 'media' %}	
+				{% for i in videos.media %}
+					{% for j in i.sources %}
+						{% ifequal j.quality "720" %}
+						<div class="item hello">
+							<a class="video-thumbnail" href="{{ j.url  }}">
+								<img src="{{ i.thumbs.m.url }}" onError="this.className='error';this.src='http://placehold.it/610x377&text=!'"/>
+								<div class="comment">&nbsp;
+									{% ifnotequal i.description None %}
+									{{ i.description }}
+									{% endifnotequal %}
+								</div>
+							</a>
+							<div class="video-info">
+								<a href="{{ j.url }}">
+									<div class="title">
+										{{ i.title }}
+									</div>
+								</a>
+							</div>
+							<div class="meta clearfix">
+								<div class="watch">
+									<i class="icon-watch"></i>&nbsp;{{ i.views }}
+								</div>
+								{{ i.department.name }}
+							</div>
+						</div>
+						{% endifequal %}
+					{% endfor %}
+				{% endfor %}
+				{% endifequal %}
+				{% ifequal t 'department' %}
+				{% for org in orgs %}
+				<div class="org-list">
+				<div class="grid col-xs-6">
+					<div class="item">
+						<div class="img">
+							<div class="img-wrapper">
+								<img src="{{ org.avatar }}"
+								onError="this.src='http://placehold.it/132&text=!'">
+							</div>
+							<div class="name">{{ org.name }}</div>
+							<div class="video-info">
+								<div class="video"><span class="num">
+										{{ org.media }}</span><span>视频</span>
+								</div>|
+								<div class="played">
+									<span class="num">{{ org.views }}</span><span>播放</span>
+								</div>
+							</div>
+							<a class="big" href="/org/{{ org.id }}">
+								<div>
+									<span>{{ org.description }}</span>
+								</div>
+							</a>
+						</div>
+						<div class="tab-list">
+							{% if not org.medias %}
+							<div class="tab1">
+								<img src="{{ STATIC_URL }}img/empty.png" />
+							</div>
+							{% endif %}
+							{% for media in org.medias %}
+							<div class="tab">
+								<a href="/video/{{ media.id }}" class="tab-a">
+									<img src="{{ media.thumbs.m.url }}" 
+									onError="this.className='error';this.src='http://placehold.it/212x135&text=!'">
+								</a>
+							</div>
+								{% endfor %}
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endfor %}
+			{% endifequal %}
+		</div>
+		{% if count > 10 %}
+		<footer class="pagination-wrapper  page">
+		{% include "pagination.html" %}
+		</footer>
+		{% else %}
+		<div style="height:40px;"></div>
+		{% endif %}  
+		</section>
+	</div>
+	{% include "footer.html" %}
+	<script type="text/javascript" src="{{ STATIC_URL }}components/requirejs/require.js"></script>
+	<script type="text/javascript" src="{{ STATIC_URL }}js/search.js"></script>
+	<script>require(["search"]);</script>
+</body>
+</html>

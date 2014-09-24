@@ -4,7 +4,7 @@ import json
 
 
 logger = logging.getLogger(__name__)
-base_url = 'http://bvod.limijiaoyin.com/api/'
+base_url = 'http://bl.limijiaoyin.com/api/'
 media_url = base_url + 'media'
 categories_url = base_url + 'categories'
 departments_url = base_url + 'departments'
@@ -121,7 +121,12 @@ def fetch_department_popular_media(slug, offset=0, limit=7):
 def fetch_department_priase_media(slug, offset=0, limit=7):
    items = {'department':slug, 'offset':offset, 'limit':limit, 'order':'likes desc'}
    return fetch_query_result(media_url, items)
-###########################################################
+
+def fetch_hot_search():
+   items = {'hot_search':1}
+   return fetch_query_result(media_url)
+
+##########################################################
 
 #####################search###############################
 def fetch_search_media(key, limit=7 ,offset=10):
@@ -131,4 +136,4 @@ def fetch_search_media(key, limit=7 ,offset=10):
 
 def fetch_search_department(key,limit=7,offset=10):
    items = {'search':key, 'limit':limit ,'offset':offset }
-   return fetch_query_result(media_url, items)
+   return fetch_query_result(departments_url, items)
