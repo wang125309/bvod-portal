@@ -30,7 +30,12 @@
     margin-left: 5px;
     background-size: 100% 100%;
 }
-
+.btn-lik {
+	cursor:pointer;
+}
+.btn-dislike {
+	cursor:pointer;
+}
 .icon-history {
     background: url(../img/history.png) center center no-repeat;
     @include size(16px, 16px);
@@ -47,13 +52,37 @@
 }
 
 .icon-like {
-  @include bvod-icon("../img/like.png", 20px, 18px, top);
+	cursor:pointer;
+	@include bvod-icon("../img/like.png", 20px, 18px, top);
 }
-
+.icon-like-enable {
+	@include bvod-icon("../img/like.png", 20px, 18px, top);
+}
+.icon-like:hover {
+	background:url("../img/like_already.png") center center no-repeat;
+}
+.icon-like-select {
+	cursor:initial;
+	@include bvod-icon("../img/like_already.png",20px,18px,top);
+}
 .icon-dislike {
-  @include bvod-icon("../img/dislike.png", 20px, 18px, top);
+	cursor:pointer;
+	@include bvod-icon("../img/dislike.png", 20px, 18px, top);
 }
-
+.icon-dislike-enable {
+	@include bvod-icon("../img/dislike.png", 20px, 18px, top);
+}
+.icon-dislike-select {
+	cursor:initial;
+	@include bvod-icon("../img/dislike_already.png",20px,18px,top);
+}
+.icon-dislike:hover {
+	background:url("../img/dislike_already.png") center center no-repeat;
+}
 .icon-share {
-  @include bvod-icon("../img/share.png", 20px, 15px, top);
+	cursor:pointer;
+	@include bvod-icon("../img/share.png", 20px, 15px, top);
+}
+.icon-share:hover {
+	background:url("../img/share_already.png") center center no-repeat;
 }
