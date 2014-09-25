@@ -6,7 +6,7 @@ define(function(require) {
 	require("jrumble");
     require("jwplayhtml5");
     require("jwpsrv");
-
+    require("search-history");
     $(function() {
         var $slider = $(".banner .carousel");
         $slider.find(".active .ad-title, .active .ad-desc").show();

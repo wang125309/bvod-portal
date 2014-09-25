@@ -7,7 +7,7 @@
     {% include "polyfills.html" %}
 </head>
 <body>
-    {% include "navbar.html" %}
+    {% include "navbar.html" with nav=request.nav type="normal" %}
 
 	{% include "video-content.html" %}
 

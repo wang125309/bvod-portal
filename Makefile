@@ -1,6 +1,6 @@
 host:=0.0.0.0
-port:=9000
-activate_venv=source venv/bin/activate
+port:=8989
+activate_venv = source venv/bin/activate
 
 debug:
 	$(activate_venv) && ./manage.py runserver $(host):$(port)
