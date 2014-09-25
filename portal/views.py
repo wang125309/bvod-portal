@@ -128,8 +128,8 @@ def video_detail(request, video_id):
     video = fetch_media_item(video_id)
     if 'error' in video:
         return render(request, 'error.html')
-
-    related = video['related_media'][:3]
+    #FIXME 
+    related = [] #video['related_media'][:3]
     video['related_media'] = []
 
     video['category'] = '/'.join(video['categories'].values())

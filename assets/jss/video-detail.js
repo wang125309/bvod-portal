@@ -6,11 +6,12 @@ define(function(require) {
     require("headroom");
 	require("jrumble");
     require("jwplayhtml5");
-    
 	require("jwpsrv");
-
-	$(function() {
-		var $slider = $(".banner .carousel");
+	var $slider = $(".banner .carousel");
+    require("jwpsrv");
+    require("search-history");
+    $(function() {
+        var $slider = $(".banner .carousel");
         $slider.find(".active .ad-title, .active .ad-desc").show();
         var password_ok = $('#verify_password_form input[name="video_id"]').data('password');
         var videoid = $('#verify_password_form input[name="video_id"]').data('videoid');

@@ -38,12 +38,12 @@
 				{% for i in videos.media %}
 					{% for j in i.sources %}
 						{% ifequal j.quality "720" %}
-						<div class="item hello">
-							<a class="video-thumbnail" href="{{ j.url  }}">
+						<div class="item hello {% if forloop.parentloop.counter|divisibleby:'5' %}no-padding-right{% endif %}">
+							<a class="video-thumbnail" href="video/{{ i.id  }}">
 								<img src="{{ i.thumbs.m.url }}" onError="this.className='error';this.src='http://placehold.it/610x377&text=!'"/>
 								<div class="comment">&nbsp;
 									{% ifnotequal i.description None %}
-									{{ i.description }}
+									{{ i.abstract }}
 									{% endifnotequal %}
 								</div>
 							</a>

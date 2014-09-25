@@ -3,10 +3,13 @@ define("search-history",function(require){
 	var Search_menu = function(json) {
 		var back = $('<div class="search_history"></div>').appendTo($(".history-query").parent());
 		var back_ul = $('<ul class="back_ul"></ul>').appendTo(back);
+		var cnt = 0 ;
 		for(i in json) {
+			cnt ++ ;
 			var li = $('<li>'+json[i]+'</li>').appendTo(back_ul);
 		}
-		var k = parseInt(6*Math.random());
+		
+		var k = parseInt(cnt*Math.random());
 		
 		$(".history-query").attr({"placeholder":"大家正在热搜："+json[k]});
 		return back;
