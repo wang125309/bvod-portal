@@ -7,9 +7,11 @@ define(function(require) {
 	require("jrumble");
     require("jwplayhtml5");
 	require("jwpsrv");
+	require("share");
 	var $slider = $(".banner .carousel");
     require("jwpsrv");
     require("search-history");
+
     $(function() {
         var $slider = $(".banner .carousel");
         $slider.find(".active .ad-title, .active .ad-desc").show();
@@ -169,12 +171,5 @@ define(function(require) {
 			}
 		}
 		
-		/*$(".share-btn").click(function(){
-			var share_url_before = "<iframe height=498 width=510 src='";
-			var share_url = $(this).data("url"); 
-			var share_url_after = "' frameboard=0 allowfullscreen></iframe>";
-			share_url = share_url_before + share_url + share_url_after ;
-			alert(share_url);
-		});*/
     });
 });
