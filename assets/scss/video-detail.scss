@@ -253,3 +253,68 @@ $link_color:#333;
 .form-group {
 	margin-bottom: 8px;
 }
+.share-btn {
+	cursor : pointer;
+}
+.share_menu {
+	width:330px;
+	height:158px;
+	margin-left:-45px;
+	margin-top:10px;
+	background:#fff;
+	border:#dcdcdc;
+	border-radius:3px;
+	box-shadow:1px 1px 3px 1px rgba(0,0,0,0.1);
+	position:absolute;
+	.coner {
+		position: absolute;
+		right:14px;
+		font-size:22px;
+		margin-top:-12px;
+		color:#fff;
+		z-index:10;
+	}
+	.coner_border {
+		position:absolute;
+		right:14px;
+		font-size:22px;
+		z-index:9;
+		margin-top:-13px;
+		color:#dcdcdc;
+	}
+	.common_url {
+		padding: 10px;
+		margin-top:50px;
+		button {
+			padding:3px 2px;
+			color:#777;
+			background:#fff;
+			border:1px solid #dcdcdc;
+			display:inline;
+		}
+		button:focus {
+			outline:none;
+		}
+		button:hover {
+			color:#fff;
+			background:#3580bd;
+		}
+		.form-control {
+			width:225px;
+			display:inline;
+			margin-left:5px;
+			height:26px;
+			vertical-align:top;
+			padding:3px;
+		}
+	}
+}
+.jiathis_style {
+	padding:10px;
+	a > span {
+		margin:5px !important;
+	}
+	a > .jtico_weixin {
+		margin-right:25px !important;
+	}
+}
