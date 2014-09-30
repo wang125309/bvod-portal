@@ -35,11 +35,15 @@ a:focus, a:hover {
   -o-transition: opacity 1s; 
   transition: opacity 1s;
 }
-
+.banner {
+	.item {
+	}
+}
 .carousel-fade .active.left {
   left:0;
   opacity:0;
   z-index:2;
+  width:100%;
 }
 
 .carousel-fade .next {
@@ -458,4 +462,7 @@ section.video-list {
     width: 100%;
     bottom: 0;
     color: #fff;
+}
+.footer {
+	width:100%;
 }

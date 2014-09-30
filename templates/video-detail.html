@@ -21,7 +21,7 @@
 
     {% include "navbar.html" with nav=request.nav type="normal"%}
 
-    <div class="video-content">
+    <div class="video-content container">
         <img src="{{ STATIC_URL }}img/watch-bg.png" alt="">
         <div class="container">
             <h4 class="path"><a href="/video">视频</a> &gt; {{ video.department.name }}</h4>

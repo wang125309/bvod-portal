@@ -46,9 +46,9 @@ define(function(require) {
         }
         var show_menu = function() {
         	if(statu()) 
-        		back_div.slideUp();
+        		back_div.fadeOut();
         	else
-        		back_div.slideDown();
+        		back_div.fadeIn();
         }
         $(".btn-share").click(function(){
         	copyToClipBoard();

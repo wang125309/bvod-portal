@@ -34,6 +34,7 @@ $container-lg:                 $container-large-desktop;
 
 // 取消container的适配功能
 
+
 .container {
   @include container-fixed();
   width: $container-lg;
@@ -52,6 +53,7 @@ $container-lg:                 $container-large-desktop;
     width: $container-lg;
   }
 }
+
 
 
 // Fluid container
