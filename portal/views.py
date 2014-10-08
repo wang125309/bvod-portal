@@ -191,7 +191,9 @@ def search(request,q='',t='media'):
 	if t == 'media':
 		if len(q) > 0 :
 			videos = fetch_search_media(q,limit)
-			count = videos['count']
+            count1 = videos['count']
+            departments = fetch_search_department(q,limit)
+            count2 = departments['count']
 			page = int(request.GET.get('p', None) or '1')
 			offset = (page-1)*10
 			videos = fetch_search_media(q,limit,offset)
@@ -200,7 +202,9 @@ def search(request,q='',t='media'):
 				'q':q,
 				'videos':videos,
 				't':t,
-				'count':count,
+				'count':count1+count2,
+                'count1':count1,
+                'count2':count2,
 				'pagination':paginator
 			})
 		else :
@@ -208,19 +212,22 @@ def search(request,q='',t='media'):
 				'q':q,
 				'videos':{},
 				't':t,
-				'count':0
+				'count':0,
+                'count1':0,
+                'count2':0
 			})
 	elif t == 'department':
 		if len(q) > 0 :
 			departments = fetch_search_department(q,limit)
-			count = departments['count']
-			page = int(request.GET.get('p', None) or '1')
+			count1 = departments['count']
+			videos = fetch_search_media(q,limit)
+			count2 = videos['count']
+            page = int(request.GET.get('p', None) or '1')
 			offset = (page-1)*10
 			departments = fetch_search_department(q,limit,offset)
 			paginator = pagination(count, page, per_page)
 			limit = per_page
-			orgs = fetch_search_department(q, limit,offset)['departments']
-    
+			orgs = fetch_search_department(q, limit, offset)['departments']
 			def add_media(dep):
 				dep['medias'] = fetch_deparment_media(dep['slug'], limit=3)
 				dep['description'] = truncate(dep['description'], 35)
@@ -232,7 +239,9 @@ def search(request,q='',t='media'):
 				'q':q,
 				'departments':departments,
 				't':t,
-				'count':count,
+				'count':count1+count2,
+                'count1':count1,
+                'count2':count2,
 				'pagination':paginator,
 				'orgs':orgs,
 			})
@@ -242,5 +251,7 @@ def search(request,q='',t='media'):
 				'departments':{},
 				't':t,
 				'count':0,
+                'count1':0,
+                'count2':0,
 				'orgs':{}
 			})
