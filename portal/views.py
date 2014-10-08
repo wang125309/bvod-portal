@@ -221,7 +221,8 @@ def search(request,q='',t='media'):
 			departments = fetch_search_department(q,limit)
 			count1 = departments['count']
 			videos = fetch_search_media(q,limit)
-            count2 = videos['count']
+            
+			count2 = videos['count']
             page = int(request.GET.get('p', None) or '1')
 			offset = (page-1)*10
 			departments = fetch_search_department(q,limit,offset)
