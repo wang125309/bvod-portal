@@ -191,9 +191,10 @@ def search(request,q='',t='media'):
 	if t == 'media':
 		if len(q) > 0 :
 			videos = fetch_search_media(q,limit)
-            count1 = videos['count']
-            departments = fetch_search_department(q,limit)
-            count2 = departments['count']
+			count1 = videos['count']
+			departments = fetch_search_department(q,limit)
+			count2 = departments['count']
+			count = count1 + count2
 			page = int(request.GET.get('p', None) or '1')
 			offset = (page-1)*10
 			videos = fetch_search_media(q,limit,offset)
@@ -202,7 +203,7 @@ def search(request,q='',t='media'):
 				'q':q,
 				'videos':videos,
 				't':t,
-				'count':count1+count2,
+				'count':count,
                 'count1':count1,
                 'count2':count2,
 				'pagination':paginator
@@ -222,7 +223,8 @@ def search(request,q='',t='media'):
 			count1 = departments['count']
 			videos = fetch_search_media(q,limit)
 			count2 = videos['count']
-            page = int(request.GET.get('p', None) or '1')
+			count = count1 + count2
+			page = int(request.GET.get('p', None) or '1')
 			offset = (page-1)*10
 			departments = fetch_search_department(q,limit,offset)
 			paginator = pagination(count, page, per_page)
@@ -239,7 +241,7 @@ def search(request,q='',t='media'):
 				'q':q,
 				'departments':departments,
 				't':t,
-				'count':count1+count2,
+				'count':count,
                 'count1':count1,
                 'count2':count2,
 				'pagination':paginator,
