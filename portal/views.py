@@ -228,7 +228,6 @@ def search(request,q='',t='media'):
 			paginator = pagination(count, page, per_page)
 			limit = per_page
 			orgs = fetch_search_department(q, limit, offset)['departments']
-    
 			def add_media(dep):
 				dep['medias'] = fetch_deparment_media(dep['slug'], limit=3)
 				dep['description'] = truncate(dep['description'], 35)
