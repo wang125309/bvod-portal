@@ -18,7 +18,7 @@ define(function(require) {
             return share_url;
         }
         var share_menu = function() {
-            var back_div = $('<div class="share_menu" style="display:none;"><div class="coner">◆</div><div class="coner_border">◆</div></div>');
+            var back_div = $('<div class="share_menu" tabindex=2 style="display:none;"><div class="coner">◆</div><div class="coner_border">◆</div></div>');
             back_div.appendTo($(".share-btn").parent());
            	$('<div class="jiathis_style"><a class="jiathis_button_qzone">QQ空间</a><a class="jiathis_button_cqq">QQ好友</a><a class="jiathis_button_tqq">腾讯微博</a><a class="jiathis_button_tsina">新浪微博</a><a class="jiathis_button_weixin">微信</a><a class="jiathis_button_renren">人人网</a></div>').appendTo(back_div);
         	var common_url = $('<div class="common_url"></div>');
@@ -28,16 +28,11 @@ define(function(require) {
         	$(".share_code").attr({"value":share_url_get()});
 			$(".btn-share").attr({
 				"data-clipboard-text":share_url_get()
-			});
+			});	 
 			return back_div;
         }
-        
-		var jiathis_config={
-			summary:"",
-			shortUrl:false,
-			hideMore:false
-		}
-        var back_div = share_menu();
+       
+  var back_div = share_menu();
         var statu = function() {
         	if(back_div.css("display")=="none")
         		return false;
@@ -55,9 +50,13 @@ define(function(require) {
         });
         $(".share-btn").click(function(){
         	show_menu();
+		back_div.focus();
         });
         $(".icon-share").click(function(){
         	show_menu();
         });
+	$(".share_menu").blur(function(){
+		back_div.fadeOut();
+	});
     });
 });

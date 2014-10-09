@@ -33,21 +33,22 @@
                 }
             });
         });
-		$(".btn-play").on("click",function(e){
-			$(this).css("display","block");
-			var value = $(this).css("background-size");
-			$(this).animate({"background-size":parseFloat(value)*1.2,},200,function(){
-				$(this).fadeOut();	
-			});	
-		});
+	$(".btn-play").on("click",function(e){
+		$(this).css("display","block");
+		var value = $(this).css("background-size");
+		$(this).animate({"background-size":parseFloat(value)*1.2,},200,function(){
+			$(this).fadeOut();	
+		});	
+	});
         $(".footer").stickyFooter();
 		var IsPC = function()  {
 			var userAgentInfo = navigator.userAgent;  
 			var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod");  
 			var flag = true;  
 			for (var v = 0; v < Agents.length; v++) {
-			    if (userAgentInfo.indexOf(Agents[v]) > 0) {
-					flag = false; break;
+		   		if (userAgentInfo.indexOf(Agents[v]) > 0) {
+					flag = false; 
+					break;
 				}  
 			}  
 			return flag;  

@@ -43,7 +43,7 @@
                     &nbsp;&nbsp;
 
                     <i class="icon-share"></i>
-					<span class="share-btn" data-url="{{ video.sources.0.url }}">分享</span>
+					<span class="share-btn" data-image="{{ video.id}}"  data-url="{{ video.sources.0.url }}">分享</span>
                 </div>
                 <h3 class="title">{{ video.title }}</h4>
             </div>
@@ -159,7 +159,16 @@
     <script type="text/javascript" src="{{ STATIC_URL }}js/video-detail.js"></script>
 	
 	<script>require(["video-detail"]);</script>
-	<script type="text/javascript" src="http://v3.jiathis.com/code_mini/jia.js" charset="utf-8"></script>
+<script>	
+	var jiathis_config={
+		summary:$(".title").html(),
+		shortUrl:false,
+		hideMore:false,
+		imageUrl:"http://v.buaa.edu.cn/images/media/"+$(".share-btn").data("image")+"l.jpg",
+		pic:"http://v.buaa.edu.cn/images/media/"+$(".share-btn").data("image")+"l.jpg",
+	}
+      </script>
+<script type="text/javascript" src="http://v3.jiathis.com/code_mini/jia.js" charset="utf-8"></script>
 	{% include "footer.html" %}
     </body>
 </html>
