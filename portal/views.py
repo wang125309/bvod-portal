@@ -204,8 +204,8 @@ def search(request,q='',t='media'):
 				'videos':videos,
 				't':t,
 				'count':count,
-                'count1':count1,
-                'count2':count2,
+                		'count1':count1,
+                		'count2':count2,
 				'pagination':paginator
 			})
 		else :
@@ -214,8 +214,8 @@ def search(request,q='',t='media'):
 				'videos':{},
 				't':t,
 				'count':0,
-                'count1':0,
-                'count2':0
+                		'count1':0,
+                		'count2':0
 			})
 	elif t == 'department':
 		if len(q) > 0 :
@@ -242,8 +242,8 @@ def search(request,q='',t='media'):
 				'departments':departments,
 				't':t,
 				'count':count,
-                'count1':count1,
-                'count2':count2,
+                		'count1':count1,
+                		'count2':count2,
 				'pagination':paginator,
 				'orgs':orgs,
 			})
@@ -253,7 +253,7 @@ def search(request,q='',t='media'):
 				'departments':{},
 				't':t,
 				'count':0,
-                'count1':0,
-                'count2':0,
+                		'count1':0,
+                		'count2':0,
 				'orgs':{}
 			})
