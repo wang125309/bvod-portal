@@ -187,12 +187,11 @@ def search(request,q='',t='media'):
 	q = request.GET.get("q")
 	t = request.GET.get("t")
 	limit = per_page
-
+	videos = fetch_search_media(q,limit)
+	departments = fetch_search_department(q,limit)
 	if t == 'media':
 		if len(q) > 0 :
-			videos = fetch_search_media(q,limit)
 			count1 = videos['count']
-			departments = fetch_search_department(q,limit)
 			count2 = departments['count']
 			count = count1 + count2
 			page = int(request.GET.get('p', None) or '1')
@@ -204,8 +203,8 @@ def search(request,q='',t='media'):
 				'videos':videos,
 				't':t,
 				'count':count,
-                'count1':count1,
-                'count2':count2,
+                		'count1':count1,
+                		'count2':count2,
 				'pagination':paginator
 			})
 		else :
@@ -214,15 +213,14 @@ def search(request,q='',t='media'):
 				'videos':{},
 				't':t,
 				'count':0,
-                'count1':0,
-                'count2':0
+                		'count1':0,
+                		'count2':0
 			})
 	elif t == 'department':
 		if len(q) > 0 :
-			departments = fetch_search_department(q,limit)
-			count1 = departments['count']
-			videos = fetch_search_media(q,limit)
-			count2 = videos['count']
+
+			count2 = departments['count']
+			count1 = videos['count']
 			count = count1 + count2
 			page = int(request.GET.get('p', None) or '1')
 			offset = (page-1)*10
@@ -242,8 +240,8 @@ def search(request,q='',t='media'):
 				'departments':departments,
 				't':t,
 				'count':count,
-                'count1':count1,
-                'count2':count2,
+                		'count1':count1,
+                		'count2':count2,
 				'pagination':paginator,
 				'orgs':orgs,
 			})
@@ -253,7 +251,7 @@ def search(request,q='',t='media'):
 				'departments':{},
 				't':t,
 				'count':0,
-                'count1':0,
-                'count2':0,
+                		'count1':0,
+                		'count2':0,
 				'orgs':{}
 			})

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>北航视频</title>
     <link rel="stylesheet" href="{{ STATIC_URL }}css/video-detail.css">
-    {% include "polyfills.html" %}
+	{% include "polyfills.html" %}
 </head>
 <body>
     <div class="verify_password_container">
@@ -161,9 +161,10 @@
 	<script>require(["video-detail"]);</script>
 <script>	
 	var jiathis_config={
-		summary:$(".title").html(),
+		summary:"【视频: "+$(".title").html() +"】",
 		shortUrl:false,
 		hideMore:false,
+		ralateuid:"北航视频",
 		imageUrl:"http://v.buaa.edu.cn/images/media/"+$(".share-btn").data("image")+"l.jpg",
 		pic:"http://v.buaa.edu.cn/images/media/"+$(".share-btn").data("image")+"l.jpg",
 	}

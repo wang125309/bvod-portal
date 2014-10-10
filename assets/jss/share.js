@@ -1,12 +1,27 @@
 define(function(require) {
 	require("jquery");
+	require("pnotify");
 	var ZeroClipboard=require("zeroclipboard");
     $(function() {
     	var copyToClipBoard = function(){ 
 			var client = new ZeroClipboard( document.getElementById("btn-share"));
 			client.on("ready",function(readyEvent){
 				client.on("aftercopy",function(event){
-					alert("代码已经复制到剪贴板");
+					new PNotify({
+						text: '代码已经复制到剪贴板',
+						icon: '',
+						type: 'success',
+						history: {
+							history: false 
+						},
+						animation: {
+							effect_in: 'show',
+							effect_out: 'slide'
+						},			
+						before_close: function(){
+							this.removeAll();
+						}
+					});
 				});
 			});
 		}
