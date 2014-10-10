@@ -187,12 +187,11 @@ def search(request,q='',t='media'):
 	q = request.GET.get("q")
 	t = request.GET.get("t")
 	limit = per_page
-
+	videos = fetch_search_media(q,limit)
+	departments = fetch_search_department(q,limit)
 	if t == 'media':
 		if len(q) > 0 :
-			videos = fetch_search_media(q,limit)
 			count1 = videos['count']
-			departments = fetch_search_department(q,limit)
 			count2 = departments['count']
 			count = count1 + count2
 			page = int(request.GET.get('p', None) or '1')
@@ -219,9 +218,7 @@ def search(request,q='',t='media'):
 			})
 	elif t == 'department':
 		if len(q) > 0 :
-			departments = fetch_search_department(q,limit)
 			count2 = departments['count']
-			videos = fetch_search_media(q,limit)
 			count1 = videos['count']
 			count = count1 + count2
 			page = int(request.GET.get('p', None) or '1')

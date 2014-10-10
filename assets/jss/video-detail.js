@@ -11,7 +11,6 @@ define(function(require) {
 	var $slider = $(".banner .carousel");
     require("jwpsrv");
     require("search-history");
-
     $(function() {
         var $slider = $(".banner .carousel");
         $slider.find(".active .ad-title, .active .ad-desc").show();
@@ -30,6 +29,7 @@ define(function(require) {
                     {file:$player.data("mid"),label:"360p SD","default":"true"}
                 ]
             });
+			jwplayer().play();
         }else {
             window.document.documentElement.style.overflow = 'hidden';
             $('.verify_password_container').css({display:'block'});
