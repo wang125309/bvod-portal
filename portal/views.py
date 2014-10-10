@@ -218,7 +218,6 @@ def search(request,q='',t='media'):
 			})
 	elif t == 'department':
 		if len(q) > 0 :
-
 			count2 = departments['count']
 			count1 = videos['count']
 			count = count1 + count2
