@@ -24,7 +24,10 @@
         </li>
         <li {% if nav.tab == "video" %} class="active" {% endif %}>
           <a href="/video">视频<br><span class="en">VIDEO</span></a>
-        </li>
+		</li>
+		<li {% if nav.tab == "live" %} class="active" {% endif %}>
+		<a href="/live">直播<br><span class="en">LIVE</span></a>
+		</li>
         <li {% if nav.tab == "organization" %} class="active" {% endif %}>
           <a href="/org/list">组织<br><span class="en">ORG.</span></a>
         </li>

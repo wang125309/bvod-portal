@@ -144,7 +144,11 @@ def video_detail(request, video_id):
     	'video': video,
         'related':related
     })
-
+@active_tab('live')
+def live(request):
+	return render(request, "live.html",{
+		
+	})
 @active_tab('video')
 def video(request, category_slug='', sub_category_slug=''):
     per_page = 16
