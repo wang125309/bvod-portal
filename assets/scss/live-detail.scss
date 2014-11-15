@@ -1,0 +1,276 @@
+@import "assets/components/bootstrap-sass-official/assets/stylesheets/bootstrap";
+@import "assets/scss/lib/grid30";
+@import "assets/scss/lib/font-bvod";
+@import "assets/scss/lib/icon";
+@import "assets/scss/lib/navbar-bvod";
+@import "assets/scss/lib/footer";
+@import "assets/scss/lib/search-history";
+@import "assets/scss/lib/pnotify.custom.min";
+body {
+	background-color: #FAF9F9;
+}
+.video-content {
+	height: 660px;
+	margin-bottom: 40px;
+	margin-top: 68px;
+	background-color: #E7E7E7;
+
+	$bg-width-indeed: 1600px;
+	$bg-height-indeed: 725px;
+
+	img {
+		position: absolute;
+		top: 68px;
+		left: 0px;
+		width: 100%;
+		height: 660px;
+		z-index: 1000;
+	}
+
+	.player-wrapper {
+		border: 8px solid #fff;
+		height: 526px;
+		background-color: $gray-darker;
+		box-shadow: 0px 1px 1px rgba(0, 0, 0, .2);
+	}
+
+	.container {
+		h4 {
+			margin: 20px 0px;
+		}
+		position: relative;
+		z-index: 1010;
+	}
+
+	img.jwlogo {
+		display: none;
+	}
+
+	.title {
+		max-width: 400px;
+		line-height: 32px;
+		@include text-overflow();
+	}
+}
+
+.video-comment {
+	margin-left: 300px;
+	float: left;
+	width: 40%;
+}
+
+.video-info {
+}
+$link_color:#333;
+.path a {
+	text-decoration : none;
+	color : $link_color ;
+}
+.path a:hover {
+	color : $link_color*0.85 ;
+	text-decoration : none;
+}
+.video-meta {
+	margin-bottom: 40px;
+}
+
+@mixin card() {
+	box-shadow: 0px 1px 3px rgba(0, 0, 0, .2);
+	padding: 20px;
+}
+.container .col-xs-12 .video-card .info .col-xs-18 {
+    padding-top:3px;
+    padding-bottom:5px;
+}
+
+.container .col-xs-12 .video-card .info .col-xs-18 h4{
+    margin-top:8px;
+}
+.org-head-img img{
+    @include square(100%);
+}
+.org-head-img {
+    @include square(124px);
+    display: block;
+    border: 3px solid #fff;
+    border-radius: 8px;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, .3);
+    width: 56px;
+    height: 56px;
+    border-bottom-width: 3px;
+}
+.org-head-img img{
+    @include square(100%);
+    border-radius: 8px;
+    width:50px;
+    height:50px;
+    box-shadow: inset -1px 1px 4px rgba(0, 0, 0, .2);
+}
+
+.video-card {
+	@include card();
+
+	.info {
+		border-bottom: 1px solid $gray-lighter;
+	}
+
+	small, .small {
+		font-weight: normal;
+	}
+
+	.desc {
+		padding: 5px 0px;
+		p {
+			color: $gray-light;
+		}
+		border-bottom: 1px solid $gray-lighter;
+	}
+
+	.views {
+		text-align: center;
+		color:#999;
+	}
+
+	.comments {
+		text-align: center;
+		color:#999;
+	}
+
+	.tags {
+		padding: 5px 0px;
+		h5 {
+			margin-bottom: 0px;
+		}
+
+		h5.value {
+			font-weight: normal;
+			color: $gray-light;
+			font-size: $font-size-base;
+			.tag {
+				background-color: rgb(245, 245, 245);
+				padding: 1px 3px;
+			}
+		}
+	}
+
+	.category {
+		padding: 5px 0px;
+		border-bottom: 1px solid $gray-lighter;
+
+		h5.value {
+			font-weight: normal;
+			color: $gray-light;
+			font-size: $font-size-base;
+		}
+	}
+}
+
+.related-video {
+	@include card();
+	.title {
+		height: 40px;
+    	overflow: hidden;
+		padding-bottom: 10px;
+		margin-bottom: 10px;
+		p {
+			font-weight: bold;
+			letter-spacing: 1px;
+			word-break: break-all;
+		}
+	}
+	
+	.info {
+		padding-bottom: 10px;
+		padding-top: 10px;
+	}
+	.info:not(:last-child) {
+		border-bottom: 1px solid #eee;
+	}
+	.name {
+		color: $gray-light;
+	}
+	.video-info {
+		color: $gray-light;
+	}
+}
+
+.footer {
+	clear: both;
+}
+
+.form-group {
+	margin-bottom: 8px;
+}
+.share-btn {
+	cursor : pointer;
+}
+.btn-share:hover {
+	background:#016ccc ;
+}
+.share_menu:focus {
+	outline:none;
+}
+.share_menu {
+	width:344px;
+	height:157;
+	margin-left:-70px;
+	margin-top:10px;
+	background:#fff;
+	border:#dcdcdc;
+	box-shadow:1px 1px 3px 1px rgba(0,0,0,0.1);
+	position:absolute;
+	.coner {
+		position: absolute;
+		right:14px;
+		font-size:22px;
+		margin-top:-11px;
+		color:#fff;
+		z-index:10;
+	}
+	.coner_border {
+		position:absolute;
+		right:14px;
+		font-size:22px;
+		z-index:9;
+		margin-top:-14px;
+		color:#dcdcdc;
+	}
+	.common_url {
+		h5 {
+			margin-bottom:12px;
+		}
+		padding: 18px;
+		margin-top:35px;
+		button {
+			padding:3px 8px;
+			color:#777;
+			background:#fff;
+			border:1px solid #dcdcdc;
+			display:inline;
+		}
+		button:focus {
+			outline:none;
+		}
+		button:hover {
+			color:#fff;
+			background:#3580bd;
+		}
+		.form-control {
+			width:213px;
+			display:inline;
+			margin-left:5px;
+			height:26px;
+			vertical-align:top;
+			padding:3px;
+		}
+	}
+}
+.jiathis_style {
+	padding:18px;
+	a > span {
+		margin:5px !important;
+	}
+	a > .jtico_weixin {
+		margin-right:25px !important;
+	}
+}

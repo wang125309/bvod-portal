@@ -19,5 +19,6 @@ urlpatterns = patterns('',
     url(r'^video$', portal.views.video),
     url(r'^video/(?P<category_slug>.*)/(?P<sub_category_slug>.*)$', portal.views.video),
 	url(r'^search$',portal.views.search),
-	url(r'^live$', portal.views.live)
+	url(r'^live$', portal.views.live),
+	url(r'^live/(?P<live_id>\d+)$', portal.views.live_detail)
 )
