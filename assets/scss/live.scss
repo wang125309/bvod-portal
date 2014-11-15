@@ -1,0 +1,86 @@
+@import "videos";
+.org-list {
+	min-height:400px;
+}
+.live-title {
+	margin-top: 40px;
+	width: 80%;	
+	margin-left:10%;
+	> .live-which {
+		padding:3px 4px;
+		background:#dcdcdc;
+		border:#fff;
+		color:#fff;
+		font-size:14px;
+	}
+	> .live-date {
+		font-size:16px;
+	}
+	> .live-week {
+		font-size:14px;
+	}
+}
+.no-padding-left {
+	padding-left:0;
+}
+.live-detail {
+	border:1px solid #dcdcdc;
+	margin-top:10px;
+	width:80%;
+	margin-left:10%;
+	height:134px;
+	box-shadow: 0 0 2px 0 #ccc; 
+	position:relative;
+	padding:0;
+	height:134px;
+	margin-bottom:0px;
+	.live-detail-img img{
+		width:234px;
+		height:132px;
+	}
+	.live-detail-desc {
+		height:100%;
+		border-right:1px solid #dcdcdc;
+		h4 {
+			margin-top:33px;
+		}
+		span {
+			font-size:14px;
+			color:#777;
+		}
+	}
+	.live-detail-time {
+		position:absolute;
+		right:200px;
+		border-right:1px solid #dcdcdc;
+		height:100%;
+		> div {
+			padding:20px;
+			padding-top:55px;
+		}
+	}
+
+	.live-detail-enter {
+			width:200px;
+			height:100%;
+			position:absolute;
+			right:0;
+			> div {
+				padding:20px;
+				padding-top:50px;
+			}
+		}
+}
+.live-week {
+	padding:2px 3px;
+	color:#fff;
+}
+.today {
+	background-color:#428bca;
+}
+.tomorrow {
+	background-color:#c5c5c5;
+}
+.footer {
+	margin-top:40px;
+}

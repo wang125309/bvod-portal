@@ -8,7 +8,7 @@ base_url = 'http://bl.limijiaoyin.com/api/'
 media_url = base_url + 'media'
 categories_url = base_url + 'categories'
 departments_url = base_url + 'departments'
-
+live_url = base_url + 'live'
 def fetch_query_result(api_url, payload, type='media'):
    r = requests.get(api_url, params=payload)
    if r.status_code == 200:
@@ -137,3 +137,14 @@ def fetch_search_media(key, limit=7 ,offset=10):
 def fetch_search_department(key,limit=7,offset=10):
    items = {'search':key, 'limit':limit ,'offset':offset }
    return fetch_query_result(departments_url, items)
+
+##########################################################
+
+####################live##################################
+
+def fetch_live_media(limit=10,offset=0):
+   items = {'limit':limit,'offset':offset}
+   return fetch_query_result(live_url,items)
+def fetch_live_item(id):
+   items = {'id':id}
+   return fetch_query_result(live_url,items)

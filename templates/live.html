@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>北航视频</title>
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/live.css">
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/jquery.stickyfooter.css">
+	{% include "polyfills.html" %}
+</head>
+<body class="body">
+{% include "navbar.html" with nav=request.nav type="" %}
+
+<div class="img-banner">
+  <img src="{{ STATIC_URL }}img/videoBanner.png">
+</div>
+<section class="org-list container no-margin">
+<div class="row">
+	{% for i in live.live %}
+	<div class="live-title">
+		{% for j in live.playDate %}
+			{% if forloop.parentloop.counter == forloop.counter %}
+				{% ifequal j "today" %}
+				<span class="live-week today">今天</span>
+				{% endifequal %}
+				{% ifequal j "tomorrow" %}
+					<span class="live-week tomorrow">明天</span>
+				{% endifequal %}
+			{% endif %}
+		{% endfor %}
+		<span class="live-date">{{ i.start_time }}</span>
+	  </div>
+	  <div class="live-detail">
+			<div class="live-detail-image col-md-8 no-padding-left">
+				<img src="{{ i.image }}" onerror="this.src=('http://placehold.it/234x132&amp;text=!')"/>
+			</div>
+			<div class="live-detail-desc col-md-12 no-padding-left">
+				<div>
+					<h4 class="live-detail-desc-title">{{ i.title }}</h4>
+					<span class="live-detail-desc-main">{{ i.desc }}</span>
+				</div>
+			</div>
+			<div class="live-detail-time col-md-3 no-padding-left">
+				<div>{{ i.start_time }}</div>
+			</div>
+			<div class="live-detail-enter col-md-5 no-padding-left">
+				<div><a href="/live/{{ i.id }}" class="btn btn-sm btn-primary">进入直播</a></div>
+			</div>	
+		</div>
+		{% endfor %}
+  </div>	  
+</section>
+
+{% include "footer.html" %}
+<script type="text/javascript" src="{{ STATIC_URL }}components/requirejs/require.js">
+</script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/live.js"></script>
+<script>require(["live"]);</script>
+</body>
+</html>

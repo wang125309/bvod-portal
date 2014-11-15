@@ -3,9 +3,9 @@ import logging
 from django.shortcuts import render, redirect
 from django.core.paginator import Paginator
 from datetime import datetime
-
+import json
 import django_active_tab as active_tab
-
+import time
 from query import *
 from utils import *
 import truncate
@@ -144,6 +144,51 @@ def video_detail(request, video_id):
     	'video': video,
         'related':related
     })
+@active_tab('live')
+def live_detail(request,live_id):
+	live = fetch_live_item(live_id)
+	return render(request,"live-detail.html",{
+		'live':live
+	})	
+@active_tab('live')
+def live(request):
+	per_page = 8
+	fetch = fetch_live_media
+	live = fetch()['live']
+	s = []
+	for i in xrange(len(live)):
+		sl = sort_list()
+		v = json.dumps(live[i])
+		l = v.split(",")
+		sl.value = l[2].split("\": \"")[1].split(" ")[0]
+		sl.id = i
+		s.append(sl)
+	s.sort(lambda x,y:cmp(x.value,y.value))
+	liv = []
+	for i in s:
+		liv.append([])
+	for i in range(len(s)):
+		liv[i] = live[s[i].id]
+	live = liv
+	now = time.strftime('%m/%d/%Y',time.localtime(time.time()))
+	bp = 1
+	for i in range(len(s)):
+		print s[i].value
+		if s[i].value >= now :
+			bp = i
+			break
+	live = live[bp::]
+	s = s[bp::]
+	playDate = []
+	for i in range(len(s)):
+		playDate.append(culDate(s[i].value).strip())
+	li = {}
+	li['live'] = live
+	li['playDate'] = playDate
+		
+	return render(request, "live.html",{
+		'live' : li
+	})
 
 @active_tab('video')
 def video(request, category_slug='', sub_category_slug=''):
@@ -239,8 +284,8 @@ def search(request,q='',t='media'):
 				'departments':departments,
 				't':t,
 				'count':count,
-                		'count1':count1,
-                		'count2':count2,
+                'count1':count1,
+                'count2':count2,
 				'pagination':paginator,
 				'orgs':orgs,
 			})
@@ -250,7 +295,7 @@ def search(request,q='',t='media'):
 				'departments':{},
 				't':t,
 				'count':0,
-                		'count1':0,
-                		'count2':0,
+                'count1':0,
+                'count2':0,
 				'orgs':{}
 			})
