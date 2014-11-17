@@ -416,11 +416,10 @@ define('live-detail',['require','store','jquery','bootstrap','jwplayer','headroo
                 height: 510,
                 html5player: "../portal_static/js/jwplayer.html5.js",
                 flashplayer: "../portal_static/js/jwplayer.flash.swf",
-                sources: [
-                    {file:$player.data("high"),label:"720p HD","default":"true"},
-                    {file:$player.data("mid"),label:"360p SD"}
-		       ]
-        });
+				sources:[{
+					file: $player.data("live"),label:"live","defalut":"true"
+				}]
+			});
 		jwplayer().play();
 		$(".btn-lik").bind("click",function(){
 			like();

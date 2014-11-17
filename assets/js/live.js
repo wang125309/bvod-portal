@@ -242,18 +242,12 @@ define('live',['require','jquery','bootstrap','headroom','affix','sticky','searc
 	$(function(){
 	    var headroom = new Headroom($(".navbar-bvod")[0]);
         headroom.init();
-	
 		$(".live-date").each(function(){
-			$(this).html($(this).text().split(' ')[0]);
+			$(this).html($(this).text().split(" ")[0]);
 		});
-		$(".live-detail-time > div").each(function(){
-			$(this).html($(this).text().split(' ')[1]);
+		$(".live-detail-time > div > span").each(function(){
+			$(this).html($(this).text().split(" ")[1]);
 		});
-		
-		$(".live-which").each(function(){
-			var dateStr = $(this).next(".live-date").text().toString();
-				
-		});	
 	});	
 });
 
