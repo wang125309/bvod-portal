@@ -2203,7 +2203,7 @@ body{background:#FAF9F9}
 .live-detail .live-detail-desc h4{margin-top:33px}
 .live-detail .live-detail-desc span{font-size:14px;color:#777}
 .live-detail .live-detail-time{position:absolute;right:200px;border-right:1px solid #dcdcdc;height:100%}
-.live-detail .live-detail-time>div{padding:55px 20px 20px}
+.live-detail .live-detail-time>div{margin-top:54px}
 .live-detail .live-detail-enter{width:200px;height:100%;position:absolute;right:0}
 .live-detail .live-detail-enter>div{padding:50px 20px 20px}
 .live-week{padding:2px 3px;color:#fff}
