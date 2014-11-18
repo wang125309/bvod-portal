@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <title>北航视频</title>
     <link rel="stylesheet" href="{{ STATIC_URL }}css/live.css">
-    <link rel="stylesheet" href="{{ STATIC_URL }}css/jquery.stickyfooter.css">
+	<link rel="stylesheet" href="{{ STATIC_URL }}css/jquery.stickyfooter.css">
+	<script type="text/javascript" src="{{ STATIC_URL }}components/requirejs/require.js">
+</script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/live.js"></script>
+<script>require(["live"]);</script>
 	{% include "polyfills.html" %}
 </head>
 <body class="body">
@@ -51,9 +55,6 @@
 </section>
 
 {% include "footer.html" %}
-<script type="text/javascript" src="{{ STATIC_URL }}components/requirejs/require.js">
-</script>
-<script type="text/javascript" src="{{ STATIC_URL }}js/live.js"></script>
-<script>require(["live"]);</script>
+
 </body>
 </html>

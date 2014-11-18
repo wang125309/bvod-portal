@@ -27,6 +27,7 @@
 	border:1px solid #dcdcdc;
 	margin-top:10px;
 	width:80%;
+	position:relative;
 	margin-left:10%;
 	height:134px;
 	box-shadow: 0 0 2px 0 #ccc; 
@@ -48,6 +49,11 @@
 			font-size:14px;
 			color:#777;
 		}
+	}
+	.live-detail-image > img {
+		width:234px;
+		position:absolute;
+		clip:rect(0,234px,130px,0);
 	}
 	.live-detail-time {
 		position:absolute;
