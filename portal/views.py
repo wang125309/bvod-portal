@@ -160,7 +160,7 @@ def live(request):
 		sl = sort_list()
 		v = json.dumps(live[i])
 		l = v.split(",")
-		sl.value = l[2].split("\": \"")[1].split(" ")[0]
+		sl.value = l[3].split("\": \"")[1].split(" ")[0]
 		sl.id = i
 		s.append(sl)
 	s.sort(lambda x,y:cmp(x.value,y.value))

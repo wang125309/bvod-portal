@@ -12,7 +12,7 @@
     <div class="video-content container">
         <img src="{{ STATIC_URL }}img/watch-bg.png" alt="">
         <div class="container">
-            <h4 class="path"><a href="/live">直播</a> &gt; {{ video.department.name }}</h4>
+			<h4 class="path"><a href="/live">直播</a>&nbsp;&gt; {{ live.live.title }}</h4>
             <div class="player-wrapper">
 				<div class="" id="player" data-live="{{ live.live.flow_address }}"
                     data-image="{{ live.live.image }}">
@@ -22,23 +22,24 @@
                 <div class="pull-right h4" style="margin: 3px; 0px 0px">
                     <i class="icon-like"></i>
                     <span class="btn-lik">喜欢</span>
-                    <span class="links">{{ live.likes|default:"0" }}</span>
+                    <span class="links">{{ live.live.like|default:"0" }}</span>
                     &nbsp;&nbsp;
 
                     <i class="icon-dislike"></i>
                     <span class="btn-dislike">不喜欢</span>
-                    <span class="dislikes">{{ live.dislikes|default:"0" }}</span> 
+                    <span class="dislikes">{{ live.live.dislike|default:"0" }}</span> 
+
                     &nbsp;&nbsp;
 
                     <i class="icon-share"></i>
 					<span class="share-btn" data-image="{{ live.id}}"  data-url="{{ live.sources.0.url }}">分享</span>
+
                 </div>
-                <h3 class="title">{{ video.title }}</h4>
+					<h3 class="title">{{ live.live.title }}</h3>
             </div>
         </div>
     </div>
-
-
+	<input id="id" type="hidden" value="{{ live.live.id }}" />
     <div class="container video-meta">
         <div class="col-xs-18" style="padding-right: 30px;">
             <h3>评论<small style="margin-top: 9px;" class="pull-right">0/144</small></h3>
@@ -58,89 +59,13 @@
             <img src="{{ STATIC_URL }}img/no-comment.png" alt="" style="max-width: 100%">
         </div>
         <div class="col-xs-12">
-            <h3>视频信息</h3>
+            <h3>直播信息</h3>
             <div class="video-card">
-                <div class="row info">
-                    <div class="col-xs-18">
-                        <div class="col-xs-10">
-                          <a class="org-head-img">
-                            <img src="{{ video.department.avatar }}" alt="" onError="this.src='http://placehold.it/50x50&text=!'">
-                          </a>
-                        </div>
-                        <div class="col-xs-20">
-                            <h4>{{ video.department.name }}&nbsp;</h4>
-                            <h4 class="small">
-                            {% if video.publish_on and video.publish_on != "None" %}
-                                {{ video.publish_on|default:"" }}
-                            {% endif %}
-                            </h4>
-                        </div>
-                    </div>
-                    <div class="col-xs-6 views">
-                        <h4>{{ video.views|default:"0" }}</h4>
-                        <h4 class="small">播放</h4>
-                    </div>
-                    <div class="col-xs-6 comments">
-                        <h4>{{ video.comment_count|default:"0" }}</h4>
-                        <h4 class="small">评论</h4>
-                    </div>
-                </div>
                 <div class="desc">
                     <h5>简介</h5>
-                    <p>{{ video.description_plain|default:"暂无简介" }}</p>
-                </div>
-                <div class="category row">
-                    <div class="col-xs-4">
-                        <h5>分类</h5>
-                    </div>
-                    <div class="col-xs-26">
-                        <h5 class='value'>{{ video.category|default:"无" }}</h5>
-                    </div>
-                </div>
-                <div class="tags row">
-                    <div class="col-xs-4">
-                        <h5>标签</h5>
-                    </div>
-                    <div class="col-xs-26">
-                        <h5 class='value'>
-                            {% if video.tags|length %}
-                                {% for tag in video.tags %}
-                                <span class='tag'>{{ tag }}</span>&nbsp;&nbsp;
-                                {% endfor %}
-                            {% else %}
-                                <span class='tag'>{{ "无" }}</span>
-                            {% endif %}
-                        </h5>
-                    </div>
+                    <p>{{ live.live.desc|default:"暂无简介" }}</p>
                 </div>
             </div>
-            {% if related %}
-            <h3>相关视频</h3>
-            <div class="related-video">
-                {% for item in related %}
-                <div class="row info">
-                    <div class="col-xs-30 item">
-                        <div class="col-xs-15">
-                            <a href="{{item.id}}">
-                                <div class="img">
-                                    <img src="{{ item.thumbs.m.url }}">
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-xs-15">
-                            <div class="title">
-                                <p>{{ item.title }}</p>
-                            </div>
-                            <div class="name">{{ item.department.name }}</div>
-                            <div class="video-info">
-                                <div class="played"><i class="icon-watch"></i><span class="num">&nbsp;{{ item.views }}</span></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                {% endfor %}
-            </div>
-            {% endif %}
         </div>
     </div>
     <script type="text/javascript" src="{{ STATIC_URL }}components/requirejs/require.js"></script>
@@ -149,7 +74,7 @@
 	<script>require(["live-detail"]);</script>
 <script>	
 	var jiathis_config={
-		summary:"【视频: "+$(".title").html() +"】",
+		summary:"【直播: "+$(".title").html() +"】",
 		shortUrl:false,
 		hideMore:false,
 		ralateuid:"北航视频",

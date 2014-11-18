@@ -231,14 +231,13 @@ define("search-history",['require','jquery'],function(require){
 	});
 });
 
-define('live',['require','jquery','bootstrap','headroom','affix','sticky','search-history','jquery'],function(require){
+define('live',['require','jquery','bootstrap','headroom','affix','sticky','search-history'],function(require){
 	require("jquery");
     require("bootstrap");
     require("headroom");
     require("affix");
     require("sticky");
     require("search-history");
-    require("jquery");
 	$(function(){
 	    var headroom = new Headroom($(".navbar-bvod")[0]);
         headroom.init();
@@ -247,6 +246,14 @@ define('live',['require','jquery','bootstrap','headroom','affix','sticky','searc
 		});
 		$(".live-detail-time > div > span").each(function(){
 			$(this).html($(this).text().split(" ")[1]);
+		});
+		$(".live-detail-desc-main").each(function(){
+			var str = $(this).text();
+			if(str.length > 44 ) {
+				str = str.substr(0,44);
+			}
+			str += "...";
+			$(this).html(str);
 		});
 	});	
 });

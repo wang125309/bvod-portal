@@ -51,8 +51,8 @@ define(function(require) {
 			}
 			return false;
 		}
-		var id = $("#verify_password_form input[name='video_id']").val();
-		if(hasId(id,store.get('like'))) {
+		var id = $("#id").val(); 
+		if(hasId(id,store.get('like_live'))) {
 			$(".icon-like").addClass("icon-like-select");
 			$(".btn-lik").css({
 				"cursor":"initial"
@@ -63,7 +63,7 @@ define(function(require) {
 			$(".icon-dislike").addClass("icon-dislike-enable");
 			$(".icon-dislike").removeClass("icon-dislike");
 		}
-		if(hasId(id,store.get('dislike'))) {
+		if(hasId(id,store.get('dislike_live'))) {
 			$(".icon-dislike").addClass("icon-dislike-select");
 			$(".btn-dislike").css({
 				"cursor":"initial"
@@ -75,12 +75,12 @@ define(function(require) {
 			$(".icon-like").removeClass("icon-like");
 		}
 		var like = function() {
-			var like_statu = hasId(id,store.get("like"));
-			var dislike_statu = hasId(id,store.get("dislike"));
+			var like_statu = hasId(id,store.get("like_live"));
+			var dislike_statu = hasId(id,store.get("dislike_live"));
 		
 			if(!like_statu&&!dislike_statu) {
-				store.set('like',store.get('like')+","+id);
-				$.get("/api/media/get?likes=1&id="+id,function(){
+				store.set('like_live',store.get('like_live')+","+id);
+				$.get("/api/live?likes=1&id="+id,function(){
 					$(".links").html(String(parseInt($(".links").text())+1));
 					$(".icon-like").addClass("icon-like-select");
 					$(".icon-dislike").addClass("icon-dislike-enable");
@@ -93,12 +93,12 @@ define(function(require) {
 			}
 		}
 		var dislike = function() {
-			var like_statu = hasId(id,store.get("like"));
-			var dislike_statu = hasId(id,store.get("dislike"));
+			var like_statu = hasId(id,store.get("like_live"));
+			var dislike_statu = hasId(id,store.get("dislike_live"));
 		
 			if(!like_statu&&!dislike_statu) {
-				store.set('dislike',store.get('dislike')+","+id);
-				$.get("/api/media/get?dislikes=1&id="+id,function(){
+				store.set('dislike_live',store.get('dislike_live')+","+id);
+				$.get("/api/live?dislikes=1&id="+id,function(){
 					$(".dislikes").html(String(parseInt($(".dislikes").text())+1));
 					$(".icon-dislike").addClass("icon-dislike-select");
 					$(".icon-like").addClass("icon-like-enable");
