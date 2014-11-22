@@ -6,24 +6,24 @@ define(function(require) {
     require("headroom");
 	require("jrumble");
     require("jwplayhtml5");
-	require("share");
+	require("share_live");
 	var $slider = $(".banner .carousel");
     require("search-history");
     $(function() {
         var $slider = $(".banner .carousel");
         $slider.find(".active .ad-title, .active .ad-desc").show();
-            $player = $("#player");
-            jwplayer("player").setup({
-                image: $player.data("image"),
-                width: 1124,
-                height: 510,
-                html5player: "../portal_static/js/jwplayer.html5.js",
-                flashplayer: "../portal_static/js/jwplayer.flash.swf",
-				sources:[{
-					file: $player.data("live"),label:"live","defalut":"true"
-				}]
-			});
-		jwplayer().play();
+        $player = $("#player");
+        jwplayer("player").setup({
+			image: $player.data("image"),
+			width: 1124,
+            height: 510,
+            autostart:true,
+			html5player: "../portal_static/js/jwplayer.html5.js",
+            flashplayer: "../portal_static/js/jwplayer.flash.swf",
+			sources:[{
+				file: $player.data("live"),label:"live","defalut":"true"
+			}]
+		});
 		$(".btn-lik").bind("click",function(){
 			like();
 		});

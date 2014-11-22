@@ -47,8 +47,9 @@ define(function(require){
 			var str = $(this).text();
 			if(str.length > 44 ) {
 				str = str.substr(0,44);
+				str += "...";
 			}
-			str += "...";
+
 			$(this).html(str);
 		});
 
