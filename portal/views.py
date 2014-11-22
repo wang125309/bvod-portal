@@ -178,7 +178,21 @@ def live(request):
 			bp = i
 			break
 	live = live[bp::]
-	s = s[bp::]
+	so = []
+	for i in xrange(len(live)):
+		sl = sort_list()
+		v = json.dumps(live[i])
+		l = v.split(",")
+		sl.value = l[3].split("\": \"")[1].split(" ")[0]+" "+l[3].split("\": \"")[1].split(" ")[1].split("\"")[0]
+		sl.id = i
+		so.append(sl)
+	so.sort(lambda x,y:cmp(x.value,y.value))
+	liv2 = []
+	for i in so:
+		liv2.append([])
+	for i in range(len(so)):
+		liv2[i] = live[so[i].id]
+	live = liv2
 	li = {}
 	li['live'] = live
 		

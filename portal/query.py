@@ -143,7 +143,7 @@ def fetch_search_department(key,limit=7,offset=10):
 ####################live##################################
 
 def fetch_live_media(limit=10,offset=0):
-   items = {'limit':limit,'offset':offset}
+   items = {'limit':limit,'offset':offset,'order':"start_time asc"}
    return fetch_query_result(live_url,items)
 def fetch_live_item(id):
    items = {'id':id}

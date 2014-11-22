@@ -52,7 +52,12 @@ body {
 		@include text-overflow();
 	}
 }
-
+.video-card .desc {
+	border:none !important;
+}
+.share_menu .common_url {
+	padding:10px !important;
+}
 .video-comment {
 	margin-left: 300px;
 	float: left;
