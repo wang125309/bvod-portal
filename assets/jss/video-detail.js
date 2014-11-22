@@ -9,7 +9,6 @@ define(function(require) {
 	require("jwpsrv");
 	require("share");
 	var $slider = $(".banner .carousel");
-    require("jwpsrv");
     require("search-history");
     $(function() {
         var $slider = $(".banner .carousel");

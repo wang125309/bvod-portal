@@ -6,10 +6,8 @@ define(function(require) {
     require("headroom");
 	require("jrumble");
     require("jwplayhtml5");
-	require("jwpsrv");
 	require("share");
 	var $slider = $(".banner .carousel");
-    require("jwpsrv");
     require("search-history");
     $(function() {
         var $slider = $(".banner .carousel");

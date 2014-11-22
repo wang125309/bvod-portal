@@ -160,31 +160,27 @@ def live(request):
 		sl = sort_list()
 		v = json.dumps(live[i])
 		l = v.split(",")
-		sl.value = l[3].split("\": \"")[1].split(" ")[0]
+		sl.value = l[6].split("\": \"")[1].split(" ")[0]+" "+l[6].split("\": \"")[1].split(" ")[1].split("\"")[0]
 		sl.id = i
 		s.append(sl)
 	s.sort(lambda x,y:cmp(x.value,y.value))
+	
 	liv = []
 	for i in s:
 		liv.append([])
 	for i in range(len(s)):
 		liv[i] = live[s[i].id]
 	live = liv
-	now = time.strftime('%m/%d/%Y',time.localtime(time.time()))
+	now = time.strftime('%Y.%m.%d %H:%M',time.localtime(time.time()))
 	bp = 1
 	for i in range(len(s)):
-		print s[i].value
 		if s[i].value >= now :
 			bp = i
 			break
 	live = live[bp::]
 	s = s[bp::]
-	playDate = []
-	for i in range(len(s)):
-		playDate.append(culDate(s[i].value).strip())
 	li = {}
 	li['live'] = live
-	li['playDate'] = playDate
 		
 	return render(request, "live.html",{
 		'live' : li
