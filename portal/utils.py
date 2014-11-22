@@ -7,7 +7,7 @@ class sort_list:
 def commaSeparatedNumber(num):
 	return format(num, ',')
 def culDate(str):
-	t = datetime.datetime.strptime(str, "%m/%d/%Y").date()
+	t = datetime.datetime.strptime(str, "%Y.%m.%d").date()
 	today = datetime.date.today()
 	oneDay = today + datetime.timedelta(days=1)
 	if t == today:
