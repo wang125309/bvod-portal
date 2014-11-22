@@ -32,7 +32,7 @@
                     &nbsp;&nbsp;
 
                     <i class="icon-share"></i>
-					<span class="share-btn" data-image="{{ live.id}}"  data-url="{{ live.sources.0.url }}">分享</span>
+					<span class="share-btn" data-image="{{ live.live.image }}">分享</span>
 
                 </div>
 					<h3 class="title">{{ live.live.title }}</h3>
@@ -80,8 +80,8 @@
 		shortUrl:false,
 		hideMore:false,
 		ralateuid:"北航视频",
-		imageUrl:"http://v.buaa.edu.cn/images/media/"+$(".share-btn").data("image")+"l.jpg",
-		pic:"http://v.buaa.edu.cn/images/media/"+$(".share-btn").data("image")+"l.jpg",
+		imageUrl:"http://v.buaa.edu.cn/images/"+$(".share-btn").data("image"),
+		pic:"http://v.buaa.edu.cn/images/"+$(".share-btn").data("image"),
 	}
       </script>
 <script type="text/javascript" src="http://v3.jiathis.com/code_mini/jia.js" charset="utf-8"></script>
