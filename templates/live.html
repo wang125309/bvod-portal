@@ -31,17 +31,17 @@
 		<div class="live-detail-image col-md-8 no-padding-left">
 			<img src="/images/{{ i.image }}" onError="this.className='error';this.src=('http://placehold.it/234x134&amp;text=!')"/>
 			</div>
-			<div class="live-detail-desc col-md-12 no-padding-left">
+			<div class="live-detail-desc col-md-11 no-padding-left">
 				<div>
 					<h4 class="live-detail-desc-title">{{ i.title }}</h4>
 					<span class="live-detail-desc-main">{{ i.desc }}</span>
 				</div>
 			</div>
-			<div class="live-detail-time col-md-3 no-padding-left">
+			<div class="live-detail-time col-md-4 no-padding-left">
 				<div>
 					<div>
-						<span class="detail-date">{{ i.start_time }}</span>&nbsp;<span class="start-time detail-desc">{{ i.start_time }}</span><br><br>
-						<span class="detail-date">{{ i.end_time }}</span>&nbsp;<span class="detail-desc">{{ i.end_time }}</span>
+						开始&nbsp;<span class="detail-date detail-date-start">{{ i.start_time }}</span>&nbsp;<span class="start-time detail-desc">{{ i.start_time }}</span><br><br>
+						结束&nbsp;<span class="detail-date detail-date-end">{{ i.end_time }}</span>&nbsp;<span class="detail-desc">{{ i.end_time }}</span>
 					</div>
 				</div>
 			</div>
