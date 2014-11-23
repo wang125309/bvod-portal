@@ -16,10 +16,13 @@ define(function(require) {
         jwplayer("player").setup({
 			image: $player.data("image"),
 			width: 1124,
-            height: 510,
-            autostart:true,
+            		height: 510,
+            		autostart:true,
 			html5player: "../portal_static/js/jwplayer.html5.js",
-            flashplayer: "../portal_static/js/jwplayer.flash.swf",
+            		flashplayer: "../portal_static/js/jwplayer.flash.swf",
+			logo: {
+				file: "../portal_static/img/water.png",	
+			},
 			sources:[{
 				file: $player.data("live"),label:"live","defalut":"true"
 			}]
