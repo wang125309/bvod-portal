@@ -33,10 +33,10 @@ WSGI_APPLICATION = 'base.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django_mysqlpool.backends.mysqlpool',
-        'NAME': 'mediadrop',
+        'NAME': 'bvod',
         'USER': 'root',
         'PASSWORD': 'nameLR9969',
-        'HOST': 'localhost',
+        'HOST': '10.254.28.1',
         'PORT': '3306'
     }
 } 
