@@ -26,14 +26,15 @@ require("jwplayhtml5");
 			file: "../portal_static/img/water.png",
 		},
 		autostart: true,
-		analytics: {
-			enabled: false,
-			cookies: false
-		},
-		sources: [
+			sources: [
                     {file:$player.data("high"),label:"720p HD","default":"true"},
                     {file:$player.data("mid"),label:"360p SD"}
-                ]
+                ],
+		analytics: {
+			enabled: false,
+			cookies: false,
+		}
+
             });
         }else {
             window.document.documentElement.style.overflow = 'hidden';
