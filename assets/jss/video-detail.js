@@ -32,7 +32,6 @@ define(function(require) {
                     {file:$player.data("mid"),label:"360p SD"}
                 ]
             });
-			jwplayer().play();
         }else {
             window.document.documentElement.style.overflow = 'hidden';
             $('.verify_password_container').css({display:'block'});
@@ -49,7 +48,11 @@ define(function(require) {
                         height: 510,
                         html5player: "../portal_static/js/jwplayer.html5.js",
                         flashplayer: "../portal_static/js/jwplayer.flash.swf",
-                        sources: [
+                       	logo : {
+				file: "../portal_static/img/water.png",
+			},
+			autoplay: true,
+ 			sources: [
                             {file:$player.data("high"),label:"720p HD"},
                             {file:$player.data("mid"),label:"360p SD","default":"true"}
                         ]
@@ -89,19 +92,19 @@ define(function(require) {
             });
 			
         }
-		$(".btn-lik").bind("click",function(){
-			like();
-		});
-		$(".icon-like").bind("click",function(){
-			like();
-		});
-		$(".btn-dislike").bind("click",function(){
-			dislike();	
-		});
-		$(".icon-dislike").bind("click",function(){
-			dislike();
-		});
-		var hasId = function(id,str) {
+	$(".btn-lik").bind("click",function(){
+		like();
+	});
+	$(".icon-like").bind("click",function(){
+		like();
+	});
+	$(".btn-dislike").bind("click",function(){
+		dislike();	
+	});
+	$(".icon-dislike").bind("click",function(){
+		dislike();
+	});
+	var hasId = function(id,str) {
 			if(!str) {
 				return false;
 			}
