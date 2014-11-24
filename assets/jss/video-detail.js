@@ -26,6 +26,7 @@ define(function(require) {
                 logo : {
 			file: "../portal_static/img/water.png",
 		},
+		autoplay: true,
 		sources: [
                     {file:$player.data("high"),label:"720p HD","default":"true"},
                     {file:$player.data("mid"),label:"360p SD"}
