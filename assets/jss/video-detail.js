@@ -5,7 +5,7 @@ define(function(require) {
     require("jwplayer");
     require("headroom");
 	require("jrumble");
-    require("jwplayhtml5");
+require("jwplayhtml5");
 	require("share");
 	var $slider = $(".banner .carousel");
     require("search-history");
@@ -25,7 +25,11 @@ define(function(require) {
                 logo : {
 			file: "../portal_static/img/water.png",
 		},
-		autoplay: true,
+		autostart: true,
+		analytics: {
+			enabled: false,
+			cookies: false
+		},
 		sources: [
                     {file:$player.data("high"),label:"720p HD","default":"true"},
                     {file:$player.data("mid"),label:"360p SD"}
