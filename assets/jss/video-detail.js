@@ -23,7 +23,10 @@ define(function(require) {
                 height: 510,
                 html5player: "../portal_static/js/jwplayer.html5.js",
                 flashplayer: "../portal_static/js/jwplayer.flash.swf",
-                sources: [
+                logo : {
+			file: "../portal_static/img/water.png",
+		},
+		sources: [
                     {file:$player.data("high"),label:"720p HD","default":"true"},
                     {file:$player.data("mid"),label:"360p SD"}
                 ]
