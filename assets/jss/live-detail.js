@@ -16,8 +16,9 @@ define(function(require) {
         jwplayer("player").setup({
 			image: $player.data("image"),
 			width: 1124,
-            height: 510,
-            autostart:true,
+            		height: 510,
+            		autostart:true,
+			stretching:"exactfit",
 			html5player: "../portal_static/js/jwplayer.html5.js",
             flashplayer: "../portal_static/js/jwplayer.flash.swf",
 			logo: {

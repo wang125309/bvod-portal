@@ -26,7 +26,11 @@ body {
 		height: 660px;
 		z-index: 1000;
 	}
-
+	#player_logo {
+		right:0;
+		width:100px;
+		height:30px;
+	}
 	.player-wrapper {
 		border: 8px solid #fff;
 		height: 526px;

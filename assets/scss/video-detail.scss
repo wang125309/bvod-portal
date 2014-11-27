@@ -79,7 +79,12 @@ body {
 		height: 660px;
 		z-index: 1000;
 	}
-
+	.jwlogo {
+		width:100px;
+		height:32px;
+		right:0;
+		left:initial;
+	}
 	.player-wrapper {
 		border: 8px solid #fff;
 		height: 526px;
@@ -95,9 +100,6 @@ body {
 		z-index: 1010;
 	}
 
-	img.jwlogo {
-		display: none;
-	}
 
 	.title {
 		max-width: 400px;
