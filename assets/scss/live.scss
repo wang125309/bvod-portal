@@ -1,6 +1,12 @@
 @import "videos";
 .org-list {
 	min-height:400px;
+	.live-empty {
+		text-align:center;
+		> img {
+			margin-top:50px;
+		}
+	}
 }
 .live-title {
 	margin-top: 40px;

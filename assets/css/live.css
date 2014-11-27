@@ -2192,6 +2192,8 @@ body{background:#FAF9F9}
 .col-xs-6 .video-info .watch,.org-list .detail .item .info .meta .watch{float:right}
 .col-xs-6 .video-info .title{font-size:18px;color:#000;margin-top:10px}
 .org-list{min-height:400px}
+.org-list .live-empty{text-align:center}
+.org-list .live-empty>img{margin-top:50px}
 .live-title{margin-top:40px;width:80%;margin-left:10%}
 .live-title>.live-which{padding:3px 4px;background:#dcdcdc;border:#fff;color:#fff;font-size:14px}
 .live-title>.live-date-sub-wrap{margin-top:10px;font-size:18px}
