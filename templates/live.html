@@ -19,6 +19,11 @@
 </div>
 <section class="org-list container no-margin">
 <div class="row">
+	{% if not live.live %}
+	<div class="live-empty">
+		<img src="{{ STATIC_URL }}img/live_empty.png" />
+	</div>
+	{% endif %}
 	{% for i in live.live %}
 	<div class="live-title">
 		<div class="live-date-sub-wrap"> 
