@@ -4,7 +4,7 @@ import json
 
 
 logger = logging.getLogger(__name__)
-base_url = 'http://182.254.137.253:8091/api/'
+base_url = 'http://v.buaa.edu.cn/api/'
 media_url = base_url + 'media'
 categories_url = base_url + 'categories'
 departments_url = base_url + 'departments'
