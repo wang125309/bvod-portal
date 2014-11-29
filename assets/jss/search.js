@@ -5,7 +5,6 @@ define(function(require){
 
 
     $(function(){
-        $(".footer").stickyFooter();
 		$(".comment").each(function(){
 			if($(this).text().length <= 1)	{
 				$(this).css("display","none");			
