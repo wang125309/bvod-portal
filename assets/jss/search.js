@@ -2,9 +2,11 @@ define(function(require){
 	require("jquery");
 	require("search-history");
 
-        $(".footer").stickyFooter();
 
-    $(function(){ $(".comment").each(function(){
+
+    $(function(){
+        $(".footer").stickyFooter();
+		$(".comment").each(function(){
 			if($(this).text().length <= 1)	{
 				$(this).css("display","none");			
 			}
