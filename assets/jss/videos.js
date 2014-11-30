@@ -9,7 +9,12 @@ define(function(require){
         var headroom = new Headroom($(".navbar-bvod")[0]);
         headroom.init();
 
-        $('.list-group > a').click(function(){
+ $(".comment").each(function(){
+			if($(this).text().length <= 1)	{
+				$(this).css("display","none");			
+			}
+		});
+       $('.list-group > a').click(function(){
             if($(this).attr('id') == $(".list-group > .active").attr('id')){
                 if($(".list-group > .active+div").hasClass('in')){
                     $(".list-group > .active+div").removeClass('active in');

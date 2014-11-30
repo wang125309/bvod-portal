@@ -1,6 +1,8 @@
 define(function(require){
 	require("jquery");
 	require("search-history");
+
+        $(".footer").stickyFooter();
     $(function(){
 		var IsPC = function()  {
 			var userAgentInfo = navigator.userAgent;  

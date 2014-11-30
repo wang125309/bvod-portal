@@ -58,7 +58,7 @@ define(function(require){
 				obj.html("<span class='views_num'>"+data.total_view+"人&nbsp;/&nbsp;"+data.total_limit+"人</span>"+obj.html());				
 			});
 		});
-		$(".live-title").each(function(){
+				$(".live-title").each(function(){
 			var show_time = $(this).next(".live-detail").find(".live-detail-time > div  .start-time").text();	
 			var live_date = $(this).find(".live-date-sub").first().text();
 			if(!time_cmp(show_time,live_date)) {
@@ -74,6 +74,8 @@ define(function(require){
 
 				});
 			}
+
+        $(".footer").stickyFooter();
 		});
 	});	
 });

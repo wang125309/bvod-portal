@@ -177,6 +177,7 @@ def live(request):
 		if s[i].value >= now :
 			bp = i
 			break
+	
 	live = live[bp::]
 	so = []
 	for i in xrange(len(live)):

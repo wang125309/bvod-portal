@@ -40,6 +40,12 @@
 			$(this).fadeOut();	
 		});	
 	});
+		$(".comment").each(function(){
+			if($(this).text().length <= 1)	{
+				$(this).css("display","none");			
+			}
+		});
+
         $(".footer").stickyFooter();
 		var IsPC = function()  {
 			var userAgentInfo = navigator.userAgent;  
