@@ -99,11 +99,13 @@
 			position:absolute;
 			right:0;
 			> div {
-				> a {
-					margin-left:35px;
+				position:absolute;
+				margin-top:50px;
+				right:10px;
+				> span {
+					margin-right:10px;
+					color:#777;
 				}
-				padding:20px;
-				padding-top:50px;
 			}
 		}
 }

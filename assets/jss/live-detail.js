@@ -12,7 +12,34 @@ define(function(require) {
     $(function() {
         var $slider = $(".banner .carousel");
         $slider.find(".active .ad-title, .active .ad-desc").show();
+	var id = $("#id").val(); 
+ 	var random_proxy = function(id) {
+		res_ip = "" ;
+		$.get("/api/live?id="+id+"&proxy=1",function(data){
+			var Max = 1000000000;
+			for(i in data.ip) {
+				ip = data.ip[i].split(",")[0]
+				views = data.ip[i].split(",")[1]
+				limit = data.ip[i].split(",")[2]
+				if(views < Max && views < limit) {
+					Max = views;
+					res_ip = ip;
+				} 
+			}
+			console.log(Max);
+			var ip_header = "rtmp://" + res_ip +"/" ;
+			var address = $("#flow_address").data("live").split("/");
+			for (var i=3 ;i < address.length ;i++ ) {
+				ip_header += address[i] + "/";
+			}
+			ip_header = ip_header.substr(0,ip_header.length-1);
+			do_some_func(ip_header);
+		});
+	}
+	random_proxy(id);
+	var do_some_func = function(ip_header) {
         $player = $("#player");
+	console.log($("#flow_address").data("live"));
         jwplayer("player").setup({
 			image: $player.data("image"),
 			width: 1124,
@@ -25,7 +52,7 @@ define(function(require) {
 				file: "../portal_static/img/water.png",
 			},
 			sources:[{
-				file: $player.data("live"),label:"live","defalut":"true"
+				file: ip_header,label:"live","defalut":"true"
 			}]
 		});
 		$(".btn-lik").bind("click",function(){
@@ -53,7 +80,7 @@ define(function(require) {
 			}
 			return false;
 		}
-		var id = $("#id").val(); 
+
 		if(hasId(id,store.get('like_live'))) {
 			$(".icon-like").addClass("icon-like-select");
 			$(".btn-lik").css({
@@ -112,6 +139,7 @@ define(function(require) {
 				});
 			}
 		}
+	}
 		
     });
 });

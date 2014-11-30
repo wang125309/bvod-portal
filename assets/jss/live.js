@@ -52,7 +52,12 @@ define(function(require){
 
 			$(this).html(str);
 		});
-
+		$(".live-detail-enter > div").each(function(){
+			var obj = $(this);
+			$.get("/api/live?id="+$(this).parent().data("id")+"&getViewCounting=1",function(data){
+				obj.html("<span class='views_num'>"+data.total_view+"人&nbsp;/&nbsp;"+data.total_limit+"人</span>"+obj.html());				
+			});
+		});
 		$(".live-title").each(function(){
 			var show_time = $(this).next(".live-detail").find(".live-detail-time > div  .start-time").text();	
 			var live_date = $(this).find(".live-date-sub").first().text();
