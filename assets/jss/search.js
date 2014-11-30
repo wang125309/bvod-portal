@@ -3,13 +3,13 @@ define(function(require){
 	require("search-history");
 
         $(".footer").stickyFooter();
- $(".comment").each(function(){
+
+    $(function(){ $(".comment").each(function(){
 			if($(this).text().length <= 1)	{
 				$(this).css("display","none");			
 			}
 		});
  
-    $(function(){
 		var IsPC = function()  {
 			var userAgentInfo = navigator.userAgent;  
 			var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod");  
