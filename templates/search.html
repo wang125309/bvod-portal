@@ -36,7 +36,7 @@
 							<a class="video-thumbnail" href="video/{{ i.id  }}">
 								<img src="{{ i.thumbs.m.url }}" onError="this.className='error';this.src='http://placehold.it/610x377&text=!'"/>
 								<div class="comment">&nbsp;
-									{% ifnotequal i.description None %}
+									{% ifnotequal i.abstract None %}
 									{{ i.abstract }}
 									{% endifnotequal %}
 								</div>
