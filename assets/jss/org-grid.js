@@ -5,7 +5,12 @@ define(function(require){
 	require("search-history");
     $(function(){
         $(".footer").stickyFooter();
-        if($('.org-empty')[0]){
+      $(".comment").each(function(){
+			if($(this).text().length <= 1)	{
+				$(this).css("display","none");			
+			}
+		});
+  if($('.org-empty')[0]){
             var height = $('.footer')[0].offsetTop - $(".organizations")[0].offsetTop;
             $(".org-empty")[0].style.height = height + 'px'; 
         }

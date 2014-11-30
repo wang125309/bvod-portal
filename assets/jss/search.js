@@ -3,6 +3,12 @@ define(function(require){
 	require("search-history");
 
         $(".footer").stickyFooter();
+ $(".comment").each(function(){
+			if($(this).text().length <= 1)	{
+				$(this).css("display","none");			
+			}
+		});
+ 
     $(function(){
 		var IsPC = function()  {
 			var userAgentInfo = navigator.userAgent;  

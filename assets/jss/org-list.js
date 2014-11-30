@@ -7,6 +7,11 @@ define(function(require){
     $(function(){
         var headroom = new Headroom($(".navbar-bvod")[0]);
         headroom.init();
+ $(".comment").each(function(){
+			if($(this).text().length <= 1)	{
+				$(this).css("display","none");			
+			}
+		});
 
         $('li.item.row').click(function(){
             location.href = $(this).find('.col-xs-12').children().find('a').attr('href');  
