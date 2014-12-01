@@ -29,6 +29,12 @@
 			</div>
 			{% endif %}
 			{% ifequal t 'media' %}	
+			{% if count1 == 0 %}
+			<div class="search_empty_wrap">
+				<img class="search_empty" src="{{ STATIC_URL }}img/search_noresult.png"/>
+			</div>
+			{% endif %}
+
 				{% for i in videos.media %}
 					{% for j in i.sources %}
 						{% ifequal j.quality "720" %}
@@ -58,7 +64,12 @@
 				{% endfor %}
 				{% endifequal %}
 				{% ifequal t 'department' %}
-				{% for org in orgs %}
+			{% if count2 == 0 %}
+			<div class="search_empty_wrap">
+				<img class="search_empty" src="{{ STATIC_URL }}img/search_noresult.png"/>
+			</div>
+			{% endif %}
+	{% for org in orgs %}
 				<div class="org-list">
 				<div class="grid col-xs-6">
 					<div class="item">
