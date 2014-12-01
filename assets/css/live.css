@@ -1296,7 +1296,7 @@ to{background-position:0 0}}
 a.list-group-item{color:#555}
 a.list-group-item .list-group-item-heading{color:#333}
 a.list-group-item:focus,a.list-group-item:hover{text-decoration:none;color:#555;background-color:#f5f5f5}
-.list-group-item.disabled,.list-group-item.disabled:focus,.list-group-item.disabled:hover{background-color:#eee;color:#777;cursor:not-allowed}
+.list-group-item.disabled,.list-group-item.disabled:focus,.list-group-item.disabled:hover{background-color:#eee;color:#777}
 .list-group-item.disabled .list-group-item-heading,.list-group-item.disabled:focus .list-group-item-heading,.list-group-item.disabled:hover .list-group-item-heading{color:inherit}
 .list-group-item.disabled .list-group-item-text,.list-group-item.disabled:focus .list-group-item-text,.list-group-item.disabled:hover .list-group-item-text{color:#777}
 .list-group-item.active,.list-group-item.active:focus,.list-group-item.active:hover{z-index:2;color:#fff;background-color:#428bca;border-color:#428bca}
@@ -2192,7 +2192,7 @@ body{background:#FAF9F9}
 .col-xs-6 .video-info .watch,.org-list .detail .item .info .meta .watch{float:right}
 .col-xs-6 .video-info .title{font-size:18px;color:#000;margin-top:10px}
 .org-list .live-empty{text-align:center}
-.org-list .live-empty>img{margin-top:50px}
+.org-list .live-empty>img{margin-top:50px;margin-bottom:50px}
 .live-title{margin-top:40px;width:80%;margin-left:10%}
 .live-title>.live-which{padding:3px 4px;background:#dcdcdc;border:#fff;color:#fff;font-size:14px}
 .live-title>.live-date-sub-wrap{margin-top:10px;font-size:18px}
