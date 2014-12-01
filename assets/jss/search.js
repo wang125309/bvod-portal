@@ -5,9 +5,11 @@ define(function(require){
 
 
     $(function(){
-        $(".footer").stickyFooter();
 		$(".comment").each(function(){
-			if($(this).text().length <= 1)	{
+			var t = $(this).text().replace(/[ ]/g,"");
+			console.log(t);
+			if(t.length <= 1)	{
+				
 				$(this).css("display","none");			
 			}
 		});
